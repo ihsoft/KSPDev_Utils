@@ -1,0 +1,7 @@
+--user=ihsoft
+--repo=KSPDev_Utils
+--token=<<SECRET>>
+--changelog=../CHANGELOG.md
+--as_draft
+--title=KSPDev Utils v{tag}
+--archive=../KSPDevUtils_v1.0.zip
