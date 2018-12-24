@@ -1407,6 +1407,9 @@
         <member name="F:KSPDev.DebugUtils.StdTypesDebugGuiControl.control">
             <summary>The actual control that handles the value.</summary>
         </member>
+        <member name="F:KSPDev.DebugUtils.StdTypesDebugGuiControl.action">
+            <summary>Action for the button debug control.</summary>
+        </member>
         <member name="M:KSPDev.DebugUtils.StdTypesDebugGuiControl.#ctor(System.String,System.Object,KSPDev.DebugUtils.IHasDebugAdjustables,System.Reflection.FieldInfo,System.Reflection.PropertyInfo,System.Reflection.MethodInfo)">
             <summary>Creates a debug adjustment control for the basic type.</summary>
             <param name="caption">The field caption to show in the dialog.</param>
@@ -1642,14 +1645,16 @@
         </member>
         <member name="M:KSPDev.GUIUtils.AbstractHermeticGUIControl.GetMemberType">
             <summary>Returns the type of the member value.</summary>
-            <returns></returns>
+            <returns>The type object of the member.</returns>
         </member>
         <member name="M:KSPDev.GUIUtils.AbstractHermeticGUIControl.GetMemberValue``1">
             <summary>Get the value from the controlled member.</summary>
+            <typeparam name="T">The type of the member.</typeparam>
             <returns>The value of the member.</returns>
         </member>
         <member name="M:KSPDev.GUIUtils.AbstractHermeticGUIControl.SetMemberValue``1(``0,KSPDev.GUIUtils.GuiActionsList)">
             <summary>Sets value to the controlled member.</summary>
+            <typeparam name="T">The type of the member.</typeparam>
             <param name="value">The new value to set.</param>
             <param name="actionsList">
             The actions list to submit the update actions into. If it's <c>null</c>, then the update and
@@ -1809,15 +1814,15 @@
             <param name="maxWidth">The maximum width of the column.</param>
         </member>
         <member name="T:KSPDev.GUIUtils.GUILayoutVerticalScrollView">
-            <summary>Control for an auto-resizing scrolling control.</summary>
+            <summary>Auto-resizing scrolling control.</summary>
             <remarks>
-            This control automatically shrinks to its content to take as small spacen as possible, while
+            This control automatically shrinks to its content to take as small space as possible, while
             still not needing the scrolling. If the height of the content exceeds the specified maximum,
             then a vertical scrollbar is added to the view and the view doesn't expand further.
             </remarks>
         </member>
         <member name="F:KSPDev.GUIUtils.GUILayoutVerticalScrollView.scrollPosition">
-            <summary>The scrolling piosition of the area.</summary>
+            <summary>The scrolling position of the area.</summary>
         </member>
         <member name="M:KSPDev.GUIUtils.GUILayoutVerticalScrollView.BeginView(UnityEngine.GUIStyle,System.Single,UnityEngine.GUILayoutOption[])">
             <summary>Starts the scrollable view.</summary>
@@ -1835,6 +1840,7 @@
         </member>
         <member name="P:KSPDev.GUIUtils.GUILayoutVerticalScrollView.scrollableAreaHeight">
             <summary>The full height of the area.</summary>
+            <value>The current height.</value>
         </member>
         <member name="T:KSPDev.GUIUtils.HermeticGUIControlBoolean">
             <summary>Hermetic GUI control for the boolean members.</summary>
@@ -3493,6 +3499,7 @@
         <member name="M:KSPDev.GUIUtils.TypeFormatters.PartType.Format(Part)">
             <summary>Formats the value into a human friendly string.</summary>
             <param name="value">The part to format.</param>
+            <returns>A formatted and localized string</returns>
         </member>
         <member name="M:KSPDev.GUIUtils.TypeFormatters.PartType.ToString">
             <summary>Returns a string formatted as a human friendly volume specification.</summary>

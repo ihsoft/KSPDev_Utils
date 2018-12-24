@@ -189,8 +189,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(TargetDir)$(ProjectName).xml" "$(TargetDir)$(TargetName).xml" /Y
-xcopy "$(TargetPath)" "..\..\..\..\Binaries\" /Y
-xcopy "$(TargetDir)$(TargetName).xml" "..\..\..\..\Binaries\" /Y
+xcopy "$(TargetPath)" "..\..\..\Binaries\" /Y
+xcopy "$(TargetDir)$(TargetName).xml" "..\..\..\Binaries\" /Y
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
