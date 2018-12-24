@@ -8,14 +8,14 @@ using UnityEngine;
 
 namespace KSPDev.GUIUtils {
 
-/// <summary>Control for an auto-resizing scrolling control.</summary>
+/// <summary>Auto-resizing scrolling control.</summary>
 /// <remarks>
-/// This control automatically shrinks to its content to take as small spacen as possible, while
+/// This control automatically shrinks to its content to take as small space as possible, while
 /// still not needing the scrolling. If the height of the content exceeds the specified maximum,
 /// then a vertical scrollbar is added to the view and the view doesn't expand further.
 /// </remarks>
 public sealed class GUILayoutVerticalScrollView {
-  /// <summary>The scrolling piosition of the area.</summary>
+  /// <summary>The scrolling position of the area.</summary>
   public Vector2 scrollPosition = Vector2.zero;
 
   /// <summary>The full height of the area.</summary>
