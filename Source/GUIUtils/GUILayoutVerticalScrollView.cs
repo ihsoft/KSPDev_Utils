@@ -19,6 +19,7 @@ public sealed class GUILayoutVerticalScrollView {
   public Vector2 scrollPosition = Vector2.zero;
 
   /// <summary>The full height of the area.</summary>
+  /// <value>The current height.</value>
   public float scrollableAreaHeight { get; private set; }
 
   /// <summary>Starts the scrollable view.</summary>

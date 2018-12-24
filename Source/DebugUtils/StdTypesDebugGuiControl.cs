@@ -27,6 +27,7 @@ public sealed class StdTypesDebugGuiControl : IRenderableGUIControl {
   /// <summary>The actual control that handles the value.</summary>
   readonly IRenderableGUIControl control;
 
+  /// <summary>Action for the button debug control.</summary>
   readonly Action action;
 
   /// <summary>Creates a debug adjustment control for the basic type.</summary>
@@ -115,19 +116,19 @@ public sealed class StdTypesDebugGuiControl : IRenderableGUIControl {
 
   /// <inheritdoc/>
   public void RenderControl(
-      GuiActionsList actionsList, GUIStyle layoutStyle, GUILayoutOption[] options) {
+      GuiActionsList actionsList, GUIStyle layoutStyle, GUILayoutOption[] layoutOptions) {
     if (control != null) {
       if (control is HermeticGUIControlClass) {
-        control.RenderControl(actionsList, layoutStyle, options);
+        control.RenderControl(actionsList, layoutStyle, layoutOptions);
       } else if (control is HermeticGUIControlBoolean) {
         using (new GUILayout.HorizontalScope(GUI.skin.box)) {
-          control.RenderControl(actionsList, layoutStyle, options);
+          control.RenderControl(actionsList, layoutStyle, layoutOptions);
         }
       } else {
         using (new GUILayout.HorizontalScope(GUI.skin.box)) {
           GUILayout.Label(caption);
           GUILayout.FlexibleSpace();
-          control.RenderControl(actionsList, layoutStyle, options);
+          control.RenderControl(actionsList, layoutStyle, layoutOptions);
         }
       }
     } else if (action != null) {

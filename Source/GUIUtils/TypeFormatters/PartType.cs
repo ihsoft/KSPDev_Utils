@@ -35,6 +35,7 @@ public sealed class PartType {
 
   /// <summary>Formats the value into a human friendly string.</summary>
   /// <param name="value">The part to format.</param>
+  /// <returns>A formatted and localized string</returns>
   public static string Format(Part value) {
     return value.partInfo.title;
   }

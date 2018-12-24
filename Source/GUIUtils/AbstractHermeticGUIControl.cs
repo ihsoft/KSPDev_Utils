@@ -72,12 +72,13 @@ public abstract class AbstractHermeticGUIControl : IRenderableGUIControl {
   }
 
   /// <summary>Returns the type of the member value.</summary>
-  /// <returns></returns>
+  /// <returns>The type object of the member.</returns>
   protected Type GetMemberType() {
     return fieldInfo != null ? fieldInfo.FieldType : propertyInfo.PropertyType;
   }
 
   /// <summary>Get the value from the controlled member.</summary>
+  /// <typeparam name="T">The type of the member.</typeparam>
   /// <returns>The value of the member.</returns>
   protected T GetMemberValue<T>() {
     return (T) (fieldInfo != null
@@ -86,6 +87,7 @@ public abstract class AbstractHermeticGUIControl : IRenderableGUIControl {
   }
 
   /// <summary>Sets value to the controlled member.</summary>
+  /// <typeparam name="T">The type of the member.</typeparam>
   /// <param name="value">The new value to set.</param>
   /// <param name="actionsList">
   /// The actions list to submit the update actions into. If it's <c>null</c>, then the update and
