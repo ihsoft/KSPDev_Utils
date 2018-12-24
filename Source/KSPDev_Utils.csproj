@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <RootNamespace>KSPDev</RootNamespace>
-    <AssemblyName>KSPDev_Utils.1.0</AssemblyName>
+    <AssemblyName>KSPDev_Utils</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkProfile />
@@ -187,10 +187,4 @@
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)$(ProjectName).xml" "$(TargetDir)$(TargetName).xml" /Y
-xcopy "$(TargetPath)" "..\..\..\Binaries\" /Y
-xcopy "$(TargetDir)$(TargetName).xml" "..\..\..\Binaries\" /Y
-</PostBuildEvent>
-  </PropertyGroup>
 </Project>
