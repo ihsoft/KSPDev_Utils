@@ -11,7 +11,7 @@ import sys
 PROJECT_ROOT = '../'
 RELEASE_FOLDER = PROJECT_ROOT + 'Release/'
 BIN_FOLDER = PROJECT_ROOT + 'Source/Bin/Release/'
-BINARY_PATH = BIN_FOLDER + 'KSPDev_Utils.dll'
+BINARY_PATH = None
 ASSEMBLY_INFO_FILE = PROJECT_ROOT + 'Source/Properties/AssemblyInfo.cs'
 
 
@@ -122,16 +122,17 @@ def CompileBinary():
 
 
 def main(argv):
+  global BINARY_PATH 
+  version = ExtractVersion()
+  BINARY_PATH = BIN_FOLDER + 'KSPDev_Utils.%s.dll' % version
+
   CompileBinary()
 
   print 'Cleanup release folder...'
   OsSafeDeleteFromDest(RELEASE_FOLDER)
 
-  version = ExtractVersion()
-
   print "Make release structure..."
-  OsSafeCopyToRelease(BINARY_PATH, RELEASE_FOLDER,
-                      dest_filename='KSPDev_Utils.%s.dll' % version)
+  OsSafeCopyToRelease(BINARY_PATH, RELEASE_FOLDER)
   OsSafeCopyToRelease(BIN_FOLDER + 'KSPDev_Utils.xml', RELEASE_FOLDER,
                       dest_filename='KSPDev_Utils.%s.xml' % version)
   OsSafeCopyToRelease('../LICENSE.md', RELEASE_FOLDER, dest_filename='KSPDev_Utils_LICENSE.md')
