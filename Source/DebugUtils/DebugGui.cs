@@ -3,6 +3,7 @@
 // This software is distributed under Public domain license.
 
 using KSPDev.LogUtils;
+using KSPDev.ModelUtils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,24 @@ public static class DebugGui {
 
     /// <summary>Method info for the method member.</summary>
     public MethodInfo methodInfo;
+  }
+
+  /// <summary>Dumps the objects hierarchy to the logs.</summary>
+  /// <remarks>
+  /// This method recirsively goes down to the all decendants, starting from
+  /// <paramref name="child"/>. The path, however, is shown realtive to <paramref name="root"/>.
+  /// </remarks>
+  /// <param name="root">The root object to make the path from.</param>
+  /// <param name="child">The descendant of <paramref name="root"/> to dump descendants for.</param>
+  public static void DumpHierarchy(Transform  root, Transform child) {
+    if (root != child) {
+      DebugEx.Warning("{0} (localPos: {1}, localRot: {2}, localEuler: {3})",
+                      Hierarchy.MakePath(Hierarchy.GetFullPath(child, parent: root)),
+                      child.localPosition, child.localRotation, child.localRotation.eulerAngles);
+    }
+    for (var i = 0; i < child.childCount; i++) {
+      DumpHierarchy(root, child.GetChild(i));
+    }
   }
 
   /// <summary>Gets the fields, available for debugging.</summary>
@@ -118,16 +137,28 @@ public static class DebugGui {
   /// <param name="group">
   /// The group of the controls to present. If empty, then all the controls are shown.
   /// </param>
+  /// <param name="bindToPart">
+  /// The fixed part to attach the dialog to. The dialog won't allow changing the part.
+  /// </param>
   /// <returns>The created dialog.</returns>
   /// <seealso cref="DestroyPartDebugDialog"/>
   /// <seealso cref="DebugAdjustableAttribute"/>
   public static PartDebugAdjustmentDialog MakePartDebugDialog(
-      string title, float? dialogWidth = null, float? valueColumnWidth = null, string group = "") {
+      string title,
+      float? dialogWidth = null, float? valueColumnWidth = null, string group = "",
+      Part bindToPart = null) {
+    if (bindToPart != null) {
+      title += " : " + DbgFormatter.PartId(bindToPart);
+    }
     var dlg = dialogsRoot.AddComponent<PartDebugAdjustmentDialog>();
     dlg.dialogTitle = title;
     dlg.dialogWidth = dialogWidth ?? dlg.dialogWidth;
     dlg.dialogValueSize = valueColumnWidth ?? dlg.dialogValueSize;
     dlg.controlsGroup = group;
+    if (bindToPart != null) {
+      dlg.lockToPart = true;
+      dlg.SetPart(bindToPart);
+    }
     DebugEx.Info("Created debug dialog: {0}", title);
     return dlg;
   }

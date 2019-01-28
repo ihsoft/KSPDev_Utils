@@ -228,6 +228,14 @@ public static class Hierarchy {
   public static Transform GetPartModelTransform(Part part) {
     var modelTransform = part.FindModelTransform("model");
     if (modelTransform == null) {
+      // Try kerbal's model.
+      modelTransform = part.FindModelTransform("model01");
+    }
+    if (modelTransform == null) {
+      // Try asteroid's model.
+      modelTransform = part.FindModelTransform("Asteroid");
+    }
+    if (modelTransform == null) {
       DebugEx.Error("Cannot find model on part {0}", part.name);
       return part.transform;
     }
@@ -240,7 +248,7 @@ public static class Hierarchy {
   /// </summary>
   /// <param name="parent">The object to start from.</param>
   /// <param name="pathPrefix">The prefix to add to every path in the result.</param>
-  /// <returns>The paths to all the objects in the hirerachy separated by a LF symbol.</returns>
+  /// <returns>The paths to all the objects in the hierarchy separated by a LF symbol.</returns>
   public static string[] ListHirerahcy(Transform parent, string pathPrefix = "") {
     var res = new List<string>();
     GatherHirerachyNames(parent, pathPrefix, res);

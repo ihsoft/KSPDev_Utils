@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <RootNamespace>KSPDev</RootNamespace>
-    <AssemblyName>KSPDev_Utils.1.0</AssemblyName>
+    <AssemblyName>KSPDev_Utils.1.1</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkProfile />
@@ -55,6 +55,7 @@
     <Compile Include="ConfigUtils\BasePersistentFieldAttribute.cs" />
     <Compile Include="ConfigUtils\AbstractPersistentFieldsFileAttribute.cs" />
     <Compile Include="ConfigUtils\IPersistentField.cs" />
+    <Compile Include="ConfigUtils\PartNodeUtils.cs" />
     <Compile Include="ConfigUtils\PersistentFieldsDatabaseAttribute.cs" />
     <Compile Include="ConfigUtils\PersistentFieldsFileAttribute.cs" />
     <Compile Include="ConfigUtils\GenericCollectionTypeProto.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="DebugUtils\DebugGui.cs" />
     <Compile Include="DebugUtils\IHasDebugAdjustables.cs" />
     <Compile Include="DebugUtils\PartDebugAdjustmentDialog.cs" />
+    <Compile Include="DebugUtils\PerfCounter.cs" />
     <Compile Include="DebugUtils\StdTypesDebugGuiControl.cs" />
     <Compile Include="Extensions\DictExtensions.cs" />
     <Compile Include="Extensions\PosAndRotExtensions.cs" />
@@ -130,6 +132,7 @@
     <Compile Include="LogUtils\DebugEx.cs" />
     <Compile Include="LogUtils\HostedDebugLog.cs" />
     <Compile Include="MathUtils\Mathd.cs" />
+    <Compile Include="MathUtils\Mathf2.cs" />
     <Compile Include="ModelUtils\AlignTransforms.cs" />
     <Compile Include="ModelUtils\Colliders.cs" />
     <Compile Include="ModelUtils\Hierarchy.cs" />
@@ -138,6 +141,7 @@
     <Compile Include="ModelUtils\Meshes.cs" />
     <Compile Include="PartUtils\PartModel.cs" />
     <Compile Include="PartUtils\PartModuleUtils.cs" />
+    <Compile Include="PartUtils\VariantsUtils.cs" />
     <Compile Include="ProcessingUtils\AsyncCall.cs" />
     <Compile Include="ProcessingUtils\SimpleStateMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

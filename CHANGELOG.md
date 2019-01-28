@@ -1,3 +1,14 @@
+# 1.1 (January 28th, 2019):
+* [Enhancement] Add methods to check distance form the part's collider instead of its center: [`GUIUtils.ModelUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ModelUtils_Colliders.htm).
+* [Enhancement] Add method to get confog node values via a generic: [`GUIUtils.ConfigUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ConfigUtils_ConfigAccessor.htm).
+* [Enhancement] Introduce a brand new module to deal with the part configs: [`GUIUtils.ConfigUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ConfigUtils_PartNodeUtils.htm).
+* [Enhancement] Allow showing a debug dialog for a specific part: [`GUIUtils.DebugUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/M_KSPDev_DebugUtils_DebugGui_MakePartDebugDialog.htm).
+* [Enhancement] A new method to dump model objects: [`GUIUtils.DebugUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/M_KSPDev_DebugUtils_DebugGui_DumpHierarchy.htm).
+* [Enhancement] New class to track the code performance in the game: [`GUIUtils.DebugUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_DebugUtils_PerfCounter.htm).
+* [Enhancement] New class to deal with float values (an extension to the game's one): [`GUIUtils.MathUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_MathUtils_Mathf2.htm).
+* [Enhancement] New set of methods to deal with the part variants: [`GUIUtils.PartUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_PartUtils_VariantsUtils.htm).
+* [Enhancement] Support kerbal and asteroid models: [`GUIUtils.ModelUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/M_KSPDev_ModelUtils_Hierarchy_GetPartModelTransform.htm).
+
 # 1.0 (December 23rd, 2018):
 * [Fix] Properly adjust the collider dimensions for sphere and cylinder: [`Colliders.AdjustCollider`](http://ihsoft.github.io/KSPDev_Utils/v1.0/html/M_KSPDev_ModelUtils_Colliders_AdjustCollider.htm).
 * [Change] Move all formatting types into own namespace: [`GUIUtils.TypeFormatters`](http://ihsoft.github.io/KSPDev_Utils/v1.0//html/N_KSPDev_GUIUtils_TypeFormatters.htm).

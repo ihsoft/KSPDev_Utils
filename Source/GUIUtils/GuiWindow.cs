@@ -24,6 +24,11 @@ public static class GuiWindow {
   /// Makes the window movable. It's an improved version of the stock <c>GUI.DragWindow()</c>
   /// method.
   /// </summary>
+  /// <remarks>
+  /// The main difference from the stock method is that the dragging state is not reset by the GUI
+  /// layout methods. Also, it reports the draggign state, so some updates to the dialog may be
+  /// frozen to not inerfere with the move operation.
+  /// </remarks>
   /// <param name="windowRect">
   /// The window rectangle. It must be the same instance which is passed to the
   /// <c>GUILayout.Window</c> method.

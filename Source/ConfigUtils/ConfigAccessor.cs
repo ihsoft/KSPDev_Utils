@@ -565,6 +565,63 @@ public static class ConfigAccessor {
     return true;
   }
 
+  /// <summary>
+  /// Reads a value of an arbitrary type <typeparamref name="T"/> from the config node.
+  /// </summary>
+  /// <param name="node">The node to read data from.</param>
+  /// <param name="path">
+  /// The path to the node. The path components should be separated by '/' symbol.
+  /// </param>
+  /// <param name="typeProto">
+  /// A proto that can parse values of type <typeparamref name="T"/>. If not set, then
+  /// <see cref="StandardOrdinaryTypesProto"/> is used.
+  /// </param>
+  /// <returns>The parsed value or <c>null</c> if not found.</returns>
+  /// <typeparam name="T">
+  /// The value type to write. The <paramref name="typeProto"/> instance must be able to handle it.
+  /// </typeparam>
+  /// <exception cref="ArgumentException">If type cannot be handled by the proto.</exception>
+  /// <seealso cref="SetValueByPath&lt;T&gt;(ConfigNode, string, T, KSPDev.ConfigUtils.AbstractOrdinaryValueTypeProto)"/>
+  public static T? GetValueByPath<T>(
+      ConfigNode node, string path, AbstractOrdinaryValueTypeProto typeProto = null)
+      where T : struct {
+    return GetValueByPath<T>(node, ConfigAccessor.StrToPath(path), typeProto);
+  }
+
+  /// <summary>
+  /// Reads a value of an arbitrary type <typeparamref name="T"/> from the config node.
+  /// </summary>
+  /// <param name="node">The node to read data from.</param>
+  /// <param name="pathKeys">
+  /// The array of values that makes the full path. The first node in the array is the top most
+  /// component of the path.
+  /// </param>
+  /// <param name="typeProto">
+  /// A proto that can parse values of type <typeparamref name="T"/>. If not set, then
+  /// <see cref="StandardOrdinaryTypesProto"/> is used.
+  /// </param>
+  /// <returns>The parsed value or <c>null</c> if not found.</returns>
+  /// <typeparam name="T">
+  /// The value type to write. The <paramref name="typeProto"/> instance must be able to handle it.
+  /// </typeparam>
+  /// <exception cref="ArgumentException">If type cannot be handled by the proto.</exception>
+  /// <seealso cref="SetValueByPath&lt;T&gt;(ConfigNode, string[], T, KSPDev.ConfigUtils.AbstractOrdinaryValueTypeProto)"/>
+  public static T? GetValueByPath<T>(
+      ConfigNode node, string[] pathKeys, AbstractOrdinaryValueTypeProto typeProto = null)
+      where T : struct {
+    if (typeProto == null) {
+      typeProto = standardTypesProto;
+    }
+    if (!typeProto.CanHandle(typeof(T))) {
+      throw new ArgumentException(string.Format(
+          "Proto {0} cannot handle type {1}", typeProto.GetType(), typeof(T)));
+    }
+    var strValue = ConfigAccessor.GetValueByPath(node, pathKeys);
+    return strValue == null
+        ? null
+        : (T?)typeProto.ParseFromString(strValue, typeof(T));
+  }
+
   /// <summary>Gathers and returns persistent field fields annotations.</summary>
   /// <param name="type">A type to lookup for the field annotations.</param>
   /// <param name="group">A group tag (see <see cref="PersistentFieldsFileAttribute"/>). If
