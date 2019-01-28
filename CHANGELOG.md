@@ -1,4 +1,4 @@
-# 1.1 (pre-release):
+# 1.1 (January 28th, 2019):
 * [Enhancement] Add methods to check distance form the part's collider instead of its center: [`GUIUtils.ModelUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ModelUtils_Colliders.htm).
 * [Enhancement] Add method to get confog node values via a generic: [`GUIUtils.ConfigUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ConfigUtils_ConfigAccessor.htm).
 * [Enhancement] Introduce a brand new module to deal with the part configs: [`GUIUtils.ConfigUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ConfigUtils_PartNodeUtils.htm).
