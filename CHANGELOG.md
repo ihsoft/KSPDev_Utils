@@ -1,3 +1,5 @@
+# 1.1 (pre-release):
+
 # 1.0 (December 23rd, 2018):
 * [Fix] Properly adjust the collider dimensions for sphere and cylinder: [`Colliders.AdjustCollider`](http://ihsoft.github.io/KSPDev_Utils/v1.0/html/M_KSPDev_ModelUtils_Colliders_AdjustCollider.htm).
 * [Change] Move all formatting types into own namespace: [`GUIUtils.TypeFormatters`](http://ihsoft.github.io/KSPDev_Utils/v1.0//html/N_KSPDev_GUIUtils_TypeFormatters.htm).
