@@ -228,6 +228,14 @@ public static class Hierarchy {
   public static Transform GetPartModelTransform(Part part) {
     var modelTransform = part.FindModelTransform("model");
     if (modelTransform == null) {
+      // Try kerbal's model.
+      modelTransform = part.FindModelTransform("model01");
+    }
+    if (modelTransform == null) {
+      // Try asteroid's model.
+      modelTransform = part.FindModelTransform("Asteroid");
+    }
+    if (modelTransform == null) {
       DebugEx.Error("Cannot find model on part {0}", part.name);
       return part.transform;
     }
