@@ -240,7 +240,7 @@ public static class Hierarchy {
   /// </summary>
   /// <param name="parent">The object to start from.</param>
   /// <param name="pathPrefix">The prefix to add to every path in the result.</param>
-  /// <returns>The paths to all the objects in the hirerachy separated by a LF symbol.</returns>
+  /// <returns>The paths to all the objects in the hierarchy separated by a LF symbol.</returns>
   public static string[] ListHirerahcy(Transform parent, string pathPrefix = "") {
     var res = new List<string>();
     GatherHirerachyNames(parent, pathPrefix, res);

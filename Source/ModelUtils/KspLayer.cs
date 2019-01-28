@@ -11,6 +11,7 @@ namespace KSPDev.ModelUtils {
 /// It's not a full set of the layers. More investigation is needed to reveal all of them.
 /// </remarks>
 /// <seealso cref="KspLayerMask"/>
+/// <seealso href="https://wiki.kerbalspaceprogram.com/wiki/API:Layers">KSP API: Layers</seealso>
 public enum KspLayer {
   /// <summary>The layer for a regular part.</summary>
   Part = 0,
