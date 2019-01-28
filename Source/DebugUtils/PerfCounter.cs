@@ -17,18 +17,23 @@ public sealed class PerfCounter {
   readonly Stopwatch watch = new Stopwatch();
 
   /// <summary>Total number of readings captured.</summary>
+  /// <value>The number of times <see cref="MeasureAction"/> was called.</value>
   public int numSamples { get; private set; }
 
   /// <summary>Total elapsed milleseconds in all readings.</summary>
+  /// <value>The total number of milliseconds, spent in the measured code.</value>
   public double totalDurationMs { get { return watch.ElapsedMilliseconds; } }
 
   /// <summary>Average time spent per one reading.</summary>
+  /// <value>The average time in milliseconds.</value>
   public double avgDurationPerCallMs { get; private set; }
 
   /// <summary>Maximum time spent in one reading during the life of the counter.</summary>
+  /// <value>The maximum duration, taken by the measured code.</value>
   public double maxDurationPerCallMs { get; private set; }
 
   /// <summary>Minimum time spent in one reading during the life of the counter.</summary>
+  /// <value>The minimum duration, taken by the measured code.</value>
   public double minDurationPerCallMs { get; private set; }
 
   /// <summary>Measures timing in a simple action that doesn't return result.</summary>
@@ -45,6 +50,8 @@ public sealed class PerfCounter {
 
   /// <summary>Measures timing in a function that returns result.</summary>
   /// <param name="fn">The function to measure.</param>
+  /// <typeparam name="RetVal">The return parameter of the measured function.</typeparam>
+  /// <returns>The value from the measured function.</returns>
   public RetVal MeasureFunction<RetVal>(Func<RetVal> fn) {
     numSamples += 1;
     watch.Start();
