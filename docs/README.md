@@ -5,5 +5,6 @@ This site holds documentation for several versions, since different versions of 
 Versions:
 
 * [KSPDev Utils v1.0](v1.0)
+* [KSPDev Utils v1.1](v1.1)
 
 The documenattion can be accessed via [GitHub Pages](https://ihsoft.github.io/KSPDev_Utils/).
