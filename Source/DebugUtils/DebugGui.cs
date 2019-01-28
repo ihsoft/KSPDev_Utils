@@ -3,6 +3,7 @@
 // This software is distributed under Public domain license.
 
 using KSPDev.LogUtils;
+using KSPDev.ModelUtils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -136,16 +137,28 @@ public static class DebugGui {
   /// <param name="group">
   /// The group of the controls to present. If empty, then all the controls are shown.
   /// </param>
+  /// <param name="bindToPart">
+  /// The fixed part to attach the dialog to. The dialog won't allow changing the part.
+  /// </param>
   /// <returns>The created dialog.</returns>
   /// <seealso cref="DestroyPartDebugDialog"/>
   /// <seealso cref="DebugAdjustableAttribute"/>
   public static PartDebugAdjustmentDialog MakePartDebugDialog(
-      string title, float? dialogWidth = null, float? valueColumnWidth = null, string group = "") {
+      string title,
+      float? dialogWidth = null, float? valueColumnWidth = null, string group = "",
+      Part bindToPart = null) {
+    if (bindToPart != null) {
+      title += " : " + DbgFormatter.PartId(bindToPart);
+    }
     var dlg = dialogsRoot.AddComponent<PartDebugAdjustmentDialog>();
     dlg.dialogTitle = title;
     dlg.dialogWidth = dialogWidth ?? dlg.dialogWidth;
     dlg.dialogValueSize = valueColumnWidth ?? dlg.dialogValueSize;
     dlg.controlsGroup = group;
+    if (bindToPart != null) {
+      dlg.lockToPart = true;
+      dlg.SetPart(bindToPart);
+    }
     DebugEx.Info("Created debug dialog: {0}", title);
     return dlg;
   }

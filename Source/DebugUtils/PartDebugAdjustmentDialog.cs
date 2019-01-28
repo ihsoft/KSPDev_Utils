@@ -41,7 +41,7 @@ public sealed class PartDebugAdjustmentDialog : MonoBehaviour,
   int selectedModule = -1;
 
   /// <summary>Scroll view for the adjustable modules.</summary>
-  GUILayoutVerticalScrollView mainScrollView = new GUILayoutVerticalScrollView();
+  readonly GUILayoutVerticalScrollView mainScrollView = new GUILayoutVerticalScrollView();
   #endregion
 
   #region Dialog configurable settings
@@ -56,14 +56,56 @@ public sealed class PartDebugAdjustmentDialog : MonoBehaviour,
 
   /// <summary>Controls group to show.</summary>
   internal string controlsGroup = "";
+
+  /// <summary>Tells if this dialog must be bound to one part only.</summary>
+  /// <remarks>
+  /// There will be no part selection UI offered, so the caller must set the part. If the parent
+  /// part dies, then the dialog automatically closes. 
+  /// </remarks>
+  /// <seealso cref="SetPart"/>
+  internal bool lockToPart;
   #endregion
 
   #region IHasGUI implementation
   /// <inheritdoc/>
   public void OnGUI() {
+    if (lockToPart && parentPart == null) {
+      DebugEx.Info("Part has died, destroying debug dialog: {0}", dialogTitle);
+      Object.Destroy(this);
+      return;
+    }
     windowRect = GUILayout.Window(
         GetInstanceID(), windowRect, ConsoleWindowFunc, dialogTitle,
         GUILayout.MaxHeight(1), GUILayout.Width(dialogWidth));
+  }
+  #endregion
+
+  #region Public interface methods
+  /// <summary>Sets the part to be adjusted.</summary>
+  /// <param name="part">The part to set.</param>
+  public void SetPart(Part part) {
+    parentPart = part;
+    if (part != null) {
+      var adjustables = new List<KeyValuePair<string, IRenderableGUIControl[]>>();
+      foreach (var module in part.Modules.Cast<PartModule>()) {
+        var moduleControls = new List<DebugGui.DebugMemberInfo>()
+            .Concat(DebugGui.GetAdjustableFields(module, group: controlsGroup))
+            .Concat(DebugGui.GetAdjustableProperties(module, group: controlsGroup))
+            .Concat(DebugGui.GetAdjustableActions(module, group: controlsGroup))
+            .Select(m => new StdTypesDebugGuiControl(
+                m.attr.caption, module,
+                fieldInfo: m.fieldInfo, propertyInfo: m.propertyInfo, methodInfo: m.methodInfo)
+            )
+            .ToArray();
+        if (moduleControls.Length > 0) {
+          adjustables.Add(new KeyValuePair<string, IRenderableGUIControl[]>(
+              module.moduleName, moduleControls));
+        }
+      }
+      adjustableModules = adjustables.ToArray();
+    } else {
+      adjustableModules = null;
+    }
   }
   #endregion
 
@@ -79,14 +121,16 @@ public sealed class PartDebugAdjustmentDialog : MonoBehaviour,
       }
     }
 
-    if (GUILayout.Button(!parentPartTracking ? "Set part" : "Cancel set mode...")) {
-      guiActions.Add(() => { parentPartTracking = !parentPartTracking; });
-    }
     string parentPartName = parentPart != null ? DbgFormatter.PartId(parentPart) : "NONE";
-    if (parentPartTracking && Mouse.HoveredPart != null) {
-      parentPartName = "Select: " + DbgFormatter.PartId(Mouse.HoveredPart);
+    if (!lockToPart) {
+      if (GUILayout.Button(!parentPartTracking ? "Set part" : "Cancel set mode...")) {
+        guiActions.Add(() => { parentPartTracking = !parentPartTracking; });
+      }
+      if (parentPartTracking && Mouse.HoveredPart != null) {
+        parentPartName = "Select: " + DbgFormatter.PartId(Mouse.HoveredPart);
+      }
+      GUILayout.Label(parentPartName, new GUIStyle(GUI.skin.box) { wordWrap = true });
     }
-    GUILayout.Label(parentPartName, new GUIStyle(GUI.skin.box) { wordWrap = true });
 
     // Render the adjustable fields.
     if (parentPart != null && adjustableModules != null) {
@@ -119,33 +163,6 @@ public sealed class PartDebugAdjustmentDialog : MonoBehaviour,
 
     // Allow the window to be dragged by its title bar.
     GuiWindow.DragWindow(ref windowRect, titleBarRect);
-  }
-
-  /// <summary>Sets the part to be adjusted.</summary>
-  /// <param name="part">The part to set.</param>
-  void SetPart(Part part) {
-    parentPart = part;
-    if (part != null) {
-      var adjustables = new List<KeyValuePair<string, IRenderableGUIControl[]>>();
-      foreach (var module in part.Modules.Cast<PartModule>()) {
-        var moduleControls = new List<DebugGui.DebugMemberInfo>()
-            .Concat(DebugGui.GetAdjustableFields(module, group: controlsGroup))
-            .Concat(DebugGui.GetAdjustableProperties(module, group: controlsGroup))
-            .Concat(DebugGui.GetAdjustableActions(module, group: controlsGroup))
-            .Select(m => new StdTypesDebugGuiControl(
-                m.attr.caption, module,
-                fieldInfo: m.fieldInfo, propertyInfo: m.propertyInfo, methodInfo: m.methodInfo)
-            )
-            .ToArray();
-        if (moduleControls.Length > 0) {
-          adjustables.Add(new KeyValuePair<string, IRenderableGUIControl[]>(
-              module.moduleName, moduleControls));
-        }
-      }
-      adjustableModules = adjustables.ToArray();
-    } else {
-      adjustableModules = null;
-    }
   }
   #endregion
 }
