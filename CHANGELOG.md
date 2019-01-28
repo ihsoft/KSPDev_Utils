@@ -1,5 +1,6 @@
 # 1.1 (pre-release):
 * [Enhancement] Add methods to check distance form the part's collider instead of its center: [`GUIUtils.ModelUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ModelUtils_Colliders.htm).
+* [Enhancement] Add method to get confog node values via a generic: [`GUIUtils.ConfigUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ConfigUtils_ConfigAccessor.htm).
 
 # 1.0 (December 23rd, 2018):
 * [Fix] Properly adjust the collider dimensions for sphere and cylinder: [`Colliders.AdjustCollider`](http://ihsoft.github.io/KSPDev_Utils/v1.0/html/M_KSPDev_ModelUtils_Colliders_AdjustCollider.htm).
