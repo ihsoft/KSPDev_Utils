@@ -6,6 +6,7 @@
 * [Enhancement] A new method to dump model objects: [`GUIUtils.DebugUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/M_KSPDev_DebugUtils_DebugGui_DumpHierarchy.htm).
 * [Enhancement] New class to track the code performance in the game: [`GUIUtils.DebugUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_DebugUtils_PerfCounter.htm).
 * [Enhancement] New class to deal with float values (an extension to the game's one): [`GUIUtils.MathUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_MathUtils_Mathf2.htm).
+* [Enhancement] New set of methods to deal with the part variants: [`GUIUtils.PartUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_PartUtils_VariantsUtils.htm).
 
 # 1.0 (December 23rd, 2018):
 * [Fix] Properly adjust the collider dimensions for sphere and cylinder: [`Colliders.AdjustCollider`](http://ihsoft.github.io/KSPDev_Utils/v1.0/html/M_KSPDev_ModelUtils_Colliders_AdjustCollider.htm).
