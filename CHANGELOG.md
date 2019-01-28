@@ -4,6 +4,7 @@
 * [Enhancement] Introduce a brand new module to deal with the part configs: [`GUIUtils.ConfigUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ConfigUtils_PartNodeUtils.htm).
 * [Enhancement] Allow showing a debug dialog for a specific part: [`GUIUtils.DebugUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/M_KSPDev_DebugUtils_DebugGui_MakePartDebugDialog.htm).
 * [Enhancement] A new method to dump model objects: [`GUIUtils.DebugUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/M_KSPDev_DebugUtils_DebugGui_DumpHierarchy.htm).
+* [Enhancement] New class to track the code performance in the game: [`GUIUtils.DebugUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_DebugUtils_PerfCounter.htm).
 
 # 1.0 (December 23rd, 2018):
 * [Fix] Properly adjust the collider dimensions for sphere and cylinder: [`Colliders.AdjustCollider`](http://ihsoft.github.io/KSPDev_Utils/v1.0/html/M_KSPDev_ModelUtils_Colliders_AdjustCollider.htm).

@@ -72,6 +72,7 @@
     <Compile Include="DebugUtils\DebugGui.cs" />
     <Compile Include="DebugUtils\IHasDebugAdjustables.cs" />
     <Compile Include="DebugUtils\PartDebugAdjustmentDialog.cs" />
+    <Compile Include="DebugUtils\PerfCounter.cs" />
     <Compile Include="DebugUtils\StdTypesDebugGuiControl.cs" />
     <Compile Include="Extensions\DictExtensions.cs" />
     <Compile Include="Extensions\PosAndRotExtensions.cs" />
