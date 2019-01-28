@@ -132,6 +132,7 @@
     <Compile Include="LogUtils\DebugEx.cs" />
     <Compile Include="LogUtils\HostedDebugLog.cs" />
     <Compile Include="MathUtils\Mathd.cs" />
+    <Compile Include="MathUtils\Mathf2.cs" />
     <Compile Include="ModelUtils\AlignTransforms.cs" />
     <Compile Include="ModelUtils\Colliders.cs" />
     <Compile Include="ModelUtils\Hierarchy.cs" />
