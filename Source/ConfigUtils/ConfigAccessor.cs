@@ -71,7 +71,7 @@ public static class ConfigAccessor {
   /// <seealso cref="PersistentFieldAttribute"/>
   public static void ReadFieldsFromDatabase(string nodePath, Type type, object instance,
                                             string group = StdPersistentGroups.Default) {
-    DebugEx.Fine("Loading persistent fileds: db path={0}, group=\"{1}\"",
+    DebugEx.Fine("Loading persistent fields: db path={0}, group=\"{1}\"",
                  nodePath, group ?? "<ALL>");
     var node = GameDatabase.Instance.GetConfigNode(nodePath);
     if (node != null) {
@@ -132,7 +132,7 @@ public static class ConfigAccessor {
     }
   }
 
-  /// <summary>Reads custom type fileds from the part's config.</summary>
+  /// <summary>Reads custom type fields from the part's config.</summary>
   /// <remarks>
   /// <para>
   /// The consumer code must call this method from the <c>OnLoad</c> method to capture the
