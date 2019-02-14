@@ -1,4 +1,5 @@
 # 1.2 (pre-release):
+* [Enhancement] Add extension method to update transform from `PosAndRot` object: [`Extensions.PosAndRotExtensions`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_Extensions_PosAndRotExtensions.htm).
 
 # 1.1 (January 28th, 2019):
 * [Enhancement] Add methods to check distance form the part's collider instead of its center: [`GUIUtils.ModelUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ModelUtils_Colliders.htm).
