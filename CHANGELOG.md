@@ -1,4 +1,5 @@
 # 1.2 (pre-release):
+* [Fix] Implement "breadth first search" approach as stated in the description. It was DFS before: [`Hierarchy.FindTransformInChildren`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_Hierarchy_FindTransformInChildren.htm).
 * [Enhancement] Add extension method to update transform from `PosAndRot` object: [`Extensions.PosAndRotExtensions`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_Extensions_PosAndRotExtensions.htm).
 
 # 1.1 (January 28th, 2019):

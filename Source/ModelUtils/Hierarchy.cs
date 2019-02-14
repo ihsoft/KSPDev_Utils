@@ -74,19 +74,14 @@ public static class Hierarchy {
   /// </remarks>
   /// <param name="parent">The transfrom to start from.</param>
   /// <param name="name">The name of the transfrom.</param>
+  /// <param name="defValue">
+  /// An object to return if the name is not found. This situation will be treated as a danger, and
+  /// a warning log record will be made.
+  /// </param>
   /// <returns>A transform or <c>null</c> if nothing is found.</returns>
-  public static Transform FindTransformInChildren(Transform parent, string name) {
-    var res = parent.Find(name);
-    if (res != null) {
-      return res;
-    }
-    for (var i = parent.childCount - 1; i >= 0; --i) {
-      res = FindTransformInChildren(parent.GetChild(i), name);
-      if (res != null) {
-        return res;
-      }
-    }
-    return null;
+  public static Transform FindTransformInChildren(Transform parent, string name,
+                                                  Transform defValue = null) {
+    return FindTransformByPath(parent, "**/" + EscapeName(name), defValue);
   }
 
   /// <summary>Finds a transform in the hirerachy by the provided path.</summary>
