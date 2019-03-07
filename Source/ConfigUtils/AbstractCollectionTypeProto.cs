@@ -7,12 +7,14 @@ using System.Collections;
 
 namespace KSPDev.ConfigUtils {
 
-/// <summary>A base class for a proto of a collection of values.</summary>
-/// <remarks>Collection of collections is not supported. Though, descendands may use own
+/// <summary>Base class for a type proto handler that can deal with collections.</summary>
+/// <remarks>
+/// Collection of collections is not supported. However, descendands may use own
 /// (de)serialization approach to handle nested collections.
-/// <para>All descendants of this class must implement a constructor which accepts a single
-/// argument: the type of the collection. Constructor can throw <see cref="ArgumentException"/>
-/// if passed type is unacceptable.</para>
+/// <para>
+/// All descendants of this class must implement a constructor which accepts a single argument: the
+/// type of the collection. Constructor can throw <see cref="ArgumentException"/> if passed type is
+/// unacceptable.</para>
 /// </remarks>
 /// <example>As a good example of overriding of this class see
 /// <see cref="GenericCollectionTypeProto"/>. Though, it tries to be universal and, hence, works
