@@ -142,6 +142,7 @@
     <Compile Include="PartUtils\PartModel.cs" />
     <Compile Include="PartUtils\PartModuleUtils.cs" />
     <Compile Include="PartUtils\VariantsUtils.cs" />
+    <Compile Include="ProcessingUtils\ArgumentGuard.cs" />
     <Compile Include="ProcessingUtils\AsyncCall.cs" />
     <Compile Include="ProcessingUtils\Preconditions.cs" />
     <Compile Include="ProcessingUtils\SimpleStateMachine.cs" />

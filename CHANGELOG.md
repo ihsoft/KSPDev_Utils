@@ -3,6 +3,7 @@
 * [Fix] Properly handle the base class when gathering persistent field attributes: [`ConfigUtils.BasePersistentFieldAttribute`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ConfigUtils_BasePersistentFieldAttribute.htm).
 * [Enhancement] Add extension method to update transform from `PosAndRot` object: [`Extensions.PosAndRotExtensions`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_Extensions_PosAndRotExtensions.htm).
 * [Enhancement] Add module to check preconditions: [`ProcessingUtils.Preconditions`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ProcessingUtils_Preconditions.htm).
+* [Enhancement] Add module to check arguents: [`ProcessingUtils.ArgumentGuard`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ProcessingUtils_ArgumentGuard.htm).
 
 # 1.1 (January 28th, 2019):
 * [Enhancement] Add methods to check distance form the part's collider instead of its center: [`GUIUtils.ModelUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ModelUtils_Colliders.htm).
