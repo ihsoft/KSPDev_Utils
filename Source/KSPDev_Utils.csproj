@@ -143,6 +143,7 @@
     <Compile Include="PartUtils\PartModuleUtils.cs" />
     <Compile Include="PartUtils\VariantsUtils.cs" />
     <Compile Include="ProcessingUtils\AsyncCall.cs" />
+    <Compile Include="ProcessingUtils\Preconditions.cs" />
     <Compile Include="ProcessingUtils\SimpleStateMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceUtils\StockResourceNames.cs" />
