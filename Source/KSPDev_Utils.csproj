@@ -54,7 +54,9 @@
     <Compile Include="ConfigUtils\AbstractOrdinaryValueTypeProto.cs" />
     <Compile Include="ConfigUtils\BasePersistentFieldAttribute.cs" />
     <Compile Include="ConfigUtils\AbstractPersistentFieldsFileAttribute.cs" />
+    <Compile Include="ConfigUtils\ConfigNodePatch.cs" />
     <Compile Include="ConfigUtils\IPersistentField.cs" />
+    <Compile Include="ConfigUtils\PartNodePatcher.cs" />
     <Compile Include="ConfigUtils\PartNodeUtils.cs" />
     <Compile Include="ConfigUtils\PersistentCustomFieldAttribute.cs" />
     <Compile Include="ConfigUtils\PersistentFieldsDatabaseAttribute.cs" />
