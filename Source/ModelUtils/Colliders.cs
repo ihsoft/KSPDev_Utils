@@ -176,8 +176,8 @@ public static class Colliders {
 
   /// <summary>Disables/enables all the colliders between the objects.</summary>
   /// <remarks>
-  /// All colliders in all the children of the both objects are explicitly set to not collide with
-  /// each other. The ignore state is reset to <c>false</c> on every scene load.
+  /// All colliders in all the children of the both objects are explicitly adjusted. The ignore
+  /// state is reset to <c>false</c> on every scene load.
   /// </remarks>
   /// <param name="obj1">Source object.</param>
   /// <param name="obj2">Target object.</param>

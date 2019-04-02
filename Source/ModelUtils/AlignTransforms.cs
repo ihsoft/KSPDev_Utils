@@ -40,7 +40,7 @@ public static class AlignTransforms {
   /// </remarks>
   /// <param name="vessel">The vessel to align.</param>
   /// <param name="vesselNode">The node at the vessel to align the target against.</param>
-  /// <param name="targetNode">The node at the target to allign the vessel against.</param>
+  /// <param name="targetNode">The node at the target to align the vessel against.</param>
   /// <seealso cref="PlaceVessel"/>
   public static void SnapAlignVessel(Vessel vessel, Transform vesselNode, Transform targetNode) {
     var localChildRot = vessel.vesselTransform.rotation.Inverse() * vesselNode.rotation;
@@ -59,7 +59,7 @@ public static class AlignTransforms {
   /// attach node, and the nodes are "looking" at each other. 
   /// </remarks>
   /// <param name="srcAttachNode">The node of the source vessel.</param>
-  /// <param name="tgtAttachNode">The node of the traget vessel.</param>
+  /// <param name="tgtAttachNode">The node of the target vessel.</param>
   public static void SnapAlignNodes(AttachNode srcAttachNode, AttachNode tgtAttachNode) {
     // The sequence of the calculations below is very order dependent! Don't change it.
     var srcVessel = srcAttachNode.owner.vessel;
