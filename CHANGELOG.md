@@ -5,6 +5,7 @@
 * [Enhancement] Add module to check preconditions: [`ProcessingUtils.Preconditions`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ProcessingUtils_Preconditions.htm).
 * [Enhancement] Add module to check arguents: [`ProcessingUtils.ArgumentGuard`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ProcessingUtils_ArgumentGuard.htm).
 * [Enhancement] Add safe method to immediately destroy an object: [`Hierarchy.SafeDestory`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/M_KSPDev_Hierarchy_SafeDestory.htm).
+* [Enhancement] Add attribute for persistent field with custom protos: [`ConfigUtils.PersistentCustomFieldAttribute`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ConfigUtils_PersistentCustomFieldAttribute.htm).
 
 # 1.1 (January 28th, 2019):
 * [Enhancement] Add methods to check distance form the part's collider instead of its center: [`GUIUtils.ModelUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ModelUtils_Colliders.htm).
