@@ -79,6 +79,7 @@ public static class Preconditions {
   }
 
   /// <summary>Throws if enum value is not in the expected set.</summary>
+  /// <typeparam name="T">Type of value to check.</typeparam>
   /// <param name="arg">The value to check.</param>
   /// <param name="message">An optional message to present in the error.</param>
   /// <param name="context">The optional "owner" object.</param>

@@ -48,6 +48,7 @@ public static class ArgumentGuard {
   }
 
   /// <summary>Throws if ordinary value is out of bounds.</summary>
+  /// <typeparam name="T">Type of value to check.</typeparam>
   /// <param name="arg">The argument value to check.</param>
   /// <param name="argName">The argument name.</param>
   /// <param name="minValue">The minumum allowed value.</param>
@@ -67,6 +68,7 @@ public static class ArgumentGuard {
   }
 
   /// <summary>Throws if enum value is not in the expected set.</summary>
+  /// <typeparam name="T">Type of value to check.</typeparam>
   /// <param name="arg">The argument value to check.</param>
   /// <param name="argName">The argument name.</param>
   /// <param name="values">The acceptable values of the enum.</param>

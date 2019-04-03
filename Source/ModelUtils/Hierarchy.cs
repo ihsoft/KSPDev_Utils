@@ -314,6 +314,7 @@ public static class Hierarchy {
   /// side-effects happen and it <i>doesn't</i> use physics incompatible <c>DestroyImmediate</c>
   /// method.
   /// </remarks>
+  /// <param name="obj">The object to destroy.</param>
   public static void SafeDestory(Transform obj) {
     SafeDestory(obj.gameObject);
   }

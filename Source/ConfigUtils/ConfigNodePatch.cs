@@ -203,7 +203,8 @@ public class ConfigNodePatch {
     return res;
   }
 
-  /// <inheritdoc/>
+  /// <summary>Returns friendly identificator of the patch.</summary>
+  /// <returns>The patch descriptor.</returns>
   public override string ToString() {
     return string.Format("[ConfigNodePatch#{0}]", sourceConfigUrl ?? name);
   }
