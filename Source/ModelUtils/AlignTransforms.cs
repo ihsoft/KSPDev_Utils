@@ -10,16 +10,16 @@ namespace KSPDev.ModelUtils {
 /// <summary>Helper methods to align transformations relative to each other.</summary>
 public static class AlignTransforms {
   /// <summary>
-  /// Aligns the source node so that it's located at the target, and the source and target are
+  /// Aligns the source object so that it's located at the target, and the source and target are
   /// "looking" at the each other.
   /// </summary>
   /// <remarks>
   /// The object's "look" direction is a <see cref="Transform.forward"/> direction. The resulted
   /// <see cref="Transform.up"/> direction of the source will be the opposite to the target.
   /// </remarks>
-  /// <param name="source">The node to align.</param>
+  /// <param name="source">The object to align.</param>
   /// <param name="sourceChild">The child node of the source to use as the align point.</param>
-  /// <param name="target">The target node to align with.</param>
+  /// <param name="target">The target object to align with.</param>
   /// <include file="Unity3D_HelpIndex.xml" path="//item[@name='T:UnityEngine.Transform']/*"/>
   public static void SnapAlign(Transform source, Transform sourceChild, Transform target) {
     // Don't relay on the localRotation since the child may be not an immediate child.
@@ -40,7 +40,7 @@ public static class AlignTransforms {
   /// </remarks>
   /// <param name="vessel">The vessel to align.</param>
   /// <param name="vesselNode">The node at the vessel to align the target against.</param>
-  /// <param name="targetNode">The node at the target to allign the vessel against.</param>
+  /// <param name="targetNode">The node at the target to align the vessel against.</param>
   /// <seealso cref="PlaceVessel"/>
   public static void SnapAlignVessel(Vessel vessel, Transform vesselNode, Transform targetNode) {
     var localChildRot = vessel.vesselTransform.rotation.Inverse() * vesselNode.rotation;
@@ -59,7 +59,7 @@ public static class AlignTransforms {
   /// attach node, and the nodes are "looking" at each other. 
   /// </remarks>
   /// <param name="srcAttachNode">The node of the source vessel.</param>
-  /// <param name="tgtAttachNode">The node of the traget vessel.</param>
+  /// <param name="tgtAttachNode">The node of the target vessel.</param>
   public static void SnapAlignNodes(AttachNode srcAttachNode, AttachNode tgtAttachNode) {
     // The sequence of the calculations below is very order dependent! Don't change it.
     var srcVessel = srcAttachNode.owner.vessel;

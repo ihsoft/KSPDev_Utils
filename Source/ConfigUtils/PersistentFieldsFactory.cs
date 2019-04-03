@@ -27,7 +27,7 @@ static class PersistentFieldsFactory {
     foreach (var fieldInfo in fieldsInfo) {
       var fieldAttr =
           fieldInfo.GetCustomAttributes(typeof(BasePersistentFieldAttribute), true).First()
-          as PersistentFieldAttribute;
+          as BasePersistentFieldAttribute;
       try {
         var persistentField = new PersistentField(fieldInfo, fieldAttr);
         result.Add(persistentField);

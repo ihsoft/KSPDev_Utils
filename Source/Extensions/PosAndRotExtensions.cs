@@ -41,6 +41,13 @@ public static class PosAndRotExtensions {
   public static PosAndRot TransformPosAndRot(this Transform node, PosAndRot posAndRot) {
     return posAndRot.Transform(node);
   }
+
+  /// <summary>Sets position and rotation in one call./// </summary>
+  /// <param name="node">The node to update.</param>
+  /// <param name="posAndRot">The position and rotation in wolrd space.</param>
+  public static void SetPosAndRot(this Transform node, PosAndRot posAndRot) {
+    node.SetPositionAndRotation(posAndRot.pos, posAndRot.rot);
+  }
 }
 
 }  // namespace

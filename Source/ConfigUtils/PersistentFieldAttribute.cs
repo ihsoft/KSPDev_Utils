@@ -122,30 +122,23 @@ namespace KSPDev.ConfigUtils {
 /// }
 /// ]]></code>
 /// <para>
-/// The code above implies that in a common case unsealed class should put the private fields in a
+/// The code above implies that in common case the unsealed class should put the private fields in a
 /// group other than default to avoid settings collision.
 /// </para>
 /// <para>
-/// When the type of the field is different from a primitive C# type or a common Unity 4 type you
-/// may need to provide a custom value handler to deal with (de)serializing. E.g. for an ordinary
-/// type it may look like this:
+/// Instead of creating nested classes with attributed fields, you can makea class that implements
+/// KSP interface <see cref="IConfigNode"/>. In this case the Save/load methid will be invoked when
+/// (de)serializing the field.
 /// </para>
 /// <code><![CDATA[
-/// class CustomType {
-///   [PersistentField("my/custom/type", ordinaryTypeProto = typeof(MyTypeProto))]
-///   private MyType field1;
-/// }
-/// ]]></code>
-/// <para>
-/// Or your custom class can implement a KSP interface <see cref="IConfigNode"/>, and it will be
-/// invoked during the field saving and restoring.
-/// </para>
-/// <code><![CDATA[
-/// class NodeCustomType : IConfigNode {
+/// public class NodeCustomType : IConfigNode {
 ///   public virtual void Save(ConfigNode node) {
 ///   }
 ///   public virtual void Load(ConfigNode node) {
 ///   }
+///
+///   [PersistentField("custom_class")]
+///   public NodeCustomType field1;
 /// }
 /// ]]></code>
 /// <para>
@@ -153,20 +146,6 @@ namespace KSPDev.ConfigUtils {
 /// choose to implement <see cref="IPersistentField"/> instead. It works in a similar way but the
 /// source/target of the persistense is a string instead of a config node.
 /// </para>
-/// <para>
-/// If your custom type is a collection that cannot be handled by the standard proto you can provide
-/// your own collection proto handler. Note that if you do then the annotated field will be treated
-/// as a collection. In fact, when you set <c>isCollection = true</c> what actually happens is just
-/// assigning <see cref="GenericCollectionTypeProto"/> as a collection proto handler.
-/// </para>
-/// <code><![CDATA[
-/// class CustomTypes {
-///   [PersistentField("my/custom/type", collectionTypeProto = typeof(MyCollectionProto))]
-///   private MyCollection field1;
-/// }
-/// ]]></code>
-/// For more examples on custom proto handlers see <see cref="AbstractOrdinaryValueTypeProto"/> and
-/// <see cref="AbstractCollectionTypeProto"/>.
 /// </example>
 /// <seealso cref="ConfigAccessor"/>
 /// <seealso cref="AbstractOrdinaryValueTypeProto"/>
@@ -182,7 +161,10 @@ public sealed class PersistentFieldAttribute : BasePersistentFieldAttribute {
     get { return collectionTypeProto != null; }
   }
 
+  /// <summary>Creates attribute for a persistent field of standard KSP types.</summary>
   /// <inheritdoc/>
+  /// <seealso cref="StandardOrdinaryTypesProto"/>
+  /// <seealso cref="GenericCollectionTypeProto"/>
   public PersistentFieldAttribute(string cfgPath) : base(cfgPath) {
     ordinaryTypeProto = typeof(StandardOrdinaryTypesProto);
     isCollection = false;

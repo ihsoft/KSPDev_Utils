@@ -74,19 +74,14 @@ public static class Hierarchy {
   /// </remarks>
   /// <param name="parent">The transfrom to start from.</param>
   /// <param name="name">The name of the transfrom.</param>
+  /// <param name="defValue">
+  /// An object to return if the name is not found. This situation will be treated as a danger, and
+  /// a warning log record will be made.
+  /// </param>
   /// <returns>A transform or <c>null</c> if nothing is found.</returns>
-  public static Transform FindTransformInChildren(Transform parent, string name) {
-    var res = parent.Find(name);
-    if (res != null) {
-      return res;
-    }
-    for (var i = parent.childCount - 1; i >= 0; --i) {
-      res = FindTransformInChildren(parent.GetChild(i), name);
-      if (res != null) {
-        return res;
-      }
-    }
-    return null;
+  public static Transform FindTransformInChildren(Transform parent, string name,
+                                                  Transform defValue = null) {
+    return FindTransformByPath(parent, "**/" + EscapeName(name), defValue);
   }
 
   /// <summary>Finds a transform in the hirerachy by the provided path.</summary>
@@ -309,6 +304,27 @@ public static class Hierarchy {
   /// <returns>A name where all the special symbols are properly escaped.</returns>
   public static string EscapeName(string unescapedName) {
     return unescapedName.Replace("/", "//");
+  }
+
+  /// <summary>Destroys the object in a way which is safe for physical callback methods.</summary>
+  /// <remarks>
+  /// The Unity <c>UnityEngine.Object.Destroy</c> method only marks object for deletion, but before
+  /// the next fixed frame cycle completed, the object still can be found in the hierarchy. And it
+  /// may trigger physics before the final cleanup. This method ensures that none of these
+  /// side-effects happen and it <i>doesn't</i> use physics incompatible <c>DestroyImmediate</c>
+  /// method.
+  /// </remarks>
+  /// <param name="obj">The object to destroy.</param>
+  public static void SafeDestory(Transform obj) {
+    SafeDestory(obj.gameObject);
+  }
+
+  /// <inheritdoc cref="SafeDestory(Transform)"/>
+  public static void SafeDestory(GameObject obj) {
+    obj.transform.parent = null;
+    obj.name = "$disposed";
+    obj.SetActive(false);
+    UnityEngine.Object.Destroy(obj);
   }
 
   #region Local helper methods.

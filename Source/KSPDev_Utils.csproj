@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <RootNamespace>KSPDev</RootNamespace>
-    <AssemblyName>KSPDev_Utils.1.1</AssemblyName>
+    <AssemblyName>KSPDev_Utils.1.2</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkProfile />
@@ -54,8 +54,11 @@
     <Compile Include="ConfigUtils\AbstractOrdinaryValueTypeProto.cs" />
     <Compile Include="ConfigUtils\BasePersistentFieldAttribute.cs" />
     <Compile Include="ConfigUtils\AbstractPersistentFieldsFileAttribute.cs" />
+    <Compile Include="ConfigUtils\ConfigNodePatch.cs" />
     <Compile Include="ConfigUtils\IPersistentField.cs" />
+    <Compile Include="ConfigUtils\PartNodePatcher.cs" />
     <Compile Include="ConfigUtils\PartNodeUtils.cs" />
+    <Compile Include="ConfigUtils\PersistentCustomFieldAttribute.cs" />
     <Compile Include="ConfigUtils\PersistentFieldsDatabaseAttribute.cs" />
     <Compile Include="ConfigUtils\PersistentFieldsFileAttribute.cs" />
     <Compile Include="ConfigUtils\GenericCollectionTypeProto.cs" />
@@ -142,7 +145,9 @@
     <Compile Include="PartUtils\PartModel.cs" />
     <Compile Include="PartUtils\PartModuleUtils.cs" />
     <Compile Include="PartUtils\VariantsUtils.cs" />
+    <Compile Include="ProcessingUtils\ArgumentGuard.cs" />
     <Compile Include="ProcessingUtils\AsyncCall.cs" />
+    <Compile Include="ProcessingUtils\Preconditions.cs" />
     <Compile Include="ProcessingUtils\SimpleStateMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceUtils\StockResourceNames.cs" />

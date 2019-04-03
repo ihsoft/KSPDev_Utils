@@ -1,0 +1,1241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="045323cf-24a9-4b04-8dcc-77d84f49f9d3" Title="KSPDev.ConfigUtils" Url="html/N_KSPDev_ConfigUtils.htm">
+    <HelpTOCNode Id="5855bc32-c2a8-47d7-8e39-422900489dfd" Title="AbstractCollectionTypeProto Class" Url="html/T_KSPDev_ConfigUtils_AbstractCollectionTypeProto.htm">
+      <HelpTOCNode Title="AbstractCollectionTypeProto Constructor " Url="html/M_KSPDev_ConfigUtils_AbstractCollectionTypeProto__ctor.htm" />
+      <HelpTOCNode Id="49db4eda-5463-47bc-b9b6-241f327d4fd8" Title="AbstractCollectionTypeProto Methods" Url="html/Methods_T_KSPDev_ConfigUtils_AbstractCollectionTypeProto.htm">
+        <HelpTOCNode Title="AddItem Method " Url="html/M_KSPDev_ConfigUtils_AbstractCollectionTypeProto_AddItem.htm" />
+        <HelpTOCNode Title="ClearItems Method " Url="html/M_KSPDev_ConfigUtils_AbstractCollectionTypeProto_ClearItems.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/M_KSPDev_ConfigUtils_AbstractCollectionTypeProto_GetEnumerator.htm" />
+        <HelpTOCNode Title="GetItemType Method " Url="html/M_KSPDev_ConfigUtils_AbstractCollectionTypeProto_GetItemType.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="42d8cd28-a817-4c6c-851a-497829e27c8b" Title="AbstractOrdinaryValueTypeProto Class" Url="html/T_KSPDev_ConfigUtils_AbstractOrdinaryValueTypeProto.htm">
+      <HelpTOCNode Title="AbstractOrdinaryValueTypeProto Constructor " Url="html/M_KSPDev_ConfigUtils_AbstractOrdinaryValueTypeProto__ctor.htm" />
+      <HelpTOCNode Id="4758ea42-789c-45a0-b875-e94ae4aa781e" Title="AbstractOrdinaryValueTypeProto Methods" Url="html/Methods_T_KSPDev_ConfigUtils_AbstractOrdinaryValueTypeProto.htm">
+        <HelpTOCNode Title="CanHandle Method " Url="html/M_KSPDev_ConfigUtils_AbstractOrdinaryValueTypeProto_CanHandle.htm" />
+        <HelpTOCNode Title="ParseFromString Method " Url="html/M_KSPDev_ConfigUtils_AbstractOrdinaryValueTypeProto_ParseFromString.htm" />
+        <HelpTOCNode Title="SerializeToString Method " Url="html/M_KSPDev_ConfigUtils_AbstractOrdinaryValueTypeProto_SerializeToString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cd38defd-dc17-4e20-aa47-99da847a7dba" Title="AbstractPersistentFieldsFileAttribute Class" Url="html/T_KSPDev_ConfigUtils_AbstractPersistentFieldsFileAttribute.htm">
+      <HelpTOCNode Title="AbstractPersistentFieldsFileAttribute Constructor " Url="html/M_KSPDev_ConfigUtils_AbstractPersistentFieldsFileAttribute__ctor.htm" />
+      <HelpTOCNode Id="308279f5-9ac7-44f8-a567-78e64f1df3a5" Title="AbstractPersistentFieldsFileAttribute Fields" Url="html/Fields_T_KSPDev_ConfigUtils_AbstractPersistentFieldsFileAttribute.htm">
+        <HelpTOCNode Title="configFilePath Field" Url="html/F_KSPDev_ConfigUtils_AbstractPersistentFieldsFileAttribute_configFilePath.htm" />
+        <HelpTOCNode Title="group Field" Url="html/F_KSPDev_ConfigUtils_AbstractPersistentFieldsFileAttribute_group.htm" />
+        <HelpTOCNode Title="nodePath Field" Url="html/F_KSPDev_ConfigUtils_AbstractPersistentFieldsFileAttribute_nodePath.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="62f89978-8055-44d3-89ef-5ac0ac8e13ef" Title="BasePersistentFieldAttribute Class" Url="html/T_KSPDev_ConfigUtils_BasePersistentFieldAttribute.htm">
+      <HelpTOCNode Title="BasePersistentFieldAttribute Constructor " Url="html/M_KSPDev_ConfigUtils_BasePersistentFieldAttribute__ctor.htm" />
+      <HelpTOCNode Id="c966ee0e-3bc1-4ba8-9551-e4939ab9f139" Title="BasePersistentFieldAttribute Properties" Url="html/Properties_T_KSPDev_ConfigUtils_BasePersistentFieldAttribute.htm">
+        <HelpTOCNode Title="collectionTypeProto Property " Url="html/P_KSPDev_ConfigUtils_BasePersistentFieldAttribute_collectionTypeProto.htm" />
+        <HelpTOCNode Title="ordinaryTypeProto Property " Url="html/P_KSPDev_ConfigUtils_BasePersistentFieldAttribute_ordinaryTypeProto.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="cf77ba8d-c6bb-4420-a515-bea35f935a39" Title="BasePersistentFieldAttribute Fields" Url="html/Fields_T_KSPDev_ConfigUtils_BasePersistentFieldAttribute.htm">
+        <HelpTOCNode Title="group Field" Url="html/F_KSPDev_ConfigUtils_BasePersistentFieldAttribute_group.htm" />
+        <HelpTOCNode Title="path Field" Url="html/F_KSPDev_ConfigUtils_BasePersistentFieldAttribute_path.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5e8d36dd-f7bd-4296-8949-98526ee08c89" Title="ConfigAccessor Class" Url="html/T_KSPDev_ConfigUtils_ConfigAccessor.htm">
+      <HelpTOCNode Id="a558230f-134d-4313-ae00-4c311d3d8eb3" Title="ConfigAccessor Methods" Url="html/Methods_T_KSPDev_ConfigUtils_ConfigAccessor.htm">
+        <HelpTOCNode Id="cbd112e5-5158-4212-bef5-701f06bc0d5c" Title="AddNodeByPath Method " Url="html/Overload_KSPDev_ConfigUtils_ConfigAccessor_AddNodeByPath.htm">
+          <HelpTOCNode Title="AddNodeByPath Method (ConfigNode, String, ConfigNode)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_AddNodeByPath.htm" />
+          <HelpTOCNode Title="AddNodeByPath Method (ConfigNode, String[], ConfigNode)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_AddNodeByPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8df86956-81c4-40ec-a455-423262aac7b0" Title="AddValueByPath Method " Url="html/Overload_KSPDev_ConfigUtils_ConfigAccessor_AddValueByPath.htm">
+          <HelpTOCNode Title="AddValueByPath Method (ConfigNode, String, String)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_AddValueByPath.htm" />
+          <HelpTOCNode Title="AddValueByPath Method (ConfigNode, String[], String)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_AddValueByPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="CopyPartConfigFromPrefab Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_CopyPartConfigFromPrefab.htm" />
+        <HelpTOCNode Id="11b0b287-fb33-4d69-b761-cf3f1d22ccdd" Title="GetNodeByPath Method " Url="html/Overload_KSPDev_ConfigUtils_ConfigAccessor_GetNodeByPath.htm">
+          <HelpTOCNode Title="GetNodeByPath Method (ConfigNode, String, Boolean)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetNodeByPath.htm" />
+          <HelpTOCNode Title="GetNodeByPath Method (ConfigNode, String[], Boolean)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetNodeByPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8c8d4f6a-bd41-4c5f-8231-99db1d4ce1d5" Title="GetNodesByPath Method " Url="html/Overload_KSPDev_ConfigUtils_ConfigAccessor_GetNodesByPath.htm">
+          <HelpTOCNode Title="GetNodesByPath Method (ConfigNode, String)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetNodesByPath.htm" />
+          <HelpTOCNode Title="GetNodesByPath Method (ConfigNode, String[])" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetNodesByPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0fcb4a07-beed-4340-8c3c-806afe0f59ed" Title="GetValueByPath Method " Url="html/Overload_KSPDev_ConfigUtils_ConfigAccessor_GetValueByPath.htm">
+          <HelpTOCNode Title="GetValueByPath Method (ConfigNode, String)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetValueByPath.htm" />
+          <HelpTOCNode Title="GetValueByPath Method (ConfigNode, String[])" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetValueByPath_1.htm" />
+          <HelpTOCNode Title="GetValueByPath(T) Method (ConfigNode, String, AbstractOrdinaryValueTypeProto)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetValueByPath__1.htm" />
+          <HelpTOCNode Title="GetValueByPath(T) Method (ConfigNode, String[], AbstractOrdinaryValueTypeProto)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetValueByPath__1_2.htm" />
+          <HelpTOCNode Title="GetValueByPath(T) Method (ConfigNode, String, T, AbstractOrdinaryValueTypeProto)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetValueByPath__1_1.htm" />
+          <HelpTOCNode Title="GetValueByPath(T) Method (ConfigNode, String[], T, AbstractOrdinaryValueTypeProto)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetValueByPath__1_3.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1eda8b5d-1217-4903-97d8-45510e24df53" Title="GetValuesByPath Method " Url="html/Overload_KSPDev_ConfigUtils_ConfigAccessor_GetValuesByPath.htm">
+          <HelpTOCNode Title="GetValuesByPath Method (ConfigNode, String)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetValuesByPath.htm" />
+          <HelpTOCNode Title="GetValuesByPath Method (ConfigNode, String[])" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_GetValuesByPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ReadFieldsFromDatabase Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_ReadFieldsFromDatabase.htm" />
+        <HelpTOCNode Title="ReadFieldsFromFile Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_ReadFieldsFromFile.htm" />
+        <HelpTOCNode Title="ReadFieldsFromNode Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_ReadFieldsFromNode.htm" />
+        <HelpTOCNode Title="ReadFieldsInType Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_ReadFieldsInType.htm" />
+        <HelpTOCNode Title="ReadPartConfig Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_ReadPartConfig.htm" />
+        <HelpTOCNode Id="ad75dd8e-2da5-4c79-b96d-50f4682a74e0" Title="SetNodeByPath Method " Url="html/Overload_KSPDev_ConfigUtils_ConfigAccessor_SetNodeByPath.htm">
+          <HelpTOCNode Title="SetNodeByPath Method (ConfigNode, String, ConfigNode)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_SetNodeByPath.htm" />
+          <HelpTOCNode Title="SetNodeByPath Method (ConfigNode, String[], ConfigNode)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_SetNodeByPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="faed7917-57b7-4e04-b975-364f5aed4e80" Title="SetValueByPath Method " Url="html/Overload_KSPDev_ConfigUtils_ConfigAccessor_SetValueByPath.htm">
+          <HelpTOCNode Title="SetValueByPath Method (ConfigNode, String, String)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_SetValueByPath.htm" />
+          <HelpTOCNode Title="SetValueByPath Method (ConfigNode, String[], String)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_SetValueByPath_1.htm" />
+          <HelpTOCNode Title="SetValueByPath(T) Method (ConfigNode, String, T, AbstractOrdinaryValueTypeProto)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_SetValueByPath__1.htm" />
+          <HelpTOCNode Title="SetValueByPath(T) Method (ConfigNode, String[], T, AbstractOrdinaryValueTypeProto)" Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_SetValueByPath__1_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="StrToPath Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_StrToPath.htm" />
+        <HelpTOCNode Title="WriteFieldsFromType Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_WriteFieldsFromType.htm" />
+        <HelpTOCNode Title="WriteFieldsIntoFile Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_WriteFieldsIntoFile.htm" />
+        <HelpTOCNode Title="WriteFieldsIntoNode Method " Url="html/M_KSPDev_ConfigUtils_ConfigAccessor_WriteFieldsIntoNode.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c800b9f1-fb70-48b9-b7cb-2f27d241cf06" Title="ConfigNodePatch Class" Url="html/T_KSPDev_ConfigUtils_ConfigNodePatch.htm">
+      <HelpTOCNode Title="ConfigNodePatch Constructor " Url="html/M_KSPDev_ConfigUtils_ConfigNodePatch__ctor.htm" />
+      <HelpTOCNode Id="90ed3ec0-0fd6-47eb-8192-7afc5f47d869" Title="ConfigNodePatch Methods" Url="html/Methods_T_KSPDev_ConfigUtils_ConfigNodePatch.htm">
+        <HelpTOCNode Title="MakeFromConfig Method " Url="html/M_KSPDev_ConfigUtils_ConfigNodePatch_MakeFromConfig.htm" />
+        <HelpTOCNode Title="MakeFromConfigNode Method " Url="html/M_KSPDev_ConfigUtils_ConfigNodePatch_MakeFromConfigNode.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_ConfigUtils_ConfigNodePatch_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4cc0752d-336d-4eb9-be2f-dbb86af179c1" Title="ConfigNodePatch Fields" Url="html/Fields_T_KSPDev_ConfigUtils_ConfigNodePatch.htm">
+        <HelpTOCNode Title="loadContext Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_loadContext.htm" />
+        <HelpTOCNode Title="modName Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_modName.htm" />
+        <HelpTOCNode Title="name Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_name.htm" />
+        <HelpTOCNode Title="patchCreationTimestamp Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_patchCreationTimestamp.htm" />
+        <HelpTOCNode Title="testSection Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_testSection.htm" />
+        <HelpTOCNode Title="upgradeSection Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_upgradeSection.htm" />
+        <HelpTOCNode Title="verboseLogging Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_verboseLogging.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ConfigNodePatch.PatchAction Enumeration" Url="html/T_KSPDev_ConfigUtils_ConfigNodePatch_PatchAction.htm" />
+    <HelpTOCNode Id="495c8389-e48f-48bc-8657-a41dddf81cb6" Title="ConfigNodePatch.TestSection Class" Url="html/T_KSPDev_ConfigUtils_ConfigNodePatch_TestSection.htm">
+      <HelpTOCNode Title="ConfigNodePatch.TestSection Constructor " Url="html/M_KSPDev_ConfigUtils_ConfigNodePatch_TestSection__ctor.htm" />
+      <HelpTOCNode Id="c17f5933-8753-4d06-84fa-7300825545d0" Title="TestSection Fields" Url="html/Fields_T_KSPDev_ConfigUtils_ConfigNodePatch_TestSection.htm">
+        <HelpTOCNode Title="moduleTests Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_TestSection_moduleTests.htm" />
+        <HelpTOCNode Title="partTests Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_TestSection_partTests.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9ebe8c44-b6c3-4831-be7e-f4094a78d574" Title="ConfigNodePatch.UpgradeSection Class" Url="html/T_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection.htm">
+      <HelpTOCNode Title="ConfigNodePatch.UpgradeSection Constructor " Url="html/M_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection__ctor.htm" />
+      <HelpTOCNode Id="afb49600-814a-4170-b36b-b87eaaf1cb23" Title="UpgradeSection Fields" Url="html/Fields_T_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection.htm">
+        <HelpTOCNode Title="moduleRules Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection_moduleRules.htm" />
+        <HelpTOCNode Title="partRules Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection_partRules.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="299548b8-d389-4999-ba7a-cd43779047d9" Title="ConfigNodePatch.UpgradeSection.Rules Class" Url="html/T_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection_Rules.htm">
+      <HelpTOCNode Title="ConfigNodePatch.UpgradeSection.Rules Constructor " Url="html/M_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection_Rules__ctor.htm" />
+      <HelpTOCNode Id="4e477d88-5cc8-4ce2-a005-251f14b9dd14" Title="Rules Fields" Url="html/Fields_T_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection_Rules.htm">
+        <HelpTOCNode Title="action Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection_Rules_action.htm" />
+        <HelpTOCNode Title="fieldRules Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection_Rules_fieldRules.htm" />
+        <HelpTOCNode Title="name Field" Url="html/F_KSPDev_ConfigUtils_ConfigNodePatch_UpgradeSection_Rules_name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4cf7c6e2-9e52-4f4f-a067-3b76ba3113d7" Title="GenericCollectionTypeProto Class" Url="html/T_KSPDev_ConfigUtils_GenericCollectionTypeProto.htm">
+      <HelpTOCNode Title="GenericCollectionTypeProto Constructor " Url="html/M_KSPDev_ConfigUtils_GenericCollectionTypeProto__ctor.htm" />
+      <HelpTOCNode Id="2b1125fc-fed3-4a19-9cfe-e62f2a56ea3a" Title="GenericCollectionTypeProto Methods" Url="html/Methods_T_KSPDev_ConfigUtils_GenericCollectionTypeProto.htm">
+        <HelpTOCNode Title="AddItem Method " Url="html/M_KSPDev_ConfigUtils_GenericCollectionTypeProto_AddItem.htm" />
+        <HelpTOCNode Title="ClearItems Method " Url="html/M_KSPDev_ConfigUtils_GenericCollectionTypeProto_ClearItems.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/M_KSPDev_ConfigUtils_GenericCollectionTypeProto_GetEnumerator.htm" />
+        <HelpTOCNode Title="GetItemType Method " Url="html/M_KSPDev_ConfigUtils_GenericCollectionTypeProto_GetItemType.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ba91435a-ee5a-42e2-9169-913c4826fc21" Title="IPersistentField Interface" Url="html/T_KSPDev_ConfigUtils_IPersistentField.htm">
+      <HelpTOCNode Id="4f4425bf-74e0-400b-a809-78d5a0968ccc" Title="IPersistentField Methods" Url="html/Methods_T_KSPDev_ConfigUtils_IPersistentField.htm">
+        <HelpTOCNode Title="ParseFromString Method " Url="html/M_KSPDev_ConfigUtils_IPersistentField_ParseFromString.htm" />
+        <HelpTOCNode Title="SerializeToString Method " Url="html/M_KSPDev_ConfigUtils_IPersistentField_SerializeToString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8094bffe-fc25-4c95-b409-ccfbe72e8cc0" Title="KspTypesProto Class" Url="html/T_KSPDev_ConfigUtils_KspTypesProto.htm">
+      <HelpTOCNode Title="KspTypesProto Constructor " Url="html/M_KSPDev_ConfigUtils_KspTypesProto__ctor.htm" />
+      <HelpTOCNode Id="5d9430f9-9a2b-40c1-89c0-5bc7501ce67d" Title="KspTypesProto Methods" Url="html/Methods_T_KSPDev_ConfigUtils_KspTypesProto.htm">
+        <HelpTOCNode Title="CanHandle Method " Url="html/M_KSPDev_ConfigUtils_KspTypesProto_CanHandle.htm" />
+        <HelpTOCNode Title="ParseFromString Method " Url="html/M_KSPDev_ConfigUtils_KspTypesProto_ParseFromString.htm" />
+        <HelpTOCNode Title="SerializeToString Method " Url="html/M_KSPDev_ConfigUtils_KspTypesProto_SerializeToString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cb35de99-bfff-4ceb-bd0b-b5039f645512" Title="PartNodePatcher Class" Url="html/T_KSPDev_ConfigUtils_PartNodePatcher.htm">
+      <HelpTOCNode Id="a0626223-93d9-4101-a198-ca82a26e33fd" Title="PartNodePatcher Methods" Url="html/Methods_T_KSPDev_ConfigUtils_PartNodePatcher.htm">
+        <HelpTOCNode Title="GetPartNameFromUpgradeNode Method " Url="html/M_KSPDev_ConfigUtils_PartNodePatcher_GetPartNameFromUpgradeNode.htm" />
+        <HelpTOCNode Title="GetPatches Method " Url="html/M_KSPDev_ConfigUtils_PartNodePatcher_GetPatches.htm" />
+        <HelpTOCNode Title="PatchNode Method " Url="html/M_KSPDev_ConfigUtils_PartNodePatcher_PatchNode.htm" />
+        <HelpTOCNode Title="TestPatch Method " Url="html/M_KSPDev_ConfigUtils_PartNodePatcher_TestPatch.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="751d7774-fad2-4cca-bf57-f6f7c0f75e98" Title="PartNodeUtils Class" Url="html/T_KSPDev_ConfigUtils_PartNodeUtils.htm">
+      <HelpTOCNode Id="7811eea5-e20b-4320-ab7b-884ef9b80248" Title="PartNodeUtils Methods" Url="html/Methods_T_KSPDev_ConfigUtils_PartNodeUtils.htm">
+        <HelpTOCNode Id="7b09e6ec-9fd6-4e27-96a6-59b18fe8350c" Title="GetModuleNode Method " Url="html/Overload_KSPDev_ConfigUtils_PartNodeUtils_GetModuleNode.htm">
+          <HelpTOCNode Title="GetModuleNode(T) Method (ConfigNode)" Url="html/M_KSPDev_ConfigUtils_PartNodeUtils_GetModuleNode__1.htm" />
+          <HelpTOCNode Title="GetModuleNode Method (ConfigNode, String)" Url="html/M_KSPDev_ConfigUtils_PartNodeUtils_GetModuleNode.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="03f750cb-d6f5-4679-a459-88973ddb88f6" Title="GetModuleNodes Method " Url="html/Overload_KSPDev_ConfigUtils_PartNodeUtils_GetModuleNodes.htm">
+          <HelpTOCNode Title="GetModuleNodes(T) Method (ConfigNode)" Url="html/M_KSPDev_ConfigUtils_PartNodeUtils_GetModuleNodes__1.htm" />
+          <HelpTOCNode Title="GetModuleNodes Method (ConfigNode, String)" Url="html/M_KSPDev_ConfigUtils_PartNodeUtils_GetModuleNodes.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d76c150c-6e2f-4846-b23b-0994eee3b0fe" Title="PersistentCustomFieldAttribute Class" Url="html/T_KSPDev_ConfigUtils_PersistentCustomFieldAttribute.htm">
+      <HelpTOCNode Title="PersistentCustomFieldAttribute Constructor " Url="html/M_KSPDev_ConfigUtils_PersistentCustomFieldAttribute__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="e0226fc6-baea-4192-84b8-865fb1f6020d" Title="PersistentFieldAttribute Class" Url="html/T_KSPDev_ConfigUtils_PersistentFieldAttribute.htm">
+      <HelpTOCNode Title="PersistentFieldAttribute Constructor " Url="html/M_KSPDev_ConfigUtils_PersistentFieldAttribute__ctor.htm" />
+      <HelpTOCNode Id="703f2e08-5930-42e4-9647-b2632d79ff05" Title="PersistentFieldAttribute Properties" Url="html/Properties_T_KSPDev_ConfigUtils_PersistentFieldAttribute.htm">
+        <HelpTOCNode Title="isCollection Property " Url="html/P_KSPDev_ConfigUtils_PersistentFieldAttribute_isCollection.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0cf5f8cf-f6e6-4ce3-a37c-05f7a5f05dc9" Title="PersistentFieldsDatabaseAttribute Class" Url="html/T_KSPDev_ConfigUtils_PersistentFieldsDatabaseAttribute.htm">
+      <HelpTOCNode Title="PersistentFieldsDatabaseAttribute Constructor " Url="html/M_KSPDev_ConfigUtils_PersistentFieldsDatabaseAttribute__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="f3555b22-3a22-49eb-a93e-3a9b2056725a" Title="PersistentFieldsFileAttribute Class" Url="html/T_KSPDev_ConfigUtils_PersistentFieldsFileAttribute.htm">
+      <HelpTOCNode Title="PersistentFieldsFileAttribute Constructor " Url="html/M_KSPDev_ConfigUtils_PersistentFieldsFileAttribute__ctor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="edd01650-2be3-43c1-a4c5-9640993e7e15" Title="PrimitiveTypesProto Class" Url="html/T_KSPDev_ConfigUtils_PrimitiveTypesProto.htm">
+      <HelpTOCNode Title="PrimitiveTypesProto Constructor " Url="html/M_KSPDev_ConfigUtils_PrimitiveTypesProto__ctor.htm" />
+      <HelpTOCNode Id="7e1662cd-3ebb-4ac9-b937-4318c543539f" Title="PrimitiveTypesProto Methods" Url="html/Methods_T_KSPDev_ConfigUtils_PrimitiveTypesProto.htm">
+        <HelpTOCNode Title="CanHandle Method " Url="html/M_KSPDev_ConfigUtils_PrimitiveTypesProto_CanHandle.htm" />
+        <HelpTOCNode Title="ParseFromString Method " Url="html/M_KSPDev_ConfigUtils_PrimitiveTypesProto_ParseFromString.htm" />
+        <HelpTOCNode Title="SerializeToString Method " Url="html/M_KSPDev_ConfigUtils_PrimitiveTypesProto_SerializeToString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2663afe5-234f-4010-9734-bb266b6a0b6b" Title="StandardOrdinaryTypesProto Class" Url="html/T_KSPDev_ConfigUtils_StandardOrdinaryTypesProto.htm">
+      <HelpTOCNode Title="StandardOrdinaryTypesProto Constructor " Url="html/M_KSPDev_ConfigUtils_StandardOrdinaryTypesProto__ctor.htm" />
+      <HelpTOCNode Id="1764f2c8-ae25-4090-a74f-1cf9acc042c6" Title="StandardOrdinaryTypesProto Methods" Url="html/Methods_T_KSPDev_ConfigUtils_StandardOrdinaryTypesProto.htm">
+        <HelpTOCNode Title="CanHandle Method " Url="html/M_KSPDev_ConfigUtils_StandardOrdinaryTypesProto_CanHandle.htm" />
+        <HelpTOCNode Title="ParseFromString Method " Url="html/M_KSPDev_ConfigUtils_StandardOrdinaryTypesProto_ParseFromString.htm" />
+        <HelpTOCNode Title="SerializeToString Method " Url="html/M_KSPDev_ConfigUtils_StandardOrdinaryTypesProto_SerializeToString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="99a1f110-0e84-497e-93d0-4e54a2a71af7" Title="StdPersistentGroups Class" Url="html/T_KSPDev_ConfigUtils_StdPersistentGroups.htm">
+      <HelpTOCNode Id="f77bcb86-7170-46c7-a103-1d34f2c376f2" Title="StdPersistentGroups Fields" Url="html/Fields_T_KSPDev_ConfigUtils_StdPersistentGroups.htm">
+        <HelpTOCNode Title="Default Field" Url="html/F_KSPDev_ConfigUtils_StdPersistentGroups_Default.htm" />
+        <HelpTOCNode Title="PartConfigLoadGroup Field" Url="html/F_KSPDev_ConfigUtils_StdPersistentGroups_PartConfigLoadGroup.htm" />
+        <HelpTOCNode Title="PartPersistant Field" Url="html/F_KSPDev_ConfigUtils_StdPersistentGroups_PartPersistant.htm" />
+        <HelpTOCNode Title="SessionGroup Field" Url="html/F_KSPDev_ConfigUtils_StdPersistentGroups_SessionGroup.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="4266bbe2-10c9-44c9-b122-43a0f0a03a29" Title="KSPDev.DebugUtils" Url="html/N_KSPDev_DebugUtils.htm">
+    <HelpTOCNode Id="b56aad44-b7c9-450d-aed4-abc4fe21c34e" Title="DebugAdjustableAttribute Class" Url="html/T_KSPDev_DebugUtils_DebugAdjustableAttribute.htm">
+      <HelpTOCNode Title="DebugAdjustableAttribute Constructor " Url="html/M_KSPDev_DebugUtils_DebugAdjustableAttribute__ctor.htm" />
+      <HelpTOCNode Id="da3a7e4f-5fbf-4efd-9df4-eba1ba2ff6cf" Title="DebugAdjustableAttribute Fields" Url="html/Fields_T_KSPDev_DebugUtils_DebugAdjustableAttribute.htm">
+        <HelpTOCNode Title="caption Field" Url="html/F_KSPDev_DebugUtils_DebugAdjustableAttribute_caption.htm" />
+        <HelpTOCNode Title="group Field" Url="html/F_KSPDev_DebugUtils_DebugAdjustableAttribute_group.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3128128f-2173-4267-8f4b-81f51b2d51ff" Title="DebugGui Class" Url="html/T_KSPDev_DebugUtils_DebugGui.htm">
+      <HelpTOCNode Id="67f527e3-af53-41eb-af44-16266bcbb089" Title="DebugGui Methods" Url="html/Methods_T_KSPDev_DebugUtils_DebugGui.htm">
+        <HelpTOCNode Title="DestroyPartDebugDialog Method " Url="html/M_KSPDev_DebugUtils_DebugGui_DestroyPartDebugDialog.htm" />
+        <HelpTOCNode Title="DumpHierarchy Method " Url="html/M_KSPDev_DebugUtils_DebugGui_DumpHierarchy.htm" />
+        <HelpTOCNode Title="GetAdjustableActions Method " Url="html/M_KSPDev_DebugUtils_DebugGui_GetAdjustableActions.htm" />
+        <HelpTOCNode Title="GetAdjustableFields Method " Url="html/M_KSPDev_DebugUtils_DebugGui_GetAdjustableFields.htm" />
+        <HelpTOCNode Title="GetAdjustableProperties Method " Url="html/M_KSPDev_DebugUtils_DebugGui_GetAdjustableProperties.htm" />
+        <HelpTOCNode Title="MakePartDebugDialog Method " Url="html/M_KSPDev_DebugUtils_DebugGui_MakePartDebugDialog.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4ef94ca6-191e-46a0-be62-a33bc28fc7d0" Title="DebugGui.DebugMemberInfo Structure" Url="html/T_KSPDev_DebugUtils_DebugGui_DebugMemberInfo.htm">
+      <HelpTOCNode Id="5f68c63c-57e3-4693-833f-e47c3d10129e" Title="DebugMemberInfo Fields" Url="html/Fields_T_KSPDev_DebugUtils_DebugGui_DebugMemberInfo.htm">
+        <HelpTOCNode Title="attr Field" Url="html/F_KSPDev_DebugUtils_DebugGui_DebugMemberInfo_attr.htm" />
+        <HelpTOCNode Title="fieldInfo Field" Url="html/F_KSPDev_DebugUtils_DebugGui_DebugMemberInfo_fieldInfo.htm" />
+        <HelpTOCNode Title="methodInfo Field" Url="html/F_KSPDev_DebugUtils_DebugGui_DebugMemberInfo_methodInfo.htm" />
+        <HelpTOCNode Title="propertyInfo Field" Url="html/F_KSPDev_DebugUtils_DebugGui_DebugMemberInfo_propertyInfo.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b7a1bf14-05e2-449f-be02-21764d9c76a8" Title="IHasDebugAdjustables Interface" Url="html/T_KSPDev_DebugUtils_IHasDebugAdjustables.htm">
+      <HelpTOCNode Id="f44b9c44-c71c-4acf-a07c-337d74df0cb0" Title="IHasDebugAdjustables Methods" Url="html/Methods_T_KSPDev_DebugUtils_IHasDebugAdjustables.htm">
+        <HelpTOCNode Title="OnBeforeDebugAdjustablesUpdate Method " Url="html/M_KSPDev_DebugUtils_IHasDebugAdjustables_OnBeforeDebugAdjustablesUpdate.htm" />
+        <HelpTOCNode Title="OnDebugAdjustablesUpdated Method " Url="html/M_KSPDev_DebugUtils_IHasDebugAdjustables_OnDebugAdjustablesUpdated.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ff0db63e-d1a1-4e74-ad1d-adfed6df11e1" Title="PartDebugAdjustmentDialog Class" Url="html/T_KSPDev_DebugUtils_PartDebugAdjustmentDialog.htm">
+      <HelpTOCNode Title="PartDebugAdjustmentDialog Constructor " Url="html/M_KSPDev_DebugUtils_PartDebugAdjustmentDialog__ctor.htm" />
+      <HelpTOCNode Id="8f275d52-5ed9-4f1c-a777-534b78de5b60" Title="PartDebugAdjustmentDialog Methods" Url="html/Methods_T_KSPDev_DebugUtils_PartDebugAdjustmentDialog.htm">
+        <HelpTOCNode Title="OnGUI Method " Url="html/M_KSPDev_DebugUtils_PartDebugAdjustmentDialog_OnGUI.htm" />
+        <HelpTOCNode Title="SetPart Method " Url="html/M_KSPDev_DebugUtils_PartDebugAdjustmentDialog_SetPart.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="aaad6e8a-f86d-4d26-b1ec-ccef6cfe1b2e" Title="PerfCounter Class" Url="html/T_KSPDev_DebugUtils_PerfCounter.htm">
+      <HelpTOCNode Title="PerfCounter Constructor " Url="html/M_KSPDev_DebugUtils_PerfCounter__ctor.htm" />
+      <HelpTOCNode Id="7b737199-e957-4069-9096-5284637f0448" Title="PerfCounter Properties" Url="html/Properties_T_KSPDev_DebugUtils_PerfCounter.htm">
+        <HelpTOCNode Title="avgDurationPerCallMs Property " Url="html/P_KSPDev_DebugUtils_PerfCounter_avgDurationPerCallMs.htm" />
+        <HelpTOCNode Title="maxDurationPerCallMs Property " Url="html/P_KSPDev_DebugUtils_PerfCounter_maxDurationPerCallMs.htm" />
+        <HelpTOCNode Title="minDurationPerCallMs Property " Url="html/P_KSPDev_DebugUtils_PerfCounter_minDurationPerCallMs.htm" />
+        <HelpTOCNode Title="numSamples Property " Url="html/P_KSPDev_DebugUtils_PerfCounter_numSamples.htm" />
+        <HelpTOCNode Title="totalDurationMs Property " Url="html/P_KSPDev_DebugUtils_PerfCounter_totalDurationMs.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d0684090-49a5-4d76-9748-a29005ff8f2a" Title="PerfCounter Methods" Url="html/Methods_T_KSPDev_DebugUtils_PerfCounter.htm">
+        <HelpTOCNode Title="MeasureAction Method " Url="html/M_KSPDev_DebugUtils_PerfCounter_MeasureAction.htm" />
+        <HelpTOCNode Title="MeasureFunction(RetVal) Method " Url="html/M_KSPDev_DebugUtils_PerfCounter_MeasureFunction__1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1f3384b6-4e0f-4210-9aec-fcf957651986" Title="StdTypesDebugGuiControl Class" Url="html/T_KSPDev_DebugUtils_StdTypesDebugGuiControl.htm">
+      <HelpTOCNode Title="StdTypesDebugGuiControl Constructor " Url="html/M_KSPDev_DebugUtils_StdTypesDebugGuiControl__ctor.htm" />
+      <HelpTOCNode Id="14a66c5f-cba5-42e1-9ecb-36130abb5c21" Title="StdTypesDebugGuiControl Methods" Url="html/Methods_T_KSPDev_DebugUtils_StdTypesDebugGuiControl.htm">
+        <HelpTOCNode Title="RenderControl Method " Url="html/M_KSPDev_DebugUtils_StdTypesDebugGuiControl_RenderControl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="4be17696-ed6e-4298-afc2-b6e29fc73fb4" Title="KSPDev.Extensions" Url="html/N_KSPDev_Extensions.htm">
+    <HelpTOCNode Id="8fabc885-3d75-4ac5-a244-47907127398b" Title="DictExtensions Class" Url="html/T_KSPDev_Extensions_DictExtensions.htm">
+      <HelpTOCNode Id="4cb95cf1-d03b-4af5-9383-76eabfbe6642" Title="DictExtensions Methods" Url="html/Methods_T_KSPDev_Extensions_DictExtensions.htm">
+        <HelpTOCNode Title="SetDefault(K, V) Method " Url="html/M_KSPDev_Extensions_DictExtensions_SetDefault__2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7ec7df49-b9da-4f23-b54b-6fef5737950a" Title="PosAndRotExtensions Class" Url="html/T_KSPDev_Extensions_PosAndRotExtensions.htm">
+      <HelpTOCNode Id="296b80f8-1656-49ce-a327-e248543bb683" Title="PosAndRotExtensions Methods" Url="html/Methods_T_KSPDev_Extensions_PosAndRotExtensions.htm">
+        <HelpTOCNode Title="InverseTransformPosAndRot Method " Url="html/M_KSPDev_Extensions_PosAndRotExtensions_InverseTransformPosAndRot.htm" />
+        <HelpTOCNode Title="SetPosAndRot Method " Url="html/M_KSPDev_Extensions_PosAndRotExtensions_SetPosAndRot.htm" />
+        <HelpTOCNode Title="TransformPosAndRot Method " Url="html/M_KSPDev_Extensions_PosAndRotExtensions_TransformPosAndRot.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b64ac46c-42aa-41f9-b3a8-6ac8c87a2744" Title="RectExtensions Class" Url="html/T_KSPDev_Extensions_RectExtensions.htm">
+      <HelpTOCNode Id="5772f274-4617-4f53-bec7-1dfb1c261bc7" Title="RectExtensions Methods" Url="html/Methods_T_KSPDev_Extensions_RectExtensions.htm">
+        <HelpTOCNode Title="Intersect Method " Url="html/M_KSPDev_Extensions_RectExtensions_Intersect.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="f5f4e61a-ca81-424a-996a-aa051032ed24" Title="KSPDev.FSUtils" Url="html/N_KSPDev_FSUtils.htm">
+    <HelpTOCNode Id="52ad8489-5d1c-4001-afee-6d421fe4aceb" Title="KspPaths Class" Url="html/T_KSPDev_FSUtils_KspPaths.htm">
+      <HelpTOCNode Id="287443ba-c898-4ff2-b960-0f2c8bc54c8f" Title="KspPaths Properties" Url="html/Properties_T_KSPDev_FSUtils_KspPaths.htm">
+        <HelpTOCNode Title="pluginsRoot Property " Url="html/P_KSPDev_FSUtils_KspPaths_pluginsRoot.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="66b117c2-4f28-4e7e-ae6d-9a2993c759cc" Title="KspPaths Methods" Url="html/Methods_T_KSPDev_FSUtils_KspPaths.htm">
+        <HelpTOCNode Title="GetModsDataFilePath Method " Url="html/M_KSPDev_FSUtils_KspPaths_GetModsDataFilePath.htm" />
+        <HelpTOCNode Id="7432df29-f5e2-45fd-8cf3-7fb48bfc4765" Title="GetModsPath Method " Url="html/Overload_KSPDev_FSUtils_KspPaths_GetModsPath.htm">
+          <HelpTOCNode Title="GetModsPath Method (Object)" Url="html/M_KSPDev_FSUtils_KspPaths_GetModsPath.htm" />
+          <HelpTOCNode Title="GetModsPath Method (Type)" Url="html/M_KSPDev_FSUtils_KspPaths_GetModsPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MakeAbsPathForGameData Method " Url="html/M_KSPDev_FSUtils_KspPaths_MakeAbsPathForGameData.htm" />
+        <HelpTOCNode Title="MakeRelativePathToGameData Method " Url="html/M_KSPDev_FSUtils_KspPaths_MakeRelativePathToGameData.htm" />
+        <HelpTOCNode Title="NormalizePath Method " Url="html/M_KSPDev_FSUtils_KspPaths_NormalizePath.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3498d7f0-d91b-470e-a31b-89d5a75cd14f" Title="KspPaths Fields" Url="html/Fields_T_KSPDev_FSUtils_KspPaths.htm">
+        <HelpTOCNode Title="PluginDataFolderName Field" Url="html/F_KSPDev_FSUtils_KspPaths_PluginDataFolderName.htm" />
+        <HelpTOCNode Title="PluginFolderName Field" Url="html/F_KSPDev_FSUtils_KspPaths_PluginFolderName.htm" />
+        <HelpTOCNode Title="pluginsRootFolder Field" Url="html/F_KSPDev_FSUtils_KspPaths_pluginsRootFolder.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="661bce04-f5ea-43e6-8442-7cf7d3e8bd17" Title="KSPDev.GUIUtils" Url="html/N_KSPDev_GUIUtils.htm">
+    <HelpTOCNode Id="2db5464a-d556-42f4-add5-90d3b11431c6" Title="AbstractHermeticGUIControl Class" Url="html/T_KSPDev_GUIUtils_AbstractHermeticGUIControl.htm">
+      <HelpTOCNode Title="AbstractHermeticGUIControl Constructor " Url="html/M_KSPDev_GUIUtils_AbstractHermeticGUIControl__ctor.htm" />
+      <HelpTOCNode Id="ecb14448-7fcf-46f0-9ee9-878ddb1d07fa" Title="AbstractHermeticGUIControl Methods" Url="html/Methods_T_KSPDev_GUIUtils_AbstractHermeticGUIControl.htm">
+        <HelpTOCNode Title="GetMemberType Method " Url="html/M_KSPDev_GUIUtils_AbstractHermeticGUIControl_GetMemberType.htm" />
+        <HelpTOCNode Title="GetMemberValue(T) Method " Url="html/M_KSPDev_GUIUtils_AbstractHermeticGUIControl_GetMemberValue__1.htm" />
+        <HelpTOCNode Title="RenderControl Method " Url="html/M_KSPDev_GUIUtils_AbstractHermeticGUIControl_RenderControl.htm" />
+        <HelpTOCNode Title="SetMemberValue(T) Method " Url="html/M_KSPDev_GUIUtils_AbstractHermeticGUIControl_SetMemberValue__1.htm" />
+        <HelpTOCNode Title="UpdateMemberInstance Method " Url="html/M_KSPDev_GUIUtils_AbstractHermeticGUIControl_UpdateMemberInstance.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8190edd4-41d7-40d1-aafb-34083c7e4b37" Title="GuiActionsList Class" Url="html/T_KSPDev_GUIUtils_GuiActionsList.htm">
+      <HelpTOCNode Title="GuiActionsList Constructor " Url="html/M_KSPDev_GUIUtils_GuiActionsList__ctor.htm" />
+      <HelpTOCNode Id="56576837-297d-4696-a215-18f663f5ffa9" Title="GuiActionsList Methods" Url="html/Methods_T_KSPDev_GUIUtils_GuiActionsList.htm">
+        <HelpTOCNode Title="Add Method " Url="html/M_KSPDev_GUIUtils_GuiActionsList_Add.htm" />
+        <HelpTOCNode Title="ExecutePendingGuiActions Method " Url="html/M_KSPDev_GUIUtils_GuiActionsList_ExecutePendingGuiActions.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4cef44b8-3230-427d-ac76-a5d0894f6cfc" Title="GuiColorScope Class" Url="html/T_KSPDev_GUIUtils_GuiColorScope.htm">
+      <HelpTOCNode Title="GuiColorScope Constructor " Url="html/M_KSPDev_GUIUtils_GuiColorScope__ctor.htm" />
+      <HelpTOCNode Id="3832571d-61ee-4290-bb52-abd83aee60ee" Title="GuiColorScope Methods" Url="html/Methods_T_KSPDev_GUIUtils_GuiColorScope.htm">
+        <HelpTOCNode Title="Dispose Method " Url="html/M_KSPDev_GUIUtils_GuiColorScope_Dispose.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e176bfe0-4db2-40ac-ae71-811db864d349" Title="GuiEnabledStateScope Class" Url="html/T_KSPDev_GUIUtils_GuiEnabledStateScope.htm">
+      <HelpTOCNode Title="GuiEnabledStateScope Constructor " Url="html/M_KSPDev_GUIUtils_GuiEnabledStateScope__ctor.htm" />
+      <HelpTOCNode Id="77cc64a7-9873-4979-bd3d-9a34ebc5cc30" Title="GuiEnabledStateScope Methods" Url="html/Methods_T_KSPDev_GUIUtils_GuiEnabledStateScope.htm">
+        <HelpTOCNode Title="Dispose Method " Url="html/M_KSPDev_GUIUtils_GuiEnabledStateScope_Dispose.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4a7d8b9b-d064-4cc7-b89d-48c4e2e0f15f" Title="GUILayoutButtons Class" Url="html/T_KSPDev_GUIUtils_GUILayoutButtons.htm">
+      <HelpTOCNode Id="ba42555f-9121-4053-8ebe-83666608782c" Title="GUILayoutButtons Methods" Url="html/Methods_T_KSPDev_GUIUtils_GUILayoutButtons.htm">
+        <HelpTOCNode Title="Push Method " Url="html/M_KSPDev_GUIUtils_GUILayoutButtons_Push.htm" />
+        <HelpTOCNode Title="Toggle Method " Url="html/M_KSPDev_GUIUtils_GUILayoutButtons_Toggle.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="190fd479-ddbf-47e1-ae03-09f3f589b82d" Title="GUILayoutStringTable Class" Url="html/T_KSPDev_GUIUtils_GUILayoutStringTable.htm">
+      <HelpTOCNode Title="GUILayoutStringTable Constructor " Url="html/M_KSPDev_GUIUtils_GUILayoutStringTable__ctor.htm" />
+      <HelpTOCNode Id="b135ce54-6c93-4748-95cd-6ea5fcb77dac" Title="GUILayoutStringTable Methods" Url="html/Methods_T_KSPDev_GUIUtils_GUILayoutStringTable.htm">
+        <HelpTOCNode Id="e2485e19-960c-4cc9-96aa-1a427ec04a1c" Title="AddTextColumn Method " Url="html/Overload_KSPDev_GUIUtils_GUILayoutStringTable_AddTextColumn.htm">
+          <HelpTOCNode Title="AddTextColumn Method (String, GUIStyle)" Url="html/M_KSPDev_GUIUtils_GUILayoutStringTable_AddTextColumn_3.htm" />
+          <HelpTOCNode Title="AddTextColumn Method (String, LocalizableMessage, GUIStyle)" Url="html/M_KSPDev_GUIUtils_GUILayoutStringTable_AddTextColumn.htm" />
+          <HelpTOCNode Title="AddTextColumn Method (String, String, GUIStyle)" Url="html/M_KSPDev_GUIUtils_GUILayoutStringTable_AddTextColumn_2.htm" />
+          <HelpTOCNode Title="AddTextColumn Method (String, String, LocalizableMessage, GUIStyle)" Url="html/M_KSPDev_GUIUtils_GUILayoutStringTable_AddTextColumn_1.htm" />
+          <HelpTOCNode Title="AddTextColumn Method (GUIContent, GUIStyle, Single, Single)" Url="html/M_KSPDev_GUIUtils_GUILayoutStringTable_AddTextColumn_4.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="StartNewRow Method " Url="html/M_KSPDev_GUIUtils_GUILayoutStringTable_StartNewRow.htm" />
+        <HelpTOCNode Title="UpdateFrame Method " Url="html/M_KSPDev_GUIUtils_GUILayoutStringTable_UpdateFrame.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="555b297a-3eeb-4f4d-81bd-5a21b16b94e9" Title="GUILayoutVerticalScrollView Class" Url="html/T_KSPDev_GUIUtils_GUILayoutVerticalScrollView.htm">
+      <HelpTOCNode Title="GUILayoutVerticalScrollView Constructor " Url="html/M_KSPDev_GUIUtils_GUILayoutVerticalScrollView__ctor.htm" />
+      <HelpTOCNode Id="bc3c2648-b4c0-45ff-92bf-ce09c27c521c" Title="GUILayoutVerticalScrollView Properties" Url="html/Properties_T_KSPDev_GUIUtils_GUILayoutVerticalScrollView.htm">
+        <HelpTOCNode Title="scrollableAreaHeight Property " Url="html/P_KSPDev_GUIUtils_GUILayoutVerticalScrollView_scrollableAreaHeight.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="58880aef-c6ff-4b01-b2e0-a849993de820" Title="GUILayoutVerticalScrollView Methods" Url="html/Methods_T_KSPDev_GUIUtils_GUILayoutVerticalScrollView.htm">
+        <HelpTOCNode Title="BeginView Method " Url="html/M_KSPDev_GUIUtils_GUILayoutVerticalScrollView_BeginView.htm" />
+        <HelpTOCNode Title="EndView Method " Url="html/M_KSPDev_GUIUtils_GUILayoutVerticalScrollView_EndView.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3eb49575-f5ff-4bd0-b2d7-f16606852dff" Title="GUILayoutVerticalScrollView Fields" Url="html/Fields_T_KSPDev_GUIUtils_GUILayoutVerticalScrollView.htm">
+        <HelpTOCNode Title="scrollPosition Field" Url="html/F_KSPDev_GUIUtils_GUILayoutVerticalScrollView_scrollPosition.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1cb6058b-4e6a-4d4f-8f87-d68ef82bb56a" Title="GuiWindow Class" Url="html/T_KSPDev_GUIUtils_GuiWindow.htm">
+      <HelpTOCNode Id="b5f10edf-9b7a-460a-a48a-229c068924f0" Title="GuiWindow Methods" Url="html/Methods_T_KSPDev_GUIUtils_GuiWindow.htm">
+        <HelpTOCNode Title="DragWindow Method " Url="html/M_KSPDev_GUIUtils_GuiWindow_DragWindow.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6762239c-849b-4ec2-86ee-cd7b6ff32230" Title="HermeticGUIControlBoolean Class" Url="html/T_KSPDev_GUIUtils_HermeticGUIControlBoolean.htm">
+      <HelpTOCNode Title="HermeticGUIControlBoolean Constructor " Url="html/M_KSPDev_GUIUtils_HermeticGUIControlBoolean__ctor.htm" />
+      <HelpTOCNode Id="5262a573-087b-47db-acc8-af7584c5cf2c" Title="HermeticGUIControlBoolean Methods" Url="html/Methods_T_KSPDev_GUIUtils_HermeticGUIControlBoolean.htm">
+        <HelpTOCNode Title="RenderControl Method " Url="html/M_KSPDev_GUIUtils_HermeticGUIControlBoolean_RenderControl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f9b15aa8-9ee9-49f5-8f9e-23a3640d9995" Title="HermeticGUIControlClass Class" Url="html/T_KSPDev_GUIUtils_HermeticGUIControlClass.htm">
+      <HelpTOCNode Title="HermeticGUIControlClass Constructor " Url="html/M_KSPDev_GUIUtils_HermeticGUIControlClass__ctor.htm" />
+      <HelpTOCNode Id="e8b4a878-de34-49fd-93d2-e5c40d6fa84a" Title="HermeticGUIControlClass Methods" Url="html/Methods_T_KSPDev_GUIUtils_HermeticGUIControlClass.htm">
+        <HelpTOCNode Title="RenderControl Method " Url="html/M_KSPDev_GUIUtils_HermeticGUIControlClass_RenderControl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c0c295f1-7da6-4241-bf74-43b09f2fd1bf" Title="HermeticGUIControlSwitch Class" Url="html/T_KSPDev_GUIUtils_HermeticGUIControlSwitch.htm">
+      <HelpTOCNode Title="HermeticGUIControlSwitch Constructor " Url="html/M_KSPDev_GUIUtils_HermeticGUIControlSwitch__ctor.htm" />
+      <HelpTOCNode Id="ff754ec4-b805-4d0b-b268-ff322340b9d4" Title="HermeticGUIControlSwitch Methods" Url="html/Methods_T_KSPDev_GUIUtils_HermeticGUIControlSwitch.htm">
+        <HelpTOCNode Title="RenderControl Method " Url="html/M_KSPDev_GUIUtils_HermeticGUIControlSwitch_RenderControl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4a2f7ef8-f9c4-4cac-833f-b0a23a12041f" Title="HermeticGUIControlText Class" Url="html/T_KSPDev_GUIUtils_HermeticGUIControlText.htm">
+      <HelpTOCNode Title="HermeticGUIControlText Constructor " Url="html/M_KSPDev_GUIUtils_HermeticGUIControlText__ctor.htm" />
+      <HelpTOCNode Id="646d71f9-1cf5-487a-a69f-27df7d1e0035" Title="HermeticGUIControlText Methods" Url="html/Methods_T_KSPDev_GUIUtils_HermeticGUIControlText.htm">
+        <HelpTOCNode Title="RenderControl Method " Url="html/M_KSPDev_GUIUtils_HermeticGUIControlText_RenderControl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a27a54c0-7357-4edc-a58b-2d97b8d85c60" Title="HintOverlay Class" Url="html/T_KSPDev_GUIUtils_HintOverlay.htm">
+      <HelpTOCNode Title="HintOverlay Constructor " Url="html/M_KSPDev_GUIUtils_HintOverlay__ctor.htm" />
+      <HelpTOCNode Id="8695548f-7453-4f08-b49b-f44e3bad4511" Title="HintOverlay Properties" Url="html/Properties_T_KSPDev_GUIUtils_HintOverlay.htm">
+        <HelpTOCNode Title="text Property " Url="html/P_KSPDev_GUIUtils_HintOverlay_text.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="81b87be6-f420-4375-802c-bf3e948a4a08" Title="HintOverlay Methods" Url="html/Methods_T_KSPDev_GUIUtils_HintOverlay.htm">
+        <HelpTOCNode Title="ShowAtCursor Method " Url="html/M_KSPDev_GUIUtils_HintOverlay_ShowAtCursor.htm" />
+        <HelpTOCNode Title="ShowAtPosition Method " Url="html/M_KSPDev_GUIUtils_HintOverlay_ShowAtPosition.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="45597c14-77f3-4b01-a889-bbe123820bd2" Title="HintOverlay Fields" Url="html/Fields_T_KSPDev_GUIUtils_HintOverlay.htm">
+        <HelpTOCNode Title="LeftSideMousePadding Field" Url="html/F_KSPDev_GUIUtils_HintOverlay_LeftSideMousePadding.htm" />
+        <HelpTOCNode Title="RightSideMousePadding Field" Url="html/F_KSPDev_GUIUtils_HintOverlay_RightSideMousePadding.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a3629187-980e-4622-9eee-760a850ac2db" Title="IHasContextMenu Interface" Url="html/T_KSPDev_GUIUtils_IHasContextMenu.htm">
+      <HelpTOCNode Id="6fce8f2e-ba57-4c10-8cdc-9b8885a410bc" Title="IHasContextMenu Methods" Url="html/Methods_T_KSPDev_GUIUtils_IHasContextMenu.htm">
+        <HelpTOCNode Title="UpdateContextMenu Method " Url="html/M_KSPDev_GUIUtils_IHasContextMenu_UpdateContextMenu.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6761acc3-4a3a-4071-a696-2e1eb4403f6e" Title="IHasGUI Interface" Url="html/T_KSPDev_GUIUtils_IHasGUI.htm">
+      <HelpTOCNode Id="55a16a36-e079-4b44-a6fe-4ee1fbda4fd0" Title="IHasGUI Methods" Url="html/Methods_T_KSPDev_GUIUtils_IHasGUI.htm">
+        <HelpTOCNode Title="OnGUI Method " Url="html/M_KSPDev_GUIUtils_IHasGUI_OnGUI.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="267c0ff7-cc49-4864-9165-c340823c9d69" Title="IRenderableGUIControl Interface" Url="html/T_KSPDev_GUIUtils_IRenderableGUIControl.htm">
+      <HelpTOCNode Id="e03f5cba-0263-4058-aa87-328b79fa4252" Title="IRenderableGUIControl Methods" Url="html/Methods_T_KSPDev_GUIUtils_IRenderableGUIControl.htm">
+        <HelpTOCNode Title="RenderControl Method " Url="html/M_KSPDev_GUIUtils_IRenderableGUIControl_RenderControl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="fa9a6d02-62ce-4c36-ba00-ca078b1113bc" Title="IsLocalizableModule Interface" Url="html/T_KSPDev_GUIUtils_IsLocalizableModule.htm">
+      <HelpTOCNode Id="d2400317-b7fb-4d91-9490-ea8cddbb4d88" Title="IsLocalizableModule Methods" Url="html/Methods_T_KSPDev_GUIUtils_IsLocalizableModule.htm">
+        <HelpTOCNode Title="LocalizeModule Method " Url="html/M_KSPDev_GUIUtils_IsLocalizableModule_LocalizeModule.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="dd039190-909e-4db0-b5ac-95fe214d2d5c" Title="LocalizableItemAttribute Class" Url="html/T_KSPDev_GUIUtils_LocalizableItemAttribute.htm">
+      <HelpTOCNode Title="LocalizableItemAttribute Constructor " Url="html/M_KSPDev_GUIUtils_LocalizableItemAttribute__ctor.htm" />
+      <HelpTOCNode Id="c83c1a74-8803-43d0-bf13-77fb12b8628d" Title="LocalizableItemAttribute Methods" Url="html/Methods_T_KSPDev_GUIUtils_LocalizableItemAttribute.htm">
+        <HelpTOCNode Title="GetLocalizedString Method " Url="html/M_KSPDev_GUIUtils_LocalizableItemAttribute_GetLocalizedString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5d46af60-90b5-49fa-a0d7-c245781688ed" Title="LocalizableItemAttribute Fields" Url="html/Fields_T_KSPDev_GUIUtils_LocalizableItemAttribute.htm">
+        <HelpTOCNode Title="defaultTemplate Field" Url="html/F_KSPDev_GUIUtils_LocalizableItemAttribute_defaultTemplate.htm" />
+        <HelpTOCNode Title="description Field" Url="html/F_KSPDev_GUIUtils_LocalizableItemAttribute_description.htm" />
+        <HelpTOCNode Title="spec Field" Url="html/F_KSPDev_GUIUtils_LocalizableItemAttribute_spec.htm" />
+        <HelpTOCNode Title="tag Field" Url="html/F_KSPDev_GUIUtils_LocalizableItemAttribute_tag.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="74440ae0-8bab-44cb-b994-baad325f761c" Title="LocalizableMessage Class" Url="html/T_KSPDev_GUIUtils_LocalizableMessage.htm">
+      <HelpTOCNode Title="LocalizableMessage Constructor " Url="html/M_KSPDev_GUIUtils_LocalizableMessage__ctor.htm" />
+      <HelpTOCNode Id="385d64c9-f128-4018-856e-481ca1aa5778" Title="LocalizableMessage Properties" Url="html/Properties_T_KSPDev_GUIUtils_LocalizableMessage.htm">
+        <HelpTOCNode Title="localizedTemplate Property " Url="html/P_KSPDev_GUIUtils_LocalizableMessage_localizedTemplate.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="502dde9d-aae9-4411-a388-63202dca2461" Title="LocalizableMessage Methods" Url="html/Methods_T_KSPDev_GUIUtils_LocalizableMessage.htm">
+        <HelpTOCNode Title="LoadLocalization Method " Url="html/M_KSPDev_GUIUtils_LocalizableMessage_LoadLocalization.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3cf60253-ebb8-40b3-9eef-facab3739da7" Title="LocalizableMessage Fields" Url="html/Fields_T_KSPDev_GUIUtils_LocalizableMessage.htm">
+        <HelpTOCNode Title="defaultTemplate Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_defaultTemplate.htm" />
+        <HelpTOCNode Title="description Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_description.htm" />
+        <HelpTOCNode Title="example Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_example.htm" />
+        <HelpTOCNode Title="guiTags Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_guiTags.htm" />
+        <HelpTOCNode Title="loadedLocVersion Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_loadedLocVersion.htm" />
+        <HelpTOCNode Title="systemLocVersion Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_systemLocVersion.htm" />
+        <HelpTOCNode Title="tag Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_tag.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7e37f8bf-1f59-4b9a-be6c-556484596e9f" Title="LocalizableMessage.GuiTags Class" Url="html/T_KSPDev_GUIUtils_LocalizableMessage_GuiTags.htm">
+      <HelpTOCNode Title="LocalizableMessage.GuiTags Constructor " Url="html/M_KSPDev_GUIUtils_LocalizableMessage_GuiTags__ctor.htm" />
+      <HelpTOCNode Id="fcc54c2b-f75c-4570-9539-a6d304a9d72d" Title="GuiTags Fields" Url="html/Fields_T_KSPDev_GUIUtils_LocalizableMessage_GuiTags.htm">
+        <HelpTOCNode Title="maxHeight Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_GuiTags_maxHeight.htm" />
+        <HelpTOCNode Title="maxWidth Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_GuiTags_maxWidth.htm" />
+        <HelpTOCNode Title="minHeight Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_GuiTags_minHeight.htm" />
+        <HelpTOCNode Title="minWidth Field" Url="html/F_KSPDev_GUIUtils_LocalizableMessage_GuiTags_minWidth.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="93107e62-d120-4557-be0d-66a8b639dd15" Title="LocalizationLoader Class" Url="html/T_KSPDev_GUIUtils_LocalizationLoader.htm">
+      <HelpTOCNode Title="LocalizationLoader Constructor " Url="html/M_KSPDev_GUIUtils_LocalizationLoader__ctor.htm" />
+      <HelpTOCNode Id="740545bb-829b-469f-b146-388c122c9a89" Title="LocalizationLoader Methods" Url="html/Methods_T_KSPDev_GUIUtils_LocalizationLoader.htm">
+        <HelpTOCNode Title="LoadItemsInModule Method " Url="html/M_KSPDev_GUIUtils_LocalizationLoader_LoadItemsInModule.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f4d53b07-3289-4b83-85de-b69cca10479d" Title="Message Class" Url="html/T_KSPDev_GUIUtils_Message.htm">
+      <HelpTOCNode Title="Message Constructor " Url="html/M_KSPDev_GUIUtils_Message__ctor.htm" />
+      <HelpTOCNode Id="8e45b1bb-899d-4c7a-8aec-0559ad4846ad" Title="Message Methods" Url="html/Methods_T_KSPDev_GUIUtils_Message.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_Message_Format.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a708790f-0257-4d0f-a6a8-cf4fcff9b513" Title="Message Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_Message.htm">
+        <HelpTOCNode Id="3d4f3979-5b83-43a6-b108-bd33a71060f6" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_Message_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (String to Message)" Url="html/M_KSPDev_GUIUtils_Message_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (Message to String)" Url="html/M_KSPDev_GUIUtils_Message_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ce1d5667-8908-4d23-aee1-312e57e0e2d5" Title="Message(T1) Class" Url="html/T_KSPDev_GUIUtils_Message_1.htm">
+      <HelpTOCNode Title="Message(T1) Constructor " Url="html/M_KSPDev_GUIUtils_Message_1__ctor.htm" />
+      <HelpTOCNode Id="d2b67f6d-4c59-4c91-9751-362a2f735071" Title="Message(T1) Methods" Url="html/Methods_T_KSPDev_GUIUtils_Message_1.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_Message_1_Format.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="37d3ca66-39bc-4908-bb49-6669df814f65" Title="Message(T1) Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_Message_1.htm">
+        <HelpTOCNode Title="Implicit Conversion (String to Message(T1))" Url="html/M_KSPDev_GUIUtils_Message_1_op_Implicit.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="656ebd0a-a282-4be7-bbea-4836213eda21" Title="Message(T1, T2) Class" Url="html/T_KSPDev_GUIUtils_Message_2.htm">
+      <HelpTOCNode Title="Message(T1, T2) Constructor " Url="html/M_KSPDev_GUIUtils_Message_2__ctor.htm" />
+      <HelpTOCNode Id="c8061581-d6f6-4a3f-8cd0-a21ac84d2388" Title="Message(T1, T2) Methods" Url="html/Methods_T_KSPDev_GUIUtils_Message_2.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_Message_2_Format.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7aaa30e1-d8d2-43cb-8198-c786e0c26405" Title="Message(T1, T2) Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_Message_2.htm">
+        <HelpTOCNode Title="Implicit Conversion (String to Message(T1, T2))" Url="html/M_KSPDev_GUIUtils_Message_2_op_Implicit.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="859ce8d7-133d-4308-967c-ef8275505e5f" Title="Message(T1, T2, T3) Class" Url="html/T_KSPDev_GUIUtils_Message_3.htm">
+      <HelpTOCNode Title="Message(T1, T2, T3) Constructor " Url="html/M_KSPDev_GUIUtils_Message_3__ctor.htm" />
+      <HelpTOCNode Id="a3ba1ea2-876f-4cc3-b5b5-f8315c47f2c6" Title="Message(T1, T2, T3) Methods" Url="html/Methods_T_KSPDev_GUIUtils_Message_3.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_Message_3_Format.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0fd5930f-2a38-484b-9363-4c2c1b93b06c" Title="Message(T1, T2, T3) Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_Message_3.htm">
+        <HelpTOCNode Title="Implicit Conversion (String to Message(T1, T2, T3))" Url="html/M_KSPDev_GUIUtils_Message_3_op_Implicit.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1f4779f3-6856-4bbe-ac16-7189515ac6de" Title="Message(T1, T2, T3, T4) Class" Url="html/T_KSPDev_GUIUtils_Message_4.htm">
+      <HelpTOCNode Title="Message(T1, T2, T3, T4) Constructor " Url="html/M_KSPDev_GUIUtils_Message_4__ctor.htm" />
+      <HelpTOCNode Id="8996720d-5180-48cf-88d8-f29de7b15ea0" Title="Message(T1, T2, T3, T4) Methods" Url="html/Methods_T_KSPDev_GUIUtils_Message_4.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_Message_4_Format.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1ced6641-8f1d-4779-8839-4edc72bbfde5" Title="Message(T1, T2, T3, T4) Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_Message_4.htm">
+        <HelpTOCNode Title="Implicit Conversion (String to Message(T1, T2, T3, T4))" Url="html/M_KSPDev_GUIUtils_Message_4_op_Implicit.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="88d1f56b-b4c5-4771-af40-8cee500e529b" Title="Message(T1, T2, T3, T4, T5) Class" Url="html/T_KSPDev_GUIUtils_Message_5.htm">
+      <HelpTOCNode Title="Message(T1, T2, T3, T4, T5) Constructor " Url="html/M_KSPDev_GUIUtils_Message_5__ctor.htm" />
+      <HelpTOCNode Id="a1048688-c085-4688-afd7-160a2e479dd5" Title="Message(T1, T2, T3, T4, T5) Methods" Url="html/Methods_T_KSPDev_GUIUtils_Message_5.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_Message_5_Format.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="438ad602-a1c0-429a-bbb9-f292b617d2a2" Title="Message(T1, T2, T3, T4, T5) Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_Message_5.htm">
+        <HelpTOCNode Title="Implicit Conversion (String to Message(T1, T2, T3, T4, T5))" Url="html/M_KSPDev_GUIUtils_Message_5_op_Implicit.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="71f78e16-e0a4-43f9-bf4a-fdd12e3da870" Title="MessageLookup(T) Class" Url="html/T_KSPDev_GUIUtils_MessageLookup_1.htm">
+      <HelpTOCNode Title="MessageLookup(T) Constructor " Url="html/M_KSPDev_GUIUtils_MessageLookup_1__ctor.htm" />
+      <HelpTOCNode Id="5408e017-f76f-4930-b271-51c263c4d64f" Title="MessageLookup(T) Methods" Url="html/Methods_T_KSPDev_GUIUtils_MessageLookup_1.htm">
+        <HelpTOCNode Title="Lookup Method " Url="html/M_KSPDev_GUIUtils_MessageLookup_1_Lookup.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="87a02387-c649-4bd8-a9a3-807a3c9579b1" Title="MessageLookup(T) Fields" Url="html/Fields_T_KSPDev_GUIUtils_MessageLookup_1.htm">
+        <HelpTOCNode Title="defaultMessage Field" Url="html/F_KSPDev_GUIUtils_MessageLookup_1_defaultMessage.htm" />
+        <HelpTOCNode Title="messages Field" Url="html/F_KSPDev_GUIUtils_MessageLookup_1_messages.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7ba5bfb2-f479-49bf-8dcf-2e6269a89f5c" Title="ScreenMessaging Class" Url="html/T_KSPDev_GUIUtils_ScreenMessaging.htm">
+      <HelpTOCNode Id="a06c0a65-c847-4331-b492-2c786fe11014" Title="ScreenMessaging Methods" Url="html/Methods_T_KSPDev_GUIUtils_ScreenMessaging.htm">
+        <HelpTOCNode Title="SetColorToRichText Method " Url="html/M_KSPDev_GUIUtils_ScreenMessaging_SetColorToRichText.htm" />
+        <HelpTOCNode Title="ShowErrorScreenMessage Method " Url="html/M_KSPDev_GUIUtils_ScreenMessaging_ShowErrorScreenMessage.htm" />
+        <HelpTOCNode Title="ShowInfoScreenMessage Method " Url="html/M_KSPDev_GUIUtils_ScreenMessaging_ShowInfoScreenMessage.htm" />
+        <HelpTOCNode Title="ShowInfoScreenMessageWithTimeout Method " Url="html/M_KSPDev_GUIUtils_ScreenMessaging_ShowInfoScreenMessageWithTimeout.htm" />
+        <HelpTOCNode Title="ShowPriorityScreenMessage Method " Url="html/M_KSPDev_GUIUtils_ScreenMessaging_ShowPriorityScreenMessage.htm" />
+        <HelpTOCNode Title="ShowPriorityScreenMessageWithTimeout Method " Url="html/M_KSPDev_GUIUtils_ScreenMessaging_ShowPriorityScreenMessageWithTimeout.htm" />
+        <HelpTOCNode Id="7a94db03-b28f-4828-b2bd-73bbcad2e9b8" Title="ShowScreenMessage Method " Url="html/Overload_KSPDev_GUIUtils_ScreenMessaging_ShowScreenMessage.htm">
+          <HelpTOCNode Title="ShowScreenMessage Method (ScreenMessageStyle, Single, String, Object[])" Url="html/M_KSPDev_GUIUtils_ScreenMessaging_ShowScreenMessage.htm" />
+          <HelpTOCNode Title="ShowScreenMessage Method (ScreenMessageStyle, Single, Color, String, Object[])" Url="html/M_KSPDev_GUIUtils_ScreenMessaging_ShowScreenMessage_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ShowWarningScreenMessage Method " Url="html/M_KSPDev_GUIUtils_ScreenMessaging_ShowWarningScreenMessage.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="863c5829-4c69-4b32-8622-01837138b652" Title="ScreenMessaging Fields" Url="html/Fields_T_KSPDev_GUIUtils_ScreenMessaging.htm">
+        <HelpTOCNode Title="DefaultErrorTimeout Field" Url="html/F_KSPDev_GUIUtils_ScreenMessaging_DefaultErrorTimeout.htm" />
+        <HelpTOCNode Title="DefaultMessageTimeout Field" Url="html/F_KSPDev_GUIUtils_ScreenMessaging_DefaultMessageTimeout.htm" />
+        <HelpTOCNode Title="DefaultWarningTimeout Field" Url="html/F_KSPDev_GUIUtils_ScreenMessaging_DefaultWarningTimeout.htm" />
+        <HelpTOCNode Title="ErrorColor Field" Url="html/F_KSPDev_GUIUtils_ScreenMessaging_ErrorColor.htm" />
+        <HelpTOCNode Title="WarningColor Field" Url="html/F_KSPDev_GUIUtils_ScreenMessaging_WarningColor.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="16957ffd-605c-42c7-af3a-2728349afc26" Title="StdSpecTags Class" Url="html/T_KSPDev_GUIUtils_StdSpecTags.htm">
+      <HelpTOCNode Id="e64f1133-d41d-450f-b5f0-f1905cca384b" Title="StdSpecTags Fields" Url="html/Fields_T_KSPDev_GUIUtils_StdSpecTags.htm">
+        <HelpTOCNode Title="ToggleDisabled Field" Url="html/F_KSPDev_GUIUtils_StdSpecTags_ToggleDisabled.htm" />
+        <HelpTOCNode Title="ToggleEnabled Field" Url="html/F_KSPDev_GUIUtils_StdSpecTags_ToggleEnabled.htm" />
+        <HelpTOCNode Title="Units Field" Url="html/F_KSPDev_GUIUtils_StdSpecTags_Units.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1e49ab4c-4b97-4507-9de0-39aee9593f40" Title="UISoundPlayer Class" Url="html/T_KSPDev_GUIUtils_UISoundPlayer.htm">
+      <HelpTOCNode Title="UISoundPlayer Constructor " Url="html/M_KSPDev_GUIUtils_UISoundPlayer__ctor.htm" />
+      <HelpTOCNode Id="f4377374-0372-4ca9-a37d-d6cb4c2c71a0" Title="UISoundPlayer Properties" Url="html/Properties_T_KSPDev_GUIUtils_UISoundPlayer.htm">
+        <HelpTOCNode Title="instance Property " Url="html/P_KSPDev_GUIUtils_UISoundPlayer_instance.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="017c9c1a-1441-4cc6-af11-d42fbfc387a1" Title="UISoundPlayer Methods" Url="html/Methods_T_KSPDev_GUIUtils_UISoundPlayer.htm">
+        <HelpTOCNode Title="CacheSound Method " Url="html/M_KSPDev_GUIUtils_UISoundPlayer_CacheSound.htm" />
+        <HelpTOCNode Title="Play Method " Url="html/M_KSPDev_GUIUtils_UISoundPlayer_Play.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="d8812bb2-99c6-4f1d-afd0-2c05f7ede519" Title="KSPDev.GUIUtils.TypeFormatters" Url="html/N_KSPDev_GUIUtils_TypeFormatters.htm">
+    <HelpTOCNode Id="b9e4b908-002e-4700-868c-4972b3c8d350" Title="AngleType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_AngleType.htm">
+      <HelpTOCNode Title="AngleType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_AngleType__ctor.htm" />
+      <HelpTOCNode Id="fea4fe45-81be-415a-86fd-ddf605eac5f8" Title="AngleType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_AngleType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_AngleType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_AngleType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9a0d655e-a31d-452c-9016-db8a7c130f59" Title="AngleType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_AngleType.htm">
+        <HelpTOCNode Id="5fa0f8c2-a75d-42c5-ad31-4aba7960db84" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_AngleType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to AngleType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_AngleType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (AngleType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_AngleType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d4994c24-b2a9-498a-83d3-278721c9be8c" Title="AngleType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_AngleType.htm">
+        <HelpTOCNode Title="unitName Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_AngleType_unitName.htm" />
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_AngleType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d5f3a7a2-cd3e-4011-83b1-3fd56a8432bb" Title="CompactNumberType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_CompactNumberType.htm">
+      <HelpTOCNode Title="CompactNumberType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_CompactNumberType__ctor.htm" />
+      <HelpTOCNode Id="db7ae576-48c6-4c5c-aaf1-3b6faabf0437" Title="CompactNumberType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_CompactNumberType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_CompactNumberType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_CompactNumberType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5da61cc9-88ed-404d-ab2d-1c52a48ae320" Title="CompactNumberType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_CompactNumberType.htm">
+        <HelpTOCNode Id="83b041f0-9c97-400b-ad78-c8dd694bf7c1" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_CompactNumberType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to CompactNumberType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_CompactNumberType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (CompactNumberType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_CompactNumberType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="bf31356f-8f38-4c93-bdc0-a7c74dc01323" Title="CompactNumberType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_CompactNumberType.htm">
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_CompactNumberType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a2b30dd1-3ba2-432a-9727-6623a508591c" Title="CostType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_CostType.htm">
+      <HelpTOCNode Title="CostType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_CostType__ctor.htm" />
+      <HelpTOCNode Id="04d49a08-e999-4239-a1ed-f12fef34f270" Title="CostType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_CostType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_CostType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_CostType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f29c156a-7ce7-4587-94bb-0379174cfe24" Title="CostType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_CostType.htm">
+        <HelpTOCNode Id="41826648-a7eb-4993-86b7-0a0508878923" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_CostType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to CostType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_CostType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (CostType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_CostType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="7bfec45e-e725-4202-abee-692472893111" Title="CostType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_CostType.htm">
+        <HelpTOCNode Title="FundPrefix Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_CostType_FundPrefix.htm" />
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_CostType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="15104a52-8502-43cd-a1be-59cdf144c6db" Title="DistanceType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_DistanceType.htm">
+      <HelpTOCNode Title="DistanceType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_DistanceType__ctor.htm" />
+      <HelpTOCNode Id="814aedc1-cfc9-495b-9cd6-52ef70f3ffac" Title="DistanceType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_DistanceType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_DistanceType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_DistanceType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="342a76a8-b41d-4503-9f15-9c15adb7fdf0" Title="DistanceType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_DistanceType.htm">
+        <HelpTOCNode Id="e068786e-d1d7-454a-afe6-23aa6e585582" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_DistanceType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to DistanceType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_DistanceType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (DistanceType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_DistanceType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a1c96be0-c455-4656-9bd2-cced9c78ccec" Title="DistanceType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_DistanceType.htm">
+        <HelpTOCNode Title="kilometer Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_DistanceType_kilometer.htm" />
+        <HelpTOCNode Title="KilometerLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_DistanceType_KilometerLocTag.htm" />
+        <HelpTOCNode Title="meter Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_DistanceType_meter.htm" />
+        <HelpTOCNode Title="MeterLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_DistanceType_MeterLocTag.htm" />
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_DistanceType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a922f487-fd7a-4f29-b07a-767a467885a4" Title="ForceType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_ForceType.htm">
+      <HelpTOCNode Title="ForceType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_ForceType__ctor.htm" />
+      <HelpTOCNode Id="e7ce91f6-56cc-4bac-81d3-cfb244752a35" Title="ForceType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_ForceType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_ForceType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_ForceType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="11388919-49fb-46d9-ab90-0bc497156506" Title="ForceType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_ForceType.htm">
+        <HelpTOCNode Id="d2aa880f-e318-4780-b485-67726a4cab76" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_ForceType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to ForceType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ForceType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (ForceType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ForceType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="db6d0c49-d59f-4e7c-b7ac-b4852ca504c4" Title="ForceType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_ForceType.htm">
+        <HelpTOCNode Title="kiloNewton Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_ForceType_kiloNewton.htm" />
+        <HelpTOCNode Title="KilonewtonLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_ForceType_KilonewtonLocTag.htm" />
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_ForceType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9c34d699-13ff-4b7b-b68a-9da9c96f914d" Title="KeyboardEventType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType.htm">
+      <HelpTOCNode Title="KeyboardEventType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType__ctor.htm" />
+      <HelpTOCNode Id="2e4526bd-54d4-4626-89de-750deb9ae477" Title="KeyboardEventType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e2123265-e005-4c2b-8798-decfd53e4477" Title="KeyboardEventType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType.htm">
+        <HelpTOCNode Id="57eacc2d-8007-4927-98e2-1f5aa5fc1aa0" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Event to KeyboardEventType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (KeyboardEventType to Event)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="dab6e506-5034-43dc-a4df-4d859abaac27" Title="KeyboardEventType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType.htm">
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="db8107cd-1494-472d-a87d-4fb545ebedfe" Title="MassType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_MassType.htm">
+      <HelpTOCNode Title="MassType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_MassType__ctor.htm" />
+      <HelpTOCNode Id="84782843-f3ae-4338-8109-ed0771af2884" Title="MassType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_MassType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_MassType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_MassType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c800c31c-b1be-42e4-b6ab-41101e8816ce" Title="MassType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_MassType.htm">
+        <HelpTOCNode Id="62690ae8-2d7e-453a-8176-8525abfcdc23" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_MassType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to MassType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_MassType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (MassType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_MassType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b2e0e68e-ee01-42d7-a824-b46758786253" Title="MassType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_MassType.htm">
+        <HelpTOCNode Title="gram Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_MassType_gram.htm" />
+        <HelpTOCNode Title="GramLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_MassType_GramLocTag.htm" />
+        <HelpTOCNode Title="kilogram Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_MassType_kilogram.htm" />
+        <HelpTOCNode Title="KilogramLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_MassType_KilogramLocTag.htm" />
+        <HelpTOCNode Title="ton Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_MassType_ton.htm" />
+        <HelpTOCNode Title="TonLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_MassType_TonLocTag.htm" />
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_MassType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3cf4e91b-1cc2-4bf6-a252-6bafe5268574" Title="PartType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_PartType.htm">
+      <HelpTOCNode Title="PartType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PartType__ctor.htm" />
+      <HelpTOCNode Id="52e52cc2-fbf2-407d-919c-660542eaac43" Title="PartType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_PartType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PartType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PartType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="855264fb-e8c2-448f-aff3-98d94b8b5a9c" Title="PartType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_PartType.htm">
+        <HelpTOCNode Id="842536f7-280c-42ca-b1e8-1185b97b5d58" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_PartType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Part to PartType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_PartType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (PartType to Part)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_PartType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9094c724-ea92-4ba0-a3be-80ca8762c363" Title="PartType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_PartType.htm">
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_PartType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="16878c01-692d-4f91-98f7-f8bf6a6f1747" Title="PercentFixedType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_PercentFixedType.htm">
+      <HelpTOCNode Title="PercentFixedType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentFixedType__ctor.htm" />
+      <HelpTOCNode Id="8046bd98-42d1-4ab8-8621-aaed06a36362" Title="PercentFixedType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_PercentFixedType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentFixedType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentFixedType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ea8b828c-c46e-4e46-8e05-902669e8a706" Title="PercentFixedType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_PercentFixedType.htm">
+        <HelpTOCNode Id="0c623cb8-569c-4a9b-91d0-0966f9e44c9f" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_PercentFixedType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to PercentFixedType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentFixedType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (PercentFixedType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentFixedType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9955ed1f-1c4e-4c29-af06-8efef94f370f" Title="PercentFixedType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_PercentFixedType.htm">
+        <HelpTOCNode Title="unitName Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_PercentFixedType_unitName.htm" />
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_PercentFixedType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0f106482-7a34-4d36-95dd-faf6998c275c" Title="PercentType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_PercentType.htm">
+      <HelpTOCNode Title="PercentType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentType__ctor.htm" />
+      <HelpTOCNode Id="21041411-78b5-40ee-afc7-9ec8f7b66136" Title="PercentType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_PercentType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="60502b66-9f9d-4074-b061-576ba27b9155" Title="PercentType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_PercentType.htm">
+        <HelpTOCNode Id="f1f3f751-9882-4020-8434-e862acf93693" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_PercentType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to PercentType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (PercentType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_PercentType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b65f8e00-c7f8-43d7-9581-de9807ba7d39" Title="PercentType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_PercentType.htm">
+        <HelpTOCNode Title="unitName Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_PercentType_unitName.htm" />
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_PercentType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1cd6a77d-1c94-41db-86f9-584565b7b1d0" Title="PressureType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_PressureType.htm">
+      <HelpTOCNode Title="PressureType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PressureType__ctor.htm" />
+      <HelpTOCNode Id="788331ed-f9cd-4e56-af2f-2bde8bc9dce1" Title="PressureType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_PressureType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PressureType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_PressureType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1ac131cc-c8b7-4362-aac6-7a742641b831" Title="PressureType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_PressureType.htm">
+        <HelpTOCNode Id="64d690b5-f44b-4ee5-b833-f171ef2bbfcd" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_PressureType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to PressureType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_PressureType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (PressureType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_PressureType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="adfd1c36-98a2-4350-8db6-aee3795a0d26" Title="PressureType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_PressureType.htm">
+        <HelpTOCNode Title="kiloPascal Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_PressureType_kiloPascal.htm" />
+        <HelpTOCNode Title="KilopascalLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_PressureType_KilopascalLocTag.htm" />
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_PressureType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8088d3ca-6aac-43ba-adff-4f4297679a9b" Title="ResourceShortType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_ResourceShortType.htm">
+      <HelpTOCNode Id="726a7fd9-b171-41fd-99db-907745a8da8b" Title="ResourceShortType Constructor " Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_ResourceShortType__ctor.htm">
+        <HelpTOCNode Title="ResourceShortType Constructor (Int32)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceShortType__ctor.htm" />
+        <HelpTOCNode Title="ResourceShortType Constructor (String)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceShortType__ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="28f7a2d8-9874-494f-a865-49e6614d066f" Title="ResourceShortType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_ResourceShortType.htm">
+        <HelpTOCNode Id="bc0d823b-2522-4cce-a09a-5cc8fbc6c324" Title="Format Method " Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_Format.htm">
+          <HelpTOCNode Title="Format Method (Int32)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_Format.htm" />
+          <HelpTOCNode Title="Format Method (String)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_Format_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6aebfd25-845d-4593-b2ea-10e608100e24" Title="ResourceShortType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_ResourceShortType.htm">
+        <HelpTOCNode Id="7b8eefc0-756e-4490-b1ae-1614ea45106e" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Int32 to ResourceShortType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_op_Implicit_2.htm" />
+          <HelpTOCNode Title="Implicit Conversion (String to ResourceShortType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_op_Implicit_3.htm" />
+          <HelpTOCNode Title="Implicit Conversion (ResourceShortType to String)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_op_Implicit.htm" />
+          <HelpTOCNode Title="Implicit Conversion (ResourceShortType to Int32)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_op_Implicit_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="7b921190-2b29-43cc-a4dd-9f978d40e913" Title="ResourceShortType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_ResourceShortType.htm">
+        <HelpTOCNode Title="resourceId Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_ResourceShortType_resourceId.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6d54b98c-82e6-48d3-a505-6a9ed080aa9b" Title="ResourceType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_ResourceType.htm">
+      <HelpTOCNode Id="084407bc-1474-4d6f-8fd7-d46e0b2563fa" Title="ResourceType Constructor " Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_ResourceType__ctor.htm">
+        <HelpTOCNode Title="ResourceType Constructor (Int32)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceType__ctor.htm" />
+        <HelpTOCNode Title="ResourceType Constructor (String)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceType__ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c22a3c90-94dc-45f2-a98c-d3fc46db6437" Title="ResourceType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_ResourceType.htm">
+        <HelpTOCNode Id="89dccab4-0b51-4956-afe4-b2120d34f36c" Title="Format Method " Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_ResourceType_Format.htm">
+          <HelpTOCNode Title="Format Method (Int32)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceType_Format.htm" />
+          <HelpTOCNode Title="Format Method (String)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceType_Format_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="596654cc-410c-426e-9b3c-44fc3ea6dab8" Title="ResourceType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_ResourceType.htm">
+        <HelpTOCNode Id="18263698-8e3b-4c22-9705-df6f74b433e5" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_ResourceType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Int32 to ResourceType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceType_op_Implicit_2.htm" />
+          <HelpTOCNode Title="Implicit Conversion (String to ResourceType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceType_op_Implicit_3.htm" />
+          <HelpTOCNode Title="Implicit Conversion (ResourceType to String)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceType_op_Implicit.htm" />
+          <HelpTOCNode Title="Implicit Conversion (ResourceType to Int32)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_ResourceType_op_Implicit_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="086c7892-c6d3-4770-8d3d-abab19f4d260" Title="ResourceType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_ResourceType.htm">
+        <HelpTOCNode Title="resourceId Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_ResourceType_resourceId.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8f3e0999-ee01-4a42-beac-72992161af03" Title="VelocityType Class" Url="html/T_KSPDev_GUIUtils_TypeFormatters_VelocityType.htm">
+      <HelpTOCNode Title="VelocityType Constructor " Url="html/M_KSPDev_GUIUtils_TypeFormatters_VelocityType__ctor.htm" />
+      <HelpTOCNode Id="b18d06bb-7d56-4851-bc52-3ea36d098d5c" Title="VelocityType Methods" Url="html/Methods_T_KSPDev_GUIUtils_TypeFormatters_VelocityType.htm">
+        <HelpTOCNode Title="Format Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_VelocityType_Format.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_GUIUtils_TypeFormatters_VelocityType_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="64d230a4-8ce2-46e4-b0bb-567014002c01" Title="VelocityType Type Conversions" Url="html/Operators_T_KSPDev_GUIUtils_TypeFormatters_VelocityType.htm">
+        <HelpTOCNode Id="271eac45-b49d-4586-8c59-51b1234ef123" Title="Implicit Conversion Operators" Url="html/Overload_KSPDev_GUIUtils_TypeFormatters_VelocityType_op_Implicit.htm">
+          <HelpTOCNode Title="Implicit Conversion (Double to VelocityType)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_VelocityType_op_Implicit_1.htm" />
+          <HelpTOCNode Title="Implicit Conversion (VelocityType to Double)" Url="html/M_KSPDev_GUIUtils_TypeFormatters_VelocityType_op_Implicit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="20905671-6d28-467e-b6a4-bd9a575485e2" Title="VelocityType Fields" Url="html/Fields_T_KSPDev_GUIUtils_TypeFormatters_VelocityType.htm">
+        <HelpTOCNode Title="kilometerPerSecond Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_VelocityType_kilometerPerSecond.htm" />
+        <HelpTOCNode Title="KilometerPerSecondLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_VelocityType_KilometerPerSecondLocTag.htm" />
+        <HelpTOCNode Title="megameterPerSecond Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_VelocityType_megameterPerSecond.htm" />
+        <HelpTOCNode Title="MegameterPerSecondLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_VelocityType_MegameterPerSecondLocTag.htm" />
+        <HelpTOCNode Title="meterPerSecond Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_VelocityType_meterPerSecond.htm" />
+        <HelpTOCNode Title="MeterPerSecondLocTag Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_VelocityType_MeterPerSecondLocTag.htm" />
+        <HelpTOCNode Title="value Field" Url="html/F_KSPDev_GUIUtils_TypeFormatters_VelocityType_value.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="85fef493-9867-49c1-92ce-3d345498e64a" Title="KSPDev.InputUtils" Url="html/N_KSPDev_InputUtils.htm">
+    <HelpTOCNode Id="eef65137-5dc6-4139-965b-fac169eeb8f4" Title="EventChecker Class" Url="html/T_KSPDev_InputUtils_EventChecker.htm">
+      <HelpTOCNode Id="31707bae-d109-4c36-aaab-8f28f172e722" Title="EventChecker Methods" Url="html/Methods_T_KSPDev_InputUtils_EventChecker.htm">
+        <HelpTOCNode Title="IsModifierCombinationPressed Method " Url="html/M_KSPDev_InputUtils_EventChecker_IsModifierCombinationPressed.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3e693e4f-aea0-4715-8df9-22c314faba7f" Title="KeyboardInputSwitch Class" Url="html/T_KSPDev_InputUtils_KeyboardInputSwitch.htm">
+      <HelpTOCNode Id="109fe119-05f0-4a9a-98bf-098a96601156" Title="KeyboardInputSwitch Constructor " Url="html/Overload_KSPDev_InputUtils_KeyboardInputSwitch__ctor.htm">
+        <HelpTOCNode Title="KeyboardInputSwitch Constructor " Url="html/M_KSPDev_InputUtils_KeyboardInputSwitch__ctor.htm" />
+        <HelpTOCNode Title="KeyboardInputSwitch Constructor (KeyCode)" Url="html/M_KSPDev_InputUtils_KeyboardInputSwitch__ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="debc0a87-d629-40ef-a341-f438ef424ab9" Title="KeyboardInputSwitch Properties" Url="html/Properties_T_KSPDev_InputUtils_KeyboardInputSwitch.htm">
+        <HelpTOCNode Title="isAnyKeyHold Property " Url="html/P_KSPDev_InputUtils_KeyboardInputSwitch_isAnyKeyHold.htm" />
+        <HelpTOCNode Title="isHold Property " Url="html/P_KSPDev_InputUtils_KeyboardInputSwitch_isHold.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="de837e8c-cb41-422e-86f7-4416dcc94d2e" Title="KeyboardInputSwitch Methods" Url="html/Methods_T_KSPDev_InputUtils_KeyboardInputSwitch.htm">
+        <HelpTOCNode Title="Load Method " Url="html/M_KSPDev_InputUtils_KeyboardInputSwitch_Load.htm" />
+        <HelpTOCNode Title="Save Method " Url="html/M_KSPDev_InputUtils_KeyboardInputSwitch_Save.htm" />
+        <HelpTOCNode Title="SetHoldState Method " Url="html/M_KSPDev_InputUtils_KeyboardInputSwitch_SetHoldState.htm" />
+        <HelpTOCNode Title="Update Method " Url="html/M_KSPDev_InputUtils_KeyboardInputSwitch_Update.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="10e48708-74eb-4bb4-bc9c-94c5316700f7" Title="KeyboardInputSwitch Events" Url="html/Events_T_KSPDev_InputUtils_KeyboardInputSwitch.htm">
+        <HelpTOCNode Title="OnClick Event" Url="html/E_KSPDev_InputUtils_KeyboardInputSwitch_OnClick.htm" />
+        <HelpTOCNode Title="OnPress Event" Url="html/E_KSPDev_InputUtils_KeyboardInputSwitch_OnPress.htm" />
+        <HelpTOCNode Title="OnRelease Event" Url="html/E_KSPDev_InputUtils_KeyboardInputSwitch_OnRelease.htm" />
+        <HelpTOCNode Title="OnStateChanged Event" Url="html/E_KSPDev_InputUtils_KeyboardInputSwitch_OnStateChanged.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f054eca5-fab0-4e38-b2aa-564213065b9f" Title="KeyboardInputSwitch Fields" Url="html/Fields_T_KSPDev_InputUtils_KeyboardInputSwitch.htm">
+        <HelpTOCNode Title="ClickDelay Field" Url="html/F_KSPDev_InputUtils_KeyboardInputSwitch_ClickDelay.htm" />
+        <HelpTOCNode Title="keyboardEnabled Field" Url="html/F_KSPDev_InputUtils_KeyboardInputSwitch_keyboardEnabled.htm" />
+        <HelpTOCNode Title="keyCode Field" Url="html/F_KSPDev_InputUtils_KeyboardInputSwitch_keyCode.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="KeyModifiers Enumeration" Url="html/T_KSPDev_InputUtils_KeyModifiers.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="3e449f8c-8f6d-406e-a22c-f6947dee3a75" Title="KSPDev.KSPInterfaces" Url="html/N_KSPDev_KSPInterfaces.htm">
+    <HelpTOCNode Id="7e62c403-d62d-4b40-878b-ca2177e084c2" Title="IJointEventsListener Interface" Url="html/T_KSPDev_KSPInterfaces_IJointEventsListener.htm">
+      <HelpTOCNode Id="9d1cf223-de38-4e59-b21a-ffe26a6a288b" Title="IJointEventsListener Methods" Url="html/Methods_T_KSPDev_KSPInterfaces_IJointEventsListener.htm">
+        <HelpTOCNode Title="OnJointBreak Method " Url="html/M_KSPDev_KSPInterfaces_IJointEventsListener_OnJointBreak.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4e856a6a-8540-4c0e-88e0-b3b6ce337fad" Title="IKSPActivateOnDecouple Interface" Url="html/T_KSPDev_KSPInterfaces_IKSPActivateOnDecouple.htm">
+      <HelpTOCNode Id="da65c889-2214-4c9b-8e5a-a2221225aac9" Title="IKSPActivateOnDecouple Methods" Url="html/Methods_T_KSPDev_KSPInterfaces_IKSPActivateOnDecouple.htm">
+        <HelpTOCNode Title="DecoupleAction Method " Url="html/M_KSPDev_KSPInterfaces_IKSPActivateOnDecouple_DecoupleAction.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0ac2af7e-b038-419d-81a2-b48f5d824043" Title="IKSPDevJointLockState Interface" Url="html/T_KSPDev_KSPInterfaces_IKSPDevJointLockState.htm">
+      <HelpTOCNode Id="604e2b13-f04f-4cc4-80be-6160f62eacdf" Title="IKSPDevJointLockState Methods" Url="html/Methods_T_KSPDev_KSPInterfaces_IKSPDevJointLockState.htm">
+        <HelpTOCNode Title="IsJointUnlocked Method " Url="html/M_KSPDev_KSPInterfaces_IKSPDevJointLockState_IsJointUnlocked.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="370a1f55-8922-4e91-b6ef-4b9bb5927516" Title="IKSPDevModuleInfo Interface" Url="html/T_KSPDev_KSPInterfaces_IKSPDevModuleInfo.htm">
+      <HelpTOCNode Id="f386857c-d19b-40a4-8e2e-eaa0ad36084d" Title="IKSPDevModuleInfo Methods" Url="html/Methods_T_KSPDev_KSPInterfaces_IKSPDevModuleInfo.htm">
+        <HelpTOCNode Title="GetDrawModulePanelCallback Method " Url="html/M_KSPDev_KSPInterfaces_IKSPDevModuleInfo_GetDrawModulePanelCallback.htm" />
+        <HelpTOCNode Title="GetInfo Method " Url="html/M_KSPDev_KSPInterfaces_IKSPDevModuleInfo_GetInfo.htm" />
+        <HelpTOCNode Title="GetModuleTitle Method " Url="html/M_KSPDev_KSPInterfaces_IKSPDevModuleInfo_GetModuleTitle.htm" />
+        <HelpTOCNode Title="GetPrimaryField Method " Url="html/M_KSPDev_KSPInterfaces_IKSPDevModuleInfo_GetPrimaryField.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c1252304-71b0-400c-9614-48b3705e9791" Title="IPartModule Interface" Url="html/T_KSPDev_KSPInterfaces_IPartModule.htm">
+      <HelpTOCNode Id="ab25e9dd-6ed5-4bf9-b47c-7c1ce3f5036e" Title="IPartModule Methods" Url="html/Methods_T_KSPDev_KSPInterfaces_IPartModule.htm">
+        <HelpTOCNode Title="OnAwake Method " Url="html/M_KSPDev_KSPInterfaces_IPartModule_OnAwake.htm" />
+        <HelpTOCNode Title="OnFixedUpdate Method " Url="html/M_KSPDev_KSPInterfaces_IPartModule_OnFixedUpdate.htm" />
+        <HelpTOCNode Title="OnInitialize Method " Url="html/M_KSPDev_KSPInterfaces_IPartModule_OnInitialize.htm" />
+        <HelpTOCNode Title="OnLoad Method " Url="html/M_KSPDev_KSPInterfaces_IPartModule_OnLoad.htm" />
+        <HelpTOCNode Title="OnSave Method " Url="html/M_KSPDev_KSPInterfaces_IPartModule_OnSave.htm" />
+        <HelpTOCNode Title="OnStart Method " Url="html/M_KSPDev_KSPInterfaces_IPartModule_OnStart.htm" />
+        <HelpTOCNode Title="OnStartFinished Method " Url="html/M_KSPDev_KSPInterfaces_IPartModule_OnStartFinished.htm" />
+        <HelpTOCNode Title="OnUpdate Method " Url="html/M_KSPDev_KSPInterfaces_IPartModule_OnUpdate.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="13953ec2-eede-4d11-a47e-ea6dabf2ba1f" Title="IsDestroyable Interface" Url="html/T_KSPDev_KSPInterfaces_IsDestroyable.htm">
+      <HelpTOCNode Id="d8d3645b-acaf-428a-ba88-220cdd7a03c3" Title="IsDestroyable Methods" Url="html/Methods_T_KSPDev_KSPInterfaces_IsDestroyable.htm">
+        <HelpTOCNode Title="OnDestroy Method " Url="html/M_KSPDev_KSPInterfaces_IsDestroyable_OnDestroy.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6b1eddb2-675b-4a53-bb6e-d21c1f2cefd9" Title="IsPackable Interface" Url="html/T_KSPDev_KSPInterfaces_IsPackable.htm">
+      <HelpTOCNode Id="e9590449-9c7f-4cfb-b541-715675871625" Title="IsPackable Methods" Url="html/Methods_T_KSPDev_KSPInterfaces_IsPackable.htm">
+        <HelpTOCNode Title="OnPartPack Method " Url="html/M_KSPDev_KSPInterfaces_IsPackable_OnPartPack.htm" />
+        <HelpTOCNode Title="OnPartUnpack Method " Url="html/M_KSPDev_KSPInterfaces_IsPackable_OnPartUnpack.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4f5a36e7-a253-4745-9667-203ef9e83d3a" Title="IsPartDeathListener Interface" Url="html/T_KSPDev_KSPInterfaces_IsPartDeathListener.htm">
+      <HelpTOCNode Id="9566bc76-e851-451c-8085-e782b7b6db9e" Title="IsPartDeathListener Methods" Url="html/Methods_T_KSPDev_KSPInterfaces_IsPartDeathListener.htm">
+        <HelpTOCNode Title="OnPartDie Method " Url="html/M_KSPDev_KSPInterfaces_IsPartDeathListener_OnPartDie.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="637e2e11-5961-4cfe-a05c-15033f7b3154" Title="IsPhysicalObject Interface" Url="html/T_KSPDev_KSPInterfaces_IsPhysicalObject.htm">
+      <HelpTOCNode Id="d2b72753-6f72-4cc5-9f3e-eb6aaf132f59" Title="IsPhysicalObject Methods" Url="html/Methods_T_KSPDev_KSPInterfaces_IsPhysicalObject.htm">
+        <HelpTOCNode Title="FixedUpdate Method " Url="html/M_KSPDev_KSPInterfaces_IsPhysicalObject_FixedUpdate.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="f17ba81c-9217-42b4-9af0-aa2c5f80110c" Title="KSPDev.LogUtils" Url="html/N_KSPDev_LogUtils.htm">
+    <HelpTOCNode Id="80328740-2a85-488e-8736-76bd603126b3" Title="DbgFormatter Class" Url="html/T_KSPDev_LogUtils_DbgFormatter.htm">
+      <HelpTOCNode Id="786d711a-c9f1-405b-bf72-e4ed52bc8f83" Title="DbgFormatter Methods" Url="html/Methods_T_KSPDev_LogUtils_DbgFormatter.htm">
+        <HelpTOCNode Title="C2S(TSource) Method " Url="html/M_KSPDev_LogUtils_DbgFormatter_C2S__1.htm" />
+        <HelpTOCNode Title="Nullable(T) Method " Url="html/M_KSPDev_LogUtils_DbgFormatter_Nullable__1.htm" />
+        <HelpTOCNode Title="PartId Method " Url="html/M_KSPDev_LogUtils_DbgFormatter_PartId.htm" />
+        <HelpTOCNode Title="Quaternion Method " Url="html/M_KSPDev_LogUtils_DbgFormatter_Quaternion.htm" />
+        <HelpTOCNode Id="c8a00062-a232-413e-950b-604c4d71cc53" Title="TranformPath Method " Url="html/Overload_KSPDev_LogUtils_DbgFormatter_TranformPath.htm">
+          <HelpTOCNode Title="TranformPath Method (GameObject, Transform)" Url="html/M_KSPDev_LogUtils_DbgFormatter_TranformPath.htm" />
+          <HelpTOCNode Title="TranformPath Method (Transform, Transform)" Url="html/M_KSPDev_LogUtils_DbgFormatter_TranformPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Vector Method " Url="html/M_KSPDev_LogUtils_DbgFormatter_Vector.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8e1c86f3-2376-4031-b5cb-5562aa824d0a" Title="DebugEx Class" Url="html/T_KSPDev_LogUtils_DebugEx.htm">
+      <HelpTOCNode Id="929e6241-f690-4c3f-850c-0d5c02ee226b" Title="DebugEx Methods" Url="html/Methods_T_KSPDev_LogUtils_DebugEx.htm">
+        <HelpTOCNode Title="Error Method " Url="html/M_KSPDev_LogUtils_DebugEx_Error.htm" />
+        <HelpTOCNode Title="Fine Method " Url="html/M_KSPDev_LogUtils_DebugEx_Fine.htm" />
+        <HelpTOCNode Title="Info Method " Url="html/M_KSPDev_LogUtils_DebugEx_Info.htm" />
+        <HelpTOCNode Title="Log Method " Url="html/M_KSPDev_LogUtils_DebugEx_Log.htm" />
+        <HelpTOCNode Title="ObjectToString Method " Url="html/M_KSPDev_LogUtils_DebugEx_ObjectToString.htm" />
+        <HelpTOCNode Title="Warning Method " Url="html/M_KSPDev_LogUtils_DebugEx_Warning.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="30e721b9-6873-471e-b21a-e361aa0774f0" Title="HostedDebugLog Class" Url="html/T_KSPDev_LogUtils_HostedDebugLog.htm">
+      <HelpTOCNode Id="b18a3dd7-32b3-4827-8b02-256ba47a88bf" Title="HostedDebugLog Methods" Url="html/Methods_T_KSPDev_LogUtils_HostedDebugLog.htm">
+        <HelpTOCNode Id="699fafab-19cd-4bba-8f53-96ac229de240" Title="Error Method " Url="html/Overload_KSPDev_LogUtils_HostedDebugLog_Error.htm">
+          <HelpTOCNode Title="Error Method (Part, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Error.htm" />
+          <HelpTOCNode Title="Error Method (PartModule, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Error_1.htm" />
+          <HelpTOCNode Title="Error Method (Transform, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Error_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f7411f02-97fb-4aa9-9c24-0163062bdc0e" Title="Fine Method " Url="html/Overload_KSPDev_LogUtils_HostedDebugLog_Fine.htm">
+          <HelpTOCNode Title="Fine Method (Part, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Fine.htm" />
+          <HelpTOCNode Title="Fine Method (PartModule, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Fine_1.htm" />
+          <HelpTOCNode Title="Fine Method (Transform, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Fine_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="c77dde03-cd5f-43ac-9ab8-219badd1f88e" Title="Info Method " Url="html/Overload_KSPDev_LogUtils_HostedDebugLog_Info.htm">
+          <HelpTOCNode Title="Info Method (Part, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Info.htm" />
+          <HelpTOCNode Title="Info Method (PartModule, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Info_1.htm" />
+          <HelpTOCNode Title="Info Method (Transform, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Info_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Log Method " Url="html/M_KSPDev_LogUtils_HostedDebugLog_Log.htm" />
+        <HelpTOCNode Id="b8ebd944-6038-44fe-b096-d7babe266f8e" Title="Warning Method " Url="html/Overload_KSPDev_LogUtils_HostedDebugLog_Warning.htm">
+          <HelpTOCNode Title="Warning Method (Part, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Warning.htm" />
+          <HelpTOCNode Title="Warning Method (PartModule, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Warning_1.htm" />
+          <HelpTOCNode Title="Warning Method (Transform, String, Object[])" Url="html/M_KSPDev_LogUtils_HostedDebugLog_Warning_2.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="d56f71e9-e093-4155-b65a-55f500de7d46" Title="KSPDev.MathUtils" Url="html/N_KSPDev_MathUtils.htm">
+    <HelpTOCNode Id="67b89518-43d9-4547-9440-3fde8aa74ed4" Title="Mathd Class" Url="html/T_KSPDev_MathUtils_Mathd.htm">
+      <HelpTOCNode Id="46befeef-a438-432f-a9b9-a54a8ecb7cca" Title="Mathd Methods" Url="html/Methods_T_KSPDev_MathUtils_Mathd.htm">
+        <HelpTOCNode Title="Approximately Method " Url="html/M_KSPDev_MathUtils_Mathd_Approximately.htm" />
+        <HelpTOCNode Title="AreSame Method " Url="html/M_KSPDev_MathUtils_Mathd_AreSame.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b5d18b88-f65f-4653-91c1-33c128cacddc" Title="Mathd Fields" Url="html/Fields_T_KSPDev_MathUtils_Mathd.htm">
+        <HelpTOCNode Title="Epsilon Field" Url="html/F_KSPDev_MathUtils_Mathd_Epsilon.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="216742f0-1ca4-4314-958f-95a6f94f2c86" Title="Mathf2 Class" Url="html/T_KSPDev_MathUtils_Mathf2.htm">
+      <HelpTOCNode Id="d14975ae-a6ec-4ef5-af89-06f6f6338d07" Title="Mathf2 Methods" Url="html/Methods_T_KSPDev_MathUtils_Mathf2.htm">
+        <HelpTOCNode Title="AreSame Method " Url="html/M_KSPDev_MathUtils_Mathf2_AreSame.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e72ba498-2006-47f5-9bf6-afadbca63d84" Title="Mathf2 Fields" Url="html/Fields_T_KSPDev_MathUtils_Mathf2.htm">
+        <HelpTOCNode Title="Epsilon Field" Url="html/F_KSPDev_MathUtils_Mathf2_Epsilon.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="dba52ed0-51fa-4025-bdc8-51f14b21e351" Title="KSPDev.ModelUtils" Url="html/N_KSPDev_ModelUtils.htm">
+    <HelpTOCNode Id="817ee456-2f2e-440a-9913-cbdcd059fc0b" Title="AlignTransforms Class" Url="html/T_KSPDev_ModelUtils_AlignTransforms.htm">
+      <HelpTOCNode Id="ea01cc87-cc16-4f3a-8028-29d8d81434e7" Title="AlignTransforms Methods" Url="html/Methods_T_KSPDev_ModelUtils_AlignTransforms.htm">
+        <HelpTOCNode Title="PlaceVessel Method " Url="html/M_KSPDev_ModelUtils_AlignTransforms_PlaceVessel.htm" />
+        <HelpTOCNode Title="SnapAlign Method " Url="html/M_KSPDev_ModelUtils_AlignTransforms_SnapAlign.htm" />
+        <HelpTOCNode Title="SnapAlignNodes Method " Url="html/M_KSPDev_ModelUtils_AlignTransforms_SnapAlignNodes.htm" />
+        <HelpTOCNode Title="SnapAlignVessel Method " Url="html/M_KSPDev_ModelUtils_AlignTransforms_SnapAlignVessel.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="695d0ce5-7017-4260-bd55-8b50c1634be2" Title="Colliders Class" Url="html/T_KSPDev_ModelUtils_Colliders.htm">
+      <HelpTOCNode Id="9e7816d6-b3c1-4497-a792-9334f4271717" Title="Colliders Methods" Url="html/Methods_T_KSPDev_ModelUtils_Colliders.htm">
+        <HelpTOCNode Title="AdjustCollider Method " Url="html/M_KSPDev_ModelUtils_Colliders_AdjustCollider.htm" />
+        <HelpTOCNode Title="GetSqrDistanceToPart Method " Url="html/M_KSPDev_ModelUtils_Colliders_GetSqrDistanceToPart.htm" />
+        <HelpTOCNode Title="GetSqrDistanceToPartOrDefault Method " Url="html/M_KSPDev_ModelUtils_Colliders_GetSqrDistanceToPartOrDefault.htm" />
+        <HelpTOCNode Id="479b8490-31d7-4e9e-a86d-1b2111fffe90" Title="SetCollisionIgnores Method " Url="html/Overload_KSPDev_ModelUtils_Colliders_SetCollisionIgnores.htm">
+          <HelpTOCNode Title="SetCollisionIgnores Method (Part, Part, Boolean)" Url="html/M_KSPDev_ModelUtils_Colliders_SetCollisionIgnores.htm" />
+          <HelpTOCNode Title="SetCollisionIgnores Method (Part, Vessel, Boolean)" Url="html/M_KSPDev_ModelUtils_Colliders_SetCollisionIgnores_1.htm" />
+          <HelpTOCNode Title="SetCollisionIgnores Method (Transform, Transform, Boolean)" Url="html/M_KSPDev_ModelUtils_Colliders_SetCollisionIgnores_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="SetSimpleCollider Method " Url="html/M_KSPDev_ModelUtils_Colliders_SetSimpleCollider.htm" />
+        <HelpTOCNode Title="UpdateColliders Method " Url="html/M_KSPDev_ModelUtils_Colliders_UpdateColliders.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="Colliders.PrimitiveCollider Enumeration" Url="html/T_KSPDev_ModelUtils_Colliders_PrimitiveCollider.htm" />
+    <HelpTOCNode Id="d3a5944f-a854-49dd-9ed8-0a17f58c0247" Title="Hierarchy Class" Url="html/T_KSPDev_ModelUtils_Hierarchy.htm">
+      <HelpTOCNode Id="60b64602-c564-4638-9b4e-5539aa1f3c39" Title="Hierarchy Methods" Url="html/Methods_T_KSPDev_ModelUtils_Hierarchy.htm">
+        <HelpTOCNode Title="EscapeName Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_EscapeName.htm" />
+        <HelpTOCNode Id="3279d000-9cac-490f-a633-101e127c5dba" Title="FindPartModelByPath Method " Url="html/Overload_KSPDev_ModelUtils_Hierarchy_FindPartModelByPath.htm">
+          <HelpTOCNode Title="FindPartModelByPath Method (Part, String, Transform)" Url="html/M_KSPDev_ModelUtils_Hierarchy_FindPartModelByPath.htm" />
+          <HelpTOCNode Title="FindPartModelByPath Method (Part, String[], Transform)" Url="html/M_KSPDev_ModelUtils_Hierarchy_FindPartModelByPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8d15052e-febb-42ea-a06b-36f145f677a7" Title="FindTransformByPath Method " Url="html/Overload_KSPDev_ModelUtils_Hierarchy_FindTransformByPath.htm">
+          <HelpTOCNode Title="FindTransformByPath Method (Transform, String, Transform)" Url="html/M_KSPDev_ModelUtils_Hierarchy_FindTransformByPath.htm" />
+          <HelpTOCNode Title="FindTransformByPath Method (Transform, String[], Transform)" Url="html/M_KSPDev_ModelUtils_Hierarchy_FindTransformByPath_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="FindTransformInChildren Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_FindTransformInChildren.htm" />
+        <HelpTOCNode Title="GetFullPath Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_GetFullPath.htm" />
+        <HelpTOCNode Title="GetPartModelTransform Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_GetPartModelTransform.htm" />
+        <HelpTOCNode Title="ListHirerahcy Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_ListHirerahcy.htm" />
+        <HelpTOCNode Title="MakePath Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_MakePath.htm" />
+        <HelpTOCNode Title="MoveToParent Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_MoveToParent.htm" />
+        <HelpTOCNode Title="PatternMatch Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_PatternMatch.htm" />
+        <HelpTOCNode Id="f1d29aad-db90-4533-839b-b6b84c5e4757" Title="SafeDestory Method " Url="html/Overload_KSPDev_ModelUtils_Hierarchy_SafeDestory.htm">
+          <HelpTOCNode Title="SafeDestory Method (GameObject)" Url="html/M_KSPDev_ModelUtils_Hierarchy_SafeDestory.htm" />
+          <HelpTOCNode Title="SafeDestory Method (Transform)" Url="html/M_KSPDev_ModelUtils_Hierarchy_SafeDestory_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="SplitAndUnescapePath Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_SplitAndUnescapePath.htm" />
+        <HelpTOCNode Title="UnescapeName Method " Url="html/M_KSPDev_ModelUtils_Hierarchy_UnescapeName.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="KspLayer Enumeration" Url="html/T_KSPDev_ModelUtils_KspLayer.htm" />
+    <HelpTOCNode Title="KspLayerMask Enumeration" Url="html/T_KSPDev_ModelUtils_KspLayerMask.htm" />
+    <HelpTOCNode Id="068acc72-7684-40ab-b0c0-a639e0725307" Title="Meshes Class" Url="html/T_KSPDev_ModelUtils_Meshes.htm">
+      <HelpTOCNode Id="bc1c30a9-2c28-4249-ba1d-b7e8755f9486" Title="Meshes Methods" Url="html/Methods_T_KSPDev_ModelUtils_Meshes.htm">
+        <HelpTOCNode Title="CreateBox Method " Url="html/M_KSPDev_ModelUtils_Meshes_CreateBox.htm" />
+        <HelpTOCNode Title="CreateCylinder Method " Url="html/M_KSPDev_ModelUtils_Meshes_CreateCylinder.htm" />
+        <HelpTOCNode Title="CreatePrimitive Method " Url="html/M_KSPDev_ModelUtils_Meshes_CreatePrimitive.htm" />
+        <HelpTOCNode Title="CreateSphere Method " Url="html/M_KSPDev_ModelUtils_Meshes_CreateSphere.htm" />
+        <HelpTOCNode Title="RescaleTextureToLength Method " Url="html/M_KSPDev_ModelUtils_Meshes_RescaleTextureToLength.htm" />
+        <HelpTOCNode Title="TranslateMesh Method " Url="html/M_KSPDev_ModelUtils_Meshes_TranslateMesh.htm" />
+        <HelpTOCNode Title="UpdateMaterials Method " Url="html/M_KSPDev_ModelUtils_Meshes_UpdateMaterials.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="499db261-820a-4a81-9536-ed5fa63e4292" Title="KSPDev.PartUtils" Url="html/N_KSPDev_PartUtils.htm">
+    <HelpTOCNode Id="0e58795f-5f4f-43f6-9ff0-097dbeb100de" Title="PartModel Class" Url="html/T_KSPDev_PartUtils_PartModel.htm">
+      <HelpTOCNode Id="8e416f6a-61c6-485d-9e6b-cd89a3070127" Title="PartModel Methods" Url="html/Methods_T_KSPDev_PartUtils_PartModel.htm">
+        <HelpTOCNode Id="9f4dd1a7-d93e-4771-8d96-4ffd7b075784" Title="UpdateHighlighters Method " Url="html/Overload_KSPDev_PartUtils_PartModel_UpdateHighlighters.htm">
+          <HelpTOCNode Title="UpdateHighlighters Method (Part)" Url="html/M_KSPDev_PartUtils_PartModel_UpdateHighlighters.htm" />
+          <HelpTOCNode Title="UpdateHighlighters Method (Transform)" Url="html/M_KSPDev_PartUtils_PartModel_UpdateHighlighters_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5d7d495e-b860-4fad-b4a0-725db241d474" Title="PartModuleUtils Class" Url="html/T_KSPDev_PartUtils_PartModuleUtils.htm">
+      <HelpTOCNode Id="819d8416-3d7c-41f3-9de1-e6b00beb3f13" Title="PartModuleUtils Methods" Url="html/Methods_T_KSPDev_PartUtils_PartModuleUtils.htm">
+        <HelpTOCNode Title="AddEvent Method " Url="html/M_KSPDev_PartUtils_PartModuleUtils_AddEvent.htm" />
+        <HelpTOCNode Title="DropEvent Method " Url="html/M_KSPDev_PartUtils_PartModuleUtils_DropEvent.htm" />
+        <HelpTOCNode Title="GetAction Method " Url="html/M_KSPDev_PartUtils_PartModuleUtils_GetAction.htm" />
+        <HelpTOCNode Title="GetEvent Method " Url="html/M_KSPDev_PartUtils_PartModuleUtils_GetEvent.htm" />
+        <HelpTOCNode Title="InjectEvent Method " Url="html/M_KSPDev_PartUtils_PartModuleUtils_InjectEvent.htm" />
+        <HelpTOCNode Title="InvalidateContextMenu Method " Url="html/M_KSPDev_PartUtils_PartModuleUtils_InvalidateContextMenu.htm" />
+        <HelpTOCNode Title="SetupAction Method " Url="html/M_KSPDev_PartUtils_PartModuleUtils_SetupAction.htm" />
+        <HelpTOCNode Title="SetupEvent Method " Url="html/M_KSPDev_PartUtils_PartModuleUtils_SetupEvent.htm" />
+        <HelpTOCNode Title="WithdrawEvent Method " Url="html/M_KSPDev_PartUtils_PartModuleUtils_WithdrawEvent.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3edc723e-5e27-41eb-82f2-416b44e9cc0f" Title="VariantsUtils Class" Url="html/T_KSPDev_PartUtils_VariantsUtils.htm">
+      <HelpTOCNode Id="5082ffc5-660f-4ec8-bbec-001db4c12148" Title="VariantsUtils Methods" Url="html/Methods_T_KSPDev_PartUtils_VariantsUtils.htm">
+        <HelpTOCNode Title="ApplyVariantOnAttachNodes Method " Url="html/M_KSPDev_PartUtils_VariantsUtils_ApplyVariantOnAttachNodes.htm" />
+        <HelpTOCNode Title="ExecuteAtPartVariant Method " Url="html/M_KSPDev_PartUtils_VariantsUtils_ExecuteAtPartVariant.htm" />
+        <HelpTOCNode Id="fbe96930-eace-4423-83c5-226a675f4f1c" Title="GetCurrentPartVariant Method " Url="html/Overload_KSPDev_PartUtils_VariantsUtils_GetCurrentPartVariant.htm">
+          <HelpTOCNode Title="GetCurrentPartVariant Method (Part)" Url="html/M_KSPDev_PartUtils_VariantsUtils_GetCurrentPartVariant_1.htm" />
+          <HelpTOCNode Title="GetCurrentPartVariant Method (AvailablePart, ConfigNode)" Url="html/M_KSPDev_PartUtils_VariantsUtils_GetCurrentPartVariant.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="769c2d78-f5eb-4723-9969-17a779d3f5fa" Title="KSPDev.ProcessingUtils" Url="html/N_KSPDev_ProcessingUtils.htm">
+    <HelpTOCNode Id="1b40d887-ff33-45d1-968d-5adcc06f5696" Title="ArgumentGuard Class" Url="html/T_KSPDev_ProcessingUtils_ArgumentGuard.htm">
+      <HelpTOCNode Id="db79a50e-f9d5-44f9-9755-1a392f6374c5" Title="ArgumentGuard Methods" Url="html/Methods_T_KSPDev_ProcessingUtils_ArgumentGuard.htm">
+        <HelpTOCNode Title="HasElements Method " Url="html/M_KSPDev_ProcessingUtils_ArgumentGuard_HasElements.htm" />
+        <HelpTOCNode Title="HasSize Method " Url="html/M_KSPDev_ProcessingUtils_ArgumentGuard_HasSize.htm" />
+        <HelpTOCNode Title="InRange(T) Method " Url="html/M_KSPDev_ProcessingUtils_ArgumentGuard_InRange__1.htm" />
+        <HelpTOCNode Title="NotNull Method " Url="html/M_KSPDev_ProcessingUtils_ArgumentGuard_NotNull.htm" />
+        <HelpTOCNode Title="NotNullOrEmpty Method " Url="html/M_KSPDev_ProcessingUtils_ArgumentGuard_NotNullOrEmpty.htm" />
+        <HelpTOCNode Title="OneOf(T) Method " Url="html/M_KSPDev_ProcessingUtils_ArgumentGuard_OneOf__1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d1987223-ac98-418d-87ac-1a1100e03846" Title="AsyncCall Class" Url="html/T_KSPDev_ProcessingUtils_AsyncCall.htm">
+      <HelpTOCNode Id="caefb76d-80d8-4374-8a2b-a80229363c66" Title="AsyncCall Methods" Url="html/Methods_T_KSPDev_ProcessingUtils_AsyncCall.htm">
+        <HelpTOCNode Title="AsyncWaitForPhysics Method " Url="html/M_KSPDev_ProcessingUtils_AsyncCall_AsyncWaitForPhysics.htm" />
+        <HelpTOCNode Title="CallOnEndOfFrame Method " Url="html/M_KSPDev_ProcessingUtils_AsyncCall_CallOnEndOfFrame.htm" />
+        <HelpTOCNode Title="CallOnFixedUpdate Method " Url="html/M_KSPDev_ProcessingUtils_AsyncCall_CallOnFixedUpdate.htm" />
+        <HelpTOCNode Title="CallOnTimeout Method " Url="html/M_KSPDev_ProcessingUtils_AsyncCall_CallOnTimeout.htm" />
+        <HelpTOCNode Title="WaitForPhysics Method " Url="html/M_KSPDev_ProcessingUtils_AsyncCall_WaitForPhysics.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1a8ace65-4754-495b-a0dc-9d425ab31a34" Title="Preconditions Class" Url="html/T_KSPDev_ProcessingUtils_Preconditions.htm">
+      <HelpTOCNode Id="c0f5ea01-aead-458a-b4dc-c041098e1338" Title="Preconditions Methods" Url="html/Methods_T_KSPDev_ProcessingUtils_Preconditions.htm">
+        <HelpTOCNode Title="ConfValueExists Method " Url="html/M_KSPDev_ProcessingUtils_Preconditions_ConfValueExists.htm" />
+        <HelpTOCNode Title="HasSize Method " Url="html/M_KSPDev_ProcessingUtils_Preconditions_HasSize.htm" />
+        <HelpTOCNode Id="c1463688-0019-4ba1-95e2-04c602943a12" Title="MakeContextError Method " Url="html/Overload_KSPDev_ProcessingUtils_Preconditions_MakeContextError.htm">
+          <HelpTOCNode Title="MakeContextError Method (Object, String)" Url="html/M_KSPDev_ProcessingUtils_Preconditions_MakeContextError.htm" />
+          <HelpTOCNode Title="MakeContextError Method (Object, String, Object[])" Url="html/M_KSPDev_ProcessingUtils_Preconditions_MakeContextError_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MinElements Method " Url="html/M_KSPDev_ProcessingUtils_Preconditions_MinElements.htm" />
+        <HelpTOCNode Title="NotNull Method " Url="html/M_KSPDev_ProcessingUtils_Preconditions_NotNull.htm" />
+        <HelpTOCNode Title="NotNullOrEmpty Method " Url="html/M_KSPDev_ProcessingUtils_Preconditions_NotNullOrEmpty.htm" />
+        <HelpTOCNode Title="OneOf(T) Method " Url="html/M_KSPDev_ProcessingUtils_Preconditions_OneOf__1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7711c568-8219-451b-ad54-7589c08d6047" Title="SimpleStateMachine(T) Class" Url="html/T_KSPDev_ProcessingUtils_SimpleStateMachine_1.htm">
+      <HelpTOCNode Title="SimpleStateMachine(T) Constructor " Url="html/M_KSPDev_ProcessingUtils_SimpleStateMachine_1__ctor.htm" />
+      <HelpTOCNode Id="9c569567-5241-4d2c-b1c4-09fe83981d0f" Title="SimpleStateMachine(T) Properties" Url="html/Properties_T_KSPDev_ProcessingUtils_SimpleStateMachine_1.htm">
+        <HelpTOCNode Title="currentState Property " Url="html/P_KSPDev_ProcessingUtils_SimpleStateMachine_1_currentState.htm" />
+        <HelpTOCNode Title="isStrict Property " Url="html/P_KSPDev_ProcessingUtils_SimpleStateMachine_1_isStrict.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9c28c03f-9611-4545-8cbf-d8c1c124e520" Title="SimpleStateMachine(T) Methods" Url="html/Methods_T_KSPDev_ProcessingUtils_SimpleStateMachine_1.htm">
+        <HelpTOCNode Title="AddStateHandlers Method " Url="html/M_KSPDev_ProcessingUtils_SimpleStateMachine_1_AddStateHandlers.htm" />
+        <HelpTOCNode Title="CheckCanSwitchTo Method " Url="html/M_KSPDev_ProcessingUtils_SimpleStateMachine_1_CheckCanSwitchTo.htm" />
+        <HelpTOCNode Title="RemoveHandlers Method " Url="html/M_KSPDev_ProcessingUtils_SimpleStateMachine_1_RemoveHandlers.htm" />
+        <HelpTOCNode Title="ResetTransitionConstraint Method " Url="html/M_KSPDev_ProcessingUtils_SimpleStateMachine_1_ResetTransitionConstraint.htm" />
+        <HelpTOCNode Title="SetTransitionConstraint Method " Url="html/M_KSPDev_ProcessingUtils_SimpleStateMachine_1_SetTransitionConstraint.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d1950dc0-ceec-4278-8fd0-ccede8188dc0" Title="SimpleStateMachine(T) Events" Url="html/Events_T_KSPDev_ProcessingUtils_SimpleStateMachine_1.htm">
+        <HelpTOCNode Title="onAfterTransition Event" Url="html/E_KSPDev_ProcessingUtils_SimpleStateMachine_1_onAfterTransition.htm" />
+        <HelpTOCNode Title="onBeforeTransition Event" Url="html/E_KSPDev_ProcessingUtils_SimpleStateMachine_1_onBeforeTransition.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="SimpleStateMachine(T).OnChange Delegate" Url="html/T_KSPDev_ProcessingUtils_SimpleStateMachine_1_OnChange.htm" />
+    <HelpTOCNode Title="SimpleStateMachine(T).OnStateChangeHandler Delegate" Url="html/T_KSPDev_ProcessingUtils_SimpleStateMachine_1_OnStateChangeHandler.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="172ec84b-8160-4532-b48f-64cb31bc633a" Title="KSPDev.ResourceUtils" Url="html/N_KSPDev_ResourceUtils.htm">
+    <HelpTOCNode Id="177fa1e0-746d-464b-82f5-bfbfc43e10d4" Title="StockResourceNames Class" Url="html/T_KSPDev_ResourceUtils_StockResourceNames.htm">
+      <HelpTOCNode Id="e36f6bd6-9de5-4c58-935b-4fca8dbc4669" Title="StockResourceNames Methods" Url="html/Methods_T_KSPDev_ResourceUtils_StockResourceNames.htm">
+        <HelpTOCNode Title="GetId Method " Url="html/M_KSPDev_ResourceUtils_StockResourceNames_GetId.htm" />
+        <HelpTOCNode Id="121c469b-91aa-426e-9bc7-e6612e3c8dd1" Title="GetResourceAbbreviation Method " Url="html/Overload_KSPDev_ResourceUtils_StockResourceNames_GetResourceAbbreviation.htm">
+          <HelpTOCNode Title="GetResourceAbbreviation Method (Int32, Boolean)" Url="html/M_KSPDev_ResourceUtils_StockResourceNames_GetResourceAbbreviation.htm" />
+          <HelpTOCNode Title="GetResourceAbbreviation Method (String, Boolean)" Url="html/M_KSPDev_ResourceUtils_StockResourceNames_GetResourceAbbreviation_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="21f2ab1a-573b-4f55-8815-635dfa958739" Title="GetResourceTitle Method " Url="html/Overload_KSPDev_ResourceUtils_StockResourceNames_GetResourceTitle.htm">
+          <HelpTOCNode Title="GetResourceTitle Method (Int32, Boolean)" Url="html/M_KSPDev_ResourceUtils_StockResourceNames_GetResourceTitle.htm" />
+          <HelpTOCNode Title="GetResourceTitle Method (String, Boolean)" Url="html/M_KSPDev_ResourceUtils_StockResourceNames_GetResourceTitle_1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="55d51b1a-ec36-42bc-8a66-cd19d22ba6fd" Title="StockResourceNames Fields" Url="html/Fields_T_KSPDev_ResourceUtils_StockResourceNames.htm">
+        <HelpTOCNode Title="Ablator Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_Ablator.htm" />
+        <HelpTOCNode Title="ElectricCharge Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_ElectricCharge.htm" />
+        <HelpTOCNode Title="EvaPropellant Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_EvaPropellant.htm" />
+        <HelpTOCNode Title="IntakeAir Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_IntakeAir.htm" />
+        <HelpTOCNode Title="LiquidFuel Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_LiquidFuel.htm" />
+        <HelpTOCNode Title="MonoPropellant Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_MonoPropellant.htm" />
+        <HelpTOCNode Title="Ore Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_Ore.htm" />
+        <HelpTOCNode Title="Oxidizer Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_Oxidizer.htm" />
+        <HelpTOCNode Title="SolidFuel Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_SolidFuel.htm" />
+        <HelpTOCNode Title="XenonGas Field" Url="html/F_KSPDev_ResourceUtils_StockResourceNames_XenonGas.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="7ea76ef4-cadc-4b43-acbd-7c30dae4111d" Title="KSPDev.SoundsUtils" Url="html/N_KSPDev_SoundsUtils.htm">
+    <HelpTOCNode Id="0c9e1474-3c55-4edb-9f87-4879872078cf" Title="SpatialSounds Class" Url="html/T_KSPDev_SoundsUtils_SpatialSounds.htm">
+      <HelpTOCNode Id="44d5a194-8f5e-4d17-a187-8b98ee4b25df" Title="SpatialSounds Methods" Url="html/Methods_T_KSPDev_SoundsUtils_SpatialSounds.htm">
+        <HelpTOCNode Title="Create3dSound Method " Url="html/M_KSPDev_SoundsUtils_SpatialSounds_Create3dSound.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="036b587b-5aa4-4185-882e-1fe3e62bceec" Title="KSPDev.Types" Url="html/N_KSPDev_Types.htm">
+    <HelpTOCNode Id="26baf3bf-7ff7-4507-9268-87197d05a36a" Title="PersistentConfigNode Class" Url="html/T_KSPDev_Types_PersistentConfigNode.htm">
+      <HelpTOCNode Title="PersistentConfigNode Constructor " Url="html/M_KSPDev_Types_PersistentConfigNode__ctor.htm" />
+      <HelpTOCNode Id="18843574-0aac-4e8b-a241-30352fbf850e" Title="PersistentConfigNode Methods" Url="html/Methods_T_KSPDev_Types_PersistentConfigNode.htm">
+        <HelpTOCNode Title="Load Method " Url="html/M_KSPDev_Types_PersistentConfigNode_Load.htm" />
+        <HelpTOCNode Title="Save Method " Url="html/M_KSPDev_Types_PersistentConfigNode_Save.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f9f07dfa-0739-4e5b-9983-b159cfc7ada0" Title="PosAndRot Class" Url="html/T_KSPDev_Types_PosAndRot.htm">
+      <HelpTOCNode Id="6f1ddaac-7e36-4037-b8ca-eab25db7dc86" Title="PosAndRot Constructor " Url="html/Overload_KSPDev_Types_PosAndRot__ctor.htm">
+        <HelpTOCNode Title="PosAndRot Constructor " Url="html/M_KSPDev_Types_PosAndRot__ctor.htm" />
+        <HelpTOCNode Title="PosAndRot Constructor (PosAndRot)" Url="html/M_KSPDev_Types_PosAndRot__ctor_1.htm" />
+        <HelpTOCNode Title="PosAndRot Constructor (Vector3, Vector3)" Url="html/M_KSPDev_Types_PosAndRot__ctor_2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4937f6c2-11c6-44c5-9125-a737b0124c8c" Title="PosAndRot Properties" Url="html/Properties_T_KSPDev_Types_PosAndRot.htm">
+        <HelpTOCNode Title="euler Property " Url="html/P_KSPDev_Types_PosAndRot_euler.htm" />
+        <HelpTOCNode Title="rot Property " Url="html/P_KSPDev_Types_PosAndRot_rot.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="118edfd4-20e4-4af1-9030-2ec84cfe0c35" Title="PosAndRot Methods" Url="html/Methods_T_KSPDev_Types_PosAndRot.htm">
+        <HelpTOCNode Title="Clone Method " Url="html/M_KSPDev_Types_PosAndRot_Clone.htm" />
+        <HelpTOCNode Title="FromString Method " Url="html/M_KSPDev_Types_PosAndRot_FromString.htm" />
+        <HelpTOCNode Title="InverseTransform Method " Url="html/M_KSPDev_Types_PosAndRot_InverseTransform.htm" />
+        <HelpTOCNode Title="ParseFromString Method " Url="html/M_KSPDev_Types_PosAndRot_ParseFromString.htm" />
+        <HelpTOCNode Title="SerializeToString Method " Url="html/M_KSPDev_Types_PosAndRot_SerializeToString.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_KSPDev_Types_PosAndRot_ToString.htm" />
+        <HelpTOCNode Title="Transform Method " Url="html/M_KSPDev_Types_PosAndRot_Transform.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d9a7da51-fe82-40ca-8bf8-ac35c4b96cb0" Title="PosAndRot Fields" Url="html/Fields_T_KSPDev_Types_PosAndRot.htm">
+        <HelpTOCNode Title="pos Field" Url="html/F_KSPDev_Types_PosAndRot_pos.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

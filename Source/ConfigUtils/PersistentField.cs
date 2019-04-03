@@ -25,7 +25,7 @@ sealed class PersistentField {
 
   /// <param name="fieldInfo">An annotated field metadata.</param>
   /// <param name="fieldAttr">An annotation of the field.</param>
-  public PersistentField(FieldInfo fieldInfo, PersistentFieldAttribute fieldAttr) {
+  public PersistentField(FieldInfo fieldInfo, BasePersistentFieldAttribute fieldAttr) {
     this.fieldInfo = fieldInfo;
     cfgPath = fieldAttr.path;
     var ordinaryType = fieldInfo.FieldType;
