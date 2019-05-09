@@ -1,3 +1,5 @@
+# 1.3 (pre-release):
+
 # 1.2 (April 2nd, 2019):
 * [Fix] Implement "breadth first search" approach as stated in the description. It was DFS before: [`Hierarchy.FindTransformInChildren`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/M_KSPDev_ModelUtils_Hierarchy_FindTransformInChildren.htm).
 * [Fix] Properly handle the base class when gathering persistent field attributes: [`ConfigUtils.BasePersistentFieldAttribute`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ConfigUtils_BasePersistentFieldAttribute.htm).
