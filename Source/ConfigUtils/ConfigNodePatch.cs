@@ -64,7 +64,7 @@ public class ConfigNodePatch {
   [PersistentField("modName")]
   public string modName = "";
 
-  /// <summary>Unix Epoch timesmap of when the patch was created.</summary>
+  /// <summary>Unix Epoch timestamp of when the patch was created.</summary>
   /// <remarks>
   /// It doesn't need to be precise. The main goal of this timestamp is to order patches on the same
   /// part. The patches created earlier will be applied first. This timestamp can also be used to
