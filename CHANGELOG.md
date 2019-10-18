@@ -1,10 +1,10 @@
 # 2.0 (pre-release):
 * [Change] Migrated to `KSP 1.8` and `Unity 2019.2`. Versions `2.x` are incompatible with KSP versions prior to `1.8`!
 * [Change] Better error logging in `CopyPartConfigFromPrefab` when modules mismatch.
-* [Change] Show `0` instead of `0 grams` for the zero mass value: [`GUIUtils.TypeFormatters`](http://ihsoft.github.io/KSPDev_Utils/v1.3/html/T_KSPDev_GUIUtils_TypeFormatters_MassType.htm).
-* [Enhancement] Improve `SafeDestory` methods family: [`ModelUtils.Hierarchy`](https://ihsoft.github.io/KSPDev_Utils/v1.3//html/Methods_T_KSPDev_ModelUtils_Hierarchy.htm).
-* [Enhancement] Add type formatter for small numbers: [`TypeFormatters.SmallNumberType`](https://ihsoft.github.io/KSPDev_Utils/v1.3/html/T_KSPDev_GUIUtils_TypeFormatters_SmallNumberType.htm).
+* [Change] Show `0` instead of `0 grams` for the zero mass value: [`GUIUtils.TypeFormatters`](http://ihsoft.github.io/KSPDev_Utils/v2.0/html/T_KSPDev_GUIUtils_TypeFormatters_MassType.htm).
 * [Change] Better formatting of the keyboard events + support mouse buttons: [`TypeFormatters.KeyboardEventType`](https://ihsoft.github.io/KSPDev_Utils/v2.0/html/T_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType.htm).
+* [Enhancement] Improve `SafeDestory` methods family: [`ModelUtils.Hierarchy`](https://ihsoft.github.io/KSPDev_Utils/v2.0//html/Methods_T_KSPDev_ModelUtils_Hierarchy.htm).
+* [Enhancement] Add type formatter for small numbers: [`TypeFormatters.SmallNumberType`](https://ihsoft.github.io/KSPDev_Utils/v2.0/html/T_KSPDev_GUIUtils_TypeFormatters_SmallNumberType.htm).
 
 # 1.2 (April 2nd, 2019):
 * [Fix] Implement "breadth first search" approach as stated in the description. It was DFS before: [`Hierarchy.FindTransformInChildren`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/M_KSPDev_ModelUtils_Hierarchy_FindTransformInChildren.htm).
