@@ -5,6 +5,7 @@
 * [Change] Better formatting of the keyboard events + support mouse buttons: [`TypeFormatters.KeyboardEventType`](https://ihsoft.github.io/KSPDev_Utils/v2.0/html/T_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType.htm).
 * [Enhancement] Improve `SafeDestory` methods family: [`ModelUtils.Hierarchy`](https://ihsoft.github.io/KSPDev_Utils/v2.0//html/Methods_T_KSPDev_ModelUtils_Hierarchy.htm).
 * [Enhancement] Add type formatter for small numbers: [`TypeFormatters.SmallNumberType`](https://ihsoft.github.io/KSPDev_Utils/v2.0/html/T_KSPDev_GUIUtils_TypeFormatters_SmallNumberType.htm).
+* [Enhancement] Add module to deal with loadable Unity perfabs: [`PrefabUtils.PrefabLoader`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.0/html/T_KSPDev_PrefabUtils_PrefabLoader.htm).
 
 # 1.2 (April 2nd, 2019):
 * [Fix] Implement "breadth first search" approach as stated in the description. It was DFS before: [`Hierarchy.FindTransformInChildren`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/M_KSPDev_ModelUtils_Hierarchy_FindTransformInChildren.htm).

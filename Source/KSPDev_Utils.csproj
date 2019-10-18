@@ -146,6 +146,7 @@
     <Compile Include="PartUtils\PartModel.cs" />
     <Compile Include="PartUtils\PartModuleUtils.cs" />
     <Compile Include="PartUtils\VariantsUtils.cs" />
+    <Compile Include="PrefabUtils\PrefabLoader.cs" />
     <Compile Include="ProcessingUtils\ArgumentGuard.cs" />
     <Compile Include="ProcessingUtils\AsyncCall.cs" />
     <Compile Include="ProcessingUtils\Preconditions.cs" />
@@ -168,6 +169,7 @@
     <Folder Include="ModelUtils" />
     <Folder Include="InputUtils" />
     <Folder Include="MathUtils" />
+    <Folder Include="PrefabUtils" />
     <Folder Include="PartUtils" />
     <Folder Include="SoundUtils" />
     <Folder Include="ResourceUtils" />
@@ -193,6 +195,9 @@
     </Reference>
     <Reference Include="System.Core">
       <HintPath>Q:\KSP_x64_Data\Managed\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>Q:\KSP_x64_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
       <HintPath>Q:\KSP_x64_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
