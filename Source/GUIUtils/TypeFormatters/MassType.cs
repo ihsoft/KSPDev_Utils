@@ -127,7 +127,10 @@ public sealed class MassType {
         scale = 1.0;
       }
     }
-    if (scale <= 0.000001) {
+    if (value < double.Epsilon) {
+      scaledValue = 0; 
+      units = "";  // Zero value has no units - it's ZERO. 
+    } else  if (scale <= 0.000001) {
       scaledValue = value / 0.000001;
       units = gram;
     } else if (scale <= 0.001) {
