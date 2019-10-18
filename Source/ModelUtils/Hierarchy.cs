@@ -314,17 +314,28 @@ public static class Hierarchy {
   /// side-effects happen and it <i>doesn't</i> use physics incompatible <c>DestroyImmediate</c>
   /// method.
   /// </remarks>
-  /// <param name="obj">The object to destroy.</param>
+  /// <param name="obj">The object to destroy. Can be <c>null</c>.</param>
   public static void SafeDestory(Transform obj) {
-    SafeDestory(obj.gameObject);
+    if (obj != null) {
+      SafeDestory(obj.gameObject);
+    }
   }
 
   /// <inheritdoc cref="SafeDestory(Transform)"/>
   public static void SafeDestory(GameObject obj) {
-    obj.transform.parent = null;
-    obj.name = "$disposed";
-    obj.SetActive(false);
-    UnityEngine.Object.Destroy(obj);
+    if (obj != null) {
+      obj.transform.SetParent(null, worldPositionStays: false);
+      obj.name = "$disposed";
+      obj.SetActive(false);
+      UnityEngine.Object.Destroy(obj);
+    }
+  }
+
+  /// <inheritdoc cref="SafeDestory(Transform)"/>
+  public static void SafeDestory(Component comp) {
+    if (comp != null) {
+      SafeDestory(comp.gameObject);
+    }
   }
 
   #region Local helper methods.
