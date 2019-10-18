@@ -8,6 +8,7 @@
 * [Enhancement] Add module to deal with loadable Unity perfabs: [`PrefabUtils.PrefabLoader`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.0/html/T_KSPDev_PrefabUtils_PrefabLoader.htm).
 * [Enhancement] Add module to deal with game UI scale change: [`PrefabUtils.UIScalableWindowController`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.0/html/T_KSPDev_PrefabUtils_UIScalableWindowController.htm).
 * [Enhancement] Add module to safely invoke callbacks: [`ProcessingUtils.SafeCallbacks`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.0/html/T_KSPDev_ProcessingUtils_SafeCallbacks.htm).
+* [Enhancement] Add abstract class for the part modules that get best of KSPDev: [`PartUtils.AbstractPartModule`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.0/html/T_KSPDev_PartUtils_AbstractPartModule.htm).
 
 # 1.2 (April 2nd, 2019):
 * [Fix] Implement "breadth first search" approach as stated in the description. It was DFS before: [`Hierarchy.FindTransformInChildren`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/M_KSPDev_ModelUtils_Hierarchy_FindTransformInChildren.htm).
