@@ -147,6 +147,7 @@
     <Compile Include="PartUtils\PartModuleUtils.cs" />
     <Compile Include="PartUtils\VariantsUtils.cs" />
     <Compile Include="PrefabUtils\PrefabLoader.cs" />
+    <Compile Include="PrefabUtils\UIScalableWindowController.cs" />
     <Compile Include="ProcessingUtils\ArgumentGuard.cs" />
     <Compile Include="ProcessingUtils\AsyncCall.cs" />
     <Compile Include="ProcessingUtils\Preconditions.cs" />
