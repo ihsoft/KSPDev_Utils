@@ -69,8 +69,16 @@ public class HintOverlay {
 
   /// <summary>Precalculated UI text size for the currently assigned text.</summary>
   Vector2 textSize;
+
   /// <summary>Precalculated style for the hint overlay window.</summary>
   GUIStyle hintWindowStyle;
+
+  /// <summary>Texture to use as the hint background.</summary>
+  /// <remarks>
+  /// It's important to keep a reference to it in a C# realm. Since otherwise it will be GC'ed by
+  /// Unity that doesn't recognize references from the GUIStyle objects. As of Unity 2019.2.2.  
+  /// </remarks>
+  Texture2D backgroundTexture;
 
   /// <summary>Constructs an overaly.</summary>
   /// <param name="fontSize">Size of the text font in the hint.</param>
@@ -79,13 +87,14 @@ public class HintOverlay {
   /// <param name="backgroundColor">Color of the hint background. If alpha component is different
   /// from <c>1.0</c> then background will be semi-transparent.</param>
   public HintOverlay(int fontSize, int padding, Color textColor, Color backgroundColor) {
+    backgroundTexture = CreateSampleTextureFromColor(backgroundColor);
     hintWindowStyle = new GUIStyle {
       normal = {
-        background = CreateSampleTextureFromColor(backgroundColor),
+        background = backgroundTexture,
         textColor = textColor
       },
       padding = new RectOffset(padding, padding, padding, padding),
-      fontSize = fontSize
+      fontSize = fontSize,
     };
   }
 
@@ -107,7 +116,10 @@ public class HintOverlay {
   }
 
   /// <summary>Shows hint at the absolute screen position.</summary>
-  /// <remarks>If hint content goes out of the screen it's clipped.</remarks>
+  /// <remarks>
+  /// If hint content goes out of the screen it's clipped.
+  /// <para>This method must be called from the <c>OnGUI()</c> method.</para>
+  /// </remarks>
   /// <param name="x">X position is screen coordinates.</param>
   /// <param name="y">Y position is screen coordinates.</param>
   public void ShowAtPosition(float x, float y) {
