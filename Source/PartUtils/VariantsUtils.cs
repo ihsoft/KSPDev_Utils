@@ -13,7 +13,7 @@ public static class VariantsUtils {
   /// <summary>Gets the part's variant.</summary>
   /// <param name="avPart">The part proto to get the variant for.</param>
   /// <param name="partNode">The part's persistent state.</param>
-  /// <returns>The part's variant.</returns>
+  /// <returns>The part's variant or <c>null</c> if none defined.</returns>
   public static PartVariant GetCurrentPartVariant(AvailablePart avPart, ConfigNode partNode) {
     var variantsModule = PartNodeUtils.GetModuleNode<ModulePartVariants>(partNode);
     if (variantsModule == null) {

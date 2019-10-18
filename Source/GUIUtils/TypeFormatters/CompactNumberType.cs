@@ -8,7 +8,8 @@ namespace KSPDev.GUIUtils.TypeFormatters {
 
 /// <summary>
 /// Message formatting class for a numeric value. For the values below <c>1000</c> the resulted
-/// message is formatted so that it takes no more than 4 digits.
+/// message is formatted so that it takes approximately 4 digits. Too small values will be padded
+/// with zeros after the dot.
 /// </summary>
 /// <remarks>
 /// <para>
