@@ -1,5 +1,6 @@
 # 2.0 (pre-release):
 * Migrated to `KSP 1.8` and `Unity 2019.2`. Versions `2.x` are incompatible with KSP versions prior to `1.8`!
+* [Enhancement] Better error logging in `CopyPartConfigFromPrefab` when modules mismatch.
 
 # 1.2 (April 2nd, 2019):
 * [Fix] Implement "breadth first search" approach as stated in the description. It was DFS before: [`Hierarchy.FindTransformInChildren`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/M_KSPDev_ModelUtils_Hierarchy_FindTransformInChildren.htm).
