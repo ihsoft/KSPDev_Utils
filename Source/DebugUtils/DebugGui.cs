@@ -14,6 +14,7 @@ namespace KSPDev.DebugUtils {
 
 /// <summary>Helper class to deal with the debug GUI functionality.</summary>
 /// <seealso cref="DebugAdjustableAttribute"/>
+/// <seealso cref="MakePartDebugDialog"/>
 public static class DebugGui {
 
   /// <summary>Game object to use to host the debug dialogs.</summary>
@@ -127,6 +128,11 @@ public static class DebugGui {
   }
 
   /// <summary>Creates a debug dialog for the parts.</summary>
+  /// <remarks>
+  /// Implement a code that would react on user interactions and invoke this method to show a debug
+  /// dialog. The dialog can be bound to a specific part, in which case it only showns for that
+  /// part, or the dialog may allow interactively selecting a part from the scene. 
+  /// </remarks>
   /// <param name="title">The titile of the dialog.</param>
   /// <param name="dialogWidth">
   /// The width of the dialog. If omitted, then the code will decide.
@@ -138,7 +144,9 @@ public static class DebugGui {
   /// The group of the controls to present. If empty, then all the controls are shown.
   /// </param>
   /// <param name="bindToPart">
-  /// The fixed part to attach the dialog to. The dialog won't allow changing the part.
+  /// The part to attach the dialog to. If set, then the dialog won't allow changing the part via
+  /// GUI. Otherwise, there will be controls in the dialog that allow selection a part from the
+  /// scene.
   /// </param>
   /// <returns>The created dialog.</returns>
   /// <seealso cref="DestroyPartDebugDialog"/>
