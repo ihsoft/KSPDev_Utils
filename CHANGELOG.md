@@ -1,4 +1,4 @@
-# 2.0 (pre-release):
+# 2.0 (October 19th, 2019):
 * [Change] Compatibility with `KSP 1.8`. Versions `2.x` are incompatible with KSP versions prior to `1.8`!
 * [Change] Migrate to `C# .Net 4.5` and `Unity 2019.2`.
 * [Change] Better error logging in `CopyPartConfigFromPrefab` when modules mismatch.
