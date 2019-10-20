@@ -60,8 +60,8 @@ public static class EventChecker {
   /// standard 101-key keyboard and, thus, have "left" and "right" keys. 
   /// These are: <c>ALT</c>, <c>CTRL</c>, <c>SHIFT</c>, and <c>COMMAND</c>.
   /// </remarks>
-  /// <param name="ev"></param>
-  /// <returns></returns>
+  /// <param name="ev">The event to get modifiers from.</param>
+  /// <returns><c>true</c> if the the current hold modifier(s) match the event.</returns>
   public static bool CheckLeftSymmetricalModifiers(Event ev) {
     var modifiers = EventModifiers.None;
     if (Input.GetKey(KeyCode.LeftAlt)) {
@@ -88,8 +88,8 @@ public static class EventChecker {
   /// standard 101-key keyboard and, thus, have "left" and "right" keys. 
   /// These are: <c>ALT</c>, <c>CTRL</c>, <c>SHIFT</c>, and <c>COMMAND</c>.
   /// </remarks>
-  /// <param name="ev"></param>
-  /// <returns></returns>
+  /// <param name="ev">The event to get modifiers from.</param>
+  /// <returns><c>true</c> if the the current hold modifier(s) match the event.</returns>
   public static bool CheckRightSymmetricalModifiers(Event ev) {
     var modifiers = EventModifiers.None;
     if (Input.GetKey(KeyCode.RightAlt)) {
@@ -116,8 +116,8 @@ public static class EventChecker {
   /// standard 101-key keyboard and, thus, have "left" and "right" keys. 
   /// These are: <c>ALT</c>, <c>CTRL</c>, <c>SHIFT</c>, and <c>COMMAND</c>.
   /// </remarks>
-  /// <param name="ev"></param>
-  /// <returns></returns>
+  /// <param name="ev">The event to get modifiers from.</param>
+  /// <returns><c>true</c> if the the current hold modifier(s) match the event.</returns>
   public static bool CheckAnySymmetricalModifiers(Event ev) {
     var modifiers = EventModifiers.None;
     if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)) {
@@ -177,4 +177,3 @@ public static class EventChecker {
 }
 
 } // namespace
-

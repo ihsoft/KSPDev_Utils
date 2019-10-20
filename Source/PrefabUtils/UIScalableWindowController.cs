@@ -21,11 +21,12 @@ public class UIScalableWindowController : MonoBehaviour, IsDestroyable {
   #region Local fields and properties
   /// <summary>Previously known scale onf UI.</summary>
   /// <seealso cref="OnGameSettingsApplied"/>
+  /// <value>The UI scale value that was in effect before the change.</value>
   protected float previousUiScale { get; private set; }
   #endregion
 
   #region MonoBehaviour overrides
-  /// <inheritdoc/>
+  /// <summary>Activates the component.</summary>
   public virtual void Awake() {
     previousUiScale = UIMasterController.Instance.uiScale;
     GameEvents.OnGameSettingsApplied.Add(OnGameSettingsApplied);

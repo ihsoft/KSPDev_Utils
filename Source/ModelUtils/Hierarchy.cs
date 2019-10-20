@@ -332,9 +332,9 @@ public static class Hierarchy {
   }
 
   /// <inheritdoc cref="SafeDestory(Transform)"/>
-  public static void SafeDestory(Component comp) {
-    if (comp != null) {
-      SafeDestory(comp.gameObject);
+  public static void SafeDestory(Component obj) {
+    if (obj != null) {
+      SafeDestory(obj.gameObject);
     }
   }
 
