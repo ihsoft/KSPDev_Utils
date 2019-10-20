@@ -12,15 +12,16 @@ sources-->
     <AssemblyName>Documentation</AssemblyName>
     <RootNamespace>Documentation</RootNamespace>
     <Name>Documentation</Name>
-    <OutputPath>..\..\docs\v1.2\</OutputPath>
+    <OutputPath>..\..\docs\v2.0\</OutputPath>
     <HtmlHelpName>Documentation</HtmlHelpName>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\KSPDev_Utils.csproj" />
+      <DocumentationSource sourceFile="..\bin\Release\KSPDev_Utils.2.0.dll" />
+      <DocumentationSource sourceFile="..\bin\Release\KSPDev_Utils.xml" />
     </DocumentationSources>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpFileFormat>Website</HelpFileFormat>
     <IndentHtml>False</IndentHtml>
-    <FrameworkVersion>.NET Framework 3.5</FrameworkVersion>
+    <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
     <KeepLogFile>False</KeepLogFile>
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
     <CleanIntermediates>True</CleanIntermediates>
@@ -123,34 +124,16 @@ common platform types that may appear.-->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' " />
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>bin\Release\Assembly-CSharp.dll</HintPath>
+      <HintPath>Q:\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>bin\Release\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>Q:\KSP_x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="KSPAssets">
-      <HintPath>bin\Release\KSPAssets.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>bin\Release\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Security">
-      <HintPath>bin\Release\Mono.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml">
-      <HintPath>bin\Release\System.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="TDx.TDxInput">
-      <HintPath>bin\Release\TDx.TDxInput.dll</HintPath>
-    </Reference>
-    <Reference Include="TrackIRUnity">
-      <HintPath>bin\Release\TrackIRUnity.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>bin\Release\UnityEngine.dll</HintPath>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Q:\KSP_x64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>bin\Release\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\bin\Release\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <!--Import the SHFB build targets-->
