@@ -60,7 +60,7 @@ public sealed class GUILayoutVerticalScrollView {
   public void EndView() {
     // A hacky way to get the actual height of the scrollable area.
     GUILayout.Label(GUIContent.none, GUIStyle.none, GUILayout.MaxHeight(0));
-    if (Event.current.type == EventType.repaint) {
+    if (Event.current.type == EventType.Repaint) {
       scrollableAreaHeight = GUILayoutUtility.GetLastRect().y;
     }
     GUILayout.EndScrollView();

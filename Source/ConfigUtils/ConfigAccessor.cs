@@ -181,7 +181,16 @@ public static class ConfigAccessor {
       var srcModule = part.partInfo.partPrefab.Modules[moduleIdx];
       if (srcModule.moduleName != tgtModule.moduleName) {
         HostedDebugLog.Error(
-            tgtModule, "The module in prefab at {0} is: {1}", moduleIdx, srcModule);
+            tgtModule, "Mismatched module in prefab at {0}: expected={1}, found={2}",
+            moduleIdx, tgtModule.moduleName, srcModule.moduleName);
+        if (GameSettings.VERBOSE_DEBUG_LOG) {
+          HostedDebugLog.Fine(
+              tgtModule, "*** DUMP OF AVAILABLE MODULES: infoName={0}, prefabName{1}",
+              part.partInfo.name, part.partInfo.partPrefab.name);
+          for (var i = 0; i < part.partInfo.partPrefab.Modules.Count; i++) {
+            DebugEx.Fine("* name={0}, id=#{1}", part.partInfo.partPrefab.Modules[i].moduleName, i);
+          }
+        }
         return;
       }
       var fields = PersistentFieldsFactory.GetPersistentFields(

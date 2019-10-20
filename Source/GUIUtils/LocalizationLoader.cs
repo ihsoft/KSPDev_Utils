@@ -41,7 +41,7 @@ public class LocalizationLoader : MonoBehaviour {
   /// </para>
   /// <para>
   /// The original KSP attributes don't need to specify <c>guiName</c> field since it will be
-  /// overwritten anyways. However, it's a good idea to give a default value just in case.
+  /// overwritten anyway. However, it's a good idea to give a default value just in case.
   /// </para>
   /// <para>
   /// This method can be called at any time during the module's life. However, the
@@ -60,8 +60,7 @@ public class LocalizationLoader : MonoBehaviour {
     // This method may look ugly and over complicated, but it's because if it's performance
     // optimized. On a vessel with 100 parts this method can be called 1000 times. So every
     // millisecond matters.
-
-    // Go thru all the KSP fields that may have the localizable content. 
+    // Go thru all the KSP fields that may have the localizable content.
     foreach (var field in module.Fields) {
       var locItems = (LocalizableItemAttribute[])field.FieldInfo.GetCustomAttributes(
           typeof(LocalizableItemAttribute), false);
@@ -97,7 +96,7 @@ public class LocalizationLoader : MonoBehaviour {
       }
     }
 
-    // Go thru all the KSP events that may have the localizable content. 
+    // Go thru all the KSP events that may have the localizable content.
     foreach (var @event in module.Events) {
       var info = module.GetType().GetMethod(@event.name);
       if (info != null) {
@@ -109,7 +108,7 @@ public class LocalizationLoader : MonoBehaviour {
       }
     }
 
-    // Go thru all the KSP actions that may have the localizable content. 
+    // Go thru all the KSP actions that may have the localizable content.
     foreach (var action in module.Actions) {
       var info = module.GetType().GetMethod(action.name);
       if (info != null) {
@@ -203,7 +202,8 @@ public class LocalizationLoader : MonoBehaviour {
           localizableModule.LocalizeModule();
         } catch (Exception ex) {
           DebugEx.Error(
-              "Exception in LocalizeModule of module {0}: {1}", localizableModule, ex.Message);
+              "Exception in LocalizeModule of module {0}: type={1}, error={2}. Trace:\n{3}",
+              localizableModule, localizableModule.GetType(), ex.Message, ex.StackTrace);
         }
       }
       // Refresh the context menu.
@@ -213,7 +213,8 @@ public class LocalizationLoader : MonoBehaviour {
           hasContextMenu.UpdateContextMenu();
         } catch (Exception ex) {
           DebugEx.Error(
-              "Exception in UpdateContextMenu of module {0}: {1}", localizableModule, ex.Message);
+              "Exception in UpdateContextMenu of module {0}: type={1}, error={2}. Trace:\n{3}",
+              hasContextMenu, hasContextMenu.GetType(), ex.Message, ex.StackTrace);
         }
       }
     }
