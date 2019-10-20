@@ -1,5 +1,6 @@
 # 2.0 (pre-release):
-* [Change] Migrated to `KSP 1.8` and `Unity 2019.2`. Versions `2.x` are incompatible with KSP versions prior to `1.8`!
+* [Change] Compatibility with `KSP 1.8`. Versions `2.x` are incompatible with KSP versions prior to `1.8`!
+* [Change] Migrate to `C# .Net 4.5` and `Unity 2019.2`.
 * [Change] Better error logging in `CopyPartConfigFromPrefab` when modules mismatch.
 * [Change] Show `0` instead of `0 grams` for the zero mass value: [`GUIUtils.TypeFormatters`](http://ihsoft.github.io/KSPDev_Utils/v2.0/html/T_KSPDev_GUIUtils_TypeFormatters_MassType.htm).
 * [Change] Better formatting of the keyboard events + support mouse buttons: [`TypeFormatters.KeyboardEventType`](https://ihsoft.github.io/KSPDev_Utils/v2.0/html/T_KSPDev_GUIUtils_TypeFormatters_KeyboardEventType.htm).
