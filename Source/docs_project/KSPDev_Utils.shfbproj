@@ -15,8 +15,7 @@ sources-->
     <OutputPath>..\..\docs\v2.0\</OutputPath>
     <HtmlHelpName>Documentation</HtmlHelpName>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\bin\Release\KSPDev_Utils.2.0.dll" />
-      <DocumentationSource sourceFile="..\bin\Release\KSPDev_Utils.xml" />
+      <DocumentationSource sourceFile="..\KSPDev_Utils.csproj" />
     </DocumentationSources>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpFileFormat>Website</HelpFileFormat>
@@ -46,23 +45,23 @@ sources-->
 &lt;para&gt;If you like dealing with the settings on yourselves, then you may find useful  the &lt;see cref="T:KSPDev.ConfigUtils.ConfigAccessor"/&gt; helper class that simplifies the routine operations with the configuration nodes and files.&lt;/para&gt;
 
 &lt;para&gt;If you'd like to start using the new attributes system that allows annotation of the settings fields, then you may start from the &lt;see cref="T:KSPDev.ConfigUtils.PersistentFieldAttribute"/&gt; class. This topic has good code examples that will help you to start.&lt;/para&gt;</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.FSUtils" isDocumented="True">A set of utility classes to deal with the paths in the game.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.GUIUtils" isDocumented="True">A set of helper classes to deal with Unity GUI.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.LogUtils" isDocumented="True">A set of simple wrappers to write the logs in a more clear and convinient way.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="(global)" isDocumented="True" />
-      <NamespaceSummaryItem name="KSPDev.KSPInterfaces" isDocumented="True">This namespace defines the interfaces that either don't exist in the game or are not documented. In the first case the goal is to make the coding more OOP by defining a clear interface, so that the callers know what to expect from the part's module. In the second case the point is to provide a verbose documentation to the existing KSP interfaces.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.Extensions" isDocumented="True">A set of handy extensions to the existing C# and KSP classes. Normally, you never call them from this assembly. Instead, you get them at the instance of the affected class. See for the details and examples in the method descriptions.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.ModelUtils" isDocumented="True">Offers a variety of methods to deal with the procedural models. Even if the model is created from a prefab, it's sometimes useful to do some adjustments to it.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.ProcessingUtils" isDocumented="True">A set of useful methods to simplify processing the common game tasks. Like scheduling a co-routine execution, controlling the module state via a simple state machine, etc.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.InputUtils" isDocumented="True">A set of helper classes to deal with the game keyboard and mouse input.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.Types" isDocumented="True">Various custom types for the KSP mods.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.ResourceUtils" isDocumented="True">A set of methods and constants to deal with the stock game resources.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.SoundsUtils" isDocumented="True">A set of methods to deal with the sounds playing.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.PartUtils" isDocumented="True">Offers a variety of methods to deal with the model on the part.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.MathUtils" isDocumented="True">Gives similar functional to the game's Mathf, but deals with teh deouble values.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.DebugUtils" isDocumented="True">A set of classes and controls to simplify mods debugging.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="KSPDev.GUIUtils.TypeFormatters" isDocumented="True">A set of classes to print as string various game and engine values. E.g. speed, distance, mass, etc.</NamespaceSummaryItem>
-    </NamespaceSummaries>
+<NamespaceSummaryItem name="KSPDev.FSUtils" isDocumented="True">A set of utility classes to deal with the paths in the game.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.GUIUtils" isDocumented="True">A set of helper classes to deal with Unity GUI.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.LogUtils" isDocumented="True">A set of simple wrappers to write the logs in a more clear and convinient way.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="(global)" isDocumented="True" />
+<NamespaceSummaryItem name="KSPDev.KSPInterfaces" isDocumented="True">This namespace defines the interfaces that either don't exist in the game or are not documented. In the first case the goal is to make the coding more OOP by defining a clear interface, so that the callers know what to expect from the part's module. In the second case the point is to provide a verbose documentation to the existing KSP interfaces.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.Extensions" isDocumented="True">A set of handy extensions to the existing C# and KSP classes. Normally, you never call them from this assembly. Instead, you get them at the instance of the affected class. See for the details and examples in the method descriptions.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.ModelUtils" isDocumented="True">Offers a variety of methods to deal with the procedural models. Even if the model is created from a prefab, it's sometimes useful to do some adjustments to it.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.ProcessingUtils" isDocumented="True">A set of useful methods to simplify processing the common game tasks. Like scheduling a co-routine execution, controlling the module state via a simple state machine, etc.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.InputUtils" isDocumented="True">A set of helper classes to deal with the game keyboard and mouse input.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.Types" isDocumented="True">Various custom types for the KSP mods.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.ResourceUtils" isDocumented="True">A set of methods and constants to deal with the stock game resources.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.SoundsUtils" isDocumented="True">A set of methods to deal with the sounds playing.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.PartUtils" isDocumented="True">Offers a variety of methods to deal with the model on the part.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.MathUtils" isDocumented="True">Gives similar functional to the game's Mathf, but deals with teh deouble values.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.DebugUtils" isDocumented="True">A set of classes and controls to simplify mods debugging.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.GUIUtils.TypeFormatters" isDocumented="True">A set of classes to print as string various game and engine values. E.g. speed, distance, mass, etc.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="KSPDev.PrefabUtils" isDocumented="True">Offers tool to deal with the dynamically loaded prefabs.</NamespaceSummaryItem></NamespaceSummaries>
     <WebsiteSdkLinkType>Msdn</WebsiteSdkLinkType>
     <HtmlSdkLinkType>Msdn</HtmlSdkLinkType>
     <IncludeFavorites>False</IncludeFavorites>
