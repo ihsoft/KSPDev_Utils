@@ -1,4 +1,5 @@
 # 2.0.1 (pre-release):
+* [Fix] Properly handle the "zero variant selected" case.
 
 # 2.0 (October 19th, 2019):
 * [Change] Compatibility with `KSP 1.8`. Versions `2.x` are incompatible with KSP versions prior to `1.8`!

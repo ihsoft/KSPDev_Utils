@@ -19,8 +19,13 @@ public static class VariantsUtils {
     if (variantsModule == null) {
       return null;
     }
-    var selectedVariantName = variantsModule.GetValue("selectedVariant")
-        ?? avPart.partPrefab.baseVariant.Name;
+    var selectedVariantName = variantsModule.GetValue("selectedVariant");
+    if (selectedVariantName == null) {
+      // Use the very first varaint, if any.
+      return avPart.partPrefab.variants.variantList.Count > 0
+          ? avPart.partPrefab.variants.variantList[0]
+          : null;
+    }
     return avPart.partPrefab.variants.variantList
         .FirstOrDefault(v => v.Name == selectedVariantName);
   }
