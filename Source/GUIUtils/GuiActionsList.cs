@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using KSPDev.LogUtils;
 using UnityEngine;
 
 namespace KSPDev.GUIUtils {
@@ -68,7 +69,11 @@ public class GuiActionsList {
   public bool ExecutePendingGuiActions() {
     if (Event.current.type == EventType.Layout) {
       foreach (var actionFn in guiActions) {
-        actionFn();
+        try {
+          actionFn();
+        } catch (Exception ex) {
+          DebugEx.Error("GUI action failed: {0}", ex);
+        }
       }
       guiActions.Clear();
       return true;

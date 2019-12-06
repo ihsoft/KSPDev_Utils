@@ -1,5 +1,6 @@
 # 2.0.1 (pre-release):
 * [Fix] Properly handle the "zero variant selected" case.
+* [Fix] Don't fail the `OnGUI` thread if any of the actions failed.
 
 # 2.0 (October 19th, 2019):
 * [Change] Compatibility with `KSP 1.8`. Versions `2.x` are incompatible with KSP versions prior to `1.8`!
