@@ -51,7 +51,7 @@ public sealed class MessageLookup<T> where T : struct {
   /// <param name="key">The key to find a message for.</param>
   /// <returns>
   /// The relevant message if the <paramref name="key"/> is found. Otherwise, either the
-  /// <see cref="defaultMessage"/> or a string represenation of the key. It's never <c>null</c>. 
+  /// <see cref="defaultMessage"/> or a string representation of the key. It's never <c>null</c>. 
   /// </returns>
   /// <example><code source="Examples/GUIUtils/MessageLookup-Examples.cs" region="MessageLookupDemo_WithDefault"/></example>
   /// <example><code source="Examples/GUIUtils/MessageLookup-Examples.cs" region="MessageLookupDemo_WithStockDefault"/></example>
