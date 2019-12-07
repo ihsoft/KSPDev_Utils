@@ -1,3 +1,7 @@
+# 2.1 (December 6th, 2019):
+* [Fix] Properly handle the "zero variant selected" case.
+* [Fix] Don't fail the `OnGUI` thread if any of the actions failed.
+
 # 2.0 (October 19th, 2019):
 * [Change] Compatibility with `KSP 1.8`. Versions `2.x` are incompatible with KSP versions prior to `1.8`!
 * [Change] Migrate to `C# .Net 4.5` and `Unity 2019.2`.

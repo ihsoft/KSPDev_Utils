@@ -11,7 +11,7 @@ namespace KSPDev.GUIUtils {
 /// Messages of this type don't have placeholders and can be just casted to a string. 
 /// </remarks>
 /// <example><code source="Examples/GUIUtils/Message-Examples.cs" region="MessageDemo"/></example>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
 public sealed class Message : LocalizableMessage {
   /// <inheritdoc cref="LocalizableMessage(string,string,string,string)"/>
   /// <seealso cref="LocalizableMessage"/>
@@ -66,9 +66,9 @@ public sealed class Message : LocalizableMessage {
 /// </remarks>
 /// <example><code source="Examples/GUIUtils/Message-Examples.cs" region="Message1Demo"/></example>
 /// <seealso cref="Message"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/Lingoona/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/Lingoona/*"/>
 public sealed class Message<T1> : LocalizableMessage {
   /// <inheritdoc cref="LocalizableMessage(string,string,string,string)"/>
   /// <seealso cref="LocalizableMessage"/>
@@ -243,9 +243,9 @@ public class Message<T1, T2, T3> : LocalizableMessage {
 /// </remarks>
 /// <example><code source="Examples/GUIUtils/Message-Examples.cs" region="Message4Demo"/></example>
 /// <seealso cref="Message"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/Lingoona/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/Lingoona/*"/>
 public class Message<T1, T2, T3, T4> : LocalizableMessage {
   /// <inheritdoc cref="LocalizableMessage(string,string,string,string)"/>
   /// <seealso cref="LocalizableMessage"/>
@@ -306,9 +306,9 @@ public class Message<T1, T2, T3, T4> : LocalizableMessage {
 /// </remarks>
 /// <example><code source="Examples/GUIUtils/Message-Examples.cs" region="Message5Demo"/></example>
 /// <seealso cref="Message"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/Lingoona/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/Lingoona/*"/>
 public class Message<T1, T2, T3, T4, T5> : LocalizableMessage {
   /// <inheritdoc cref="LocalizableMessage(string,string,string,string)"/>
   /// <seealso cref="LocalizableMessage"/>

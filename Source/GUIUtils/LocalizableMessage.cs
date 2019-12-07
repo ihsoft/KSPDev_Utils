@@ -5,7 +5,6 @@
 using KSP.Localization;
 using KSPDev.LogUtils;
 using System;
-using UnityEngine;
 
 namespace KSPDev.GUIUtils {
 
@@ -22,33 +21,35 @@ namespace KSPDev.GUIUtils {
 /// </para>
 /// <para>
 /// The template of the messages supports special tags that may give a hint to the caller code on
-/// how the messages should be rendered. Those tags must be palced at the beginning of the template.
+/// how the messages should be rendered. Those tags must be placed at the beginning of the template.
 /// For the available tags see <see cref="GuiTags"/>.
 /// </para>
 /// </remarks>
 /// <seealso cref="LocalizableItemAttribute"/>
 /// <seealso cref="systemLocVersion"/>
 public class LocalizableMessage {
-  /// <summary>Various values that give hints on how the messages should be presented in GUI.</summary>
+  /// <summary>
+  /// Various values that give hints on how the messages should be presented in GUI.
+  /// </summary>
   /// <remarks>
-  /// It's up to the caller to handle theses settings. They improve the appearence, but are not
+  /// It's up to the caller to handle theses settings. They improve the appearance, but are not
   /// required for the proper content presentation.
   /// </remarks>
   public class GuiTags {
     /// <summary>Minimum width of the area in GUI.</summary>
-    /// <remarks>Defined via tag: &lt;gui:min:width,heigth&gt;</remarks>
-    public float minWidth = 0;
+    /// <remarks>Defined via tag: &lt;gui:min:width,height&gt;</remarks>
+    public float minWidth;
 
     /// <summary>Minimum height of the area in GUI.</summary>
-    /// <remarks>Defined via tag: &lt;gui:min:width,heigth&gt;</remarks>
-    public float minHeight = 0;
+    /// <remarks>Defined via tag: &lt;gui:min:width,height&gt;</remarks>
+    public float minHeight;
 
     /// <summary>Maximum width of the area in GUI.</summary>
-    /// <remarks>Defined via tag: &lt;gui:max:width,heigth&gt;</remarks>
+    /// <remarks>Defined via tag: &lt;gui:max:width,height&gt;</remarks>
     public float maxWidth = float.PositiveInfinity;
 
     /// <summary>Maximum height of the area in GUI.</summary>
-    /// <remarks>Defined via tag: &lt;gui:max:width,heigth&gt;</remarks>
+    /// <remarks>Defined via tag: &lt;gui:max:width,height&gt;</remarks>
     public float maxHeight = float.PositiveInfinity;
   }
 
@@ -75,17 +76,17 @@ public class LocalizableMessage {
   /// </remarks>
   public readonly string example;
 
-  /// <summary>Tag to use when resolving the string via the Localizer.</summary>
+  /// <summary>Tag to use when resolving the string via the localizer.</summary>
   /// <remarks>
   /// It can be <c>null</c> to indicate that the localization is not needed. In this case the
   /// <see cref="defaultTemplate"/> will be used as text.
   /// </remarks>
-  /// <include file="KSPAPI_HelpIndex.xml" path="//item[@name='T:KSP.Localization.Localizer']"/>
+  /// <include file="../KSPAPI_HelpIndex.xml" path="//item[@name='T:KSP.Localization.Localizer']"/>
   public readonly string tag;
 
   /// <summary>GUI specific settings that suggest how to show the message.</summary>
   /// <remarks>
-  /// Due to the lazzy update nature of the localized messages, these settings are <i>not</i>
+  /// Due to the lazy update nature of the localized messages, these settings are <i>not</i>
   /// loaded until the message is used at least once. The caller code may ensure the values are
   /// updated by calling to <see cref="LoadLocalization"/>, or by simply getting the
   /// <see cref="localizedTemplate"/> value.
@@ -104,16 +105,16 @@ public class LocalizableMessage {
   /// </para>
   /// <para>
   /// When current language is changed the cached version needs to be reloaded. Call
-  /// the <see cref="LoadLocalization"/> method to force it. However, as of KSP 1.3.0 the langauge
+  /// the <see cref="LoadLocalization"/> method to force it. However, as of KSP 1.3.0 the language
   /// cannot be changed while the game is running.
   /// </para>
   /// </remarks>
   /// <value>
   /// A Lingoona Grammar template in the
-  /// <see cref="Localizer.CurrentLanguage">current languge</see>.
+  /// <see cref="Localizer.CurrentLanguage">current language</see>.
   /// </value>
   /// <seealso cref="LoadLocalization"/>
-  /// <include file="KSPAPI_HelpIndex.xml" path="//item[@name='T:KSP.Localization.Localizer']"/>
+  /// <include file="../KSPAPI_HelpIndex.xml" path="//item[@name='T:KSP.Localization.Localizer']"/>
   public string localizedTemplate {
     get {
       if (loadedLocVersion != systemLocVersion) {
@@ -150,7 +151,7 @@ public class LocalizableMessage {
   /// <summary>Constructs a localizable message.</summary>
   /// <param name="tag">
   /// The tag to use when getting the localized version of the template. If <c>null</c> then the
-  /// message will alaways use <paramref name="defaultTemplate"/> as text.
+  /// message will always use <paramref name="defaultTemplate"/> as text.
   /// </param>
   /// <param name="defaultTemplate">
   /// <para>
@@ -169,10 +170,10 @@ public class LocalizableMessage {
   /// specifying the circumstances of when this string is displayed. The context <i>does</i> matter!
   /// </param>
   /// <param name="example">
-  /// An example of how the template can be used and what is the output in the langauge of the
+  /// An example of how the template can be used and what is the output in the language of the
   /// <paramref name="defaultTemplate"/>. Provide it to illustrate the non-obvious cases. 
   /// </param>
-  /// <include file="SpecialDocTags.xml" path="Tags/Lingoona/*"/>
+  /// <include file="../SpecialDocTags.xml" path="Tags/Lingoona/*"/>
   protected LocalizableMessage(string tag,
                                string defaultTemplate = null,
                                string description = null, string example = null) {

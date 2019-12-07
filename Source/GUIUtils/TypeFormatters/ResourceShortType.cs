@@ -19,8 +19,8 @@ namespace KSPDev.GUIUtils.TypeFormatters {
 /// Use it as a generic parameter when creating a <see cref="LocalizableMessage"/> descendants.
 /// </para>
 /// </remarks>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
+/// <include file="../../SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
+/// <include file="../../SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
 /// <example><code source="Examples/GUIUtils/TypeFormatters/ResourceShortType-Examples.cs" region="ResourceShortTypeDemo1"/></example>
 /// <example><code source="Examples/GUIUtils/TypeFormatters/ResourceShortType-Examples.cs" region="ResourceShortTypeDemo2_FormatDefault"/></example>
 public sealed class ResourceShortType {

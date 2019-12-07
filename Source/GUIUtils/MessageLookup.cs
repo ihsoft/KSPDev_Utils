@@ -2,8 +2,10 @@
 // Author: igor.zavoychinskiy@gmail.com
 // This software is distributed under Public domain license.
 
-using System;
 using System.Collections.Generic;
+using KSP.Localization;
+using KSPDev.LogUtils;
+using System;
 
 namespace KSPDev.GUIUtils {
 
@@ -17,7 +19,7 @@ namespace KSPDev.GUIUtils {
 /// cannot be a string, though.
 /// </para>
 /// </remarks>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
+/// <include file="../SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
 /// <example><code source="Examples/GUIUtils/MessageLookup-Examples.cs" region="MessageLookupDemo_Simple"/></example>
 /// <example><code source="Examples/GUIUtils/MessageLookup-Examples.cs" region="MessageLookupDemo_WithDefault"/></example>
 /// <example><code source="Examples/GUIUtils/MessageLookup-Examples.cs" region="MessageLookupDemo_WithStockDefault"/></example>
@@ -51,7 +53,7 @@ public sealed class MessageLookup<T> where T : struct {
   /// <param name="key">The key to find a message for.</param>
   /// <returns>
   /// The relevant message if the <paramref name="key"/> is found. Otherwise, either the
-  /// <see cref="defaultMessage"/> or a string represenation of the key. It's never <c>null</c>. 
+  /// <see cref="defaultMessage"/> or a string representation of the key. It's never <c>null</c>. 
   /// </returns>
   /// <example><code source="Examples/GUIUtils/MessageLookup-Examples.cs" region="MessageLookupDemo_WithDefault"/></example>
   /// <example><code source="Examples/GUIUtils/MessageLookup-Examples.cs" region="MessageLookupDemo_WithStockDefault"/></example>

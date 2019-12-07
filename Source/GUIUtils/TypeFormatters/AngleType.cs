@@ -13,8 +13,8 @@ namespace KSPDev.GUIUtils.TypeFormatters {
 /// <remarks>
 /// Use it as a generic parameter when creating a <see cref="LocalizableMessage"/> descendants.
 /// </remarks>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
+/// <include file="../../SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
+/// <include file="../../SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
 /// <example><code source="Examples/GUIUtils/TypeFormatters/AngleType-Examples.cs" region="AngleTypeDemo1"/></example>
 /// <example><code source="Examples/GUIUtils/TypeFormatters/AngleType-Examples.cs" region="AngleTypeDemo2_FormatDefault"/></example>
 /// <example><code source="Examples/GUIUtils/TypeFormatters/AngleType-Examples.cs" region="AngleTypeDemo2_FormatFixed"/></example>

@@ -15,8 +15,8 @@ namespace KSPDev.GUIUtils.TypeFormatters {
 /// Use it as a generic parameter when creating a <see cref="LocalizableMessage"/> descendants.
 /// </para>
 /// </remarks>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
+/// <include file="../../SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
+/// <include file="../../SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
 /// <seealso cref="CompactNumberType"/>
 public sealed class SmallNumberType {
   /// <summary>A wrapped numeric value.</summary>
