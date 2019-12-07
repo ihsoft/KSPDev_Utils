@@ -1,4 +1,4 @@
-# 2.0.1 (pre-release):
+# 2.1 (pre-release):
 * [Fix] Properly handle the "zero variant selected" case.
 * [Fix] Don't fail the `OnGUI` thread if any of the actions failed.
 
