@@ -20,8 +20,8 @@ namespace KSPDev.GUIUtils.TypeFormatters {
 /// used for the unit names.
 /// </para>
 /// </remarks>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
-/// <include file="SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
+/// <include file="../../SpecialDocTags.xml" path="Tags/MessageTypeWithArg/*"/>
+/// <include file="../../SpecialDocTags.xml" path="Tags/MessageArgumentType/*"/>
 /// <example><code source="Examples/GUIUtils/TypeFormatters/VelocityType-Examples.cs" region="VelocityTypeDemo1"/></example>
 /// <example><code source="Examples/GUIUtils/TypeFormatters/VelocityType-Examples.cs" region="VelocityTypeDemo2_FormatDefault"/></example>
 /// <example><code source="Examples/GUIUtils/TypeFormatters/VelocityType-Examples.cs" region="VelocityTypeDemo2_FormatFixed"/></example>

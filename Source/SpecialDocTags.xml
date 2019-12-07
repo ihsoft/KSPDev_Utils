@@ -3,12 +3,12 @@
 <Tags>
 
 <MessageTypeWithArg>
-  <seealso cref="Message&lt;T1&gt;"/>
-  <seealso cref="Message&lt;T1,T2&gt;"/>
-  <seealso cref="Message&lt;T1,T2,T3&gt;"/>
-  <seealso cref="Message&lt;T1,T2,T3,T4&gt;"/>
-  <seealso cref="Message&lt;T1,T2,T3,T4,T5&gt;"/>
-  <seealso cref="MessageLookup&lt;T&gt;"/>
+  <seealso cref="Message{T1}"/>
+  <seealso cref="Message{T1,T2}"/>
+  <seealso cref="Message{T1,T2,T3}"/>
+  <seealso cref="Message{T1,T2,T3,T4}"/>
+  <seealso cref="Message{T1,T2,T3,T4,T5}"/>
+  <seealso cref="MessageLookup{T}"/>
 </MessageTypeWithArg>
 
 <MessageArgumentType>

@@ -5,7 +5,6 @@
 using KSP.Localization;
 using KSPDev.LogUtils;
 using System;
-using UnityEngine;
 
 namespace KSPDev.GUIUtils {
 
@@ -82,7 +81,7 @@ public class LocalizableMessage {
   /// It can be <c>null</c> to indicate that the localization is not needed. In this case the
   /// <see cref="defaultTemplate"/> will be used as text.
   /// </remarks>
-  /// <include file="KSPAPI_HelpIndex.xml" path="//item[@name='T:KSP.Localization.Localizer']"/>
+  /// <include file="../KSPAPI_HelpIndex.xml" path="//item[@name='T:KSP.Localization.Localizer']"/>
   public readonly string tag;
 
   /// <summary>GUI specific settings that suggest how to show the message.</summary>
@@ -115,7 +114,7 @@ public class LocalizableMessage {
   /// <see cref="Localizer.CurrentLanguage">current language</see>.
   /// </value>
   /// <seealso cref="LoadLocalization"/>
-  /// <include file="KSPAPI_HelpIndex.xml" path="//item[@name='T:KSP.Localization.Localizer']"/>
+  /// <include file="../KSPAPI_HelpIndex.xml" path="//item[@name='T:KSP.Localization.Localizer']"/>
   public string localizedTemplate {
     get {
       if (loadedLocVersion != systemLocVersion) {
@@ -174,7 +173,7 @@ public class LocalizableMessage {
   /// An example of how the template can be used and what is the output in the language of the
   /// <paramref name="defaultTemplate"/>. Provide it to illustrate the non-obvious cases. 
   /// </param>
-  /// <include file="SpecialDocTags.xml" path="Tags/Lingoona/*"/>
+  /// <include file="../SpecialDocTags.xml" path="Tags/Lingoona/*"/>
   protected LocalizableMessage(string tag,
                                string defaultTemplate = null,
                                string description = null, string example = null) {
