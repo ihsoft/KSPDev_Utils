@@ -162,17 +162,33 @@ public static class EventChecker {
   /// </remarks>
   /// <param name="ev">The event to match for.</param>
   /// <param name="button">
-  /// The mouse button that was clicked. If this parameter is omitted, then only the event modifiers
-  /// are checked. It can be used to check the "pre-condition".
+  /// The mouse button from the Unity <c>EventSystem</c> which is known to be pressed in this frame.
+  /// The <c>EventSystem</c> logic is not in sync with <c>MonoBehaviour.Update</c>, so the event
+  /// system handlers should provide the pressed <c>button</c> explicitly. The callers from the
+  /// <c>Update</c> method don't need to do so since the right action button can be extracted from
+  /// <paramref name="ev"/>.
+  /// </param>
+  /// <param name="onlyCheckModifiers">
+  /// Tells if only the modifiers in the event need to be checked. This is how a "precondition" can
+  /// be verified when the GUI is interactive and depends on the pressed keys.
   /// </param>
   /// <returns>
   /// <c>true</c> if the requested combination has matched the current frame state.
   /// </returns>
-  /// <seealso cref="GetInputButtonFromEvent"/>
   /// <seealso cref="CheckAnySymmetricalModifiers"/>
-  public static bool CheckClickEvent(Event ev, PointerEventData.InputButton? button = null) {
-    return CheckAnySymmetricalModifiers(ev)
-        && (!button.HasValue || button == GetInputButtonFromEvent(ev));
+  /// <seealso href="https://docs.unity3d.com/ScriptReference/Input.GetKeyDown.html">
+  /// Input.GetKeyDown
+  /// </seealso>
+  public static bool CheckClickEvent(
+      Event ev, PointerEventData.InputButton? button = null, bool onlyCheckModifiers = false) {
+    var modifiersCheck = CheckAnySymmetricalModifiers(ev);
+    if (!modifiersCheck || onlyCheckModifiers) {
+      return modifiersCheck;
+    }
+    if (button.HasValue) {
+      return button == GetInputButtonFromEvent(ev);
+    }
+    return Input.GetKeyDown(ev.keyCode);
   }
 }
 

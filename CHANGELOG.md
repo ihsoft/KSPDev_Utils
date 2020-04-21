@@ -1,4 +1,5 @@
 # 2.2 (pre-release):
+* [Change] Better default behavior in  [`EventChecker.CheckClickEvent`](http://ihsoft.github.io/KSPDev_Utils/v2.2/html/M_KSPDev_InputUtils_EventChecker_CheckClickEvent.htm).
 
 # 2.1 (December 6th, 2019):
 * [Fix] Properly handle the "zero variant selected" case.
