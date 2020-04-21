@@ -59,7 +59,7 @@ namespace KSPDev.KSPInterfaces {
 /// </item>
 /// <item>
 /// <term><see cref="OnLoad"/></term>
-/// <description>Is <b>not called</b> for the new parts since they are clonned. When a saved vessel
+/// <description>Is <b>not called</b> for the new parts since they are cloned. When a saved vessel
 /// is loaded in the editor every part on the vessel gets this method called with the values from
 /// the save file. The annotated fields are populated from the file <i>before</i> this method gets
 /// control, so it's safe to use them.
@@ -67,7 +67,7 @@ namespace KSPDev.KSPInterfaces {
 /// </item>
 /// <item>
 /// <term><see cref="OnInitialize"/></term>
-/// <description>Hard to say what it means for the edtior, but important difference from the flight
+/// <description>Hard to say what it means for the editor, but important difference from the flight
 /// scenes is that this method is called before <see cref="OnStart"/>.
 /// </description>
 /// </item>
@@ -79,7 +79,7 @@ namespace KSPDev.KSPInterfaces {
 /// </item>
 /// </list>
 ///
-/// <para>In the <i>fligth scenes</i> the callbacks are executed in the following order:</para>
+/// <para>In the <i>flight scenes</i> the callbacks are executed in the following order:</para>
 /// <list type="table">
 /// <item>
 /// <term><see cref="OnAwake"/></term>
