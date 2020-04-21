@@ -1,3 +1,5 @@
+# 2.2 (pre-release):
+
 # 2.1 (December 6th, 2019):
 * [Fix] Properly handle the "zero variant selected" case.
 * [Fix] Don't fail the `OnGUI` thread if any of the actions failed.
