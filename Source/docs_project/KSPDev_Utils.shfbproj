@@ -12,7 +12,7 @@ sources-->
     <AssemblyName>Documentation</AssemblyName>
     <RootNamespace>Documentation</RootNamespace>
     <Name>Documentation</Name>
-    <OutputPath>..\..\docs\v2.0\</OutputPath>
+    <OutputPath>..\..\docs\v2.2\</OutputPath>
     <HtmlHelpName>Documentation</HtmlHelpName>
     <DocumentationSources>
       <DocumentationSource sourceFile="..\KSPDev_Utils.csproj" />
