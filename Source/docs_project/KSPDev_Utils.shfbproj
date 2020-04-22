@@ -12,7 +12,7 @@ sources-->
     <AssemblyName>Documentation</AssemblyName>
     <RootNamespace>Documentation</RootNamespace>
     <Name>Documentation</Name>
-    <OutputPath>..\..\docs\v2.0\</OutputPath>
+    <OutputPath>..\..\docs\v2.2\</OutputPath>
     <HtmlHelpName>Documentation</HtmlHelpName>
     <DocumentationSources>
       <DocumentationSource sourceFile="..\KSPDev_Utils.csproj" />
@@ -122,6 +122,12 @@ common platform types that may appear.-->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' " />
+  <ItemGroup>
+    <ProjectReference Include="KSP_API.shfbproj">
+      <Name>KSP_API</Name>
+      <Project>{854f4123-1608-425c-b6bb-71f702fa74e6}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <!--Import the SHFB build targets-->
   <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
 </Project>
