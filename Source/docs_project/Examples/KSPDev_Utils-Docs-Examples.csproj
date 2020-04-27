@@ -53,9 +53,6 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>Q:\KSP_x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="KSPDev_Utils.2.0">
-      <HintPath>..\..\..\..\KAS\Binaries\KSPDev_Utils.2.0.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -121,6 +118,12 @@
     <Folder Include="PartUtils" />
     <Folder Include="ProcessingUtils" />
     <Folder Include="Properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\KSPDev_Utils.csproj">
+      <Project>{01a7b80c-e283-4651-b879-3cc5efaaa1a4}</Project>
+      <Name>KSPDev_Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
