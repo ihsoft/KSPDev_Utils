@@ -1,4 +1,6 @@
 # 2.3 (pre-release):
+* [Fix] Check for overloads when looking for events and actions in [`LocalizationLoader.LoadItemsInModule`](http://ihsoft.github.io/KSPDev_Utils/v2.3/html/M_KSPDev_GUIUtils_LocalizationLoader_LoadItemsInModule.htm).
+* [Change] Support non-public events and actions in [`LocalizationLoader.LoadItemsInModule`](http://ihsoft.github.io/KSPDev_Utils/v2.3/html/M_KSPDev_GUIUtils_LocalizationLoader_LoadItemsInModule.htm).
 
 # 2.2 (April 22nd, 2020):
 * [Change] Better default behavior in  [`EventChecker.CheckClickEvent`](http://ihsoft.github.io/KSPDev_Utils/v2.2/html/M_KSPDev_InputUtils_EventChecker_CheckClickEvent.htm).

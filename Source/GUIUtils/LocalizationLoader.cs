@@ -28,8 +28,8 @@ public class LocalizationLoader : MonoBehaviour {
   /// <summary>Localizes the <see cref="PartModule"/> items.</summary>
   /// <remarks>
   /// <para>
-  /// The localizable items must be declared as non-static public members. The following items are
-  /// supported:
+  /// The localizable items must be declared as non-static public or protected members. The
+  /// following items are supported:
   /// <list type="bullet">
   /// <item>
   /// <see cref="KSPField"/>. This type may have multiple localization items: for <c>guiName</c>
@@ -98,7 +98,12 @@ public class LocalizationLoader : MonoBehaviour {
 
     // Go thru all the KSP events that may have the localizable content.
     foreach (var @event in module.Events) {
-      var info = module.GetType().GetMethod(@event.name);
+      var info = module.GetType().GetMethod(
+          @event.name,
+          BindingFlags.Public | BindingFlags.NonPublic,
+          null /* default binder */,
+          new Type[0],
+          null /* no modifiers */);
       if (info != null) {
         var locItems = (LocalizableItemAttribute[])info.GetCustomAttributes(
             typeof(LocalizableItemAttribute), false);
@@ -110,7 +115,12 @@ public class LocalizationLoader : MonoBehaviour {
 
     // Go thru all the KSP actions that may have the localizable content.
     foreach (var action in module.Actions) {
-      var info = module.GetType().GetMethod(action.name);
+      var info = module.GetType().GetMethod(
+          action.name,
+          BindingFlags.Public | BindingFlags.NonPublic,
+          null /* default binder */,
+          new[] {typeof(KSPActionParam)},
+          null /* no modifiers */);
       if (info != null) {
         var locItems = (LocalizableItemAttribute[])info.GetCustomAttributes(
             typeof(LocalizableItemAttribute), false);
