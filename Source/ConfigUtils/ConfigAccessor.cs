@@ -158,7 +158,7 @@ public static class ConfigAccessor {
   /// <summary>Copies the custom part fields from the prefab into the instance.</summary>
   /// <remarks>
   /// The consumer code must call this method from the <c>OnAwake</c> method to ensure the custom
-  /// fields are properly intialized.
+  /// fields are properly initialized.
   /// </remarks>
   /// <param name="tgtModule">The module to copy the fields into.</param>
   /// <seealso cref="ReadPartConfig"/>
@@ -197,7 +197,7 @@ public static class ConfigAccessor {
           tgtModule.GetType(), false /* needStatic */, true /* needInstance */,
           StdPersistentGroups.PartConfigLoadGroup);
       foreach (var field in fields) {
-        // We need a copy, so get it thru the persistance.
+        // We need a copy, so get it thru the persistence.
         var copyNode = new ConfigNode();
         field.WriteToConfig(copyNode, srcModule);
         field.ReadFromConfig(copyNode, tgtModule);

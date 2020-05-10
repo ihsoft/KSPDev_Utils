@@ -166,7 +166,7 @@ public static class EventChecker {
   /// The <c>EventSystem</c> logic is not in sync with <c>MonoBehaviour.Update</c>, so the event
   /// system handlers should provide the pressed <c>button</c> explicitly. The callers from the
   /// <c>Update</c> method don't need to do so since the right action button can be extracted from
-  /// <paramref name="ev"/>.
+  /// <c>Input</c>.
   /// </param>
   /// <param name="onlyCheckModifiers">
   /// Tells if only the modifiers in the event need to be checked. This is how a "precondition" can
