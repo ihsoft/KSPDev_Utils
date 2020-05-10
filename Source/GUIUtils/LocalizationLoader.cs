@@ -57,7 +57,7 @@ public class LocalizationLoader : MonoBehaviour {
   /// <include file="KSPAPI_HelpIndex.xml" path="//item[@name='T:KSPEvent']"/>
   /// <include file="KSPAPI_HelpIndex.xml" path="//item[@name='T:KSPAction']"/>
   public static void LoadItemsInModule(PartModule module) {
-    // This method may look ugly and over complicated, but it's because if it's performance
+    // This method may look ugly and over complicated, but it's because of it's performance
     // optimized. On a vessel with 100 parts this method can be called 1000 times. So every
     // millisecond matters.
     // Go thru all the KSP fields that may have the localizable content.
