@@ -1,3 +1,5 @@
+# 2.3 (pre-release):
+
 # 2.2 (April 22nd, 2020):
 * [Change] Better default behavior in  [`EventChecker.CheckClickEvent`](http://ihsoft.github.io/KSPDev_Utils/v2.2/html/M_KSPDev_InputUtils_EventChecker_CheckClickEvent.htm).
 
