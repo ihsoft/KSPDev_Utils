@@ -1,4 +1,4 @@
-# 2.3 (pre-release):
+# 2.3 (May 10th, 2020):
 * [Fix] Check for overloads when looking for events and actions in [`LocalizationLoader.LoadItemsInModule`](http://ihsoft.github.io/KSPDev_Utils/v2.3/html/M_KSPDev_GUIUtils_LocalizationLoader_LoadItemsInModule.htm).
 * [Change] Support non-public events and actions in [`LocalizationLoader.LoadItemsInModule`](http://ihsoft.github.io/KSPDev_Utils/v2.3/html/M_KSPDev_GUIUtils_LocalizationLoader_LoadItemsInModule.htm).
 
