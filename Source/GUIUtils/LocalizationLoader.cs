@@ -98,9 +98,10 @@ public class LocalizationLoader : MonoBehaviour {
 
     // Go thru all the KSP events that may have the localizable content.
     foreach (var @event in module.Events) {
+      //var info = module.GetType().GetMethod(@event.name);
       var info = module.GetType().GetMethod(
           @event.name,
-          BindingFlags.Public | BindingFlags.NonPublic,
+          BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
           null /* default binder */,
           new Type[0],
           null /* no modifiers */);
@@ -110,6 +111,8 @@ public class LocalizationLoader : MonoBehaviour {
         if (locItems.Length > 0 && !string.IsNullOrEmpty(locItems[0].tag)) {
           @event.guiName = locItems[0].GetLocalizedString();
         }
+      } else {
+        DebugEx.Error("Cannot find method for event: {0}.{1}", module.GetType(), @event.name);
       }
     }
 
@@ -117,7 +120,7 @@ public class LocalizationLoader : MonoBehaviour {
     foreach (var action in module.Actions) {
       var info = module.GetType().GetMethod(
           action.name,
-          BindingFlags.Public | BindingFlags.NonPublic,
+          BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
           null /* default binder */,
           new[] {typeof(KSPActionParam)},
           null /* no modifiers */);
@@ -127,6 +130,8 @@ public class LocalizationLoader : MonoBehaviour {
         if (locItems.Length > 0 && !string.IsNullOrEmpty(locItems[0].tag)) {
           action.guiName = locItems[0].GetLocalizedString();
         }
+      } else {
+        DebugEx.Error("Cannot find method for action: {0}.{1}", module.GetType(), action.name);
       }
     }
   }
