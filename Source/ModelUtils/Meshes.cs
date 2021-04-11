@@ -35,7 +35,9 @@ public static class Meshes {
   public static void RescaleTextureToLength(
       GameObject obj, float lengthUnit = 1.0f, Renderer renderer = null) {
     var newScale = lengthUnit / obj.transform.localScale.z;
-    var mr = renderer ?? obj.GetComponent<Renderer>();
+    var mr = renderer
+        ? renderer
+        : obj.GetComponent<Renderer>();
     mr.material.mainTextureScale = new Vector2(mr.material.mainTextureScale.x, newScale);
   }
 

@@ -1,5 +1,6 @@
 # 2.5 (pre-release):
 * [Change] Fix `SafeDestory` method name spelling: [`ModelUtils.Hierarchy`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Hierarchy_SafeDestroy.htm).
+* [Fix] Better handle `renderer` parameter in: [`Meshes.RescaleTextureToLength`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_RescaleTextureToLength.htm).
 
 # 2.4 (July 18th, 2020):
 * [Fix #9] Events and actions don't localize.
