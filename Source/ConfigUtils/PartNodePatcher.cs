@@ -33,7 +33,7 @@ public static class PartNodePatcher {
   /// <summary>Returns patch nodes for the tag.</summary>
   /// <remarks>
   /// This call can be very expensive. It's strongly encouraged to implement a lazy access approach
-  /// and cache the retunred values.
+  /// and cache the returned values.
   /// </remarks>
   /// <param name="modName">
   /// The mod to find the nodes for. If it's <c>null</c> or empty, then all the nodes will be
@@ -60,7 +60,7 @@ public static class PartNodePatcher {
   /// <summary>Tests if the patch can be applied to the part node.</summary>
   /// <param name="partNode">The part node to test against.</param>
   /// <param name="patch">The patch to test.</param>
-  /// <param name="loadContext">The conext in whcih the part is being patched.</param>
+  /// <param name="loadContext">The context in which the part is being patched.</param>
   /// <param name="quietMode">Tells if anything should be reported to the logs.</param>
   /// <returns><c>true</c> if the TEST rules of the patch have matched.</returns>
   public static bool TestPatch(ConfigNode partNode, ConfigNodePatch patch, LoadContext loadContext,
@@ -126,7 +126,7 @@ public static class PartNodePatcher {
   /// <summary>Applies the patch to the part node.</summary>
   /// <param name="partNode">The part node to patch.</param>
   /// <param name="patch">The patch to apply.</param>
-  /// <param name="loadContext">The conext in whcih the part is being patched.</param>
+  /// <param name="loadContext">The context in which the part is being patched.</param>
   public static void PatchNode(
       ConfigNode partNode, ConfigNodePatch patch, LoadContext loadContext) {
     ArgumentGuard.NotNull(partNode, "partNode", context: patch);
@@ -150,7 +150,7 @@ public static class PartNodePatcher {
         if (moduleRules.action == ConfigNodePatch.PatchAction.Add) {
           DebugEx.Warning("[UpgradePipeline][{0}] Action: ADD NODE", moduleContext);
           targetModuleNode = partNode.AddNode("MODULE");
-          targetModuleNode.SetValue("name", moduleRules.name, "*** added by comaptibility patch",
+          targetModuleNode.SetValue("name", moduleRules.name, "*** added by compatibility patch",
                                     createIfNotFound: true);
         } else {
           targetModuleNode = LookupModule(partNode, moduleRules.name);

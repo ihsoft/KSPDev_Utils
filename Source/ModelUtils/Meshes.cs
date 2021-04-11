@@ -20,13 +20,13 @@ public static class Meshes {
   /// long to be covered by one sample then the texture will be tiled to fill the space.
   /// <para>
   /// This methods assumes UV data on the primitive was created for a length of 1m. With this
-  /// assumption in mind the Z axis of the local scale is cosidered "the length".
+  /// assumption in mind the Z axis of the local scale is considered "the length".
   /// <see cref="CreatePrimitive"/> method guarantees that newly created primitive always has length
   /// of one meter but if primitive was created by other means its default length can be different.
   /// </para>
   /// </remarks>
   /// <param name="obj">Game object to adjust material on. Z axis scale gives the length.</param>
-  /// <param name = "lengthUnit">Length to be completly covered by one sample of the texture.
+  /// <param name = "lengthUnit">Length to be completely covered by one sample of the texture.
   /// </param>
   /// <param name="renderer">Specific renderer to adjust texture in. If <c>null</c> then first
   /// renderer on the object will be updated. Note, that getting renderer from the object is an
