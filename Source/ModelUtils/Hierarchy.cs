@@ -315,14 +315,14 @@ public static class Hierarchy {
   /// method.
   /// </remarks>
   /// <param name="obj">The object to destroy. Can be <c>null</c>.</param>
-  public static void SafeDestory(Transform obj) {
+  public static void SafeDestroy(Transform obj) {
     if (obj != null) {
-      SafeDestory(obj.gameObject);
+      SafeDestroy(obj.gameObject);
     }
   }
 
-  /// <inheritdoc cref="SafeDestory(Transform)"/>
-  public static void SafeDestory(GameObject obj) {
+  /// <inheritdoc cref="SafeDestroy(Transform)"/>
+  public static void SafeDestroy(GameObject obj) {
     if (obj != null) {
       obj.transform.SetParent(null, worldPositionStays: false);
       obj.name = "$disposed";
@@ -331,10 +331,10 @@ public static class Hierarchy {
     }
   }
 
-  /// <inheritdoc cref="SafeDestory(Transform)"/>
-  public static void SafeDestory(Component obj) {
+  /// <inheritdoc cref="SafeDestroy(Transform)"/>
+  public static void SafeDestroy(Component obj) {
     if (obj != null) {
-      SafeDestory(obj.gameObject);
+      SafeDestroy(obj.gameObject);
     }
   }
 
