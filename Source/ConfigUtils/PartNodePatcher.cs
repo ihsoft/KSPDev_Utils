@@ -278,23 +278,24 @@ public static class PartNodePatcher {
   /// <param name="node">The part's config node.</param>
   /// <param name="loadContext">The loading context that tells how to extract the values.</param>
   /// <returns>
-  /// The array of two values, where first value is the name, and the second value is ID.
+  /// The array of two values, where first value is the name, and the second value is ID. The values that cannot be
+  /// recovered will be <c>null</c>.
   /// </returns>
   static string[] GetPartId(ConfigNode node, LoadContext loadContext) {
-    string partName;
-    string partId;
+    string partName = null;
+    string partId = null;
     if (loadContext == LoadContext.SFS) {
       partName = node.GetValue("name");
       partId = node.GetValue("cid");
-      Preconditions.NotNullOrEmpty(partName, message: "part name", context: node);
-      Preconditions.NotNullOrEmpty(partId, message: "part cid", context: node);
     } else {
-      var carftPartName = node.GetValue("part");
-      Preconditions.NotNullOrEmpty(carftPartName, message: "craftPartName", context: node);
-      var pair = carftPartName.Split(new[] {'_'}, 2);
-      Preconditions.HasSize(pair, 2, message: "craftPartName pair", context: node);
-      partName = pair[0];
-      partId = pair[1];
+      var craftPartName = node.GetValue("part");
+      if (craftPartName != null) {
+        var pair = craftPartName.Split(new[] {'_'}, 2);
+        if (pair.Length == 2) {
+          partName = pair[0];
+          partId = pair[1];
+        }
+      }
     }
     return new[] {partName, partId};
   }
