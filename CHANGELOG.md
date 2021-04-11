@@ -1,3 +1,5 @@
+# 2.5 (pre-release):
+
 # 2.4 (July 18th, 2020):
 * [Fix #9] Events and actions don't localize.
 
