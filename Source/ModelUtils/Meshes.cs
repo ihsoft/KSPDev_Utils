@@ -2,8 +2,6 @@
 // Author: igor.zavoychinskiy@gmail.com
 // This software is distributed under Public domain license.
 
-using System;
-using System.Linq;
 using UnityEngine;
 
 namespace KSPDev.ModelUtils {
@@ -86,11 +84,12 @@ public static class Meshes {
       float diameter, float length, Material material, Transform parent,
       Colliders.PrimitiveCollider colliderType = Colliders.PrimitiveCollider.None) {
     // Default length scale is 2.0.
-    var obj = Meshes.CreatePrimitive(PrimitiveType.Cylinder,
-                                     new Vector3(diameter, diameter, length / 2),
-                                     material, parent: parent);
-    Colliders.AdjustCollider(obj, new Vector3(diameter, diameter, length),
-                             colliderType, shapeType: PrimitiveType.Cylinder);
+    var obj = CreatePrimitive(
+        PrimitiveType.Cylinder, new Vector3(diameter, diameter, length / 2),
+        material, parent: parent);
+    Colliders.AdjustCollider(
+        obj, new Vector3(diameter, diameter, length),
+        colliderType, shapeType: PrimitiveType.Cylinder);
     return obj;
   }
 
@@ -99,7 +98,7 @@ public static class Meshes {
   /// <param name="height">Y-axis of the box.</param>
   /// <param name="length">Z-axis of the box.</param>
   /// <param name="material">Material for the primitive.</param>
-  /// <param name="parent">Parent transfrom to atatch primitive to.</param>
+  /// <param name="parent">Parent transform to attach primitive to.</param>
   /// <param name="colliderType">Type of the collider to create on the primitive.</param>
   /// <returns>Sphere game object.</returns>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
@@ -118,7 +117,7 @@ public static class Meshes {
   /// <summary>Creates an ideal sphere.</summary>
   /// <param name="diameter">Diameter of the sphere.</param>
   /// <param name="material">Material for the primitive.</param>
-  /// <param name="parent">Parent transfrom to atatch primitive to.</param>
+  /// <param name="parent">Parent transform to attach primitive to.</param>
   /// <param name="colliderType">Type of the collider to create on the primitive.</param>
   /// <returns>Sphere game object.</returns>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
@@ -168,19 +167,19 @@ public static class Meshes {
     return primitive;
   }
 
-  /// <summary>Translates meshes's verticies.</summary>
+  /// <summary>Translates meshes' vertices.</summary>
   /// <remarks>
-  /// This is different from setting postion, rotation and scale to the transform. This method
-  /// <i>actually</i> changes vetricies in the mesh. It's not performance effective, so avoid doing
-  /// it frequiently.
+  /// This is different from setting position, rotation and scale to the transform. This method
+  /// <i>actually</i> changes vetrices in the mesh. It's not performance effective, so avoid doing
+  /// it frequently.
   /// </remarks>
   /// <param name="model">Model object to change the mesh in.</param>
   /// <param name="offset">
-  /// Offset for the verticies. If not specified then the offset is zero. The offset is added
+  /// Offset for the vertices. If not specified then the offset is zero. The offset is added
   /// <i>after</i> the scale and the rotation have been applied.  
   /// </param>
   /// <param name="rotation">
-  /// Rotation for the verticies. If not set then no rotation is added.
+  /// Rotation for the vertices. If not set then no rotation is added.
   /// </param>
   /// <param name="scale">
   /// Scale for the vertex positions. If not specified then the scale is not affected.
