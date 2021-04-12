@@ -75,7 +75,7 @@ public static class Meshes {
   /// <param name="diameter">XY of the cylinder.</param>
   /// <param name="length">Z-axis of the cylinder.</param>
   /// <param name="material">Material for the primitive.</param>
-  /// <param name="parent">Parent transfrom to atatch primitive to.</param>
+  /// <param name="parent">Parent transform to attach primitive to.</param>
   /// <param name="colliderType">Type of the collider to create on the primitive.</param>
   /// <returns>Sphere game object.</returns>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
@@ -172,7 +172,7 @@ public static class Meshes {
   /// <summary>Translates meshes' vertices.</summary>
   /// <remarks>
   /// This is different from setting position, rotation and scale to the transform. This method
-  /// <i>actually</i> changes vetrices in the mesh. It's not performance effective, so avoid doing
+  /// <i>actually</i> changes vertices in the mesh. It's not performance effective, so avoid doing
   /// it frequently.
   /// </remarks>
   /// <param name="model">Model object to change the mesh in.</param>

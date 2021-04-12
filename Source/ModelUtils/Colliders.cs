@@ -38,7 +38,7 @@ public static class Colliders {
   /// <para>
   /// Note, that radius of the sphere and the capsule colliders is the same on both X and Y axis.
   /// If the combined boundary box has any of the dimensions significantly different then it makes
-  /// sense to choose a different collider type. Or break down the hirearchy into more colliders.
+  /// sense to choose a different collider type. Or break down the hierarchy into more colliders.
   /// </para>
   /// </remarks>
   /// <param name="parent">Parent object.</param>
