@@ -178,6 +178,20 @@ public abstract class AbstractPartModule : PartModule,
     eventData.Add(listener);
     unregisterListenerActions.Add(() => eventData.Remove(listener));
   }
+  /// <summary>Registers a game event listener and cleans it up on module destruction.</summary>
+  /// <remarks>
+  /// Instead of overriding both <c>OnAwake</c> and <c>OnDestroy</c> methods to register/unregister
+  /// KSP event listeners, do register via this method. The unregistration will be done
+  /// automatically when the component dies.
+  /// </remarks>
+  /// <param name="eventData">The game event to register for.</param>
+  /// <param name="listener">The event listener.</param>
+  /// <typeparam name="T">The first type in <c>EventData</c> of the related event.</typeparam>
+  /// <typeparam name="K">The second type in <c>EventData</c> of the related event.</typeparam>
+  protected void RegisterGameEventListener<T, K>(EventData<T, K> eventData, EventData<T, K>.OnEvent listener) {
+    eventData.Add(listener);
+    unregisterListenerActions.Add((Action) (() => eventData.Remove(listener)));
+  }
   #endregion
 }
 
