@@ -27,27 +27,19 @@ namespace KSPDev.GUIUtils.TypeFormatters {
 /// <example><code source="Examples/GUIUtils/TypeFormatters/DistanceType-Examples.cs" region="DistanceTypeDemo2_FormatWithScale"/></example>
 /// <example><code source="Examples/GUIUtils/TypeFormatters/DistanceType-Examples.cs" region="DistanceTypeDemo2_FormatFixed"/></example>
 public sealed class DistanceType {
-  /// <summary>Localization tag for the "centimeter" units.</summary>
-  public const string CentiMeterLocTag = "#autoLOC_7003266";
-
   /// <summary>Localization tag for the "meter" units.</summary>
   public const string MeterLocTag = "#autoLOC_7001411";
 
   /// <summary>Localization tag for the "kilometer" units.</summary>
   public const string KilometerLocTag = "#autoLOC_7001405";
   
-  /// <summary>Localized suffix for the "centimeter" units. Scale x0.01</summary>
-  public static readonly Message Centimeter = new Message(
-      CentiMeterLocTag, defaultTemplate: " cm",
-      description: "Centimeter unit for a distance value");
-
   /// <summary>Localized suffix for the "meter" units. Scale x1.</summary>
-  public static readonly Message Meter = new Message(
+  public static readonly Message meter = new Message(
       MeterLocTag, defaultTemplate: " m",
       description: "Meter unit for a distance value");
 
-  /// <summary>Localized suffix for the "kilometer" units. Scale x1000</summary>
-  public static readonly Message Kilometer = new Message(
+  /// <summary>Localized suffix for the "kilometer" untis. Scale x1000</summary>
+  public static readonly Message kilometer = new Message(
       KilometerLocTag, defaultTemplate: " km",
       description: "Kilometer unit for a distance value");
 
@@ -102,7 +94,7 @@ public sealed class DistanceType {
   /// The specific numeric number format to use. If this parameter is specified, then the method
   /// doesn't try to guess the right scale. Instead, it uses either the provided
   /// <paramref name="scale"/>, or <c>1.0</c> if nothing is provided. If the format is not
-  /// specified, then it's chosen basing on the scale.
+  /// specified, then it's choosen basing on the scale.
   /// </param>
   /// <returns>A formatted and localized string</returns>
   /// <example><code source="Examples/GUIUtils/TypeFormatters/DistanceType-Examples.cs" region="DistanceTypeDemo2_FormatDefault"/></example>
@@ -111,27 +103,25 @@ public sealed class DistanceType {
   public static string Format(double value, double? scale = null, string format = null) {
     // Detect the scale, and scale the value.
     string units;
+    double scaledValue;
     if (format != null && !scale.HasValue) {
-      scale = 1.0;  // Default scale.
+      scale = 1.0;  // No scale detection.
     }
     var testValue = Math.Abs(value);
     if (!scale.HasValue) {
       // Auto detect the best scale.
       if (testValue > 1000) {
         scale = 1000;
-      } else if (testValue > 1.0) {
-        scale = 1.0;
       } else {
-        scale = 0.01;
+        scale = 1.0;
       }
     }
-    var scaledValue = value / scale.Value;
-    if (scale < 1.0) {
-      units = Centimeter;
-    } else if (scale < 1000.0) {
-      units = Meter;
+    if (scale <= 1.0) {
+      scaledValue = value;
+      units = meter;
     } else {
-      units = Kilometer;
+      scaledValue = value / 1000;
+      units = kilometer;
     }
     if (format != null) {
       return scaledValue.ToString(format) + units;
