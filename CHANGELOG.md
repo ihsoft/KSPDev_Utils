@@ -3,6 +3,7 @@
 * [Change] Fix `SafeDestory` method name spelling: [`Hierarchy.SafeDestroy`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Hierarchy_SafeDestroy.htm).
 * [Change] Dont fail if id/name of the part is not found in: [`PartNodePatcher.GetPartId`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ConfigUtils_PartNodePatcher_GetPartId.htm).
 * [Enhancement] Add `RegisterGameEventListener` version for two arguments `EventData`: [`PartUtils.AbstractPartModule`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.5/html/T_KSPDev_PartUtils_AbstractPartModule.htm).
+* [Enhancement] Add new method: [`Meshes.CreatePrimitiveWithCollider`](http://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_CreatePrimitiveWithCollider.htm).
 
 # 2.4 (July 18th, 2020):
 * [Fix #9] Events and actions don't localize.

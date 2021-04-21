@@ -86,7 +86,7 @@ public static class Meshes {
       float diameter, float length, Material material, Transform parent,
       Colliders.PrimitiveCollider colliderType = Colliders.PrimitiveCollider.None) {
     // Default length scale is 2.0.
-    var obj = CreatePrimitive(
+    var obj = CreatePrimitiveWithCollider(
         PrimitiveType.Cylinder, new Vector3(diameter, diameter, length / 2),
         material, parent: parent);
     Colliders.AdjustCollider(
@@ -111,7 +111,7 @@ public static class Meshes {
       float width, float height, float length, Material material, Transform parent,
       Colliders.PrimitiveCollider colliderType = Colliders.PrimitiveCollider.None) {
     var scale = new Vector3(width, height, length);
-    var obj = CreatePrimitive(PrimitiveType.Cube, scale, material, parent: parent);
+    var obj = CreatePrimitiveWithCollider(PrimitiveType.Cube, scale, material, parent: parent);
     Colliders.AdjustCollider(obj, scale, colliderType, shapeType: PrimitiveType.Cube);
     return obj;
   }
@@ -130,12 +130,12 @@ public static class Meshes {
       float diameter, Material material, Transform parent,
       Colliders.PrimitiveCollider colliderType = Colliders.PrimitiveCollider.None) {
     var scale =  new Vector3(diameter, diameter, diameter);
-    var obj = CreatePrimitive(PrimitiveType.Sphere, scale, material, parent: parent);
+    var obj = CreatePrimitiveWithCollider(PrimitiveType.Sphere, scale, material, parent: parent);
     Colliders.AdjustCollider(obj, scale, colliderType, shapeType: PrimitiveType.Sphere);
     return obj;
   }
 
-  /// <summary>Creates a primitive mesh and attaches it to the model.</summary>
+  /// <summary>Creates a primitive mesh without colliders and attaches it to the model.</summary>
   /// <remarks>
   /// For <see cref="PrimitiveType.Cylinder"/> Z and Y axis will be swapped to make Z "the length".
   /// <para>
@@ -157,8 +157,31 @@ public static class Meshes {
   /// </seealso>
   public static GameObject CreatePrimitive(
       PrimitiveType type, Vector3 meshScale, Material material, Transform parent) {
+    var primitive = CreatePrimitiveWithCollider(type, meshScale, material, parent);
+    Colliders.SafeDestroy(primitive.GetComponent<Collider>());
+    return primitive;
+  }
+
+  /// <summary>Creates a primitive and attaches it to the model.</summary>
+  /// <remarks>
+  /// For <see cref="PrimitiveType.Cylinder"/> Z and Y axis will be swapped to make Z "the length". The primitive will
+  /// have a collider of the appropriate type.
+  /// </remarks>
+  /// <param name="type">The type of the primitive.</param>
+  /// <param name="meshScale">
+  /// The scale to bring all the mesh vertices to. The scale is applied on the mesh, i.e. it's
+  /// applied on the vertices, not the transform.
+  /// </param>
+  /// <param name="material">The material to use for the primitive.</param>
+  /// <param name="parent">The parent transform to attach the primitive to.</param>
+  /// <returns>The game object of the new primitive.</returns>
+  /// <seealso href="https://docs.unity3d.com/ScriptReference/GameObject.CreatePrimitive.html">
+  /// Unity3D: GameObject.CreatePrimitive</seealso>
+  /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
+  /// </seealso>
+  public static GameObject CreatePrimitiveWithCollider(
+      PrimitiveType type, Vector3 meshScale, Material material, Transform parent) {
     var primitive = GameObject.CreatePrimitive(type);
-    UnityEngine.Object.DestroyImmediate(primitive.GetComponent<Collider>());
     Hierarchy.MoveToParent(primitive.transform, parent);
     primitive.GetComponent<Renderer>().material = material;
 
