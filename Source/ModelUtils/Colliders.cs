@@ -53,14 +53,15 @@ public static class Colliders {
   /// Then, the collider either wraps this box entirely, or sits inside it entirely. If this
   /// parameter is <c>true</c> then the collider will cover the boundary box.
   /// </param>
+  /// <returns>The collider created or <c>null</c>.</returns>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/GameObject.html">
   /// Unity 3D: GameObject</seealso>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/PrimitiveType.html">
   /// Unity 3D: PrimitiveType</seealso>
-  public static void SetSimpleCollider(GameObject parent, PrimitiveType type,
-                                       bool inscribeBoundaryIntoCollider = true) {
+  public static Collider SetSimpleCollider(GameObject parent, PrimitiveType type,
+                                           bool inscribeBoundaryIntoCollider = true) {
     parent.GetComponentsInChildren<Collider>().ToList()
-        .ForEach(UnityEngine.Object.Destroy);
+        .ForEach(SafeDestroy);
 
     // Get bounds of all renderers in the parent. The bounds come in world's coordinates, so
     // translate them into parent's local space before encapsulating. 
@@ -75,27 +76,32 @@ public static class Colliders {
 
     // Add collider basing on the requested type.
     if (type == PrimitiveType.Cube) {
-      var collider = parent.AddComponent<BoxCollider>();
+      var collider = GetColliderOfType<BoxCollider>(parent);
       collider.center = combinedBounds.center;
       collider.size = combinedBounds.size;
-    } else if (type == PrimitiveType.Capsule || type == PrimitiveType.Cylinder) {
+      return collider;
+    }
+    if (type == PrimitiveType.Capsule || type == PrimitiveType.Cylinder) {
       // TODO(ihsoft): Choose direction so what the volume is minimized.
-      var collider = parent.AddComponent<CapsuleCollider>();
+      var collider = GetColliderOfType<CapsuleCollider>(parent);
       collider.center = combinedBounds.center;
       collider.direction = 2;  // Z axis
       collider.height = combinedBounds.size.z;
       collider.radius = inscribeBoundaryIntoCollider
           ? Mathf.Max(combinedBounds.extents.x, combinedBounds.extents.y)
           : Mathf.Min(combinedBounds.extents.x, combinedBounds.extents.y);
-    } else if (type == PrimitiveType.Sphere) {
-      var collider = parent.AddComponent<SphereCollider>();
+      return collider;
+    }
+    if (type == PrimitiveType.Sphere) {
+      var collider = GetColliderOfType<SphereCollider>(parent);
       collider.center = combinedBounds.center;
       collider.radius = inscribeBoundaryIntoCollider
           ? Mathf.Max(combinedBounds.extents.x, combinedBounds.extents.y)
           : Mathf.Min(combinedBounds.extents.x, combinedBounds.extents.y);
-    } else {
-      DebugEx.Error("Unsupported collider: {0}. Ignoring", type);
+      return collider;
     }
+    DebugEx.Error("Unsupported collider: {0}. Ignoring", type);
+    return null;
   }
 
   /// <summary>Sets the specified values to colliders of all the objects in the part's model.
@@ -140,38 +146,78 @@ public static class Colliders {
   /// <see cref="PrimitiveType.Cylinder"/>, <see cref="PrimitiveType.Sphere"/>, and
   /// <see cref="PrimitiveType.Cube"/> are supported.
   /// </param>
-  /// FIXME: it's not working with asymetric meshes
-  /// FIXME: use GameOvbject.GetRedererBounds?
-  public static void AdjustCollider(
+  /// FIXME: it's not working with asymmetric meshes
+  /// FIXME: use GameObject.GetRendererBounds?
+  public static Collider AdjustCollider(
       GameObject primitive, Vector3 meshSize, PrimitiveCollider colliderType,
       PrimitiveType? shapeType = null) {
-    UnityEngine.Object.Destroy(primitive.GetComponent<Collider>());
-    if (colliderType == PrimitiveCollider.Mesh) {
-      var collider = primitive.AddComponent<MeshCollider>();
-      collider.convex = true;
-    } else if (colliderType == PrimitiveCollider.Shape) {
-      // FIXME: non tirival scales does't fit simple colliders. Fix it.
-      if (shapeType.Value == PrimitiveType.Cylinder) {
-        // TODO(ihsoft): Choose direction so what the volume is minimized.
-        var collider = primitive.AddComponent<CapsuleCollider>();
-        collider.direction = 2;  // Z axis
-        collider.height = meshSize.z;  // It's now length.
-        collider.radius = meshSize.x / 2.0f;
-      } else if (shapeType.Value == PrimitiveType.Sphere) {
-        var collider = primitive.AddComponent<SphereCollider>();
-        collider.radius = meshSize.x / 2.0f;
-      } else if (shapeType.Value == PrimitiveType.Cube) {
-        var collider = primitive.AddComponent<BoxCollider>();
-        collider.size = meshSize;
-      } else {
-        DebugEx.Warning("Unknown primitive type {0}. Droppping collider.", shapeType.Value);
-      }
-    } else if (colliderType == PrimitiveCollider.Bounds) {
-      SetSimpleCollider(primitive, PrimitiveType.Cube, inscribeBoundaryIntoCollider: true);
-    } else if (colliderType != PrimitiveCollider.None) {
-      DebugEx.Warning(
-          "Unsupported collider type {0}. Droppping whatever collider part had", colliderType);
+    if (colliderType == PrimitiveCollider.None) {
+      SafeDestroy(GetActiveCollider<Collider>(primitive));
+      return null;
     }
+    if (colliderType == PrimitiveCollider.Mesh) {
+      var collider = GetColliderOfType<MeshCollider>(primitive);
+      collider.convex = true;
+      return collider;
+    }
+    if (colliderType == PrimitiveCollider.Shape) {
+      switch (shapeType) {
+        // FIXME: non trivial scales doesn't fit simple colliders. Fix it.
+        case null:
+          SafeDestroy(GetActiveCollider<Collider>(primitive));
+          DebugEx.Warning("Primitive type not set. Dropping collider.");
+          return null;
+        case PrimitiveType.Cylinder: {
+          // TODO(ihsoft): Choose direction so what the volume is minimized.
+          var collider = GetColliderOfType<CapsuleCollider>(primitive);
+          collider.direction = 2;  // Z axis
+          collider.height = meshSize.z;  // It's now length.
+          collider.radius = meshSize.x / 2.0f;
+          return collider;
+        }
+        case PrimitiveType.Sphere: {
+          var collider = GetColliderOfType<SphereCollider>(primitive);
+          collider.radius = meshSize.x / 2.0f;
+          return collider;
+        }
+        case PrimitiveType.Cube: {
+          var collider = GetColliderOfType<BoxCollider>(primitive);
+          collider.size = meshSize;
+          return collider;
+        }
+        default:
+          SafeDestroy(GetActiveCollider<Collider>(primitive));
+          DebugEx.Warning("Unknown primitive type {0}. Dropping collider.", shapeType.Value);
+          return null;
+      }
+    }
+    if (colliderType == PrimitiveCollider.Bounds) {
+      return SetSimpleCollider(primitive, PrimitiveType.Cube, inscribeBoundaryIntoCollider: true);
+    }
+    SafeDestroy(GetActiveCollider<Collider>(primitive));
+    DebugEx.Warning(
+        "Unsupported collider type {0}. Dropping whatever collider part had", colliderType);
+    return null;
+  }
+
+  /// <summary>Returns a collider of the requested type or creates one if needed.</summary>
+  /// <remarks>
+  /// This method returns the exact collider component if it exist in the <paramref name="obj"/>. However, if the object
+  /// doesn't have a collider, then a new one will be created. If the game object has a collider but its type is
+  /// incompatible, it will be deleted and a new compatible collider will be created. Note that the old collider, if
+  /// present, will be removed using the <see cref="Colliders.SafeDestroy"/> method.
+  /// </remarks>
+  /// <param name="obj"></param>
+  /// <typeparam name="T"></typeparam>
+  /// <returns>The found or created collider.</returns>
+  public static T GetColliderOfType<T>(GameObject obj) where T: Collider {
+    var currentCollider = GetActiveCollider<Collider>(obj);
+    var collider = currentCollider as T;
+    if (collider == null) {
+      SafeDestroy(currentCollider);
+      collider = obj.AddComponent<T>();
+    }
+    return collider;
   }
 
   /// <summary>Disables/enables all the colliders between the objects.</summary>
@@ -269,7 +315,7 @@ public static class Colliders {
   /// <param name="part">The part to check for.</param>
   /// <param name="defaultValue">The value to return if no suitable colliders found.</param>
   /// <param name="filterFn">
-  /// The filter function to apply to every collider. Return <c>false</c> from it to sklip the
+  /// The filter function to apply to every collider. Return <c>false</c> from it to skip the
   /// collider in the following checks.
   /// </param>
   /// <returns>
@@ -279,6 +325,39 @@ public static class Colliders {
       Vector3 point, Part part,
       float defaultValue = float.PositiveInfinity, Func<Collider, bool> filterFn = null) {
     return GetSqrDistanceToPart(point, part) ?? defaultValue;
+  }
+
+  /// <summary>Destroys the collider in a way which is safe for physical callback methods.</summary>
+  /// <remarks>
+  /// Uses <c>DestroyImmediate</c> to drop the collider when possible. If called during the <c>FixedUpdate</c> cycle,
+  /// the <c>Destroy</c> is used, and the collider gets explicitly disabled. In the latter case, the collider won't
+  /// actually be deleted after the call (it will on the next frame update), but it won't be executing any behavior and
+  /// another collider of the same type could be be added. The caller must always assume that the collider is not
+  /// immediately removed from the <c>GameObject</c>. Thus, the <c>Collider.enabled</c> property must be checked when
+  /// fetching the active collider.
+  /// </remarks>
+  /// <param name="obj">The object to destroy. Can be <c>null</c>.</param>
+  public static void SafeDestroy(Collider obj) {
+    if (obj != null) {
+      if (Time.inFixedTimeStep) {
+        UnityEngine.Object.Destroy(obj);
+        obj.enabled = false;
+      } else {
+        UnityEngine.Object.DestroyImmediate(obj);
+      }
+    }
+  }
+
+  /// <summary>Returns the first active collider of the requested type.</summary>
+  /// <summary>
+  /// Use this method in conjunction with <see cref="SafeDestroy"/> to properly handle colliders operations within one
+  /// frame.
+  /// </summary>
+  /// <param name="obj">The object to get a collider from.</param>
+  /// <typeparam name="T">The type of the collider to request.</typeparam>
+  /// <returns>The collider or <c>null</c> if no active colliders of that type were found.</returns>
+  public static T GetActiveCollider<T>(GameObject obj) where T : Collider {
+    return obj.GetComponents<T>().FirstOrDefault(c => c.enabled);
   }
 }
 
