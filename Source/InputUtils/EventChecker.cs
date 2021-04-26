@@ -12,7 +12,7 @@ namespace KSPDev.InputUtils {
 /// <remarks>Modifiers can be joined to get a combination. E.g. <c>AnyAlt | AnyShift</c>.</remarks>
 /// <seealso cref="EventChecker.IsModifierCombinationPressed"/>
 [FlagsAttribute]
-[ObsoleteAttribute("This class will soon be depreacted. Use CheckAnySymmetricalModifiers().")]
+[ObsoleteAttribute("This class will soon be deprecated. Use CheckAnySymmetricalModifiers().")]
 public enum KeyModifiers {
   /// <summary>No modifier keys are pressed.</summary>
   /// <remarks>This value only makes sense when used alone. Combining it with any other value
@@ -161,16 +161,29 @@ public static class EventChecker {
   /// state modifiers (CAPS, NUM, SCROLL, etc.).
   /// </remarks>
   /// <param name="ev">The event to match for.</param>
+  /// <returns>
+  /// <c>true</c> if the requested combination has matched the current frame state.
+  /// </returns>
+  /// <seealso cref="CheckAnySymmetricalModifiers"/>
+  /// <seealso href="https://docs.unity3d.com/ScriptReference/Input.GetKeyDown.html">
+  /// Input.GetKeyDown
+  /// </seealso>
+  public static bool CheckClickEvent(Event ev) {
+    return CheckAnySymmetricalModifiers(ev) && Input.GetKeyDown(ev.keyCode);
+  }
+
+  /// <summary>Checks if the mouse click event has happen during the frame.</summary>
+  /// <remarks>
+  /// This check treats "left" and "right" modifiers equally. And it doesn't consider any of the
+  /// state modifiers (CAPS, NUM, SCROLL, etc.).
+  /// </remarks>
+  /// <param name="ev">The event to match for.</param>
   /// <param name="button">
   /// The mouse button from the Unity <c>EventSystem</c> which is known to be pressed in this frame.
   /// The <c>EventSystem</c> logic is not in sync with <c>MonoBehaviour.Update</c>, so the event
   /// system handlers should provide the pressed <c>button</c> explicitly. The callers from the
   /// <c>Update</c> method don't need to do so since the right action button can be extracted from
   /// <c>Input</c>.
-  /// </param>
-  /// <param name="onlyCheckModifiers">
-  /// Tells if only the modifiers in the event need to be checked. This is how a "precondition" can
-  /// be verified when the GUI is interactive and depends on the pressed keys.
   /// </param>
   /// <returns>
   /// <c>true</c> if the requested combination has matched the current frame state.
@@ -179,16 +192,8 @@ public static class EventChecker {
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Input.GetKeyDown.html">
   /// Input.GetKeyDown
   /// </seealso>
-  public static bool CheckClickEvent(
-      Event ev, PointerEventData.InputButton? button = null, bool onlyCheckModifiers = false) {
-    var modifiersCheck = CheckAnySymmetricalModifiers(ev);
-    if (!modifiersCheck || onlyCheckModifiers) {
-      return modifiersCheck;
-    }
-    if (button.HasValue) {
-      return button == GetInputButtonFromEvent(ev);
-    }
-    return Input.GetKeyDown(ev.keyCode);
+  public static bool CheckClickEvent(Event ev, PointerEventData.InputButton button) {
+    return CheckAnySymmetricalModifiers(ev) && button == GetInputButtonFromEvent(ev);
   }
 }
 
