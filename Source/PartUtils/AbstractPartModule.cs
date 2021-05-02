@@ -61,14 +61,14 @@ public abstract class AbstractPartModule : PartModule,
   #endregion
 
   #region PartModule overrides
-  /// <inheritdoc/>
+  /// <inheritdoc cref="IPartModule.OnAwake" />
   public override void OnAwake() {
     ConfigAccessor.CopyPartConfigFromPrefab(this);
     base.OnAwake();
     LocalizeModule();
   }
 
-  /// <inheritdoc/>
+  /// <inheritdoc cref="IPartModule.OnLoad" />
   public override void OnLoad(ConfigNode node) {
     ConfigAccessor.ReadPartConfig(this, cfgNode: node);
     ConfigAccessor.ReadFieldsFromNode(node, GetType(), this, StdPersistentGroups.PartPersistant);
@@ -79,11 +79,11 @@ public abstract class AbstractPartModule : PartModule,
     }
   }
 
-  /// <inheritdoc/>
+  /// <inheritdoc cref="IPartModule.OnStart" />
   public override void OnStart(StartState state) {
     base.OnStart(state);
-    if (!moduleSettingsLoaded) {
-      moduleSettingsLoaded = true;
+    if (!_moduleSettingsLoaded) {
+      _moduleSettingsLoaded = true;
       if (!HighLogic.LoadedSceneIsEditor) {
         HostedDebugLog.Fine(this, "Late load of module settings. Save file inconsistency?");
       }
@@ -91,7 +91,7 @@ public abstract class AbstractPartModule : PartModule,
     }
   }
 
-  /// <inheritdoc/>
+  /// <inheritdoc cref="IPartModule.OnSave" />
   public override void OnSave(ConfigNode node) {
     base.OnSave(node);
     ConfigAccessor.WriteFieldsIntoNode(node, GetType(), this, StdPersistentGroups.PartPersistant);
@@ -101,7 +101,7 @@ public abstract class AbstractPartModule : PartModule,
   #region IsDestroyable implementation
   /// <inheritdoc/>
   public virtual void OnDestroy() {
-    unregisterListenerActions.ForEach(x => x.Invoke());
+    _unregisterListenerActions.ForEach(x => x.Invoke());
   }
   #endregion
 
@@ -127,7 +127,7 @@ public abstract class AbstractPartModule : PartModule,
   /// </remarks>
   /// <param name="msg">The message to show.</param>
   /// <param name="isError">
-  /// Tells if the messages is an error condition report. Such messages will be highlighed.
+  /// Tells if the messages is an error condition report. Such messages will be highlighted.
   /// </param>
   protected void ShowStatusMessage(string msg, bool isError = false) {
     if (FlightGlobals.ActiveVessel != vessel) {
@@ -157,7 +157,7 @@ public abstract class AbstractPartModule : PartModule,
   /// </para>
   /// <para>
   /// This method can be called multiple times in the part's life time, so keep this method
-  /// ideponent. Repetative calls to this method should not break the part's logic.
+  /// idempotent. The repetitive calls to this method should not break the part's logic.
   /// </para>
   /// </remarks>
   protected virtual void InitModuleSettings() {
@@ -167,7 +167,7 @@ public abstract class AbstractPartModule : PartModule,
   /// <summary>Registers a game event listener and cleans it up on module destruction.</summary>
   /// <remarks>
   /// Instead of overriding both <c>OnAwake</c> and <c>OnDestroy</c> methods to register/unregister
-  /// KSP event listeners, do register via this method. The unregistration will be done
+  /// KSP event listeners, do register via this method. The un-registration will be done
   /// automatically when the component dies.
   /// </remarks>
   /// <param name="eventData">The game event to register for.</param>
@@ -176,12 +176,13 @@ public abstract class AbstractPartModule : PartModule,
   protected void RegisterGameEventListener<T>(
       EventData<T> eventData, EventData<T>.OnEvent listener) {
     eventData.Add(listener);
-    unregisterListenerActions.Add(() => eventData.Remove(listener));
+    _unregisterListenerActions.Add(() => eventData.Remove(listener));
   }
+
   /// <summary>Registers a game event listener and cleans it up on module destruction.</summary>
   /// <remarks>
   /// Instead of overriding both <c>OnAwake</c> and <c>OnDestroy</c> methods to register/unregister
-  /// KSP event listeners, do register via this method. The unregistration will be done
+  /// KSP event listeners, do register via this method. The un-registration will be done
   /// automatically when the component dies.
   /// </remarks>
   /// <param name="eventData">The game event to register for.</param>
