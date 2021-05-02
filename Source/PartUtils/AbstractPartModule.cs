@@ -46,11 +46,11 @@ public abstract class AbstractPartModule : PartModule,
 
   #region Local fields
   /// <summary>Tells if <see cref="InitModuleSettings"/> was called on the part.</summary>
-  bool moduleSettingsLoaded;
+  bool _moduleSettingsLoaded;
 
   /// <summary>List of events to call to cleanup registered game event listeners.</summary>
   /// <remarks>They are called from the destroy method.</remarks>
-  readonly List<Action> unregisterListenerActions = new List<Action>();
+  readonly List<Action> _unregisterListenerActions = new List<Action>();
   #endregion
 
   #region IsLocalizableModule implementation
@@ -73,8 +73,8 @@ public abstract class AbstractPartModule : PartModule,
     ConfigAccessor.ReadPartConfig(this, cfgNode: node);
     ConfigAccessor.ReadFieldsFromNode(node, GetType(), this, StdPersistentGroups.PartPersistant);
     base.OnLoad(node);
-    if (!moduleSettingsLoaded) {
-      moduleSettingsLoaded = true;
+    if (!_moduleSettingsLoaded) {
+      _moduleSettingsLoaded = true;
       InitModuleSettings();
     }
   }
@@ -131,7 +131,7 @@ public abstract class AbstractPartModule : PartModule,
   /// </param>
   protected void ShowStatusMessage(string msg, bool isError = false) {
     if (FlightGlobals.ActiveVessel != vessel) {
-      msg = string.Format("[{0}]: {1}", vessel.vesselName, msg);
+      msg = $"[{vessel.vesselName}]: {msg}";
     }
     if (isError) {
       msg = ScreenMessaging.SetColorToRichText(msg, ScreenMessaging.ErrorColor);
@@ -191,7 +191,7 @@ public abstract class AbstractPartModule : PartModule,
   /// <typeparam name="K">The second type in <c>EventData</c> of the related event.</typeparam>
   protected void RegisterGameEventListener<T, K>(EventData<T, K> eventData, EventData<T, K>.OnEvent listener) {
     eventData.Add(listener);
-    unregisterListenerActions.Add((Action) (() => eventData.Remove(listener)));
+    _unregisterListenerActions.Add(() => eventData.Remove(listener));
   }
   #endregion
 }
