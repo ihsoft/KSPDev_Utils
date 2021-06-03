@@ -15,7 +15,7 @@
     </RootNamespace>
     <Name>KSP API</Name>
     <!-- SHFB properties -->
-    <FrameworkVersion>.NET Framework 3.5</FrameworkVersion>
+    <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
     <OutputPath>Help\KSP-API\</OutputPath>
     <HtmlHelpName>KSP_API</HtmlHelpName>
     <Language>en-US</Language>
