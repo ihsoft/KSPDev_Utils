@@ -73,6 +73,10 @@ public abstract class AbstractPartModule : PartModule,
     ConfigAccessor.ReadPartConfig(this, cfgNode: node);
     ConfigAccessor.ReadFieldsFromNode(node, GetType(), this, StdPersistentGroups.PartPersistant);
     base.OnLoad(node);
+    if (vessel == null && PartLoader.Instance.IsReady()) {
+      HostedDebugLog.Info(this, "EVA construction part loaded");
+      ResetEvaPartState();
+    }
     if (!_moduleSettingsLoaded) {
       _moduleSettingsLoaded = true;
       InitModuleSettings();
@@ -117,6 +121,16 @@ public abstract class AbstractPartModule : PartModule,
   /// </remarks>
   /// <seealso cref="InitModuleSettings"/>
   protected virtual void CheckSettingsConsistency() {
+  }
+
+  /// <summary>
+  /// Notifies if this module is being activated/used on a part that is a subject to an EVA construction mode action.
+  /// </summary>
+  /// <remarks>
+  /// In the construction mode the parts can get cloned for the GUI purposes. If the part has an internal state that
+  /// is not desirable to apply too all of its copies, then this state must be reset here.
+  /// </remarks>
+  protected virtual void ResetEvaPartState() {
   }
 
   /// <summary>Shows a UI messages with regard to the currently active vessel.</summary>

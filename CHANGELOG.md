@@ -7,6 +7,7 @@
 * [Enhancement] Add `RegisterGameEventListener` version for two arguments `EventData`: [`PartUtils.AbstractPartModule`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.5/html/M_KSPDev_PartUtils_AbstractPartModule_RegisterGameEventListener__2.htm).
 * [Enhancement] Add new method: [`Meshes.CreatePrimitiveWithCollider`](http://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_CreatePrimitiveWithCollider.htm).
 * [Enhancement] Add methods for better collidres control: [`Colliders.CreatePrimitiveWithCollider`](http://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_CreatePrimitiveWithCollider.htm).
+* [Enhancement] Add inheritable method to reset module state: [`AbstractPartModule.ResetEvaPartState`](http://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_PartUtils_AbstractPartModule_ResetEvaPartState.htm).
 
 # 2.4 (July 18th, 2020):
 * [Fix #9] Events and actions don't localize.
