@@ -18,9 +18,7 @@ Prerequisites:
   for the current game `.Net` version:
   - Note, that the older versions get eventually deprecated. If this is the case, choose the
     minumum version available.
-  - You can also check the `Binaries` folder for the appropriate packages.
-  - It's a good idea to commit the working versions of the developer packages into the `Binaries`
-    folder. Drop the older version(s) if you commit a newer one.
+  - Thecurrent compatible version is `ndp48-devpack-enu-4.5.1.exe`.
 
 Steps:
 
