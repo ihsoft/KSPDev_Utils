@@ -30,7 +30,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   /// exception in the strict mode.
   /// </para>
   /// <para>
-  /// The initial state is always <c>null</c>, whiсh means <i>STOPPED</i>. The caller must set the
+  /// The initial state is always <c>null</c>, which means <i>STOPPED</i>. The caller must set the
   /// initial state before starting using the machine. In spite of the other transitions, the
   /// initial state change is not restricted by the state transition constraints, regardless to the
   /// <see cref="isStrict"/> setting.
@@ -44,8 +44,8 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   /// <seealso cref="isStrict"/>
   /// <example><code source="Examples/ProcessingUtils/SimpleStateMachine-Examples.cs" region="SimpleStateMachineFree"/></example>
   public T? currentState {
-    get { return _currentState; }
-    set { SetState(value); }
+    get => _currentState;
+    set => SetState(value);
   }
   T? _currentState;
 
@@ -117,7 +117,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
 
   /// <summary>Defines a state and the allowed target states for it.</summary>
   /// <remarks>
-  /// In the strict mode it's required that every transition is declared excplicitly.
+  /// In the strict mode it's required that every transition is declared explicitly.
   /// </remarks>
   /// <param name="fromState">The source state.</param>
   /// <param name="toStates">The list of the states that are allowed as the targets.</param>
@@ -131,7 +131,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   }
 
   /// <summary>Clears the transitions for the source state if any.</summary>
-  /// <param name="fromState">The source state to clear the tarnsitions for.</param>
+  /// <param name="fromState">The source state to clear the transitions for.</param>
   /// <seealso cref="SetTransitionConstraint"/>
   public void ResetTransitionConstraint(T fromState) {
     CheckIsNotStarted();
@@ -161,9 +161,9 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   /// <i>new</i> state, to which the machine is going to switch. 
   /// </param>
   /// <param name="callOnInit">
-  /// Tells if this handler is allowed to be called when the state machine intitates from the
+  /// Tells if this handler is allowed to be called when the state machine initiates from the
   /// <c>null</c> state. This usually means the owning object is in process of loading its state.
-  /// Not all functionality can be availabe at this moment.
+  /// Not all functionality can be available at this moment.
   /// </param>
   /// <param name="callOnShutdown">
   /// Tells if this handler is allowed to be called when the state machine goes into the <c>null</c>
@@ -276,8 +276,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
       var oldState = _currentState;
       if (oldState.HasValue && newState.HasValue) {
         if (!CheckCanSwitchTo(newState.Value)) {
-          throw new InvalidOperationException(string.Format(
-              "Transition {0}=>{1} is not allowed", oldState.Value, newState.Value));
+          throw new InvalidOperationException($"Transition {oldState.Value}=>{newState.Value} is not allowed");
         }
       }
       FireTransitionEvent(oldState, newState, isBefore: true);
@@ -311,8 +310,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
         }
       }
     } catch (Exception ex) {
-      var msg = string.Format("Unexpected exception when leaving state: {0}",
-                              oldState != null ? oldState.ToString() : "[NULL]");
+      var msg = $"Unexpected exception when leaving state: {(oldState != null ? oldState.ToString() : "[NULL]")}";
       throw new InvalidOperationException(msg, ex);
     }
   }
@@ -333,8 +331,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
         }
       }
     } catch (Exception ex) {
-      var msg = string.Format("Enexpected exception when entering state: {0}",
-                              newState != null ? newState.ToString() : "[NULL]");
+      var msg = $"Unexpected exception when entering state: {(newState != null ? newState.ToString() : "[NULL]")}";
       throw new InvalidOperationException(msg, ex);
     }
   }
@@ -350,7 +347,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
       if (isBefore && onBeforeTransition != null) {
         onBeforeTransition(oldState, newState);
       } else if (!isBefore && onAfterTransition != null) {
-          onAfterTransition(oldState, newState);
+        onAfterTransition(oldState, newState);
       }
     } catch (Exception ex) {
       var msg = string.Format(
