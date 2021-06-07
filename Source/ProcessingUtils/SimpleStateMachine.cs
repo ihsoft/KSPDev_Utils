@@ -49,7 +49,11 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   }
   T? _currentState;
 
-  /// <summary>Tells if all the transitions must be excplicitly declared.</summary>
+  /// <summary>Tells if the machine was shutdown.</summary>
+  /// <remarks>Once the machine was shutdown, all other interactions to it will be bounced with an error log.</remarks>
+  public bool machineIsInactive { get; private set; }
+
+  /// <summary>Tells if all the transitions must be explicitly declared.</summary>
   /// <value>The strict mode state.</value>
   /// <seealso cref="SetTransitionConstraint"/>
   /// <example><code source="Examples/ProcessingUtils/SimpleStateMachine-Examples.cs" region="SimpleStateMachineStrict"/></example>
@@ -247,6 +251,14 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
     }
   }
 
+  /// <summary>Verifies that this machine has not been shutdown.</summary>
+  /// <exception cref="InvalidOperationException">If the machine has been shutdown.</exception>
+  void CheckIsActive(T newState) {
+    if (machineIsInactive) {
+      throw new InvalidOperationException($"Interacting with a shutdown machine: newState={newState}");
+    }
+  }
+
   /// <summary>
   /// Changes the machine's state if the current and the new states are different. Checks if the
   /// transition is allowed before actually changing the state.
@@ -258,6 +270,9 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   /// <exception cref="InvalidOperationException">If the transition is not allowed.</exception>
   void SetState(T? newState) {
     if (!_currentState.Equals(newState)) {
+      if (newState.HasValue) {
+        CheckIsActive(newState.Value);
+      }
       var oldState = _currentState;
       if (oldState.HasValue && newState.HasValue) {
         if (!CheckCanSwitchTo(newState.Value)) {
@@ -274,6 +289,9 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
         FireEnterState(oldState, newState);
       }
       FireTransitionEvent(oldState, newState, isBefore: false);
+    }
+    if (!newState.HasValue) {
+      machineIsInactive = true;
     }
   }
 
