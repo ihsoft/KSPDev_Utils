@@ -239,14 +239,6 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   }
 
   #region Local utility methods
-  /// <summary>Verifies that the state machine is started.</summary>
-  /// <exception cref="InvalidOperationException">If state machine is not yet started.</exception>
-  void CheckIsStarted() {
-    if (!currentState.HasValue) {
-      throw new InvalidOperationException("Not allowed in STOPPED state");
-    }
-  }
-
   /// <summary>Verifies that the state machine is <i>not</i> started.</summary>
   /// <exception cref="InvalidOperationException">If state machine is already started.</exception>
   void CheckIsNotStarted() {
