@@ -75,7 +75,7 @@ public abstract class AbstractPartModule : PartModule,
     base.OnLoad(node);
     if (vessel == null && PartLoader.Instance.IsReady()) {
       HostedDebugLog.Info(this, "EVA construction part loaded");
-      ResetEvaPartState();
+      OnEvaPartLoaded();
     }
     if (!_moduleSettingsLoaded) {
       _moduleSettingsLoaded = true;
@@ -123,14 +123,13 @@ public abstract class AbstractPartModule : PartModule,
   protected virtual void CheckSettingsConsistency() {
   }
 
-  /// <summary>
-  /// Notifies if this module is being activated/used on a part that is a subject to an EVA construction mode action.
-  /// </summary>
+  /// <summary>Notifies the part is being created from the stock EVA construction mode.</summary>
   /// <remarks>
-  /// In the construction mode the parts can get cloned for the GUI purposes. If the part has an internal state that
-  /// is not desirable to apply too all of its copies, then this state must be reset here.
+  /// This callback is called from <see cref="OnLoad"/>. In the EVA mode the parts in flight are copied "as-is" and then
+  /// re-instantiated for the purpose of the drag operation. This may capture some internal state that the original part
+  /// would not wish to exist in the dragged part. This method can be used to reset such state.   
   /// </remarks>
-  protected virtual void ResetEvaPartState() {
+  protected virtual void OnEvaPartLoaded() {
   }
 
   /// <summary>Shows a UI messages with regard to the currently active vessel.</summary>
