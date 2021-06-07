@@ -235,7 +235,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   public bool CheckCanSwitchTo(T newState) {
     return !isStrict
         || transitionConstraints.ContainsKey(_currentState.Value)
-           && transitionConstraints[_currentState.Value].IndexOf(newState) != -1;
+            && transitionConstraints[_currentState.Value].IndexOf(newState) != -1;
   }
 
   #region Local utility methods
@@ -301,7 +301,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
         }
       }
     } catch (Exception ex) {
-      var msg = string.Format("Enexpected exception when leaving state: {0}",
+      var msg = string.Format("Unexpected exception when leaving state: {0}",
                               oldState != null ? oldState.ToString() : "[NULL]");
       throw new InvalidOperationException(msg, ex);
     }
