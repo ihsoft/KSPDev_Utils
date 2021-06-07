@@ -117,8 +117,7 @@ public static class Colliders {
   /// </param>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Collider.html">Unity3D: Collider
   /// </seealso>
-  public static void UpdateColliders(GameObject parent,
-                                     bool? isPhysical = null, bool? isEnabled = true) {
+  public static void UpdateColliders(GameObject parent, bool? isPhysical = null, bool? isEnabled = null) {
     foreach (var collider in parent.GetComponentsInChildren<Collider>()) {
       if (isPhysical.HasValue) {
         collider.isTrigger = !isPhysical.Value;
