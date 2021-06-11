@@ -12,20 +12,21 @@ public static class Meshes {
   /// Rescales texture so what one sample covers exactly one unit of the primitive length.
   /// </summary>
   /// <remarks>
+  /// <p>
   /// Normally one texture sample covers the whole primitive regardless to its length. By calling
   /// this method you ensure that one sample keeps its ratio comparing to a linear unit. If
   /// primitive is too short to fit the texture then the texture is truncated. If primitive is too
   /// long to be covered by one sample then the texture will be tiled to fill the space.
-  /// <para>
+  /// </p>
+  /// <p>
   /// This methods assumes UV data on the primitive was created for a length of 1m. With this
   /// assumption in mind the Z axis of the local scale is considered "the length".
   /// <see cref="CreatePrimitive"/> method guarantees that newly created primitive always has length
   /// of one meter but if primitive was created by other means its default length can be different.
-  /// </para>
+  /// </p>
   /// </remarks>
   /// <param name="obj">Game object to adjust material on. Z axis scale gives the length.</param>
-  /// <param name = "lengthUnit">Length to be completely covered by one sample of the texture.
-  /// </param>
+  /// <param name = "lengthUnit">Length to be completely covered by one sample of the texture.</param>
   /// <param name="renderer">Specific renderer to adjust texture in. If <c>null</c> then first
   /// renderer on the object will be updated. Note, that getting renderer from the object is an
   /// expensive operation. When performance is the key it makes sense caching the renderer, and
@@ -50,9 +51,7 @@ public static class Meshes {
   /// parts. And it's a good practice to share materials within the same part.
   /// </remarks>
   /// <param name="parent">Game object to start searching for renderers from.</param>
-  /// <param name="newShaderName">
-  /// New shader name. If <c>null</c> then it will not be changed.
-  /// </param>
+  /// <param name="newShaderName"> New shader name. If <c>null</c> then it will not be changed.</param>
   /// <param name="newColor">Color to set. If <c>null</c> then it will not be changed.</param>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Shader.html">Unity3D: Shader</seealso>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
@@ -77,7 +76,7 @@ public static class Meshes {
   /// <param name="material">Material for the primitive.</param>
   /// <param name="parent">Parent transform to attach primitive to.</param>
   /// <param name="colliderType">Type of the collider to create on the primitive.</param>
-  /// <returns>Sphere game object.</returns>
+  /// <returns>Cylinder game object.</returns>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
   /// </seealso>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Transform.html">Unity3D: Transform
@@ -102,7 +101,7 @@ public static class Meshes {
   /// <param name="material">Material for the primitive.</param>
   /// <param name="parent">Parent transform to attach primitive to.</param>
   /// <param name="colliderType">Type of the collider to create on the primitive.</param>
-  /// <returns>Sphere game object.</returns>
+  /// <returns>Box game object.</returns>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
   /// </seealso>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Transform.html">Unity3D: Transform
@@ -137,11 +136,13 @@ public static class Meshes {
 
   /// <summary>Creates a primitive mesh without colliders and attaches it to the model.</summary>
   /// <remarks>
+  /// <p>
   /// For <see cref="PrimitiveType.Cylinder"/> Z and Y axis will be swapped to make Z "the length".
-  /// <para>
+  /// </p>
+  /// <p>
   /// Collider on the primitive will be destroyed. Consider using
   /// <see cref="Colliders.AdjustCollider"/> to setup the right collider when needed.
-  /// </para>
+  /// </p>
   /// </remarks>
   /// <param name="type">The type of the primitive.</param>
   /// <param name="meshScale">
