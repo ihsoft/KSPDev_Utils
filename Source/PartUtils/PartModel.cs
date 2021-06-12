@@ -5,6 +5,7 @@
 using KSPDev.ModelUtils;
 using System;
 using System.Linq;
+using KSPDev.LogUtils;
 using UnityEngine;
 
 namespace KSPDev.PartUtils {
@@ -16,39 +17,41 @@ public static class PartModel {
   /// When a part is highlighted (e.g. due to the mouse hover event), it highlights its models via a
   /// pre-cached set of the highlighter components. This cache is constructed on the part creation.
   /// If a model is added or removed from the part in runtime, the cache needs to be updated. This
-  /// method does it by finding the part from the game objects hirerachy. If there is a part found,
+  /// method does it by finding the part from the game objects hierarchy. If there is a part found,
   /// then its highlighters are updated.
   /// </remarks>
   /// <param name="modelObj">The game object which needs an update. It can be <c>null</c>.</param>
-  public static void UpdateHighlighters(Transform modelObj) {
+  /// <param name="exclude">If set, then this object and all its children will be excluded from highlighting.</param>
+  public static void UpdateHighlighters(Transform modelObj, Transform exclude = null) {
     if (modelObj == null) {
       return;
     }
     var ownerPart = modelObj.GetComponentInParent<Part>();
     if (ownerPart != null) {
-      UpdateHighlighters(ownerPart);
+      UpdateHighlighters(ownerPart, exclude);
     }
   }
 
   /// <summary>Refreshes the highlighters on the part.</summary>
   /// <remarks>
-  /// It goes thru the highlighters cache and drops all the renderers that are no more in the part's
+  /// It goes through the highlighters cache and drops all the renderers that are no more in the part's
   /// model hierarchy. Then, it gets all the renderers in the hierarchy and ensures all of them are
   /// in the cache. It's not a cheap operation performance wise.
   /// </remarks>
   /// <param name="part">The part to refresh the highlighters for. It can be <c>null</c>.</param>
-  public static void UpdateHighlighters(Part part) {
+  /// <param name="exclude">If set, then this object and all its children will be excluded from highlighting.</param>
+  public static void UpdateHighlighters(Part part, Transform exclude = null) {
     if (part == null) {
       return;
     }
     if (part != null && part.HighlightRenderer != null) {
       var partModel = Hierarchy.GetPartModelTransform(part);
       // Drop the renderers that have left the part's model.
-      part.HighlightRenderer.RemoveAll(x => x == null || !x.transform.IsChildOf(partModel));
-      // Add the renderers that came into the part's model.
+      part.HighlightRenderer.RemoveAll(
+          x => x == null || !x.transform.IsChildOf(partModel) || exclude != null && x.transform.IsChildOf(exclude));
       part.HighlightRenderer.AddRange(
-          part.GetComponentsInChildren<Renderer>()
-              .Where(x => !part.HighlightRenderer.Contains(x)));
+          part.GetComponentsInChildren<Renderer>().Where(
+              x => !part.HighlightRenderer.Contains(x) && (exclude == null || !x.transform.IsChildOf(exclude))));
       part.RefreshHighlighter();
     }
   }
