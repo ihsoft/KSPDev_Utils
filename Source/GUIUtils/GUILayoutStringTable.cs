@@ -7,18 +7,18 @@ using UnityEngine;
 
 namespace KSPDev.GUIUtils {
 
-/// <summary>Utility class to draw a simple table with the text colum contents.</summary>
+/// <summary>Utility class to draw a simple table with the text column contents.</summary>
 /// <remarks>
-/// <para>
-/// This table cannot hold non-string content. It keeps all the columns to be of the same, and the
-/// size is adjusted to the maximum column's size in the rows. There is a one frame delay between
+/// <p>
+/// This table cannot hold non-string content. It keeps all the columns to be of the same size, and the
+/// size is adjusted to the maximum column's size in all the rows. There is a one frame delay between
 /// the content change and the column resizing, which may result in flickering if the content
 /// changes too frequently. The columns try to take as small space as possible, so defining the
 /// minimum size may be a good bet.
-/// </para>
-/// <para>
+/// </p>
+/// <p>
 /// This class is designed to be called on every frame. It's heavily performance optimized.
-/// </para>
+/// </p>
 /// </remarks>
 public class GUILayoutStringTable {
   /// <summary>Index of the curently rendered column.</summary>
