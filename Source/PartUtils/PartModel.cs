@@ -39,20 +39,28 @@ public static class PartModel {
   /// in the cache. It's not a cheap operation performance wise.
   /// </remarks>
   /// <param name="part">The part to refresh the highlighters for. It can be <c>null</c>.</param>
-  /// <param name="exclude">If set, then this object and all its children will be excluded from highlighting.</param>
+  /// <param name="exclude">
+  /// If set, then this object and all its children will be excluded from highlighting. Note, that the stock game logic
+  /// doesn't assume a case when some renderers from the model are not subject to highlighting. The client must track
+  /// events which result to the stock update logic to run and repeat the custom update to maintain the excluded state. 
+  /// </param>
   public static void UpdateHighlighters(Part part, Transform exclude = null) {
     if (part == null) {
       return;
     }
     if (part != null && part.HighlightRenderer != null) {
+      part.ResetModelRenderersCache();
       var partModel = Hierarchy.GetPartModelTransform(part);
-      // Drop the renderers that have left the part's model.
-      part.HighlightRenderer.RemoveAll(
-          x => x == null || !x.transform.IsChildOf(partModel) || exclude != null && x.transform.IsChildOf(exclude));
-      part.HighlightRenderer.AddRange(
-          part.GetComponentsInChildren<Renderer>().Where(
-              x => !part.HighlightRenderer.Contains(x) && (exclude == null || !x.transform.IsChildOf(exclude))));
+      part.HighlightRenderer = partModel.GetComponentsInChildren<Renderer>()
+          .Where(r => exclude == null || !r.transform.IsChildOf(exclude)).ToList();
+      part.HighlightRenderer.ForEach(r => r.SetPropertyBlock(part.mpb));
       part.RefreshHighlighter();
+      // Refresh active highlighting to apply it on the new renderers. 
+      if (part.HighlightActive) {
+        var recursive = part.RecurseHighlight;
+        part.SetHighlight(false, recursive);  // Need to reset the state first.
+        part.SetHighlight(true, recursive);
+      }
     }
   }
 }
