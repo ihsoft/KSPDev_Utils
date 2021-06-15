@@ -2,7 +2,6 @@
 // Author: igor.zavoychinskiy@gmail.com
 // This software is distributed under Public domain license.
 
-using System;
 using UnityEngine;
 
 namespace KSPDev.GUIUtils {
@@ -21,7 +20,7 @@ namespace KSPDev.GUIUtils {
 /// </p>
 /// </remarks>
 public class GUILayoutStringTable {
-  /// <summary>Index of the curently rendered column.</summary>
+  /// <summary>Index of the currently rendered column.</summary>
   int currentIndex;
 
   /// <summary>Current frame maximum widths of the columns.</summary>
@@ -125,7 +124,7 @@ public class GUILayoutStringTable {
       return;
     }
     if (Event.current.type == EventType.Layout) {
-      // In the layout phase only calculate the size. Don't limit or resize the width of the area. 
+      // In the layout phase only calculates the size. Don't limit or resize the width of the area. 
       var size = style.CalcSize(content);
       var width = Mathf.Min(Mathf.Max(size.x, minWidth), maxWidth);
       if (width > columnWidths[currentIndex]) {
