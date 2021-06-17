@@ -4,7 +4,7 @@
 * [Change] INCOMPATIBLE! Fix `SafeDestory` method name spelling: [`Hierarchy.SafeDestroy`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Hierarchy_SafeDestroy.htm).
 * [Change] INCOMPATIBLE! Refactoring the `CheckClickEvent` method: [`EventChecker.CheckClickEvent`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_InputUtils_EventChecker_CheckClickEvent.htm).
 * [Change] INCOMPATIBLE! Refactoring the `UpdateColliders` method: [`Colliders.UpdateColliders`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Colliders_UpdateColliders.htm).
-* [Change] INCOMPATIBLE! Refactoring the `SimpleStateMachine`: once the machine is shutdown, it cannot be used anymore. [`ProcessingUtils.SimpleStateMachine`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/T_KSPDev_ProcessingUtils_SimpleStateMachine.htm).
+* [Change] INCOMPATIBLE! Refactoring the `SimpleStateMachine` class: once the machine is shutdown, it cannot be used anymore. [`ProcessingUtils.SimpleStateMachine`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/T_KSPDev_ProcessingUtils_SimpleStateMachine.htm).
 * [Change] INCOMPATIBLE! Refactoring the `HintOverlay` class: now the callers need to provide a full `GUIStyle`. [`GUIUtils.HintOverlay`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/T_KSPDev_GUIUtils_HintOverlay.htm).
 * [Enhancement] Add `RegisterGameEventListener` version for two arguments `EventData`: [`PartUtils.AbstractPartModule`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.5/html/M_KSPDev_PartUtils_AbstractPartModule_RegisterGameEventListener__2.htm).
 * [Enhancement] Add new method: [`Meshes.CreatePrimitiveWithCollider`](http://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_CreatePrimitiveWithCollider.htm).
