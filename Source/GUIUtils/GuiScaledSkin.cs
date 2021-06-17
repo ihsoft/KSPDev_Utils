@@ -91,8 +91,9 @@ public class GuiScaledSkin {
   /// <returns></returns>
   public static GUIStyle ScaleGuiStyle(GUISkin originalSkin, GUIStyle originalStyle, float guiScale) {
     var refFont = originalStyle.font != null ? originalStyle.font : originalSkin.font;
+    var fontSize = originalStyle.fontSize > float.Epsilon ? originalStyle.fontSize : refFont.fontSize; 
     var res = new GUIStyle(originalStyle) {
-        fontSize = Mathf.CeilToInt(guiScale * refFont.fontSize),
+        fontSize = Mathf.CeilToInt(guiScale * fontSize),
         contentOffset = originalStyle.contentOffset * guiScale,
         fixedHeight = originalStyle.fixedHeight * guiScale,
         fixedWidth = originalStyle.fixedWidth * guiScale,
