@@ -156,8 +156,6 @@ public class GuiScaledSkin {
     // Custom styles
     var newCustomStyles = new GUIStyle[originalSkin.customStyles.Length];
     for (var i = newCustomStyles.Length - 1; i >= 0; i--) {
-      //FIXME
-      DebugEx.Warning("**** update custom style: {0}", originalSkin.customStyles[i].name);
       newCustomStyles[i] = ScaleGuiStyle(originalSkin, originalSkin.customStyles[i], guiScale);
     }
 
