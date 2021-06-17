@@ -20,6 +20,18 @@ namespace KSPDev.GUIUtils {
 /// </p>
 /// </remarks>
 public class GUILayoutStringTable {
+  /// <summary>Tells if the maximum size of the columns should be persistent between the frames.</summary>
+  /// <remarks>
+  /// <p>
+  /// If set to <c>true</c>, then the new frame will use the previous frame's data to determine the minimum column
+  /// sizes. Thus, the table could grow, but it never shrinks (unless <see cref="ResetMaxSizes"/> is called). With this
+  /// setting set to <c>false</c>, the table size will be recalculated from the scratch on every frame. 
+  /// </p>
+  /// <p>This property can be modified at any time, but it will have effect on the next frame only.</p>
+  /// </remarks>
+  /// <seealso cref="ResetMaxSizes"/>
+  public bool keepMaxSize { get; set; }
+
   /// <summary>Index of the currently rendered column.</summary>
   int currentIndex;
 
@@ -34,9 +46,24 @@ public class GUILayoutStringTable {
   /// It's OK to render more columns than reserved. They won't resized, but it's not an error.
   /// </remarks>
   /// <param name="columns">The number of columns to track.</param>
-  public GUILayoutStringTable(int columns) {
+  /// <param name="keepMaxSize">
+  /// Tells if the maximum sizes should be persisted. See <see cref="keepMaxSize"/> property for more details.
+  /// </param>
+  /// <seealso cref="ResetMaxSizes"/>
+  public GUILayoutStringTable(int columns, bool keepMaxSize = false) {
     columnWidths = new float[columns];
     lastFrameColumnWidths = new float[columns];
+    this.keepMaxSize = keepMaxSize;
+  }
+
+  /// <summary>Resets all the accumulated maximum column sizes to zero.</summary>
+  /// <remarks>
+  /// Only makes sense when the <see cref="keepMaxSize"/> mode is enabled. When this mode is disabled, the column sizes
+  /// are updated on every frame.
+  /// </remarks>
+  public void ResetMaxSizes() {
+    columnWidths = new float[columnWidths.Length];
+    lastFrameColumnWidths = new float[lastFrameColumnWidths.Length];
   }
 
   /// <summary>Updates the table state each frame to remember the best column size values.</summary>
@@ -127,11 +154,15 @@ public class GUILayoutStringTable {
       // In the layout phase only calculates the size. Don't limit or resize the width of the area. 
       var size = style.CalcSize(content);
       var width = Mathf.Min(Mathf.Max(size.x, minWidth), maxWidth);
-      if (width > columnWidths[currentIndex]) {
-        columnWidths[currentIndex] = width;
+      if (width < columnWidths[currentIndex]) {
+        width = columnWidths[currentIndex];
       }
+      if (keepMaxSize && width < lastFrameColumnWidths[currentIndex]) {
+        width = lastFrameColumnWidths[currentIndex];
+      }
+      columnWidths[currentIndex] = width;
     }
-    GUILayout.Label(content, style, GUILayout.Width(lastFrameColumnWidths[currentIndex]));
+    GUILayout.Label(content, style, GUILayout.Width(columnWidths[currentIndex]));
     currentIndex++;
   }
 }
