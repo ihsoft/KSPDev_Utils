@@ -30,16 +30,17 @@ public class GUILayoutStringTable {
   /// <p>This property can be modified at any time, but it will have effect on the next frame only.</p>
   /// </remarks>
   /// <seealso cref="ResetMaxSizes"/>
+  // ReSharper disable once MemberCanBePrivate.Global
   public bool keepMaxSize { get; set; }
 
   /// <summary>Index of the currently rendered column.</summary>
-  int currentIndex;
+  int _currentIndex;
 
   /// <summary>Current frame maximum widths of the columns.</summary>
-  float[] columnWidths;
+  float[] _columnWidths;
 
   /// <summary>The maximum widths of the columns from the previous frame.</summary>
-  float[] lastFrameColumnWidths;
+  float[] _lastFrameColumnWidths;
 
   /// <summary>Creates a table of the specified column width.</summary>
   /// <remarks>
@@ -51,8 +52,8 @@ public class GUILayoutStringTable {
   /// </param>
   /// <seealso cref="ResetMaxSizes"/>
   public GUILayoutStringTable(int columns, bool keepMaxSize = false) {
-    columnWidths = new float[columns];
-    lastFrameColumnWidths = new float[columns];
+    _columnWidths = new float[columns];
+    _lastFrameColumnWidths = new float[columns];
     this.keepMaxSize = keepMaxSize;
   }
 
@@ -62,8 +63,8 @@ public class GUILayoutStringTable {
   /// are updated on every frame.
   /// </remarks>
   public void ResetMaxSizes() {
-    columnWidths = new float[columnWidths.Length];
-    lastFrameColumnWidths = new float[lastFrameColumnWidths.Length];
+    _columnWidths = new float[_columnWidths.Length];
+    _lastFrameColumnWidths = new float[_lastFrameColumnWidths.Length];
   }
 
   /// <summary>Updates the table state each frame to remember the best column size values.</summary>
@@ -73,15 +74,15 @@ public class GUILayoutStringTable {
   /// </remarks>
   public void UpdateFrame() {
     if (Event.current.type == EventType.Layout) {
-      lastFrameColumnWidths = columnWidths;
-      columnWidths = new float[lastFrameColumnWidths.Length];
+      _lastFrameColumnWidths = _columnWidths;
+      _columnWidths = new float[_lastFrameColumnWidths.Length];
     }
   }
 
   /// <summary>Tells that a new row is about to be rendered.</summary>
   /// <remarks>Call it before every new row.</remarks>
   public void StartNewRow() {
-    currentIndex = 0;
+    _currentIndex = 0;
   }
 
   /// <summary>Adds a text column into the table.</summary>
@@ -145,7 +146,7 @@ public class GUILayoutStringTable {
   /// <param name="maxWidth">The maximum width of the column.</param>
   public void AddTextColumn(GUIContent content, GUIStyle style,
                             float minWidth = 0, float maxWidth = float.PositiveInfinity) {
-    if (currentIndex >= columnWidths.Length) {
+    if (_currentIndex >= _columnWidths.Length) {
       // This column was not planned by the caller, so simply pass it through.
       GUILayout.Label(content, style);
       return;
@@ -154,16 +155,16 @@ public class GUILayoutStringTable {
       // In the layout phase only calculates the size. Don't limit or resize the width of the area. 
       var size = style.CalcSize(content);
       var width = Mathf.Min(Mathf.Max(size.x, minWidth), maxWidth);
-      if (width < columnWidths[currentIndex]) {
-        width = columnWidths[currentIndex];
+      if (width < _columnWidths[_currentIndex]) {
+        width = _columnWidths[_currentIndex];
       }
-      if (keepMaxSize && width < lastFrameColumnWidths[currentIndex]) {
-        width = lastFrameColumnWidths[currentIndex];
+      if (keepMaxSize && width < _lastFrameColumnWidths[_currentIndex]) {
+        width = _lastFrameColumnWidths[_currentIndex];
       }
-      columnWidths[currentIndex] = width;
+      _columnWidths[_currentIndex] = width;
     }
-    GUILayout.Label(content, style, GUILayout.Width(columnWidths[currentIndex]));
-    currentIndex++;
+    GUILayout.Label(content, style, GUILayout.Width(_columnWidths[_currentIndex]));
+    _currentIndex++;
   }
 }
 
