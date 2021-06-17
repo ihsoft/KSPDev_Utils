@@ -50,6 +50,7 @@
 * [Enhancement] Add class to configure a part config patch: [`ConfigUtils.ConfigNodePatch`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ConfigUtils_ConfigNodePatch.htm).
 * [Enhancement] Add module to handle part config patches: [`ConfigUtils.PartNodePatcher`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ConfigUtils_PartNodePatcher.htm).
 * [Enhancement] Add max size retention mode to: [`GUIUtils.GUILayoutStringTable`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_GUIUtils_GUILayoutStringTable.htm).
+* [Enhancement] Add module to support game's GUI scale: [`GUIUtils.GuiScaledSkin`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_GUIUtils_GuiScaledSkin.htm).
 
 # 1.1 (January 28th, 2019):
 * [Enhancement] Add methods to check distance form the part's collider instead of its center: [`GUIUtils.ModelUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ModelUtils_Colliders.htm).

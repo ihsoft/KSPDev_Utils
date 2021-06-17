@@ -92,6 +92,7 @@
     <Compile Include="GUIUtils\GUILayoutButtons.cs" />
     <Compile Include="GUIUtils\GuiLayoutStringTable.cs" />
     <Compile Include="GUIUtils\GUILayoutVerticalScrollView.cs" />
+    <Compile Include="GUIUtils\GuiScaledSkin.cs" />
     <Compile Include="GUIUtils\HermeticGUIControlBoolean.cs" />
     <Compile Include="GUIUtils\HermeticGUIControlClass.cs" />
     <Compile Include="GUIUtils\HermeticGUIControlSwitch.cs" />
@@ -170,7 +171,6 @@
   <ItemGroup>
     <Folder Include="DebugUtils" />
     <Folder Include="Extensions" />
-    <Folder Include="GUIUtils" />
     <Folder Include="GUIUtils\TypeFormatters" />
     <Folder Include="KSPInterfaces" />
     <Folder Include="LogUtils" />
