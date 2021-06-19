@@ -45,22 +45,21 @@ public static class PartModel {
   /// events which result to the stock update logic to run and repeat the custom update to maintain the excluded state. 
   /// </param>
   public static void UpdateHighlighters(Part part, Transform exclude = null) {
-    if (part == null) {
+    if (part == null || part.HighlightRenderer == null) {
       return;
     }
-    if (part != null && part.HighlightRenderer != null) {
-      part.ResetModelRenderersCache();
-      var partModel = Hierarchy.GetPartModelTransform(part);
-      part.HighlightRenderer = partModel.GetComponentsInChildren<Renderer>()
-          .Where(r => exclude == null || !r.transform.IsChildOf(exclude)).ToList();
-      part.HighlightRenderer.ForEach(r => r.SetPropertyBlock(part.mpb));
-      part.RefreshHighlighter();
-      // Refresh active highlighting to apply it on the new renderers. 
-      if (part.HighlightActive) {
-        var recursive = part.RecurseHighlight;
-        part.SetHighlight(false, recursive);  // Need to reset the state first.
-        part.SetHighlight(true, recursive);
-      }
+
+    var oldActive = part.HighlightActive;
+    var oldRecursive = part.RecurseHighlight;
+    if (oldActive) {
+      part.SetHighlight(false, oldRecursive);
+    }
+    part.ResetModelRenderersCache();
+    var partModel = Hierarchy.GetPartModelTransform(part);
+    part.HighlightRenderer = partModel.GetComponentsInChildren<Renderer>()
+        .Where(r => exclude == null || !r.transform.IsChildOf(exclude)).ToList();
+    if (oldActive) {
+      part.SetHighlight(true, oldRecursive);
     }
   }
 }
