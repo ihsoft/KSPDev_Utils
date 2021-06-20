@@ -121,7 +121,6 @@ public class GuiScaledSkin {
   #region Local utility methods
   /// <summary>Makes a scaled skin based on the origin one.</summary>
   void UpdateScaledSkin() {
-    guiScale = GameSettings.UI_SCALE;
     scaledSkinIsDirty = false;
 
     var originalSkin = _sourceSkinProvider.Invoke();
@@ -171,6 +170,7 @@ public class GuiScaledSkin {
   /// <summary>Reacts on the GUI scale change event and recalculates the skin.</summary>
   void OnUIScaleChangeGameEvent() {
     scaledSkinIsDirty = true;
+    guiScale = GameSettings.UI_SCALE;
   }
   #endregion
 }
