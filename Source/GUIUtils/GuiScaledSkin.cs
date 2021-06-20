@@ -32,6 +32,8 @@ namespace KSPDev.GUIUtils {
 public class GuiScaledSkin {
   /// <summary>The skin that is scaled to the current game's settings.</summary>
   /// <remarks>Dop not cache this instance! It changes as the scale setting does.</remarks>
+  /// <value>A copy of the original skin that is scaled to the currently selected game's settings.</value>
+  /// <seealso cref="guiScale"/>
   public GUISkin scaledSkin {
     get {
       if (scaledSkinIsDirty) {
@@ -45,10 +47,12 @@ public class GuiScaledSkin {
   public bool scaledSkinIsDirty;
 
   /// <summary>The scale setting which this instance currently tracks.</summary>
+  /// <value>The scale of <see cref="scaledSkin"/>.</value>
   public float guiScale { get; private set; }
 
   /// <summary>The dialog title height with this skin applied.</summary>
   /// <remarks>It's a best guess number. It's <b>NOT</b> the real value to be used in the GUI layout engine.</remarks>
+  /// <value>The height of the GUI dialog title.</value>
   public int guiTitleHeight { get; private set; }
 
   readonly Func<GUISkin> _sourceSkinProvider;
@@ -88,7 +92,7 @@ public class GuiScaledSkin {
   /// <param name="originalSkin">The skin that is a base for the scaling.</param>
   /// <param name="originalStyle">The style to get values from.</param>
   /// <param name="guiScale">The scale factor, where <c>1.0</c> means "exactly as in the original".</param>
-  /// <returns></returns>
+  /// <returns>A scaled style. The default font size will be overwritten.</returns>
   public static GUIStyle ScaleGuiStyle(GUISkin originalSkin, GUIStyle originalStyle, float guiScale) {
     var refFont = originalStyle.font != null ? originalStyle.font : originalSkin.font;
     var fontSize = originalStyle.fontSize > float.Epsilon ? originalStyle.fontSize : refFont.fontSize; 

@@ -29,6 +29,7 @@ public class GUILayoutStringTable {
   /// </p>
   /// <p>This property can be modified at any time, but it will have effect on the next frame only.</p>
   /// </remarks>
+  /// <value><c>true</c> if the column sizes are retained between the frames.</value>
   /// <seealso cref="ResetMaxSizes"/>
   // ReSharper disable once MemberCanBePrivate.Global
   public bool keepMaxSize { get; set; }

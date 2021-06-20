@@ -51,6 +51,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
 
   /// <summary>Tells if the machine was shutdown.</summary>
   /// <remarks>Once the machine was shutdown, all other interactions to it will be bounced with an error log.</remarks>
+  /// <value><c>true</c> if machine has been shutdown and cannot serve transitions anymore.</value>
   public bool machineIsInactive { get; private set; }
 
   /// <summary>Tells if all the transitions must be explicitly declared.</summary>

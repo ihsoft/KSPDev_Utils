@@ -145,6 +145,7 @@ public static class Colliders {
   /// <see cref="PrimitiveType.Cylinder"/>, <see cref="PrimitiveType.Sphere"/>, and
   /// <see cref="PrimitiveType.Cube"/> are supported.
   /// </param>
+  /// <returns>The adjusted collider.</returns>
   /// FIXME: it's not working with asymmetric meshes
   /// FIXME: use GameObject.GetRendererBounds?
   public static Collider AdjustCollider(
