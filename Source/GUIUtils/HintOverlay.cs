@@ -35,9 +35,11 @@ namespace KSPDev.GUIUtils {
 ///   }
 /// }
 /// </code>
-/// <p>In the example above text of the hint is set on every frame update since the frame count is updated
+/// <p>In the example above the text of the hint is set on every frame update since the frame count is updated
 /// this frequently. However, if your data is updated less frequently you may save some performance
-/// by updating text in the methods different from <c>OnGUI</c>.</p>
+/// by updating text in the methods different from <c>OnGUI</c>. You still need to call <see cref="ShowAtCursor"/> in
+/// every frame, though.
+/// </p>
 /// </example>
 public class HintOverlay {
   // ReSharper disable MemberCanBePrivate.Global
