@@ -1,7 +1,3 @@
-The documentation is built using
-[Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB)
-of the minimum version `v2018.12.10.0`. Using the lower versions is discouraged.
-
 # Building documentation for a new version
 
 KSPDev Utils is a redistributable library, which means there are many different versions in the
@@ -17,6 +13,8 @@ version `1.0`.
 For every new version of the documentation, the
 [`README.md`](../../docs/README.md) on the documentation site must be extended. The links to the
 newer versions come at the top.
+
+For more details on building the docs, refer [BUILD.md](BUILD.md).
 
 # When updating documenation
 
