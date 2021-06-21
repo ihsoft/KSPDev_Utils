@@ -1,4 +1,4 @@
-# 2.5 (pre-release):
+# 2.5 (June 20th, 2021):
 * [Fix] Better handle `renderer` parameter in: [`Meshes.RescaleTextureToLength`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_RescaleTextureToLength.htm).
 * [Change] Dont fail if id/name of the part is not found in `PartNodePatcher.GetPartId`.
 * [Change] INCOMPATIBLE! Fix `SafeDestory` method name spelling: [`Hierarchy.SafeDestroy`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Hierarchy_SafeDestroy.htm).
