@@ -1,4 +1,4 @@
-# Buildiong the documentation system
+# Building the documentation system
 
 The help files must be made _before_ merging into the master branch. I.e. the code changes and the
 updated docs must land into the `next` branch prior to the merge. They all must be merged into
@@ -23,7 +23,7 @@ updated docs must land into the `next` branch prior to the merge. They all must 
 
 # Things to NOT do
 
-Don't even try to build the `KSP_API.shfbproj` porject! If you try, it will create somewhat 100k of
-files in teh file system. And ALL of them won't make any sense for `KSPDev-Utils`. The `KSP_API`
-project only exists to avoid the false unresolved referrences warnings in the main project. Never
-build it on its own!!!
+Don't even try to build the `KSP_API.shfbproj` project! If you do, it will create somewhat 100k of
+files in the file system. And ALL of them won't make any sense for `KSPDev_Utils`. The `KSP_API`
+project only exists to avoid the false unresolved referrences warnings in the main project (a
+workaround for the SHFB issue). Never build it on its own!!!
