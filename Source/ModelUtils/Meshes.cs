@@ -2,8 +2,6 @@
 // Author: igor.zavoychinskiy@gmail.com
 // This software is distributed under Public domain license.
 
-using System;
-using System.Linq;
 using UnityEngine;
 
 namespace KSPDev.ModelUtils {
@@ -14,20 +12,21 @@ public static class Meshes {
   /// Rescales texture so what one sample covers exactly one unit of the primitive length.
   /// </summary>
   /// <remarks>
+  /// <p>
   /// Normally one texture sample covers the whole primitive regardless to its length. By calling
   /// this method you ensure that one sample keeps its ratio comparing to a linear unit. If
   /// primitive is too short to fit the texture then the texture is truncated. If primitive is too
   /// long to be covered by one sample then the texture will be tiled to fill the space.
-  /// <para>
+  /// </p>
+  /// <p>
   /// This methods assumes UV data on the primitive was created for a length of 1m. With this
-  /// assumption in mind the Z axis of the local scale is cosidered "the length".
+  /// assumption in mind the Z axis of the local scale is considered "the length".
   /// <see cref="CreatePrimitive"/> method guarantees that newly created primitive always has length
   /// of one meter but if primitive was created by other means its default length can be different.
-  /// </para>
+  /// </p>
   /// </remarks>
   /// <param name="obj">Game object to adjust material on. Z axis scale gives the length.</param>
-  /// <param name = "lengthUnit">Length to be completly covered by one sample of the texture.
-  /// </param>
+  /// <param name = "lengthUnit">Length to be completely covered by one sample of the texture.</param>
   /// <param name="renderer">Specific renderer to adjust texture in. If <c>null</c> then first
   /// renderer on the object will be updated. Note, that getting renderer from the object is an
   /// expensive operation. When performance is the key it makes sense caching the renderer, and
@@ -37,7 +36,9 @@ public static class Meshes {
   public static void RescaleTextureToLength(
       GameObject obj, float lengthUnit = 1.0f, Renderer renderer = null) {
     var newScale = lengthUnit / obj.transform.localScale.z;
-    var mr = renderer ?? obj.GetComponent<Renderer>();
+    var mr = renderer
+        ? renderer
+        : obj.GetComponent<Renderer>();
     mr.material.mainTextureScale = new Vector2(mr.material.mainTextureScale.x, newScale);
   }
 
@@ -50,9 +51,7 @@ public static class Meshes {
   /// parts. And it's a good practice to share materials within the same part.
   /// </remarks>
   /// <param name="parent">Game object to start searching for renderers from.</param>
-  /// <param name="newShaderName">
-  /// New shader name. If <c>null</c> then it will not be changed.
-  /// </param>
+  /// <param name="newShaderName"> New shader name. If <c>null</c> then it will not be changed.</param>
   /// <param name="newColor">Color to set. If <c>null</c> then it will not be changed.</param>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Shader.html">Unity3D: Shader</seealso>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
@@ -75,9 +74,9 @@ public static class Meshes {
   /// <param name="diameter">XY of the cylinder.</param>
   /// <param name="length">Z-axis of the cylinder.</param>
   /// <param name="material">Material for the primitive.</param>
-  /// <param name="parent">Parent transfrom to atatch primitive to.</param>
+  /// <param name="parent">Parent transform to attach primitive to.</param>
   /// <param name="colliderType">Type of the collider to create on the primitive.</param>
-  /// <returns>Sphere game object.</returns>
+  /// <returns>Cylinder game object.</returns>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
   /// </seealso>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Transform.html">Unity3D: Transform
@@ -86,11 +85,12 @@ public static class Meshes {
       float diameter, float length, Material material, Transform parent,
       Colliders.PrimitiveCollider colliderType = Colliders.PrimitiveCollider.None) {
     // Default length scale is 2.0.
-    var obj = Meshes.CreatePrimitive(PrimitiveType.Cylinder,
-                                     new Vector3(diameter, diameter, length / 2),
-                                     material, parent: parent);
-    Colliders.AdjustCollider(obj, new Vector3(diameter, diameter, length),
-                             colliderType, shapeType: PrimitiveType.Cylinder);
+    var obj = CreatePrimitiveWithCollider(
+        PrimitiveType.Cylinder, new Vector3(diameter, diameter, length / 2),
+        material, parent: parent);
+    Colliders.AdjustCollider(
+        obj, new Vector3(diameter, diameter, length),
+        colliderType, shapeType: PrimitiveType.Cylinder);
     return obj;
   }
 
@@ -99,9 +99,9 @@ public static class Meshes {
   /// <param name="height">Y-axis of the box.</param>
   /// <param name="length">Z-axis of the box.</param>
   /// <param name="material">Material for the primitive.</param>
-  /// <param name="parent">Parent transfrom to atatch primitive to.</param>
+  /// <param name="parent">Parent transform to attach primitive to.</param>
   /// <param name="colliderType">Type of the collider to create on the primitive.</param>
-  /// <returns>Sphere game object.</returns>
+  /// <returns>Box game object.</returns>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
   /// </seealso>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Transform.html">Unity3D: Transform
@@ -110,7 +110,7 @@ public static class Meshes {
       float width, float height, float length, Material material, Transform parent,
       Colliders.PrimitiveCollider colliderType = Colliders.PrimitiveCollider.None) {
     var scale = new Vector3(width, height, length);
-    var obj = CreatePrimitive(PrimitiveType.Cube, scale, material, parent: parent);
+    var obj = CreatePrimitiveWithCollider(PrimitiveType.Cube, scale, material, parent: parent);
     Colliders.AdjustCollider(obj, scale, colliderType, shapeType: PrimitiveType.Cube);
     return obj;
   }
@@ -118,7 +118,7 @@ public static class Meshes {
   /// <summary>Creates an ideal sphere.</summary>
   /// <param name="diameter">Diameter of the sphere.</param>
   /// <param name="material">Material for the primitive.</param>
-  /// <param name="parent">Parent transfrom to atatch primitive to.</param>
+  /// <param name="parent">Parent transform to attach primitive to.</param>
   /// <param name="colliderType">Type of the collider to create on the primitive.</param>
   /// <returns>Sphere game object.</returns>
   /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
@@ -129,18 +129,20 @@ public static class Meshes {
       float diameter, Material material, Transform parent,
       Colliders.PrimitiveCollider colliderType = Colliders.PrimitiveCollider.None) {
     var scale =  new Vector3(diameter, diameter, diameter);
-    var obj = CreatePrimitive(PrimitiveType.Sphere, scale, material, parent: parent);
+    var obj = CreatePrimitiveWithCollider(PrimitiveType.Sphere, scale, material, parent: parent);
     Colliders.AdjustCollider(obj, scale, colliderType, shapeType: PrimitiveType.Sphere);
     return obj;
   }
 
-  /// <summary>Creates a primitive mesh and attaches it to the model.</summary>
+  /// <summary>Creates a primitive mesh without colliders and attaches it to the model.</summary>
   /// <remarks>
+  /// <p>
   /// For <see cref="PrimitiveType.Cylinder"/> Z and Y axis will be swapped to make Z "the length".
-  /// <para>
+  /// </p>
+  /// <p>
   /// Collider on the primitive will be destroyed. Consider using
   /// <see cref="Colliders.AdjustCollider"/> to setup the right collider when needed.
-  /// </para>
+  /// </p>
   /// </remarks>
   /// <param name="type">The type of the primitive.</param>
   /// <param name="meshScale">
@@ -156,8 +158,31 @@ public static class Meshes {
   /// </seealso>
   public static GameObject CreatePrimitive(
       PrimitiveType type, Vector3 meshScale, Material material, Transform parent) {
+    var primitive = CreatePrimitiveWithCollider(type, meshScale, material, parent);
+    Colliders.SafeDestroy(primitive.GetComponent<Collider>());
+    return primitive;
+  }
+
+  /// <summary>Creates a primitive and attaches it to the model.</summary>
+  /// <remarks>
+  /// For <see cref="PrimitiveType.Cylinder"/> Z and Y axis will be swapped to make Z "the length". The primitive will
+  /// have a collider of the appropriate type.
+  /// </remarks>
+  /// <param name="type">The type of the primitive.</param>
+  /// <param name="meshScale">
+  /// The scale to bring all the mesh vertices to. The scale is applied on the mesh, i.e. it's
+  /// applied on the vertices, not the transform.
+  /// </param>
+  /// <param name="material">The material to use for the primitive.</param>
+  /// <param name="parent">The parent transform to attach the primitive to.</param>
+  /// <returns>The game object of the new primitive.</returns>
+  /// <seealso href="https://docs.unity3d.com/ScriptReference/GameObject.CreatePrimitive.html">
+  /// Unity3D: GameObject.CreatePrimitive</seealso>
+  /// <seealso href="https://docs.unity3d.com/ScriptReference/Material.html">Unity3D: Material
+  /// </seealso>
+  public static GameObject CreatePrimitiveWithCollider(
+      PrimitiveType type, Vector3 meshScale, Material material, Transform parent) {
     var primitive = GameObject.CreatePrimitive(type);
-    UnityEngine.Object.DestroyImmediate(primitive.GetComponent<Collider>());
     Hierarchy.MoveToParent(primitive.transform, parent);
     primitive.GetComponent<Renderer>().material = material;
 
@@ -168,19 +193,19 @@ public static class Meshes {
     return primitive;
   }
 
-  /// <summary>Translates meshes's verticies.</summary>
+  /// <summary>Translates meshes' vertices.</summary>
   /// <remarks>
-  /// This is different from setting postion, rotation and scale to the transform. This method
-  /// <i>actually</i> changes vetricies in the mesh. It's not performance effective, so avoid doing
-  /// it frequiently.
+  /// This is different from setting position, rotation and scale to the transform. This method
+  /// <i>actually</i> changes vertices in the mesh. It's not performance effective, so avoid doing
+  /// it frequently.
   /// </remarks>
   /// <param name="model">Model object to change the mesh in.</param>
   /// <param name="offset">
-  /// Offset for the verticies. If not specified then the offset is zero. The offset is added
+  /// Offset for the vertices. If not specified then the offset is zero. The offset is added
   /// <i>after</i> the scale and the rotation have been applied.  
   /// </param>
   /// <param name="rotation">
-  /// Rotation for the verticies. If not set then no rotation is added.
+  /// Rotation for the vertices. If not set then no rotation is added.
   /// </param>
   /// <param name="scale">
   /// Scale for the vertex positions. If not specified then the scale is not affected.

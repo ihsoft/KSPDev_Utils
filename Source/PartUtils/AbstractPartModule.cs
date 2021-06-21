@@ -46,11 +46,11 @@ public abstract class AbstractPartModule : PartModule,
 
   #region Local fields
   /// <summary>Tells if <see cref="InitModuleSettings"/> was called on the part.</summary>
-  bool moduleSettingsLoaded;
+  bool _moduleSettingsLoaded;
 
   /// <summary>List of events to call to cleanup registered game event listeners.</summary>
   /// <remarks>They are called from the destroy method.</remarks>
-  readonly List<Action> unregisterListenerActions = new List<Action>();
+  readonly List<Action> _unregisterListenerActions = new List<Action>();
   #endregion
 
   #region IsLocalizableModule implementation
@@ -61,29 +61,33 @@ public abstract class AbstractPartModule : PartModule,
   #endregion
 
   #region PartModule overrides
-  /// <inheritdoc/>
+  /// <inheritdoc cref="IPartModule.OnAwake" />
   public override void OnAwake() {
     ConfigAccessor.CopyPartConfigFromPrefab(this);
     base.OnAwake();
     LocalizeModule();
   }
 
-  /// <inheritdoc/>
+  /// <inheritdoc cref="IPartModule.OnLoad" />
   public override void OnLoad(ConfigNode node) {
     ConfigAccessor.ReadPartConfig(this, cfgNode: node);
     ConfigAccessor.ReadFieldsFromNode(node, GetType(), this, StdPersistentGroups.PartPersistant);
     base.OnLoad(node);
-    if (!moduleSettingsLoaded) {
-      moduleSettingsLoaded = true;
+    if (vessel == null && PartLoader.Instance.IsReady()) {
+      HostedDebugLog.Info(this, "EVA construction part loaded");
+      OnEvaPartLoaded();
+    }
+    if (!_moduleSettingsLoaded) {
+      _moduleSettingsLoaded = true;
       InitModuleSettings();
     }
   }
 
-  /// <inheritdoc/>
+  /// <inheritdoc cref="IPartModule.OnStart" />
   public override void OnStart(StartState state) {
     base.OnStart(state);
-    if (!moduleSettingsLoaded) {
-      moduleSettingsLoaded = true;
+    if (!_moduleSettingsLoaded) {
+      _moduleSettingsLoaded = true;
       if (!HighLogic.LoadedSceneIsEditor) {
         HostedDebugLog.Fine(this, "Late load of module settings. Save file inconsistency?");
       }
@@ -91,7 +95,7 @@ public abstract class AbstractPartModule : PartModule,
     }
   }
 
-  /// <inheritdoc/>
+  /// <inheritdoc cref="IPartModule.OnSave" />
   public override void OnSave(ConfigNode node) {
     base.OnSave(node);
     ConfigAccessor.WriteFieldsIntoNode(node, GetType(), this, StdPersistentGroups.PartPersistant);
@@ -101,7 +105,7 @@ public abstract class AbstractPartModule : PartModule,
   #region IsDestroyable implementation
   /// <inheritdoc/>
   public virtual void OnDestroy() {
-    unregisterListenerActions.ForEach(x => x.Invoke());
+    _unregisterListenerActions.ForEach(x => x.Invoke());
   }
   #endregion
 
@@ -119,6 +123,15 @@ public abstract class AbstractPartModule : PartModule,
   protected virtual void CheckSettingsConsistency() {
   }
 
+  /// <summary>Notifies the part is being created from the stock EVA construction mode.</summary>
+  /// <remarks>
+  /// This callback is called from <see cref="OnLoad"/>. In the EVA mode the parts in flight are copied "as-is" and then
+  /// re-instantiated for the purpose of the drag operation. This may capture some internal state that the original part
+  /// would not wish to exist in the dragged part. This method can be used to reset such state.   
+  /// </remarks>
+  protected virtual void OnEvaPartLoaded() {
+  }
+
   /// <summary>Shows a UI messages with regard to the currently active vessel.</summary>
   /// <remarks>
   /// The UI messages from the active vessel are shown at the highest priority to bring attention
@@ -127,11 +140,11 @@ public abstract class AbstractPartModule : PartModule,
   /// </remarks>
   /// <param name="msg">The message to show.</param>
   /// <param name="isError">
-  /// Tells if the messages is an error condition report. Such messages will be highlighed.
+  /// Tells if the messages is an error condition report. Such messages will be highlighted.
   /// </param>
   protected void ShowStatusMessage(string msg, bool isError = false) {
     if (FlightGlobals.ActiveVessel != vessel) {
-      msg = string.Format("[{0}]: {1}", vessel.vesselName, msg);
+      msg = $"[{vessel.vesselName}]: {msg}";
     }
     if (isError) {
       msg = ScreenMessaging.SetColorToRichText(msg, ScreenMessaging.ErrorColor);
@@ -157,7 +170,7 @@ public abstract class AbstractPartModule : PartModule,
   /// </para>
   /// <para>
   /// This method can be called multiple times in the part's life time, so keep this method
-  /// ideponent. Repetative calls to this method should not break the part's logic.
+  /// idempotent. The repetitive calls to this method should not break the part's logic.
   /// </para>
   /// </remarks>
   protected virtual void InitModuleSettings() {
@@ -167,7 +180,7 @@ public abstract class AbstractPartModule : PartModule,
   /// <summary>Registers a game event listener and cleans it up on module destruction.</summary>
   /// <remarks>
   /// Instead of overriding both <c>OnAwake</c> and <c>OnDestroy</c> methods to register/unregister
-  /// KSP event listeners, do register via this method. The unregistration will be done
+  /// KSP event listeners, do register via this method. The un-registration will be done
   /// automatically when the component dies.
   /// </remarks>
   /// <param name="eventData">The game event to register for.</param>
@@ -176,7 +189,22 @@ public abstract class AbstractPartModule : PartModule,
   protected void RegisterGameEventListener<T>(
       EventData<T> eventData, EventData<T>.OnEvent listener) {
     eventData.Add(listener);
-    unregisterListenerActions.Add(() => eventData.Remove(listener));
+    _unregisterListenerActions.Add(() => eventData.Remove(listener));
+  }
+
+  /// <summary>Registers a game event listener and cleans it up on module destruction.</summary>
+  /// <remarks>
+  /// Instead of overriding both <c>OnAwake</c> and <c>OnDestroy</c> methods to register/unregister
+  /// KSP event listeners, do register via this method. The un-registration will be done
+  /// automatically when the component dies.
+  /// </remarks>
+  /// <param name="eventData">The game event to register for.</param>
+  /// <param name="listener">The event listener.</param>
+  /// <typeparam name="T">The first type in <c>EventData</c> of the related event.</typeparam>
+  /// <typeparam name="K">The second type in <c>EventData</c> of the related event.</typeparam>
+  protected void RegisterGameEventListener<T, K>(EventData<T, K> eventData, EventData<T, K>.OnEvent listener) {
+    eventData.Add(listener);
+    _unregisterListenerActions.Add(() => eventData.Remove(listener));
   }
   #endregion
 }

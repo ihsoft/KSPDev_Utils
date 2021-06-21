@@ -98,7 +98,6 @@ public class LocalizationLoader : MonoBehaviour {
 
     // Go thru all the KSP events that may have the localizable content.
     foreach (var @event in module.Events) {
-      //var info = module.GetType().GetMethod(@event.name);
       var info = module.GetType().GetMethod(
           @event.name,
           BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,

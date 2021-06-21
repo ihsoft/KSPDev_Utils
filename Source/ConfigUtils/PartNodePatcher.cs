@@ -33,7 +33,7 @@ public static class PartNodePatcher {
   /// <summary>Returns patch nodes for the tag.</summary>
   /// <remarks>
   /// This call can be very expensive. It's strongly encouraged to implement a lazy access approach
-  /// and cache the retunred values.
+  /// and cache the returned values.
   /// </remarks>
   /// <param name="modName">
   /// The mod to find the nodes for. If it's <c>null</c> or empty, then all the nodes will be
@@ -60,7 +60,7 @@ public static class PartNodePatcher {
   /// <summary>Tests if the patch can be applied to the part node.</summary>
   /// <param name="partNode">The part node to test against.</param>
   /// <param name="patch">The patch to test.</param>
-  /// <param name="loadContext">The conext in whcih the part is being patched.</param>
+  /// <param name="loadContext">The context in which the part is being patched.</param>
   /// <param name="quietMode">Tells if anything should be reported to the logs.</param>
   /// <returns><c>true</c> if the TEST rules of the patch have matched.</returns>
   public static bool TestPatch(ConfigNode partNode, ConfigNodePatch patch, LoadContext loadContext,
@@ -126,7 +126,7 @@ public static class PartNodePatcher {
   /// <summary>Applies the patch to the part node.</summary>
   /// <param name="partNode">The part node to patch.</param>
   /// <param name="patch">The patch to apply.</param>
-  /// <param name="loadContext">The conext in whcih the part is being patched.</param>
+  /// <param name="loadContext">The context in which the part is being patched.</param>
   public static void PatchNode(
       ConfigNode partNode, ConfigNodePatch patch, LoadContext loadContext) {
     ArgumentGuard.NotNull(partNode, "partNode", context: patch);
@@ -150,7 +150,7 @@ public static class PartNodePatcher {
         if (moduleRules.action == ConfigNodePatch.PatchAction.Add) {
           DebugEx.Warning("[UpgradePipeline][{0}] Action: ADD NODE", moduleContext);
           targetModuleNode = partNode.AddNode("MODULE");
-          targetModuleNode.SetValue("name", moduleRules.name, "*** added by comaptibility patch",
+          targetModuleNode.SetValue("name", moduleRules.name, "*** added by compatibility patch",
                                     createIfNotFound: true);
         } else {
           targetModuleNode = LookupModule(partNode, moduleRules.name);
@@ -278,23 +278,24 @@ public static class PartNodePatcher {
   /// <param name="node">The part's config node.</param>
   /// <param name="loadContext">The loading context that tells how to extract the values.</param>
   /// <returns>
-  /// The array of two values, where first value is the name, and the second value is ID.
+  /// The array of two values, where first value is the name, and the second value is ID. The values that cannot be
+  /// recovered will be <c>null</c>.
   /// </returns>
   static string[] GetPartId(ConfigNode node, LoadContext loadContext) {
-    string partName;
-    string partId;
+    string partName = null;
+    string partId = null;
     if (loadContext == LoadContext.SFS) {
       partName = node.GetValue("name");
       partId = node.GetValue("cid");
-      Preconditions.NotNullOrEmpty(partName, message: "part name", context: node);
-      Preconditions.NotNullOrEmpty(partId, message: "part cid", context: node);
     } else {
-      var carftPartName = node.GetValue("part");
-      Preconditions.NotNullOrEmpty(carftPartName, message: "craftPartName", context: node);
-      var pair = carftPartName.Split(new[] {'_'}, 2);
-      Preconditions.HasSize(pair, 2, message: "craftPartName pair", context: node);
-      partName = pair[0];
-      partId = pair[1];
+      var craftPartName = node.GetValue("part");
+      if (craftPartName != null) {
+        var pair = craftPartName.Split(new[] {'_'}, 2);
+        if (pair.Length == 2) {
+          partName = pair[0];
+          partId = pair[1];
+        }
+      }
     }
     return new[] {partName, partId};
   }

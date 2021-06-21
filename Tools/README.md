@@ -1,3 +1,13 @@
+# Prerequsites
+
+You need to download the appropriate `MSBuild.exe` version to make the release scripts to work.
+The best bet is downlading the _latest_ version and updating the `make_binary.cmd` script.
+
+The legacy versions of the tool can be found
+[here](https://visualstudio.microsoft.com/ru/vs/older-downloads/)
+
+# Overview
+
 The scripts in this folder are used to make and publish the Utils binary.
 
 In order to release a new version, do the following:

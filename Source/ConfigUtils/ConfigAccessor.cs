@@ -120,6 +120,7 @@ public static class ConfigAccessor {
   /// <seealso cref="PersistentFieldsDatabaseAttribute"/>
   public static void ReadFieldsInType(Type type, object instance,
                                       string group = StdPersistentGroups.Default) {
+    //FIXME: read parent types first
     var attributes = GetPersistentFieldsFiles(type, group);
     DebugEx.Fine("Loading persistent fields: type={0}, group=\"{1}\"", type, group ?? "<ALL>");
     foreach (var attr in attributes) {

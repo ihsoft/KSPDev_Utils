@@ -2,42 +2,70 @@
 // Author: igor.zavoychinskiy@gmail.com
 // This software is distributed under Public domain license.
 
-using System;
 using UnityEngine;
 
 namespace KSPDev.GUIUtils {
 
-/// <summary>Utility class to draw a simple table with the text colum contents.</summary>
+/// <summary>Utility class to draw a simple table with the text column contents.</summary>
 /// <remarks>
-/// <para>
-/// This table cannot hold non-string content. It keeps all the columns to be of the same, and the
-/// size is adjusted to the maximum column's size in the rows. There is a one frame delay between
+/// <p>
+/// This table cannot hold non-string content. It keeps all the columns to be of the same size, and the
+/// size is adjusted to the maximum column's size in all the rows. There is a one frame delay between
 /// the content change and the column resizing, which may result in flickering if the content
 /// changes too frequently. The columns try to take as small space as possible, so defining the
 /// minimum size may be a good bet.
-/// </para>
-/// <para>
+/// </p>
+/// <p>
 /// This class is designed to be called on every frame. It's heavily performance optimized.
-/// </para>
+/// </p>
 /// </remarks>
 public class GUILayoutStringTable {
-  /// <summary>Index of the curently rendered column.</summary>
-  int currentIndex;
+  /// <summary>Tells if the maximum size of the columns should be persistent between the frames.</summary>
+  /// <remarks>
+  /// <p>
+  /// If set to <c>true</c>, then the new frame will use the previous frame's data to determine the minimum column
+  /// sizes. Thus, the table could grow, but it never shrinks (unless <see cref="ResetMaxSizes"/> is called). With this
+  /// setting set to <c>false</c>, the table size will be recalculated from the scratch on every frame. 
+  /// </p>
+  /// <p>This property can be modified at any time, but it will have effect on the next frame only.</p>
+  /// </remarks>
+  /// <value><c>true</c> if the column sizes are retained between the frames.</value>
+  /// <seealso cref="ResetMaxSizes"/>
+  // ReSharper disable once MemberCanBePrivate.Global
+  public bool keepMaxSize { get; set; }
+
+  /// <summary>Index of the currently rendered column.</summary>
+  int _currentIndex;
 
   /// <summary>Current frame maximum widths of the columns.</summary>
-  float[] columnWidths;
+  float[] _columnWidths;
 
   /// <summary>The maximum widths of the columns from the previous frame.</summary>
-  float[] lastFrameColumnWidths;
+  float[] _lastFrameColumnWidths;
 
   /// <summary>Creates a table of the specified column width.</summary>
   /// <remarks>
   /// It's OK to render more columns than reserved. They won't resized, but it's not an error.
   /// </remarks>
   /// <param name="columns">The number of columns to track.</param>
-  public GUILayoutStringTable(int columns) {
-    columnWidths = new float[columns];
-    lastFrameColumnWidths = new float[columns];
+  /// <param name="keepMaxSize">
+  /// Tells if the maximum sizes should be persisted. See <see cref="keepMaxSize"/> property for more details.
+  /// </param>
+  /// <seealso cref="ResetMaxSizes"/>
+  public GUILayoutStringTable(int columns, bool keepMaxSize = false) {
+    _columnWidths = new float[columns];
+    _lastFrameColumnWidths = new float[columns];
+    this.keepMaxSize = keepMaxSize;
+  }
+
+  /// <summary>Resets all the accumulated maximum column sizes to zero.</summary>
+  /// <remarks>
+  /// Only makes sense when the <see cref="keepMaxSize"/> mode is enabled. When this mode is disabled, the column sizes
+  /// are updated on every frame.
+  /// </remarks>
+  public void ResetMaxSizes() {
+    _columnWidths = new float[_columnWidths.Length];
+    _lastFrameColumnWidths = new float[_lastFrameColumnWidths.Length];
   }
 
   /// <summary>Updates the table state each frame to remember the best column size values.</summary>
@@ -47,15 +75,15 @@ public class GUILayoutStringTable {
   /// </remarks>
   public void UpdateFrame() {
     if (Event.current.type == EventType.Layout) {
-      lastFrameColumnWidths = columnWidths;
-      columnWidths = new float[lastFrameColumnWidths.Length];
+      _lastFrameColumnWidths = _columnWidths;
+      _columnWidths = new float[_lastFrameColumnWidths.Length];
     }
   }
 
   /// <summary>Tells that a new row is about to be rendered.</summary>
   /// <remarks>Call it before every new row.</remarks>
   public void StartNewRow() {
-    currentIndex = 0;
+    _currentIndex = 0;
   }
 
   /// <summary>Adds a text column into the table.</summary>
@@ -119,21 +147,25 @@ public class GUILayoutStringTable {
   /// <param name="maxWidth">The maximum width of the column.</param>
   public void AddTextColumn(GUIContent content, GUIStyle style,
                             float minWidth = 0, float maxWidth = float.PositiveInfinity) {
-    if (currentIndex >= columnWidths.Length) {
+    if (_currentIndex >= _columnWidths.Length) {
       // This column was not planned by the caller, so simply pass it through.
       GUILayout.Label(content, style);
       return;
     }
     if (Event.current.type == EventType.Layout) {
-      // In the layout phase only calculate the size. Don't limit or resize the width of the area. 
+      // In the layout phase only calculates the size. Don't limit or resize the width of the area. 
       var size = style.CalcSize(content);
       var width = Mathf.Min(Mathf.Max(size.x, minWidth), maxWidth);
-      if (width > columnWidths[currentIndex]) {
-        columnWidths[currentIndex] = width;
+      if (width < _columnWidths[_currentIndex]) {
+        width = _columnWidths[_currentIndex];
       }
+      if (keepMaxSize && width < _lastFrameColumnWidths[_currentIndex]) {
+        width = _lastFrameColumnWidths[_currentIndex];
+      }
+      _columnWidths[_currentIndex] = width;
     }
-    GUILayout.Label(content, style, GUILayout.Width(lastFrameColumnWidths[currentIndex]));
-    currentIndex++;
+    GUILayout.Label(content, style, GUILayout.Width(_columnWidths[_currentIndex]));
+    _currentIndex++;
   }
 }
 
