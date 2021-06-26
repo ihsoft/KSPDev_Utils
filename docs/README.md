@@ -11,5 +11,6 @@ Versions:
 * [KSPDev Utils v2.2](v2.2)
 * [KSPDev Utils v2.3](v2.3)
 * [KSPDev Utils v2.5](v2.5) - `KSP 1.11` and higher
+* [KSPDev Utils v2.6](v2.6)
 
 The documentation can be accessed via [GitHub Pages](https://ihsoft.github.io/KSPDev_Utils/).
