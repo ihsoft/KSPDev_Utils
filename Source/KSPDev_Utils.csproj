@@ -93,6 +93,7 @@
     <Compile Include="GUIUtils\GUILayoutButtons.cs" />
     <Compile Include="GUIUtils\GuiLayoutStringTable.cs" />
     <Compile Include="GUIUtils\GUILayoutVerticalScrollView.cs" />
+    <Compile Include="GUIUtils\GuiScale.cs" />
     <Compile Include="GUIUtils\GuiScaledSkin.cs" />
     <Compile Include="GUIUtils\GuiSkinScope.cs" />
     <Compile Include="GUIUtils\GuiTooltip.cs" />
