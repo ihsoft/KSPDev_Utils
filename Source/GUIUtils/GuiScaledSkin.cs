@@ -126,6 +126,7 @@ public class GuiScaledSkin {
   /// <summary>Makes a scaled skin based on the origin one.</summary>
   void UpdateScaledSkin() {
     scaledSkinIsDirty = false;
+    guiScale = GameSettings.UI_SCALE;
 
     var originalSkin = _sourceSkinProvider.Invoke();
     UnityEngine.Object.Destroy(scaledSkin);
@@ -174,7 +175,6 @@ public class GuiScaledSkin {
   /// <summary>Reacts on the GUI scale change event and recalculates the skin.</summary>
   void OnUIScaleChangeGameEvent() {
     scaledSkinIsDirty = true;
-    guiScale = GameSettings.UI_SCALE;
   }
   #endregion
 }
