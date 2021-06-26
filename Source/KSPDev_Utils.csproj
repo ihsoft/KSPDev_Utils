@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <RootNamespace>KSPDev</RootNamespace>
-    <AssemblyName>KSPDev_Utils.2.5</AssemblyName>
+    <AssemblyName>KSPDev_Utils.2.6</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkProfile />
@@ -93,8 +93,11 @@
     <Compile Include="GUIUtils\GUILayoutButtons.cs" />
     <Compile Include="GUIUtils\GuiLayoutStringTable.cs" />
     <Compile Include="GUIUtils\GUILayoutVerticalScrollView.cs" />
+    <Compile Include="GUIUtils\GuiMatrixScope.cs" />
+    <Compile Include="GUIUtils\GuiScale.cs" />
     <Compile Include="GUIUtils\GuiScaledSkin.cs" />
     <Compile Include="GUIUtils\GuiSkinScope.cs" />
+    <Compile Include="GUIUtils\GuiTooltip.cs" />
     <Compile Include="GUIUtils\HermeticGUIControlBoolean.cs" />
     <Compile Include="GUIUtils\HermeticGUIControlClass.cs" />
     <Compile Include="GUIUtils\HermeticGUIControlSwitch.cs" />

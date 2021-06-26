@@ -4,4 +4,4 @@
 --changelog=../CHANGELOG.md
 --as_draft
 --title=KSPDev Utils v{tag}
---archive=../KSPDevUtils_v2.5.zip
+--archive=../KSPDevUtils_v2.6.zip

@@ -5,8 +5,6 @@
 using KSPDev.FSUtils;
 using KSPDev.GUIUtils;
 using KSPDev.LogUtils;
-using System;
-using System.Linq;
 using UnityEngine;
 
 namespace KSPDev {
@@ -22,7 +20,7 @@ namespace KSPDev {
 /// </remarks>
 [KSPAddon(KSPAddon.Startup.Instantly, true /*once*/)]
 class LibraryLoader : MonoBehaviour {
-  /// <summary>Loaded library indentifier.</summary>
+  /// <summary>Loaded library identifier.</summary>
   public static string assemblyVersionStr { get; private set; }
 
   /// <summary>Tells if the loader has already initialized.</summary>
@@ -36,14 +34,11 @@ class LibraryLoader : MonoBehaviour {
     loaded = true;
 
     var assembly = GetType().Assembly;
-    assemblyVersionStr = string.Format(
-        "{0} (v{1})",
-        KspPaths.MakeRelativePathToGameData(assembly.Location),
-        assembly.GetName().Version);
+    assemblyVersionStr = $"{KspPaths.MakeRelativePathToGameData(assembly.Location)} (v{assembly.GetName().Version})";
     DebugEx.Info("Loading KSPDevUtils: {0}", assemblyVersionStr);
 
     // Install the localization callbacks. The object must not be destroyed.
-    UnityEngine.Object.DontDestroyOnLoad(gameObject);
+    DontDestroyOnLoad(gameObject);
     gameObject.AddComponent<LocalizationLoader>();
     gameObject.AddComponent<UISoundPlayer>();
   }

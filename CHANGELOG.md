@@ -1,3 +1,9 @@
+# 2.6 (June 26th, 2021):
+* [Fix] Fix scale initialization in Better handle `renderer` parameter in: [`GUIUtils.GuiScaledSkin`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiScaledSkin.htm).
+* [Enhancement] Add an alternative module to support game's GUI scale: [`GUIUtils.GuiScale`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiScale.htm).
+* [Enhancement] Add a scope object to assist GUI matrix overrdies: [`GUIUtils.GuiMatrixScope`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiMatrixScope.htm).
+* [Enhancement] Add control to handle tooltips: [`GUIUtils.GuiTooltip`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiTooltip.htm).
+
 # 2.5 (June 20th, 2021):
 * [Fix] Better handle `renderer` parameter in: [`Meshes.RescaleTextureToLength`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_RescaleTextureToLength.htm).
 * [Change] Dont fail if id/name of the part is not found in `PartNodePatcher.GetPartId`.
@@ -11,6 +17,9 @@
 * [Enhancement] Add methods for better collidres control: [`Colliders.CreatePrimitiveWithCollider`](http://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_CreatePrimitiveWithCollider.htm).
 * [Enhancement] Add a callback to notify if a part being created by the EVA editor: [`AbstractPartModule.OnEvaPartLoaded`](http://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_PartUtils_AbstractPartModule_OnEvaPartLoaded.htm).
 * [Enhancement] Add parameter `exclude` into highlight updater: [`PartModel.UpdateHighlighters`](http://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_PartUtils_PartModel_UpdateHighlighters.htm).
+* [Enhancement] Add max size retention mode to: [`GUIUtils.GUILayoutStringTable`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/T_KSPDev_GUIUtils_GUILayoutStringTable.htm).
+* [Enhancement] Add module to support game's GUI scale: [`GUIUtils.GuiScaledSkin`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/T_KSPDev_GUIUtils_GuiScaledSkin.htm).
+* [Enhancement] Add a scope object to assist GUI skin overrdies: [`GUIUtils.GuiSkinScope`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/T_KSPDev_GUIUtils_GuiSkinScope.htm).
 
 # 2.4 (July 18th, 2020):
 * [Fix #9] Events and actions don't localize.
@@ -50,9 +59,6 @@
 * [Enhancement] Add attribute for persistent field with custom protos: [`ConfigUtils.PersistentCustomFieldAttribute`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ConfigUtils_PersistentCustomFieldAttribute.htm).
 * [Enhancement] Add class to configure a part config patch: [`ConfigUtils.ConfigNodePatch`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ConfigUtils_ConfigNodePatch.htm).
 * [Enhancement] Add module to handle part config patches: [`ConfigUtils.PartNodePatcher`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_ConfigUtils_PartNodePatcher.htm).
-* [Enhancement] Add max size retention mode to: [`GUIUtils.GUILayoutStringTable`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_GUIUtils_GUILayoutStringTable.htm).
-* [Enhancement] Add module to support game's GUI scale: [`GUIUtils.GuiScaledSkin`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_GUIUtils_GuiScaledSkin.htm).
-* [Enhancement] Add a scope object to assist GUI skin overrdies: [`GUIUtils.GuiSkinScope`](https://ihsoft.github.io/KSPDev_Utils/v1.2/html/T_KSPDev_GUIUtils_GuiSkinScope.htm).
 
 # 1.1 (January 28th, 2019):
 * [Enhancement] Add methods to check distance form the part's collider instead of its center: [`GUIUtils.ModelUtils`](https://ihsoft.github.io/KSPDev_Utils/v1.1/html/T_KSPDev_ModelUtils_Colliders.htm).

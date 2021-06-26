@@ -137,10 +137,6 @@ def main(argv):
       help='''forces the created release to be draft''')
   opts = vars(parser.parse_args(argv[1:]))
 
-
-  #FIXME
-  print "*********", opts['add_file']
-
   user = opts['user']
   repo = opts['repo']
 

@@ -11,6 +11,21 @@ using UnityEngine;
 namespace KSPDev.GUIUtils {
 
 /// <summary>Component for automatic <c>GUISkin</c> rescaling, based on the current game's GUI scale setting.</summary>
+/// <remarks>
+/// <p>
+/// The scaling is achieved by proportional increase/decrease of the font size and margin/padding rects. The default
+/// font stays unchanged, but all the controls that use default font size will get overrides for the nwe scaled size.
+/// Some more elements will not get scaled:
+/// </p>
+/// <p>
+/// <list type="bullet">
+/// <item>The background images.</item>
+/// <item>The textures, rendered via <c>Label</c> and <c>DrawTexture</c> controls.</item>
+/// <item>The <c>GUILayoutOption</c> size settings.</item>
+/// <item>The <c>GUILayout.Space()</c> control.</item>
+/// </list>
+/// </p> 
+/// </remarks>
 /// <example>
 /// <code>
 /// <![CDATA[
@@ -47,6 +62,7 @@ public class GuiScaledSkin {
   public bool scaledSkinIsDirty;
 
   /// <summary>The scale setting which this instance currently tracks.</summary>
+  /// <remarks>It's updated from the <see cref="scaledSkin"/> property getter.</remarks>
   /// <value>The scale of <see cref="scaledSkin"/>.</value>
   public float guiScale { get; private set; }
 
@@ -126,6 +142,7 @@ public class GuiScaledSkin {
   /// <summary>Makes a scaled skin based on the origin one.</summary>
   void UpdateScaledSkin() {
     scaledSkinIsDirty = false;
+    guiScale = GameSettings.UI_SCALE;
 
     var originalSkin = _sourceSkinProvider.Invoke();
     UnityEngine.Object.Destroy(scaledSkin);
@@ -174,7 +191,6 @@ public class GuiScaledSkin {
   /// <summary>Reacts on the GUI scale change event and recalculates the skin.</summary>
   void OnUIScaleChangeGameEvent() {
     scaledSkinIsDirty = true;
-    guiScale = GameSettings.UI_SCALE;
   }
   #endregion
 }
