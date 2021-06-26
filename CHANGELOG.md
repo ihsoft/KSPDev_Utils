@@ -1,6 +1,7 @@
 # 2.6 (pre-release):
 * [Fix] Fix scale initialization in Better handle `renderer` parameter in: [`GUIUtils.GuiScaledSkin`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiScaledSkin.htm).
 * [Enhancement] Add an alternative module to support game's GUI scale: [`GUIUtils.GuiScale`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiScale.htm).
+* [Enhancement] Add a scope object to assist GUI matrix overrdies: [`GUIUtils.GuiMatrixScope`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiMatrixScope.htm).
 * [Enhancement] Add control to handle tooltips: [`GUIUtils.GuiTooltip`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiTooltip.htm).
 
 # 2.5 (June 20th, 2021):
