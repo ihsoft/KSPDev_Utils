@@ -1,4 +1,5 @@
 # 2.6 (pre-release):
+* [Fix] Fix scale initialization in Better handle `renderer` parameter in: [`GUIUtils.GuiScaledSkin`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiScaledSkin.htm).
 
 # 2.5 (June 20th, 2021):
 * [Fix] Better handle `renderer` parameter in: [`Meshes.RescaleTextureToLength`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_RescaleTextureToLength.htm).
