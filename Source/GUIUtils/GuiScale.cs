@@ -46,6 +46,7 @@ namespace KSPDev.GUIUtils {
 public class GuiScale {
   /// <summary>The pivot point to scale the dialog at.</summary>
   /// <remarks>In a simple c case it's the position of the top-left corner of the dialog.</remarks>
+  /// <value>The pivot point to make the matrix at.</value>
   public Vector2 pivot => _getPivotFn.Invoke();
 
   /// <summary>The current scale which this control is tracking.</summary>
