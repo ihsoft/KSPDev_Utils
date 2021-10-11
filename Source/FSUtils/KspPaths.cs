@@ -164,7 +164,9 @@ public static class KspPaths {
     if (subFolder != null) {
       dataDirectory = Path.Combine(dataDirectory, subFolder);
     }
-    Directory.CreateDirectory(dataDirectory);
+    if (createMissingDirs) {
+      Directory.CreateDirectory(dataDirectory);
+    }
     return Path.Combine(dataDirectory, fileName);
   }
 }
