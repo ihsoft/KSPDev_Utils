@@ -51,7 +51,7 @@ public static class ArgumentGuard {
   /// <typeparam name="T">Type of value to check.</typeparam>
   /// <param name="arg">The argument value to check.</param>
   /// <param name="argName">The argument name.</param>
-  /// <param name="minValue">The minumum allowed value.</param>
+  /// <param name="minValue">The minimum allowed value.</param>
   /// <param name="maxValue">The maximum allowed value.</param>
   /// <param name="message">An optional message to present in the error.</param>
   /// <param name="context">The optional "owner" object.</param>

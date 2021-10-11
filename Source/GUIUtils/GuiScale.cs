@@ -33,8 +33,8 @@ namespace KSPDev.GUIUtils {
 /// }
 ///
 /// void OnGUI() {
-///   using (new GuiMatrixScope() {
-///     _guiSkin.UpdateMatrix();
+///   using (new GuiMatrixScope()) {
+///     _guiScale.UpdateMatrix();
 ///     _windowRect = GUILayout.Window(GetInstanceID(), _windowRect, WindowFunc, WindowTitle);
 ///   }
 /// }
