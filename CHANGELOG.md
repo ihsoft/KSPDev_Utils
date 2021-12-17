@@ -1,4 +1,5 @@
 # 2.7 (pre-release):
+* [Fix] Fix prefab fileds loading when modules list changes: [`ConfigUtils.CopyPartConfigFromPrefab`](https://ihsoft.github.io/KSPDev_Utils/v2.7/html/T_KSPDev_ConfigUtils_CopyPartConfigFromPrefab.htm).
 
 # 2.6 (June 26th, 2021):
 * [Fix] Fix scale initialization in: [`GUIUtils.GuiScaledSkin`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiScaledSkin.htm).
