@@ -204,8 +204,8 @@ public static class ConfigAccessor {
 
   /// <summary>Writes values of the annotated persistent fields into a file.</summary>
   /// <remarks>
-  /// All persitent values are <b>added</b> into the file provided. I.e. if node had already had a
-  /// value being persited then it either overwritten (ordinary fields) or extended (collection
+  /// All persistent values are <b>added</b> into the file provided. I.e. if node had already had a
+  /// value being persisted then it either overwritten (ordinary fields) or extended (collection
   /// fields).
   /// </remarks>
   /// <param name="filePath">
@@ -213,7 +213,7 @@ public static class ConfigAccessor {
   /// <see cref="KspPaths.MakeAbsPathForGameData"/>.
   /// </param>
   /// <param name="rootNodePath">
-  /// A path to the node in the file where the data should be written. If the node already exsists
+  /// A path to the node in the file where the data should be written. If the node already exists
   /// it will be deleted.
   /// </param>
   /// <param name="type">A type to write fields for.</param>

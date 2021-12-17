@@ -13,9 +13,9 @@ public static class SafeCallbacks {
   /// <remarks>
   /// The exceptions that the callback may rise are logged as errors, but the flow is not get
   /// interrupted. Such behavior may be handy when calling cleanup methods or notifying multiple
-  /// recepients where the failure is not an option.
+  /// recipients where the failure is not an option.
   /// </remarks>
-  /// <param name="fn">The action to exectue.</param>
+  /// <param name="fn">The action to execute.</param>
   public static void Action(Action fn) {
     try {
       fn.Invoke();
@@ -28,7 +28,7 @@ public static class SafeCallbacks {
   /// <remarks>
   /// The exceptions that the callback may rise are logged as errors, but the flow is not get
   /// interrupted. Such behavior may be handy when calling cleanup methods or notifying multiple
-  /// recepients where the failure is not an option.
+  /// recipients where the failure is not an option.
   /// </remarks>
   /// <param name="fn">The function to call.</param>
   /// <param name="failValue">

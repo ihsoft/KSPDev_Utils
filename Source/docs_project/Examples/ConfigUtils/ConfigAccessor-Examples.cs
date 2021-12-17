@@ -10,7 +10,7 @@ namespace ConfigUtils.Examples {
 public class ReadPartConfigExample : PartModule {
   public override void OnAwake() {
     base.OnAwake();
-    // get hthe custom fields from the prefab.
+    // Get the custom fields from the prefab.
     ConfigAccessor.CopyPartConfigFromPrefab(this);
   }
 
