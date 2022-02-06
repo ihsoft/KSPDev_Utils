@@ -58,6 +58,7 @@ public class GuiScale {
 
   readonly Action _onScaleUpdatedFn;
   readonly Func<Vector2> _getPivotFn;
+  readonly bool _highFps;
 
   /// <summary>Creates a scaled skin instance.</summary>
   /// <param name="getPivotFn">
@@ -68,9 +69,14 @@ public class GuiScale {
   /// A callback which will be called every time the game's UI scale is updated. The mods can react on it to
   /// update their internal cached styles. This callback is processed from the <see cref="UpdateMatrix"/> method.
   /// </param>
-  public GuiScale(Func<Vector2> getPivotFn, Action onScaleUpdatedFn = null) {
+  /// <param name="highFps">
+  /// Indicates if this object is created frequently. Even though it's not recommended to create this object frequently,
+  /// this setting would tell the code to limit any logging or checks.
+  /// </param>
+  public GuiScale(Func<Vector2> getPivotFn, Action onScaleUpdatedFn = null, bool highFps = false) {
     _onScaleUpdatedFn = onScaleUpdatedFn;
     _getPivotFn = getPivotFn;
+    _highFps = highFps;
     scaleIsDirty = true;
     GameEvents.onUIScaleChange.Add(OnUIScaleChangeGameEvent);
   }
@@ -89,7 +95,9 @@ public class GuiScale {
 
   /// <summary>Unregisters any game's callbacks. </summary>
   ~GuiScale() {
-    DebugEx.Fine("Destroying GUI scale object...");
+    if (!_highFps) {
+      DebugEx.Fine("Destroying GUI scale object...");
+    }
     GameEvents.onUIScaleChange.Remove(OnUIScaleChangeGameEvent);
   }
 
@@ -98,7 +106,9 @@ public class GuiScale {
   void UpdateScale() {
     scaleIsDirty = false;
     scale = new Vector2(GameSettings.UI_SCALE, GameSettings.UI_SCALE);
-    DebugEx.Fine("GUI scale updated: scale={0}", GameSettings.UI_SCALE);
+    if (!_highFps) {
+      DebugEx.Fine("GUI scale updated: scale={0}", GameSettings.UI_SCALE);
+    }
     _onScaleUpdatedFn?.Invoke();
   }
 
