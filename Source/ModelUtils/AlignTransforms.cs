@@ -83,7 +83,7 @@ public static class AlignTransforms {
   /// <param name="newPosition">The new position of the vessel.</param>
   /// <param name="newRotation">The new rotation of the vessel.</param>
   /// <param name="refVessel">
-  /// The vessel to alignt the velocity with. If it's <c>null</c>, then the velocity on the moving
+  /// The vessel to align the velocity with. If it's <c>null</c>, then the velocity on the moving
   /// vessel will just be zeroed.
   /// </param>
   public static void PlaceVessel(

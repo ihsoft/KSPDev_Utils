@@ -23,8 +23,7 @@ public static class ArgumentGuard {
   /// <param name="message">An optional message to present in the error.</param>
   /// <param name="context">The optional "owner" object.</param>
   /// <exception cref="ArgumentNullException">If the argument is <c>null</c>.</exception>
-  public static void NotNull(object arg, string argName,
-                             string message = null, object context = null) {
+  public static void NotNull(object arg, string argName, string message = null, object context = null) {
     if (arg == null) {
       throw new ArgumentNullException(argName, Preconditions.MakeContextError(context, message));
     }
@@ -42,8 +41,7 @@ public static class ArgumentGuard {
     NotNull(arg, argName, message: message, context: context);
     if (arg == "") {
       throw new ArgumentException(
-          argName,
-          Preconditions.MakeContextError(context, "Argument is EMPTY: {0}", message));
+          Preconditions.MakeContextError(context, "Argument is EMPTY: msg={0}", message ?? "N/A"), argName);
     }
   }
 
@@ -51,7 +49,7 @@ public static class ArgumentGuard {
   /// <typeparam name="T">Type of value to check.</typeparam>
   /// <param name="arg">The argument value to check.</param>
   /// <param name="argName">The argument name.</param>
-  /// <param name="minValue">The minumum allowed value.</param>
+  /// <param name="minValue">The minimum allowed value.</param>
   /// <param name="maxValue">The maximum allowed value.</param>
   /// <param name="message">An optional message to present in the error.</param>
   /// <param name="context">The optional "owner" object.</param>

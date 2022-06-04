@@ -19,7 +19,7 @@ public class GuiMatrixScope : IDisposable {
     _oldMatrix = GUI.matrix;
   }
 
-  /// <summary>Restores the matrix that was set before the scope started.</summary>
+  /// <summary>Restores the matrix that was set after the scope has started.</summary>
   public void Dispose() {
     GUI.matrix = _oldMatrix;
   }

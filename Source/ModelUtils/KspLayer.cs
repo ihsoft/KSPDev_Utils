@@ -37,7 +37,7 @@ public enum KspLayer {
   TriggerCollider = 21,
 
   /// <summary>The layer for FX objects.</summary>
-  /// <remarks>E.g. <c>PadFXReceiver</c> on the Kerbins VAB launchpad.</remarks>
+  /// <remarks>E.g. <c>PadFXReceiver</c> on the Kerbin's VAB launchpad.</remarks>
   Fx = 30,
 }
 

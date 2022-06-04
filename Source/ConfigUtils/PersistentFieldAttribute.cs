@@ -151,6 +151,7 @@ namespace KSPDev.ConfigUtils {
 /// <seealso cref="AbstractOrdinaryValueTypeProto"/>
 /// <seealso cref="AbstractCollectionTypeProto"/>
 /// <seealso cref="IPersistentField"/>
+/// <seealso cref="StdPersistentGroups"/>
 /// <seealso href="https://kerbalspaceprogram.com/api/interface_i_config_node.html">KSP: IConfigNode</seealso>
 [AttributeUsage(AttributeTargets.Field)]
 public sealed class PersistentFieldAttribute : BasePersistentFieldAttribute {

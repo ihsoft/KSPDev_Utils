@@ -324,7 +324,7 @@ public static class Colliders {
   public static float GetSqrDistanceToPartOrDefault(
       Vector3 point, Part part,
       float defaultValue = float.PositiveInfinity, Func<Collider, bool> filterFn = null) {
-    return GetSqrDistanceToPart(point, part) ?? defaultValue;
+    return GetSqrDistanceToPart(point, part, filterFn: filterFn) ?? defaultValue;
   }
 
   /// <summary>Destroys the collider in a way which is safe for physical callback methods.</summary>
