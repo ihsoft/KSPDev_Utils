@@ -1,5 +1,5 @@
 # 2.7 (pre-release):
-* [Fix] Fix prefab fileds loading when modules list changes: [`ConfigUtils.CopyPartConfigFromPrefab`](https://ihsoft.github.io/KSPDev_Utils/v2.7/html/T_KSPDev_ConfigUtils_CopyPartConfigFromPrefab.htm).
+* [Fix] Fix prefab fields loading when modules list changes: [`ConfigUtils.CopyPartConfigFromPrefab`](https://ihsoft.github.io/KSPDev_Utils/v2.7/html/T_KSPDev_ConfigUtils_CopyPartConfigFromPrefab.htm).
 * [Fix] Pass filter Fn in `GetSqrDistanceToPartOrDefault`.
 * [Enhancement] Add high FPS parameter to [`GUIUtils.GuiScale`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.7/html/M_KSPDev_Utils_GUIUtils_GuiScale.htm).
 
