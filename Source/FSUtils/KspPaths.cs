@@ -24,7 +24,7 @@ public static class KspPaths {
   /// </summary>
   /// <remarks>
   /// The files in this directory will be ignored by the game during the loading process. This
-  /// is a common palce to put tghe mod's settings. A directory with such name can be placed
+  /// is a common place to put the mod's settings. A directory with such name can be placed
   /// anywhere within the <c>GameData</c> folder. However, it's usually a subfolder of
   /// <see cref="PluginFolderName"/>.
   /// </remarks>
@@ -86,7 +86,7 @@ public static class KspPaths {
   /// Note that method doesn't care if the path exists. The returned path will always use <c>/</c>
   /// as directory separator regardless to the platform.
   /// </remarks>
-  /// <param name="pathParts">Path parts tp consutruct an absolute or relative path.</param>
+  /// <param name="pathParts">Path parts tp construct an absolute or relative path.</param>
   /// <returns>
   /// Relative path. All relative casts (e.g. '..') will be resolved, and all
   /// directory separators will be translated to <c>/</c> regardless to the platform settings.
@@ -148,14 +148,14 @@ public static class KspPaths {
     return GetModsPath(target.GetType());
   }
 
-  /// <summary>Returns a relative game's path to the file located in the data folder.</summary>
-  /// <param name="obj">The object instance to use to resolve the mod's assembly.</param>
-  /// <param name="fileName">The data file name.</param>
+  /// <summary>Returns full path to the file located in the data folder.</summary>
+  /// <param name="obj">The object instance to use to resolve the mod's assembly. This gives the base path.</param>
+  /// <param name="fileName">The file name to resolve.</param>
   /// <param name="createMissingDirs">
   /// Instructs the method to create all the directories and subdirectories in the specified path,
   /// should they not already exist.
   /// </param>
-  /// <param name="subFolder">The optional sub-folder name to add to the path.</param>
+  /// <param name="subFolder">The optional sub-folder name(s) to add to the path before the file name.</param>
   /// <returns>An absolute path.</returns>
   public static string GetModsDataFilePath(object obj, string fileName,
                                            bool createMissingDirs = false,
@@ -164,7 +164,9 @@ public static class KspPaths {
     if (subFolder != null) {
       dataDirectory = Path.Combine(dataDirectory, subFolder);
     }
-    Directory.CreateDirectory(dataDirectory);
+    if (createMissingDirs) {
+      Directory.CreateDirectory(dataDirectory);
+    }
     return Path.Combine(dataDirectory, fileName);
   }
 }

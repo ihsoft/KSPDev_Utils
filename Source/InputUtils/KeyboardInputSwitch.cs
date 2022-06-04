@@ -9,8 +9,7 @@ using UnityEngine;
 namespace KSPDev.InputUtils {
 
 /// <summary>
-/// Wrapper around a keyboard key code that incapsulates the persiting and the handling logic into
-/// a single class.
+/// Wrapper around a keyboard key code that encapsulates the persisting and the handling logic into a single class.
 /// </summary>
 /// <remarks>
 /// <para>
@@ -97,8 +96,8 @@ namespace KSPDev.InputUtils {
 /// }
 /// ]]></code>
 /// <para>
-/// In many cases you may want to load a key bining from a config file. It can be achieved by
-/// adding an attribute to the field of this type:
+/// In many cases you may want to load a key binding from a config file. It can be achieved by adding an attribute to
+/// the field of this type:
 /// </para>
 /// <code><![CDATA[
 /// [PersistentFieldsFile("my/mod/settings.cfg", "")]
@@ -166,8 +165,7 @@ public class KeyboardInputSwitch : IConfigNode {
   public KeyCode keyCode;
 
   /// <summary>
-  /// Determines if the switch should react on the keyboard events from the <see cref="Update"/>
-  /// method.
+  /// Determines if the switch should react on the keyboard events from the <see cref="Update"/> method.
   /// </summary>
   /// <remarks>
   /// If switch is disabled while the key was pressed then the hold state will <i>not</i> be reset.

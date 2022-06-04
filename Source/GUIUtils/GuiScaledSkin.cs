@@ -36,7 +36,7 @@ namespace KSPDev.GUIUtils {
 /// }
 ///
 /// void OnGUI() {
-///   using (new GuiSkinScope(GuiScaledSkin.scaledSkin) {
+///   using (new GuiSkinScope(_guiScaledSkin.scaledSkin)) {
 ///     _windowRect = GUILayout.Window(GetInstanceID(), _windowRect, WindowFunc, WindowTitle);
 ///   }
 /// }

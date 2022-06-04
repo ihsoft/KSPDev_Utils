@@ -186,8 +186,7 @@ public abstract class AbstractPartModule : PartModule,
   /// <param name="eventData">The game event to register for.</param>
   /// <param name="listener">The event listener.</param>
   /// <typeparam name="T">The type of <c>EventData</c> of the related event.</typeparam>
-  protected void RegisterGameEventListener<T>(
-      EventData<T> eventData, EventData<T>.OnEvent listener) {
+  protected void RegisterGameEventListener<T>(EventData<T> eventData, EventData<T>.OnEvent listener) {
     eventData.Add(listener);
     _unregisterListenerActions.Add(() => eventData.Remove(listener));
   }

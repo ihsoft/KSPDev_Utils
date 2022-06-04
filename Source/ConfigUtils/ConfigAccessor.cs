@@ -167,49 +167,45 @@ public static class ConfigAccessor {
   /// <code source="Examples/ConfigUtils/ConfigAccessor-Examples.cs" region="ReadPartConfigExample"/>
   /// </example>
   public static void CopyPartConfigFromPrefab(PartModule tgtModule) {
+    if (!PartLoader.Instance.IsReady()) {
+      return;
+    }
     var part = tgtModule.part;
-    if (PartLoader.Instance.IsReady()) {
-      var moduleIdx = part.Modules.IndexOf(tgtModule);
-      if (moduleIdx == -1) {
-        // Modules in the unloaded parts awake before being added into part.
-        moduleIdx = part.Modules.Count;
+
+    // Do not relay on the exact "module to module" match. The runtime logic can affect it.
+    var tgtModulePos = part.Modules.IndexOf(tgtModule);
+    var tgtModuleIdx = tgtModulePos != -1 ? tgtModulePos : part.Modules.Count;
+    var skipSameModuleCnt = 0;
+    for (var i = 0; i < part.Modules.Count && i < tgtModuleIdx; i++) {
+      var module = part.Modules[i];
+      if (module.moduleName == tgtModule.moduleName) {
+        skipSameModuleCnt++;
       }
-      if (moduleIdx >= part.partInfo.partPrefab.Modules.Count) {
-        HostedDebugLog.Error(
-            tgtModule, "The prefab part doesn't have the module at {0}", moduleIdx);
-        return;
-      }
-      var srcModule = part.partInfo.partPrefab.Modules[moduleIdx];
-      if (srcModule.moduleName != tgtModule.moduleName) {
-        HostedDebugLog.Error(
-            tgtModule, "Mismatched module in prefab at {0}: expected={1}, found={2}",
-            moduleIdx, tgtModule.moduleName, srcModule.moduleName);
-        if (GameSettings.VERBOSE_DEBUG_LOG) {
-          HostedDebugLog.Fine(
-              tgtModule, "*** DUMP OF AVAILABLE MODULES: infoName={0}, prefabName{1}",
-              part.partInfo.name, part.partInfo.partPrefab.name);
-          for (var i = 0; i < part.partInfo.partPrefab.Modules.Count; i++) {
-            DebugEx.Fine("* name={0}, id=#{1}", part.partInfo.partPrefab.Modules[i].moduleName, i);
-          }
-        }
-        return;
-      }
-      var fields = PersistentFieldsFactory.GetPersistentFields(
-          tgtModule.GetType(), false /* needStatic */, true /* needInstance */,
-          StdPersistentGroups.PartConfigLoadGroup);
-      foreach (var field in fields) {
-        // We need a copy, so get it thru the persistence.
-        var copyNode = new ConfigNode();
-        field.WriteToConfig(copyNode, srcModule);
-        field.ReadFromConfig(copyNode, tgtModule);
-      }
+    }
+    var srcModule = part.partInfo.partPrefab.Modules.Cast<PartModule>()
+        .Where(x => x.moduleName == tgtModule.moduleName)
+        .Skip(skipSameModuleCnt)
+        .FirstOrDefault();
+    if (srcModule == null) {
+      HostedDebugLog.Error(
+          tgtModule, "The prefab doesn't have enough modules of this type: needed={0}", skipSameModuleCnt);
+      return;
+    }
+    var fields = PersistentFieldsFactory.GetPersistentFields(
+        tgtModule.GetType(), false /* needStatic */, true /* needInstance */,
+        StdPersistentGroups.PartConfigLoadGroup);
+    foreach (var field in fields) {
+      // We need a copy, so get it through the persistence.
+      var copyNode = new ConfigNode();
+      field.WriteToConfig(copyNode, srcModule);
+      field.ReadFromConfig(copyNode, tgtModule);
     }
   }
 
   /// <summary>Writes values of the annotated persistent fields into a file.</summary>
   /// <remarks>
-  /// All persitent values are <b>added</b> into the file provided. I.e. if node had already had a
-  /// value being persited then it either overwritten (ordinary fields) or extended (collection
+  /// All persistent values are <b>added</b> into the file provided. I.e. if node had already had a
+  /// value being persisted then it either overwritten (ordinary fields) or extended (collection
   /// fields).
   /// </remarks>
   /// <param name="filePath">
@@ -217,7 +213,7 @@ public static class ConfigAccessor {
   /// <see cref="KspPaths.MakeAbsPathForGameData"/>.
   /// </param>
   /// <param name="rootNodePath">
-  /// A path to the node in the file where the data should be written. If the node already exsists
+  /// A path to the node in the file where the data should be written. If the node already exists
   /// it will be deleted.
   /// </param>
   /// <param name="type">A type to write fields for.</param>

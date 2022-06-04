@@ -1,8 +1,13 @@
+# 2.7 (June 3rd, 2022):
+* [Fix] Fix prefab fields loading when modules list changes: [`ConfigUtils.CopyPartConfigFromPrefab`](https://ihsoft.github.io/KSPDev_Utils/v2.7/html/T_KSPDev_ConfigUtils_CopyPartConfigFromPrefab.htm).
+* [Fix] Pass filter Fn in `GetSqrDistanceToPartOrDefault`.
+* [Enhancement] Add high FPS parameter to [`GUIUtils.GuiScale`](http://ihsoft.github.io/KSPDev/KSPDev_Utils/v2.7/html/M_KSPDev_Utils_GUIUtils_GuiScale.htm).
+
 # 2.6 (June 26th, 2021):
-* [Fix] Fix scale initialization in Better handle `renderer` parameter in: [`GUIUtils.GuiScaledSkin`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiScaledSkin.htm).
+* [Fix] Fix scale initialization in: [`GUIUtils.GuiScaledSkin`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiScaledSkin.htm).
 * [Enhancement] Add an alternative module to support game's GUI scale: [`GUIUtils.GuiScale`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiScale.htm).
 * [Enhancement] Add a scope object to assist GUI matrix overrdies: [`GUIUtils.GuiMatrixScope`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiMatrixScope.htm).
-* [Enhancement] Add control to handle tooltips: [`GUIUtils.GuiTooltip`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiTooltip.htm).
+* [Enhancement] Add a control to handle the tooltips: [`GUIUtils.GuiTooltip`](https://ihsoft.github.io/KSPDev_Utils/v2.6/html/T_KSPDev_GUIUtils_GuiTooltip.htm).
 
 # 2.5 (June 20th, 2021):
 * [Fix] Better handle `renderer` parameter in: [`Meshes.RescaleTextureToLength`](https://ihsoft.github.io/KSPDev_Utils/v2.5/html/M_KSPDev_ModelUtils_Meshes_RescaleTextureToLength.htm).

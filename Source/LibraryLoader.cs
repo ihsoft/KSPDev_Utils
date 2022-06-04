@@ -28,6 +28,7 @@ class LibraryLoader : MonoBehaviour {
 
   void Awake() {
     if (loaded) {
+      DebugEx.Info("Unloading KSPDevUtils due to it's already loaded: {0}", assemblyVersionStr);
       gameObject.DestroyGameObject();
       return;  // Only let the loader to work once per version.
     }
