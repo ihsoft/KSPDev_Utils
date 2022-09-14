@@ -4,12 +4,13 @@
 
 using KSPDev.LogUtils;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
 namespace KSPDev.ConfigUtils {
 
-/// <summary>Descriptor of a persitent field.</summary>
+/// <summary>Descriptor of a persistent field.</summary>
 sealed class PersistentField {
   /// <summary>Annotated fields metadata.</summary>
   public readonly FieldInfo fieldInfo;
@@ -32,13 +33,12 @@ sealed class PersistentField {
 
     if (fieldAttr.collectionTypeProto != null) {
       collectionProto =
-          Activator.CreateInstance(fieldAttr.collectionTypeProto, new[] {fieldInfo.FieldType})
-          as AbstractCollectionTypeProto;
+          Activator.CreateInstance(collectionTypeProto, fieldInfo.FieldType) as AbstractCollectionTypeProto;
+      Debug.Assert(collectionProto != null, nameof(collectionProto) + " != null");
       ordinaryType = collectionProto.GetItemType();
     }
-    simpleTypeProto =
-        Activator.CreateInstance(fieldAttr.ordinaryTypeProto)
-        as AbstractOrdinaryValueTypeProto;
+    simpleTypeProto = Activator.CreateInstance(fieldAttr.ordinaryTypeProto) as AbstractOrdinaryValueTypeProto;
+    Debug.Assert(simpleTypeProto != null, nameof(simpleTypeProto) + " != null");
     isCustomSimpleType = typeof(IPersistentField).IsAssignableFrom(ordinaryType);
 
     // Determine if field's or collection item's type is a class (compound type).
@@ -159,14 +159,14 @@ sealed class PersistentField {
         compoundTypeField.ReadFromConfig(node, instance);
       }
     }
-    var configNode = instance as IConfigNode;
-    if (configNode != null) {
-      try {
-        configNode.Load(node);
-      } catch (Exception ex) {
-        DebugEx.Error("Cannot parse value \"{0}\" as {1}: {2}",
-                      node, fieldInfo.FieldType.FullName, ex.Message); 
-      }
+    if (instance is not IConfigNode configNode) {
+      return;
+    }
+    try {
+      configNode.Load(node);
+    } catch (Exception ex) {
+      DebugEx.Error("Cannot parse value \"{0}\" as {1}: {2}",
+                    node, fieldInfo.FieldType.FullName, ex.Message); 
     }
   }
 
@@ -187,32 +187,30 @@ sealed class PersistentField {
     collectionProto.ClearItems(value);
     if (isCompound) {
       // For compound items read nodes and have them parsed.
-      var itemCfgs = ConfigAccessor.GetNodesByPath(node, cfgPath);
-      if (itemCfgs != null) {
-        foreach (var itemCfg in itemCfgs) {
-          var itemValue = Activator.CreateInstance(collectionProto.GetItemType());
-          DeserializeCompoundFieldsFromNode(itemCfg, itemValue);
-          collectionProto.AddItem(value, itemValue);
-        }
+      var itemConfigs = ConfigAccessor.GetNodesByPath(node, cfgPath);
+      if (itemConfigs == null) {
+        return;
+      }
+      foreach (var itemCfg in itemConfigs) {
+        var itemValue = Activator.CreateInstance(collectionProto.GetItemType());
+        DeserializeCompoundFieldsFromNode(itemCfg, itemValue);
+        collectionProto.AddItem(value, itemValue);
       }
     } else {
       // For ordinary items read strings and have them parsed. 
-      var itemCfgs = ConfigAccessor.GetValuesByPath(node, cfgPath);
-      if (itemCfgs != null) {
-        foreach (var itemCfg in itemCfgs) {
-          try {
-            object itemValue;
-            if (isCustomSimpleType) {
-              itemValue = Activator.CreateInstance(collectionProto.GetItemType());
-              ((IPersistentField)itemValue).ParseFromString(itemCfg);
-            } else {
-              itemValue = simpleTypeProto.ParseFromString(itemCfg, collectionProto.GetItemType());
-            }
-            collectionProto.AddItem(value, itemValue);
-          } catch (Exception ex) {
-            DebugEx.Error("Cannot parse value \"{0}\" as {1}: {2}",
-                          itemCfgs, collectionProto.GetItemType().FullName, ex.Message);
-          }
+      var itemConfigs = ConfigAccessor.GetValuesByPath(node, cfgPath);
+      if (itemConfigs == null) {
+        return;
+      }
+      foreach (var itemCfg in itemConfigs) {
+        try {
+          var itemValue = isCustomSimpleType
+              ? CreateCustomSimpleTypeValue(collectionProto.GetItemType(), itemCfg)
+              : simpleTypeProto.ParseFromString(itemCfg, collectionProto.GetItemType());
+          collectionProto.AddItem(value, itemValue);
+        } catch (Exception ex) {
+          DebugEx.Error("Cannot parse value \"{0}\" as {1}: {2}",
+                        itemConfigs, collectionProto.GetItemType().FullName, ex.Message);
         }
       }
     }
@@ -230,48 +228,62 @@ sealed class PersistentField {
     var value = fieldInfo.GetValue(instance);
     if (isCompound) {
       var cfgNode = ConfigAccessor.GetNodeByPath(node, cfgPath);
-      if (cfgNode != null) {
-        if (value == null) {
-          // Try creating the instance using its default constructor.
-          if (fieldInfo.IsInitOnly) {
-            DebugEx.Warning(
-                "Cannot assign to a NULL readonly compound field! Field is ignored: {0}.{1}",
-                fieldInfo.DeclaringType.FullName, fieldInfo.Name);
-            return;
-          }
-          try {
-            value = Activator.CreateInstance(fieldInfo.FieldType);
-            fieldInfo.SetValue(instance, value);
-          } catch (Exception ex) {
-            DebugEx.Error("Cannot restore field of type {0}: {1}", fieldInfo.FieldType, ex.Message);
-          }
-        }
-        DeserializeCompoundFieldsFromNode(cfgNode, value);
-      }
-    } else {
-      if (fieldInfo.IsInitOnly) {
-        DebugEx.Warning("Cannot assign to a readonly field! Field is ignored: {0}.{1}",
-                        fieldInfo.DeclaringType.FullName, fieldInfo.Name);
+      if (cfgNode == null) {
         return;
       }
-      var cfgValue = ConfigAccessor.GetValueByPath(node, cfgPath);
-      if (cfgValue != null) {
+      if (value == null) {
+        // Try creating the instance using its default constructor.
+        if (fieldInfo.IsInitOnly) {
+          DebugEx.Warning(
+              "Cannot assign to a NULL readonly compound field! Field is ignored: {0}.{1}",
+              fieldInfo.DeclaringType?.FullName, fieldInfo.Name);
+          return;
+        }
         try {
-          object fieldValue;
-          if (isCustomSimpleType) {
-            // Prefer the existing instance of the field value when available.
-            fieldValue = value ?? Activator.CreateInstance(fieldInfo.FieldType);
-            ((IPersistentField)fieldValue).ParseFromString(cfgValue);
-          } else {
-            fieldValue = simpleTypeProto.ParseFromString(cfgValue, fieldInfo.FieldType);
-          }
-          fieldInfo.SetValue(instance, fieldValue);
+          value = Activator.CreateInstance(fieldInfo.FieldType);
+          fieldInfo.SetValue(instance, value);
         } catch (Exception ex) {
-          DebugEx.Error("Cannot parse value \"{0}\" as {1}: {2}",
-                        cfgValue, fieldInfo.FieldType.FullName, ex.Message);
+          DebugEx.Error("Cannot restore field of type {0}: {1}", fieldInfo.FieldType, ex.Message);
         }
       }
+      DeserializeCompoundFieldsFromNode(cfgNode, value);
+    } else {
+      var cfgValue = ConfigAccessor.GetValueByPath(node, cfgPath);
+      if (fieldInfo.IsInitOnly && (!isCustomSimpleType || value == null)) {
+        DebugEx.Warning("Cannot assign to a readonly field! Field is ignored: {0}.{1}",
+                        fieldInfo.DeclaringType?.FullName, fieldInfo.Name);
+        return;
+      }
+      if (cfgValue == null) {
+        return;
+      }
+      try {
+        if (isCustomSimpleType) {
+          if (value == null) {
+            fieldInfo.SetValue(instance, CreateCustomSimpleTypeValue(fieldInfo.FieldType, cfgValue));
+          } else {
+            ((IPersistentField)value).ParseFromString(cfgValue);
+          }
+        } else {
+          fieldInfo.SetValue(instance, simpleTypeProto.ParseFromString(cfgValue, fieldInfo.FieldType));
+        }
+      } catch (Exception ex) {
+        DebugEx.Error("Cannot parse value \"{0}\" as {1}: {2}", cfgValue, fieldInfo.FieldType.FullName, ex.Message);
+      }
     }
+  }
+
+  static object CreateCustomSimpleTypeValue(Type type, string cfgValue) {
+    object value;
+    try {
+      value = Activator.CreateInstance(type, cfgValue);
+      return value;
+    } catch (MissingMethodException) {
+      // Try the default constructor.
+    }
+    value = Activator.CreateInstance(type);
+    ((IPersistentField)value).ParseFromString(cfgValue);
+    return value;
   }
 }
 
