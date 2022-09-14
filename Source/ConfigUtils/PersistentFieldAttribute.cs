@@ -156,10 +156,15 @@ namespace KSPDev.ConfigUtils {
 [AttributeUsage(AttributeTargets.Field)]
 public sealed class PersistentFieldAttribute : BasePersistentFieldAttribute {
   /// <summary>Specifies if the annotated field is a collection of values.</summary>
+  /// <remarks>
+  /// Deprecated! The standard collections are now auto-detected.
+  /// See <see cref="GenericCollectionTypeProto.IsSupportedType"/>. Use <see cref="PersistentCustomFieldAttribute"/>
+  /// when a non-standard collection needs to be handled.
+  /// </remarks>
   /// <value><c>true</c> if the field is a collection.</value>
   public bool isCollection {
-    set { collectionTypeProto = value ? typeof(GenericCollectionTypeProto) : null; }
-    get { return collectionTypeProto != null; }
+    set => collectionTypeProto = value ? typeof(GenericCollectionTypeProto) : null;
+    get => collectionTypeProto != null;
   }
 
   /// <summary>Creates attribute for a persistent field of standard KSP types.</summary>

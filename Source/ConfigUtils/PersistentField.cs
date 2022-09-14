@@ -31,7 +31,15 @@ sealed class PersistentField {
     cfgPath = fieldAttr.path;
     var ordinaryType = fieldInfo.FieldType;
 
-    if (fieldAttr.collectionTypeProto != null) {
+    // Auto-detect the common collections when using the base attribute.
+    var collectionTypeProto = fieldAttr.collectionTypeProto;
+    if (fieldAttr is PersistentFieldAttribute
+        && collectionTypeProto == null
+        && GenericCollectionTypeProto.IsSupportedType(fieldInfo.FieldType)) {
+      collectionTypeProto = typeof(GenericCollectionTypeProto);
+    }
+
+    if (collectionTypeProto != null) {
       collectionProto =
           Activator.CreateInstance(collectionTypeProto, fieldInfo.FieldType) as AbstractCollectionTypeProto;
       Debug.Assert(collectionProto != null, nameof(collectionProto) + " != null");
