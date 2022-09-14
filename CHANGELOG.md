@@ -1,3 +1,5 @@
+# 2.8 (September 14th, 2022):
+
 # 2.7 (June 3rd, 2022):
 * [Fix] Fix prefab fields loading when modules list changes: [`ConfigUtils.CopyPartConfigFromPrefab`](https://ihsoft.github.io/KSPDev_Utils/v2.7/html/T_KSPDev_ConfigUtils_CopyPartConfigFromPrefab.htm).
 * [Fix] Pass filter Fn in `GetSqrDistanceToPartOrDefault`.
