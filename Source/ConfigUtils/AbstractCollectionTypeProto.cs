@@ -9,17 +9,16 @@ namespace KSPDev.ConfigUtils {
 
 /// <summary>Base class for a type proto handler that can deal with collections.</summary>
 /// <remarks>
-/// Collection of collections is not supported. However, descendands may use own
-/// (de)serialization approach to handle nested collections.
+/// Collection of collections is not supported. However, the descendants may use own (de)serialization approach to
+/// handle nested collections.
 /// <para>
-/// All descendants of this class must implement a constructor which accepts a single argument: the
-/// type of the collection. Constructor can throw <see cref="ArgumentException"/> if passed type is
-/// unacceptable.</para>
+/// All descendants of this class must implement a constructor which accepts a single argument: the type of the
+/// collection. Constructor can throw <see cref="ArgumentException"/> if the passed type is unacceptable.</para>
 /// </remarks>
-/// <example>As a good example of overriding of this class see
-/// <see cref="GenericCollectionTypeProto"/>. Though, it tries to be universal and, hence, works
-/// via reflection. You don't need to deal with reflections as long as your custom proto used for
-/// the fields of known types only.
+/// <example>
+/// As a good example of overriding of this class see <see cref="GenericCollectionTypeProto"/>. Though, it tries to be
+/// universal and, hence, works via reflection. You don't need to deal with reflections as long as your custom proto
+/// is used for the fields of the known types only.
 /// <code>
 /// class MyBooleanCollection {
 ///   public void AddItem(bool itemValue) {

@@ -10,8 +10,12 @@ using UnityEngine;
 
 namespace KSPDev.ConfigUtils {
 
-/// <summary>A proto handler for a simple generic collection.</summary>
-/// <remarks>Generic must have exactly one argument.</remarks>
+/// <summary>A proto handler for a mutable generic collection.</summary>
+/// <remarks>
+/// The generic must have exactly one argument. The target type must provide two methods: <c>Add</c> and <c>Clear</c>.
+/// If any of them is missing, the type is considered ineligible. If they are present, then they will be used to fill
+/// the collection on a deserialization.
+/// </remarks>
 /// <seealso cref="PersistentFieldAttribute"/>
 public sealed class GenericCollectionTypeProto : AbstractCollectionTypeProto {
   readonly Type itemType;

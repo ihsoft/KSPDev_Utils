@@ -137,8 +137,8 @@ public static class ConfigAccessor {
   /// <remarks>
   /// <para>
   /// The consumer code must call this method from the <c>OnLoad</c> method to capture the
-  /// PartLoader initalization. This method automatically detects the game loading phase, so it's
-  /// safe to call it in every <c>OnLoad</c> inovacation.
+  /// PartLoader initialization. This method automatically detects the game loading phase, so it's
+  /// safe to call it in every <c>OnLoad</c> invocation.
   /// </para>
   /// </remarks>
   /// <param name="module">The module to load the data for.</param>
@@ -521,19 +521,21 @@ public static class ConfigAccessor {
     SetValueByPath(node, pathKeys, strValue);
   }
 
-  /// <summary>
-  /// Reads a value of arbitrary type <typeparamref name="T"/> from a config node.
-  /// </summary>
+  /// <summary>Reads a value of arbitrary type <typeparamref name="T"/> from a config node.</summary>
   /// <param name="node">A node to read data from.</param>
-  /// <param name="path">A string path to the node. Path components should be separated by '/'
-  /// symbol.</param>
-  /// <param name="value">A variable to read value into. The <paramref name="typeProto"/> handler
-  /// must know how to convert value's type from string.</param>
-  /// <param name="typeProto">A proto capable to handle the type of <paramref name="value"/>. If not
-  /// set then <see cref="StandardOrdinaryTypesProto"/> is used.</param>
+  /// <param name="path">
+  /// A string path to the node. Path components should be separated by '/' symbol.
+  /// </param>
+  /// <param name="value">
+  /// A variable to read value into. The <paramref name="typeProto"/> handler
+  /// must know how to convert value's type from string.
+  /// </param>
+  /// <param name="typeProto">
+  /// A proto capable to handle the type of <paramref name="value"/>. If not set then
+  /// <see cref="StandardOrdinaryTypesProto"/> is used.
+  /// </param>
   /// <returns><c>true</c> if value was successfully read and stored.</returns>
-  /// <typeparam name="T">The value type to read. Type proto must be able to handle it.
-  /// </typeparam>
+  /// <typeparam name="T">The value type to read. Type proto must be able to handle it.</typeparam>
   /// <exception cref="ArgumentException">If type cannot be handled by the proto.</exception>
   public static bool GetValueByPath<T>(ConfigNode node, string path, ref T value,
                                        AbstractOrdinaryValueTypeProto typeProto = null) {
@@ -628,10 +630,10 @@ public static class ConfigAccessor {
         : (T?)typeProto.ParseFromString(strValue, typeof(T));
   }
 
-  /// <summary>Gathers and returns persistent field fields annotations.</summary>
+  /// <summary>Gathers and returns persistent field file annotations.</summary>
   /// <param name="type">A type to lookup for the field annotations.</param>
   /// <param name="group">A group tag (see <see cref="PersistentFieldsFileAttribute"/>). If
-  /// <c>null</c> then all files defined in the type are returned.</param>
+  /// <c>null</c> then all fields defined in the type are returned.</param>
   /// <returns>Array of persistent fields.</returns>
   static AbstractPersistentFieldsFileAttribute[] GetPersistentFieldsFiles(Type type, string group) {
     // Sort by config path to ensure the most top level nodes are handled before the children.

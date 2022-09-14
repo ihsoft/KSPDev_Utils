@@ -6,27 +6,27 @@ namespace KSPDev.ConfigUtils {
 
 /// <summary>Interface for the simple types that need custom (de)serialization logic.</summary>
 /// <remarks>
-/// It's similar to <c>IConfigNode</c> interface in the compound types but with the following
-/// differences:
+/// It's similar to <c>IConfigNode</c> interface in the compound types but with the following differences:
 /// <list type="bullet">
 /// <item>The value is (de)serialized from/to a simple string.</item>
 /// <item>
-/// If the field is initialized to an instance of the type, then this instance will be used to
-/// deserialize the value. If the field is not initialized but there is a value in the config file,
-/// then a new instance will be created. For this reason the type must implement a default
-/// constructor.
+/// If the field is initialized to an instance of the type, then this instance will be used to deserialize the value.
+/// If the field is not initialized but there is a value in the config file, then a new instance will be created and
+/// assigned to the field. First, a single string parameter constructor will be attempted with the config value in the
+/// parameter. If no such constructor found, a default constructor will be attempted, and if succeeded then the
+/// deserialization method called ont it.
 /// </item>
 /// </list>
 /// <para>
 /// Note that the types that implement this interface will <i>never</i> be treated as compound. I.e.
-/// <see cref="ConfigAccessor"/> will not try to persist the members of such types even though there
-/// may be fields attributed with <see cref="PersistentFieldAttribute"/>.
+/// <see cref="ConfigAccessor"/> will not try to persist the members of such types even though there may be fields
+/// attributed with <see cref="PersistentFieldAttribute"/>.
 /// </para>
 /// </remarks>
 /// <example>
 /// Here is how a simple vector serialization may look like:
 /// <code><![CDATA[
-/// public class MyVector : IPeristentField {
+/// public class MyVector : IPersistentField {
 ///   float x;
 ///   float y;
 ///
@@ -43,9 +43,8 @@ namespace KSPDev.ConfigUtils {
 /// }
 /// ]]></code>
 /// <para>
-/// This example doesn't do any checking when parsing the string, but in general it's a good idea to
-/// do a sanity check of the string. It's OK to throw an exception from the parsing method when the
-/// data is invalid.
+/// This example doesn't do any checking when parsing the string, but in general it's a good idea to do a sanity check
+/// of the string. It's OK to throw an exception from the parsing method when the data is invalid.
 /// </para>
 /// </example>
 /// <seealso cref="ConfigAccessor"/>
