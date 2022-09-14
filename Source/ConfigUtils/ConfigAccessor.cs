@@ -71,8 +71,7 @@ public static class ConfigAccessor {
   /// <seealso cref="PersistentFieldAttribute"/>
   public static void ReadFieldsFromDatabase(string nodePath, Type type, object instance,
                                             string group = StdPersistentGroups.Default) {
-    DebugEx.Fine("Loading persistent fields: db path={0}, group=\"{1}\"",
-                 nodePath, group ?? "<ALL>");
+    DebugEx.Fine("Loading persistent fields: db path={0}, group=\"{1}\"", nodePath, group ?? "<ALL>");
     var node = GameDatabase.Instance.GetConfigNode(nodePath);
     if (node != null) {
       ReadFieldsFromNode(node, type, instance, group: group);
@@ -98,9 +97,9 @@ public static class ConfigAccessor {
   public static void ReadFieldsFromNode(ConfigNode node, Type type, object instance,
                                         string group = StdPersistentGroups.Default) {
     var fields = PersistentFieldsFactory.GetPersistentFields(
-        type, true /* needStatic */, instance != null /* needInstance */, group).ToArray();
+        type, true /* needStatic */, instance != null /* needInstance */, group);
     DebugEx.Fine("Loading {0} persistent fields: group=\"{1}\", node={2}", 
-                 fields.Length, group ?? "<ALL>", node.name);
+                 fields.Count, group ?? "<ALL>", node.name);
     foreach (var field in fields) {
       field.ReadFromConfig(node, instance);
     }
@@ -314,7 +313,7 @@ public static class ConfigAccessor {
   /// <paramref name="node"/>.</returns>
   public static string GetValueByPath(ConfigNode node, string[] pathKeys) {
     var valueNode = GetNodeByPath(node, pathKeys.Take(pathKeys.Length - 1).ToArray());
-    return valueNode != null ? valueNode.GetValue(pathKeys.Last()) : null;
+    return valueNode?.GetValue(pathKeys.Last());
   }
 
   /// <summary>Reads repeated values from config node by a path.</summary>

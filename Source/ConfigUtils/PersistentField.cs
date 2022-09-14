@@ -49,7 +49,7 @@ sealed class PersistentField {
 
     if (!isCompound && !simpleTypeProto.CanHandle(ordinaryType) && !isCustomSimpleType) {
       DebugEx.Error("Proto {0} cannot handle value in field {1}.{2}",
-                    ordinaryType.FullName, fieldInfo.DeclaringType.FullName, fieldInfo.Name);
+                    ordinaryType.FullName, fieldInfo.DeclaringType?.FullName, fieldInfo.Name);
       isDisabled = true;
     }
 
@@ -67,9 +67,8 @@ sealed class PersistentField {
 
       // Disable if cannot deal with the field anyways.
       if (compoundTypeFields.Length == 0 && !typeof(IConfigNode).IsAssignableFrom(ordinaryType)) {
-        DebugEx.Error("Compound type in field {0}.{1} has no persistent fields and doesn't"
-                      + " implement IConfigNode",
-                      fieldInfo.DeclaringType.FullName, fieldInfo.Name);
+        DebugEx.Error("Compound type in field {0}.{1} has no persistent fields and doesn't implement IConfigNode",
+                      fieldInfo.DeclaringType?.FullName, fieldInfo.Name);
         isDisabled = true;
       }
     }
@@ -147,9 +146,7 @@ sealed class PersistentField {
       }
     }
     var configNode = instance as IConfigNode;
-    if (configNode != null) {
-      configNode.Save(node);
-    }
+    configNode?.Save(node);
     return node;
   }
   
@@ -183,8 +180,8 @@ sealed class PersistentField {
     var value = fieldInfo.GetValue(instance);
     if (value == null) {
       // Collections are the complex objects, they must exist in order to be restored.
-      DebugEx.Warning("Skip reading collection field {0}.{1} due to it's not initalized",
-                      fieldInfo.DeclaringType.FullName, fieldInfo.Name);
+      DebugEx.Warning("Skip reading collection field {0}.{1} due to it's not initialized",
+                      fieldInfo.DeclaringType?.FullName, fieldInfo.Name);
       return;
     }
     collectionProto.ClearItems(value);

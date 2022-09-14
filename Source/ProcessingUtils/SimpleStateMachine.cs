@@ -99,11 +99,11 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   /// <example><code source="Examples/ProcessingUtils/SimpleStateMachine-Examples.cs" region="SimpleStateMachineFree"/></example>
   public event OnStateChangeHandler onAfterTransition;
 
-  readonly Dictionary<T, OnChange> enterHandlersAny = new Dictionary<T, OnChange>();
-  readonly Dictionary<T, OnChange> enterHandlersInit = new Dictionary<T, OnChange>();
-  readonly Dictionary<T, OnChange> leaveHandlersAny = new Dictionary<T, OnChange>();
-  readonly Dictionary<T, OnChange> leaveHandlersShutdown = new Dictionary<T, OnChange>();
-  readonly Dictionary<T, T[]> transitionConstraints = new Dictionary<T, T[]>();
+  readonly Dictionary<T, OnChange> _enterHandlersAny = new();
+  readonly Dictionary<T, OnChange> _enterHandlersInit = new();
+  readonly Dictionary<T, OnChange> _leaveHandlersAny = new();
+  readonly Dictionary<T, OnChange> _leaveHandlersShutdown = new();
+  readonly Dictionary<T, T[]> _transitionConstraints = new();
 
   /// <summary>Constructs a new uninitialized state machine.</summary>
   /// <param name="strict">Tells if all the transitions must be explicitly declared.</param>
@@ -127,8 +127,8 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   /// <example><code source="Examples/ProcessingUtils/SimpleStateMachine-Examples.cs" region="SimpleStateMachineStrict"/></example>
   public void SetTransitionConstraint(T fromState, T[] toStates) {
     CheckIsNotStarted();
-    transitionConstraints.Remove(fromState);
-    transitionConstraints.Add(fromState, toStates);
+    _transitionConstraints.Remove(fromState);
+    _transitionConstraints.Add(fromState, toStates);
   }
 
   /// <summary>Clears the transitions for the source state if any.</summary>
@@ -136,7 +136,7 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   /// <seealso cref="SetTransitionConstraint"/>
   public void ResetTransitionConstraint(T fromState) {
     CheckIsNotStarted();
-    transitionConstraints.Remove(fromState);
+    _transitionConstraints.Remove(fromState);
   }
 
   /// <summary>Adds a state change event.</summary>
@@ -178,27 +178,27 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
     CheckIsNotStarted();
     if (enterHandler != null) {
       if (callOnInit) {
-        if (!enterHandlersInit.ContainsKey(state)) {
-          enterHandlersInit.Add(state, null);
+        if (!_enterHandlersInit.ContainsKey(state)) {
+          _enterHandlersInit.Add(state, null);
         }
-        enterHandlersInit[state] += enterHandler;
+        _enterHandlersInit[state] += enterHandler;
       }
-      if (!enterHandlersAny.ContainsKey(state)) {
-        enterHandlersAny.Add(state, null);
+      if (!_enterHandlersAny.ContainsKey(state)) {
+        _enterHandlersAny.Add(state, null);
       }
-      enterHandlersAny[state] += enterHandler;
+      _enterHandlersAny[state] += enterHandler;
     }
     if (leaveHandler != null) {
       if (callOnShutdown) {
-        if (!leaveHandlersShutdown.ContainsKey(state)) {
-          leaveHandlersShutdown.Add(state, null);
+        if (!_leaveHandlersShutdown.ContainsKey(state)) {
+          _leaveHandlersShutdown.Add(state, null);
         }
-        leaveHandlersShutdown[state] += leaveHandler;
+        _leaveHandlersShutdown[state] += leaveHandler;
       }
-      if (!leaveHandlersAny.ContainsKey(state)) {
-        leaveHandlersAny.Add(state, null);
+      if (!_leaveHandlersAny.ContainsKey(state)) {
+        _leaveHandlersAny.Add(state, null);
       }
-      leaveHandlersAny[state] += leaveHandler;
+      _leaveHandlersAny[state] += leaveHandler;
     }
   }
 
@@ -210,23 +210,23 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   public void RemoveHandlers(T state, OnChange enterHandler = null, OnChange leaveHandler = null) {
     CheckIsNotStarted();
     if (enterHandler != null) {
-      if (enterHandlersAny.ContainsKey(state)) {
+      if (_enterHandlersAny.ContainsKey(state)) {
         // disable once DelegateSubtraction
-        enterHandlersAny[state] -= enterHandler;
+        _enterHandlersAny[state] -= enterHandler;
       }
-      if (enterHandlersInit.ContainsKey(state)) {
+      if (_enterHandlersInit.ContainsKey(state)) {
         // disable once DelegateSubtraction
-        enterHandlersInit[state] -= enterHandler;
+        _enterHandlersInit[state] -= enterHandler;
       }
     }
     if (leaveHandler != null) {
-      if (leaveHandlersAny.ContainsKey(state)) {
+      if (_leaveHandlersAny.ContainsKey(state)) {
         // disable once DelegateSubtraction
-        leaveHandlersAny[state] -= leaveHandler;
+        _leaveHandlersAny[state] -= leaveHandler;
       }
-      if (leaveHandlersShutdown.ContainsKey(state)) {
+      if (_leaveHandlersShutdown.ContainsKey(state)) {
         // disable once DelegateSubtraction
-        leaveHandlersShutdown[state] -= leaveHandler;
+        _leaveHandlersShutdown[state] -= leaveHandler;
       }
     }
   }
@@ -239,8 +239,8 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
   /// <example><code source="Examples/ProcessingUtils/SimpleStateMachine-Examples.cs" region="SimpleStateMachineStrict"/></example>
   public bool CheckCanSwitchTo(T newState) {
     return !isStrict
-        || transitionConstraints.ContainsKey(_currentState.Value)
-            && transitionConstraints[_currentState.Value].IndexOf(newState) != -1;
+        || _transitionConstraints.ContainsKey(_currentState.Value)
+            && _transitionConstraints[_currentState.Value].IndexOf(newState) != -1;
   }
 
   #region Local utility methods
@@ -302,11 +302,11 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
     OnChange @event;
     try {
       if (!newState.HasValue) {
-        if (leaveHandlersShutdown.TryGetValue(_currentState.Value, out @event)) {
+        if (_leaveHandlersShutdown.TryGetValue(_currentState.Value, out @event)) {
           @event(newState);
         }
       } else {
-        if (leaveHandlersAny.TryGetValue(_currentState.Value, out @event)) {
+        if (_leaveHandlersAny.TryGetValue(_currentState.Value, out @event)) {
           @event(newState);
         }
       }
@@ -323,11 +323,11 @@ public sealed class SimpleStateMachine<T> where T : struct, IConvertible {
     OnChange @event;
     try {
       if (!oldState.HasValue) {
-        if (enterHandlersInit.TryGetValue(_currentState.Value, out @event)) {
+        if (_enterHandlersInit.TryGetValue(_currentState.Value, out @event)) {
           @event(oldState);
         }
       } else {
-        if (enterHandlersAny.TryGetValue(_currentState.Value, out @event)) {
+        if (_enterHandlersAny.TryGetValue(_currentState.Value, out @event)) {
           @event(oldState);
         }
       }

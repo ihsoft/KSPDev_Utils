@@ -48,10 +48,6 @@ namespace KSPDev.ConfigUtils {
 /// <seealso cref="ConfigAccessor"/>
 /// <seealso cref="BasePersistentFieldAttribute"/>
 public abstract class AbstractCollectionTypeProto {
-  AbstractCollectionTypeProto() {
-    // Disallow default constructor. This class will only be created via reflection.
-  }
-  
   /// <param name="containerType">A type of the collection (i.e. an immediate field's type).</param>
   protected AbstractCollectionTypeProto(Type containerType) {}
 
