@@ -6,7 +6,6 @@ using KSPDev.LogUtils;
 using System;
 using System.Reflection;
 using System.Collections;
-using UnityEngine;
 
 namespace KSPDev.ConfigUtils {
 
@@ -17,36 +16,25 @@ namespace KSPDev.ConfigUtils {
 /// the collection on a deserialization.
 /// </remarks>
 /// <seealso cref="PersistentFieldAttribute"/>
+/// <seealso cref="IsSupportedType"/>
 public sealed class GenericCollectionTypeProto : AbstractCollectionTypeProto {
-  readonly Type itemType;
-  readonly MethodInfo addMethod;
-  readonly MethodInfo clearMethod;
+  readonly Type _itemType;
+  readonly MethodInfo _addMethod;
+  readonly MethodInfo _clearMethod;
 
   /// <inheritdoc/>
   public GenericCollectionTypeProto(Type containerType) : base(containerType) {
-    if (!containerType.IsGenericType || containerType.GetGenericArguments().Length != 1) {
-      DebugEx.Error(
-          "{0} requires generic container with one type parameter but found: {1}",
-          GetType().FullName, containerType.FullName);
+    if (!IsSupportedType(containerType, logFailedChecks: true)) {
       throw new ArgumentException("Invalid container type");
     }
-    itemType = containerType.GetGenericArguments()[0];
-
-    addMethod = containerType.GetMethod("Add");
-    if (addMethod == null) {
-      DebugEx.Error("Type {0} doesn't have Add() method", containerType.FullName);
-      throw new ArgumentException("Invalid container type");
-    }
-    clearMethod = containerType.GetMethod("Clear");
-    if (clearMethod == null) {
-      DebugEx.Error("Type {0} doesn't have Clear() method", containerType.FullName);
-      throw new ArgumentException("Invalid container type");
-    }
+    _itemType = containerType.GetGenericArguments()[0];
+    _addMethod = containerType.GetMethod("Add");
+    _clearMethod = containerType.GetMethod("Clear");
   }
 
   /// <inheritdoc/>
   public override Type GetItemType() {
-    return itemType;
+    return _itemType;
   }
   
   /// <inheritdoc/>
@@ -56,12 +44,40 @@ public sealed class GenericCollectionTypeProto : AbstractCollectionTypeProto {
   
   /// <inheritdoc/>
   public override void AddItem(object instance, object item) {
-    addMethod.Invoke(instance, new[] {item});
+    _addMethod.Invoke(instance, new[] {item});
   }
 
   /// <inheritdoc/>
   public override void ClearItems(object instance) {
-    clearMethod.Invoke(instance, new object[0]);
+    _clearMethod.Invoke(instance, new object[0]);
+  }
+
+  /// <summary>Verifies if this proto can handle the provided collection type.</summary>
+  /// <param name="type">The type to check.</param>
+  /// <param name="logFailedChecks">Indicates that the failed checks must be logged.</param>
+  /// <returns><c>true</c> if the collection type can be handled by this proto.</returns>
+  public static bool IsSupportedType(Type type, bool logFailedChecks = false) {
+    if (!type.IsGenericType || type.GetGenericArguments().Length != 1) {
+      if (logFailedChecks) {
+        DebugEx.Error(
+            "{0} requires a generic container with one type parameter but found: {1}",
+            nameof(GenericCollectionTypeProto), type.FullName);
+      }
+      return false;
+    }
+    if (type.GetMethod("Add") == null) {
+      if (logFailedChecks) {
+        DebugEx.Error("Type {0} doesn't have Add() method", type.FullName);
+      }
+      return false;
+    }
+    if (type.GetMethod("Clear") == null) {
+      if (logFailedChecks) {
+        DebugEx.Error("Type {0} doesn't have Clear() method", type.FullName);
+      }
+      return false;
+    }
+    return true;
   }
 }
 
